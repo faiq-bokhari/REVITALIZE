@@ -15,16 +15,16 @@
 \begin{document}
 
 \begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-\midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
-\bottomrule
-\end{tabularx}
+	\caption{Revision History} \label{TblRevisionHistory}
+	\begin{tabularx}{\textwidth}{llX}
+		\toprule
+		\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+		\midrule
+		Date1 & Name(s) & Description of changes\\
+		Date2 & Name(s) & Description of changes\\
+		... & ... & ...\\
+		\bottomrule
+	\end{tabularx}
 \end{table}
 
 \newpage
@@ -40,12 +40,11 @@ Date2 & Name(s) & Description of changes\\
 \section{Team Member Roles}
 
 \section{Workflow Plan}
+The main repository is named REVITALIZE. The implementation will follow the feature-branch model. Feature development will take place in a branch other than the main branch. This encapsulation makes it easy for our team to work on a feature without disturbing the main codebase. That way, the main branch will never contain broken code. The feature-branch model will make it simple for our team to initiate discussions around a branch by making pull requests to comment on each other’s work.\\\\
+The documentation will follow the centralized model. The main branch will serve as a point of entry for all changes to the documentation. All changes will be committed to this branch.\\\\
+To report bugs and request modifications to implementation or documentation, we will create GitHub issues and assign them to the people working on a specific problem. This will also serve as a way of holding team members accountable for the issues they have to tackle in the future. Labels will be used to classify issues and pull requests to help create a standard workflow in our repository.\\\\
+If required, milestones will be created to track progress on groups of issues or pull requests in our repository to better manage our project through viewing milestones’ view dates, completion percentages, and lists of open and closed issues and pull requests associated with the milestones. Using milestones could become a necessity as our project size and complexity increases with time.
 
-\begin{itemize}
-	\item How will you be using git, including branches, pull request, etc.?
-	\item How will you be managing issues, including template issues, issue
-	classificaiton, etc.?
-\end{itemize}
 
 \section{Proof of Concept Demonstration Plan}
 
@@ -56,16 +55,16 @@ you will be able to overcome this risk?
 \section{Technology}
 
 \begin{itemize}
-\item Specific programming language
-\item Specific linter tool (if appropriate)
-\item Specific unit testing framework
-\item Investigation of code coverage measuring tools
-\item Specific plans for Continuous Integration (CI), or an explanation that CI
-  is not being done
-\item Specific performance measuring tools (like Valgrind), if
-  appropriate
-\item Libraries you will likely be using?
-\item Tools you will likely be using?
+	\item Specific programming language
+	\item Specific linter tool (if appropriate)
+	\item Specific unit testing framework
+	\item Investigation of code coverage measuring tools
+	\item Specific plans for Continuous Integration (CI), or an explanation that CI
+	is not being done
+	\item Specific performance measuring tools (like Valgrind), if
+	appropriate
+	\item Libraries you will likely be using?
+	\item Tools you will likely be using?
 \end{itemize}
 
 \section{Coding Standard}
