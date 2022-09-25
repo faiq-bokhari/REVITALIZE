@@ -1,8 +1,11 @@
-\documentclass{article}
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
 
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage[table, dvipsnames]{xcolor}
+\usepackage{longtable}
 
 \title{Problem Statement and Goals\\\progname}
 
@@ -63,7 +66,7 @@ Software application, where if web application is created, will be available for
 
 \section{Goals}
 
-\begin{tabular}{ |p{3cm}||p{5cm}|p{5cm}| }
+\begin{longtable}{ |p{3cm}||p{5cm}|p{5cm}| }
  \hline
  \rowcolor{lightgray}
  \multicolumn{3}{|c|}{Product Goals} \\
@@ -77,7 +80,13 @@ Software application, where if web application is created, will be available for
  \hline
  Secure & All private user data, should be protected and application should prevent any data leakages from occurring. User data should only be available for the user unless, user specifies otherwise.  & In society, there are many hacking attempts, and hacking has become a profitable business where the victims are innocent users. So by making application more secure by creating high-level authentication and testing our product thoroughly, it can help ensure more trust to our users. \\
  \hline
-\end{tabular}
+ Customizable & The application should be flexible and customizable to cater to the user's personal health and limitations. The Recipe Finder, Workout Planner and Sleep Scheduler should have preset values that can be altered to the user's preferences.  & Each individual has a varying body types, stengths and weaknesses. The Recipe Finder should have options that consider dietary restrictions and calorie goals. The Workout planner should have a large variety of excercises to choose from for each muscle group. The sleep tracker should be able to adjust the sleep timer to allow for planning within the user's schedule. \\
+ \hline
+ Progress Tracking & User interactions with the app should be logged and tracked in a diary format to ensure that the user is able to better understand their daily habits & When making a lifestyle change, it is important to keep track of progress to ensure that daily, weekly and monthly targets are met. It is essential for the user to be able to reflect on their habits and routine and adjust to better aid in their journey.   \\
+ \hline
+ Digestable Visualization of Big Data & The data accumulated throughout the use of the app should be easily accessable in a digestable format to help the user better understand progress and keep track of their longterm health  & User's can have the option to view their progress in terms of long term data sets that can help to visualize progress. A visual representation can be extemely beneficial to understanding the change in habits over a long period of time.    \\
+ \hline
+\end{longtable}
 
 \section{Stretch Goals}
 
