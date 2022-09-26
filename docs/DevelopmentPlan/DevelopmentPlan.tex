@@ -73,23 +73,40 @@ There are no hardware risks or concerns as this is purely a software project.
 
 \subsection{Plan to Overcome Risks}
 
+\subsubsection{Human Computer Interface and User Experience}
+Discussing with the stakeholders and devising user-acceptance testing should be the path to overcoming the interface-related risk. Also, the team aims to put one developer in charge of specifically researching methods of improving the app's user experience.
+
+\subsubsection{Design and Implementation}
+Frequent meeting and communication should be enough to ensure adequate transfer of the software-design-related knowledge and expertise some team members have more of than others. 
+
+\subsubsection{Testing}
+The team aims to go beyond just unit testing and high code coverage statistics; end-to-end testing and user acceptance testing should also be considered and implemented to ensure smooth usability. As the project progresses, the team aims to dedicate special attention and time to devising a clear testing architecture.
+
+\subsubsection{Scope}
+It will be tried to minimize this risk by intelligently dividing tasks and providing realistic estimates for how long each task will take. If the team realizes some things to be out of scope later down the line, then they can meet with stakeholders to narrow down on what should be prioritized and what should be left as a stretch goal.
+
+\subsubsection{Future Goal Changes}
+Trying to stay flexible and meet twice a week. If some goals change, then devising a plan with the time and effort scope at a later date should be a viable route.
+.
 
 \section{Technology}
 
-\begin{itemize}
-	\item Specific programming language
-	\item Specific linter tool (if appropriate)
-	\item Specific unit testing framework
-	\item Investigation of code coverage measuring tools
-	\item Specific plans for Continuous Integration (CI), or an explanation that CI
-	is not being done
-	\item Specific performance measuring tools (like Valgrind), if
-	appropriate
-	\item Libraries you will likely be using?
-	\item Tools you will likely be using?
-\end{itemize}
+\subsection{Specific Programming Language}
+For this mobile app, Javascript will be used as the main programming language, as it is aimed to use React Native and Express JS (two Javascript based frameworks) to build the app's front end and back end respectively.
+\subsection{Unit Testing Framework}
+The well resourced, well documented Javascript unit testing framework the development team has collectively expressed favour for is Jest, hence this will be the framework of choice.
+\subsection{Continuous Integration}
+As the development team is generally comfortable with Github and that is the version control platform that has been opted for, it makes sense to use Githiub's own Continuous Integration features to support real time integration of incoming code.
+\subsection{Performace Measuring Tool}
+After conducting research, it has been decided that Sentry will be the tool of choice due to the vast functionality it offers in regards to performance measuring and debugging.
+\subsection{Libraries}
+This would a dynamic, extensible list so it is better describred generally like this:  React, Express, Node js all associated libraries with said frameworks. 
+\subsection{Tools}
+Recipe Finder (https://www.edamam.com/), Workout Tracker(https://wger.de/en/software/api), Sleep Tracker (https://developers.google.com/location-context/sleep), IDE's: VS Code and Android Studio.
+
 
 \section{Coding Standard}
+The team can use the Google JS Style Guide as a benchmark for coding standard and stylistic specs: https://google.github.io/styleguide/jsguide.html
 
 \section{Project Scheduling}
 Gantt chart will be used for project scheduling, showing key deliverables and progress. Will be updated regularly throughout the project:
