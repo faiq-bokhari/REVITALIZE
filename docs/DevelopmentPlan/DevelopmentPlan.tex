@@ -16,144 +16,144 @@
 \input{../Common}
 
 \begin{document}
+
+\maketitle
+
+\begin{table}[hp]
+	\caption{Revision History} \label{TblRevisionHistory}
+	\begin{tabularx}{\textwidth}{llX}
+		\toprule
+		\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+		\midrule
+		September 26th, 2022 & Mahmoud Anklis  & Initial Team Meet Plan, Team Communication Plan, Team Member\\
+		September 26th, 2022 & Youssef Dahab  & Initial Workflow Plan, Proof of Concept Demonstration Plan \\
+		September 26th, 2022 & Hasan Kibria  & Initial Proof of Concept Demonstration Plan, Technology, Coding Standard \\
+		September 26th, 2022 & Bill Nguyen  & Initial Project Scheduling \\
+		September 26th, 2022 & Logan Brown & Review Development Plan\\
+		September 26th, 2022 & Syed Bokhari & Review Development Plan\\
+		September 29th, 2022 & Youssef Dahab & Added Contents page\\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Team Meeting Plan}
+\begin{table}[hp]
+	\begin{tabularx}{\textwidth}{|l|l|X|}
+		\toprule
+		\textbf{Where} & \textbf{When} & \textbf{Length}\\
+		\midrule
+		Discord & Sunday @ 1 pm & 2 Hours\\
+		Discord & Tuesday @ 10:30 am & 2 Hours\\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\section{Team Communication Plan}
+The team’s plan involves multiple communication mediums, each playing a significant role throughout the duration of the project. Pre-planned meetings will be conducted on Discord at the allotted timings during the week. Additionally, a Facebook Messenger group chat will be used for day-to-day communication which may include but not limited to questions, updates, and concerns. Every member is required to stay up to date with the group chat, checking it regularly or as soon as possible. Urgent issues will also be conveyed through the Facebook Messenger group chat. 
+\subsection{Agenda Rules}
+\begin{itemize}
+	\item An agenda shall be prepared before every meeting. It will consist of topics of discussion, questions regarding previous topics, and potential action items.
+	\item Each meeting will have one facilitator. This role rotates between the members each meeting. 
+	\item Action items from previous meetings are checked for completion.
+	\item New action items are assigned to each member at the end of the meeting.
+	\item Members behave in a respectful manner during the meeting.
+\end{itemize}
+\section{Team Member Roles}
+
+\begin{table}[H]
 	
-	\maketitle
-	
-	\begin{table}[hp]
-		\caption{Revision History} \label{TblRevisionHistory}
-		\begin{tabularx}{\textwidth}{llX}
-			\toprule
-			\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-			\midrule
-			September 26th, 2022 & Mahmoud Anklis  & Initial Team Meet Plan, Team Communication Plan, Team Member\\
-			September 26th, 2022 & Youssef Dahab  & Initial Workflow Plan, Proof of Concept Demonstration Plan \\
-			September 26th, 2022 & Hasan Kibria  & Initial Proof of Concept Demonstration Plan, Technology, Coding Standard \\
-			September 26th, 2022 & Bill Nguyen  & Initial Project Scheduling \\
-			September 26th, 2022 & Logan Brown & Review Development Plan\\
-			September 26th, 2022 & Syed Bokhari & Review Development Plan\\
-			September 29th, 2022 & Youssef Dahab & Added Contents page\\
-			\bottomrule
-		\end{tabularx}
-	\end{table}
-	
-	\newpage
-	\tableofcontents
-	\newpage
-	
-	\section{Team Meeting Plan}
-	\begin{table}[hp]
-		\begin{tabularx}{\textwidth}{|l|l|X|}
-			\toprule
-			\textbf{Where} & \textbf{When} & \textbf{Length}\\
-			\midrule
-			Discord & Sunday @ 1 pm & 2 Hours\\
-			Discord & Tuesday @ 10:30 am & 2 Hours\\
-			\bottomrule
-		\end{tabularx}
-	\end{table}
-	
-	\section{Team Communication Plan}
-	The team’s plan involves multiple communication mediums, each playing a significant role throughout the duration of the project. Pre-planned meetings will be conducted on Discord at the allotted timings during the week. Additionally, a Facebook Messenger group chat will be used for day-to-day communication which may include but not limited to questions, updates, and concerns. Every member is required to stay up to date with the group chat, checking it regularly or as soon as possible. Urgent issues will also be conveyed through the Facebook Messenger group chat. 
-	\subsection{Agenda Rules}
-	\begin{itemize}
-		\item An agenda shall be prepared before every meeting. It will consist of topics of discussion, questions regarding previous topics, and potential action items.
-		\item Each meeting will have one facilitator. This role rotates between the members each meeting. 
-		\item Action items from previous meetings are checked for completion.
-		\item New action items are assigned to each member at the end of the meeting.
-		\item Members behave in a respectful manner during the meeting.
-	\end{itemize}
-	\section{Team Member Roles}
-	
-	\begin{table}[H]
-		
-		\begin{tabular}{|l|l|} 
-			\hline
-			Bill Nguyen    & \begin{tabular}[c]{@{}l@{}}Git Specialist\\Software Developer\\Software Tester~ ~ ~\end{tabular}  \\ 
-			\hline
-			Syed Bokhari   & \begin{tabular}[c]{@{}l@{}}Team Leader\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
-			\hline
-			Hasan Kibria   & \begin{tabular}[c]{@{}l@{}}UI Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
-			\hline
-			Youssef Dahab  & \begin{tabular}[c]{@{}l@{}}Documentation Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
-			\hline
-			Logan Brown    & \begin{tabular}[c]{@{}l@{}}Latex Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
-			\hline
-			Mahmoud Anklis & \begin{tabular}[c]{@{}l@{}}Technology Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\
-			\hline
-		\end{tabular}
-	\end{table}
-	
-	\section{Workflow Plan}
-	The main repository is named REVITALIZE. The implementation will follow the feature-branch model. Feature development will take place in a branch other than the main branch. This encapsulation makes it easy to work on a feature without disturbing the main codebase. That way, the main branch will never contain broken code. The feature-branch model makes it simple for team members to initiate discussions around a branch by making pull requests to comment on each other’s work.\\\\
-	The documentation will follow the centralized model. The main branch will serve as a point of entry for all changes to the documentation. All changes will be committed to this branch.\\\\
-	To report bugs and request modifications to implementation or documentation, GitHub issues will be created and assigned to people working on a specific problem. This will also serve as a way of holding team members accountable for the issues they have to tackle in the future. Labels will be used to classify issues and pull requests to help create a standard workflow in the used repositories.\\\\
-	If required, milestones will be created to track progress on groups of issues or pull requests to better manage the project through viewing milestones’ view dates, completion percentages, and lists of open and closed issues and pull requests associated with the milestones. Using milestones could become a necessity as project size and complexity increase with time.
-	
-	
-	\section{Proof of Concept Demonstration Plan}
-	
-	\subsection{Potential Risks and Difficulties}
-	
-	\subsubsection{Human Computer Interface and User Experience}
-	As there are already existing implementations that are similar to this project, the team has to determine how to deliver this project to it's stakeholders in a better way than the other existing applications. This entails improving the human computer interface and user experience aspects of the project. Determining how to tackle this issue entails answering many of the deepest questions and most important questions in computing such as how to design the project to achieve the optimal functionality, learnability, performance, error rates, trustability, retention, and accessibility all at the same time? What does it mean for the interface to be better at all? Easier to use, faster to get tasks done, or less mistakes made by user? Not answering such questions with accuracy can potentially be a blocker to how the team plans to deliver the project to it's stakeholders.
-	
-	\subsubsection{Design and Implementation}
-	Some of the team members are not very familiar with the client-server architecture model or with the programming languages and application programming interfaces that the team plans to use. There will be a learning curve that team members are required to get over quickly to deliver the project on time.
-	
-	\subsubsection{Testing}
-	The tests, that the team requires to have a working deliverable, entail testing for functionality, usability, interface, performance, and user experience. However, the main concern regarding testing the project is determining how to come up with an effective test plan that tests all the different aspects of the project.
-	
-	\subsubsection{Scope}
-	The team does not currently envision the scope to be a risk as the project seems doable as it is. However, further down the line, as team members are designing, documenting, implementing and testing the project, they will be able to determine if the project size is too large and if project goals have to be modified. Thus, project scope is potentially a future risk.
-	
-	\subsubsection{Future Goal Changes}
-	The project seems reasonable the way it is planned out. However, from previous years of experience with software development, team members knows that future issues will arise, that currently have been missed or were not thought of or known of, that might force the team to change it's goals or original plan of design and implementation.
-	
-	\subsubsection{Libraries}
-	The team does not anticipate any concerns with library installations as standardized frameworks will be used.
-	
-	\subsubsection{Hardware}
-	There are no hardware risks or concerns as this is purely a software project.
-	
-	\subsection{Plan to Overcome Risks}
-	
-	\subsubsection{Human Computer Interface and User Experience}
-	Discussing with the stakeholders and devising user-acceptance testing should be the path to overcoming the interface-related risk. Also, the team aims to put one developer in charge of specifically researching methods of improving the app's user experience.
-	
-	\subsubsection{Design and Implementation}
-	Frequent meeting and communication should be enough to ensure adequate transfer of the software-design-related knowledge and expertise some team members have more of than others. 
-	
-	\subsubsection{Testing}
-	The team aims to go beyond just unit testing and high code coverage statistics; end-to-end testing and user acceptance testing should also be considered and implemented to ensure smooth usability. As the project progresses, the team aims to dedicate special attention and time to devising a clear testing architecture.
-	
-	\subsubsection{Scope}
-	It will be tried to minimize this risk by intelligently dividing tasks and providing realistic estimates for how long each task will take. If the team realizes some things to be out of scope later down the line, then they can meet with stakeholders to narrow down on what should be prioritized and what should be left as a stretch goal.
-	
-	\subsubsection{Future Goal Changes}
-	Trying to stay flexible and meet twice a week. If some goals change, then devising a plan with the time and effort scope at a later date should be a viable route.
-	.
-	
-	\section{Technology}
-	
-	\subsection{Specific Programming Language}
-	For this mobile app, Javascript will be used as the main programming language, as it is aimed to use React Native and Express JS (two Javascript based frameworks) to build the app's front end and back end respectively.
-	\subsection{Unit Testing Framework}
-	The well resourced, well documented Javascript unit testing framework the development team has collectively expressed favour for is Jest, hence this will be the framework of choice.
-	\subsection{Continuous Integration}
-	As the development team is generally comfortable with Github and that is the version control platform that has been opted for, it makes sense to use Githiub's own Continuous Integration features to support real time integration of incoming code.
-	\subsection{Performace Measuring Tool}
-	After conducting research, it has been decided that Sentry will be the tool of choice due to the vast functionality it offers in regards to performance measuring and debugging.
-	\subsection{Libraries}
-	This would a dynamic, extensible list so it is better describred generally like this:  React, Express, Node js all associated libraries with said frameworks. 
-	\subsection{Tools}
-	Recipe Finder (https://www.edamam.com/), Workout Tracker(https://wger.de/en/software/api), Sleep Tracker (https://developers.google.com/location-context/sleep), IDE's: VS Code and Android Studio.
-	
-	
-	\section{Coding Standard}
-	The team can use the Google JS Style Guide as a benchmark for coding standard and stylistic specs: https://google.github.io/styleguide/jsguide.html
-	
-	\section{Project Scheduling}
-	Gantt chart will be used for project scheduling, showing key deliverables and progress. Will be updated regularly throughout the project:
-	\url{https://github.com/BillNguyen1999/REVITALIZE/tree/main/projectschedule/REVITALIZE.pdf}.
-	
+	\begin{tabular}{|l|l|} 
+		\hline
+		Bill Nguyen    & \begin{tabular}[c]{@{}l@{}}Git Specialist\\Software Developer\\Software Tester~ ~ ~\end{tabular}  \\ 
+		\hline
+		Syed Bokhari   & \begin{tabular}[c]{@{}l@{}}Team Leader\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
+		\hline
+		Hasan Kibria   & \begin{tabular}[c]{@{}l@{}}UI Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
+		\hline
+		Youssef Dahab  & \begin{tabular}[c]{@{}l@{}}Documentation Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
+		\hline
+		Logan Brown    & \begin{tabular}[c]{@{}l@{}}Latex Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\ 
+		\hline
+		Mahmoud Anklis & \begin{tabular}[c]{@{}l@{}}Technology Specialist\\Software Developer\\Software Tester~ ~\end{tabular}    \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\section{Workflow Plan}
+The main repository is named REVITALIZE. The implementation will follow the feature-branch model. Feature development will take place in a branch other than the main branch. This encapsulation makes it easy to work on a feature without disturbing the main codebase. That way, the main branch will never contain broken code. The feature-branch model makes it simple for team members to initiate discussions around a branch by making pull requests to comment on each other’s work.\\\\
+The documentation will follow the centralized model. The main branch will serve as a point of entry for all changes to the documentation. All changes will be committed to this branch.\\\\
+To report bugs and request modifications to implementation or documentation, GitHub issues will be created and assigned to people working on a specific problem. This will also serve as a way of holding team members accountable for the issues they have to tackle in the future. Labels will be used to classify issues and pull requests to help create a standard workflow in the used repositories.\\\\
+If required, milestones will be created to track progress on groups of issues or pull requests to better manage the project through viewing milestones’ view dates, completion percentages, and lists of open and closed issues and pull requests associated with the milestones. Using milestones could become a necessity as project size and complexity increase with time.
+
+
+\section{Proof of Concept Demonstration Plan}
+
+\subsection{Potential Risks and Difficulties}
+
+\subsubsection{Human Computer Interface and User Experience}
+As there are already existing implementations that are similar to this project, the team has to determine how to deliver this project to it's stakeholders in a better way than the other existing applications. This entails improving the human computer interface and user experience aspects of the project. Determining how to tackle this issue entails answering many of the deepest questions and most important questions in computing such as how to design the project to achieve the optimal functionality, learnability, performance, error rates, trustability, retention, and accessibility all at the same time? What does it mean for the interface to be better at all? Easier to use, faster to get tasks done, or less mistakes made by user? Not answering such questions with accuracy can potentially be a blocker to how the team plans to deliver the project to it's stakeholders.
+
+\subsubsection{Design and Implementation}
+Some of the team members are not very familiar with the client-server architecture model or with the programming languages and application programming interfaces that the team plans to use. There will be a learning curve that team members are required to get over quickly to deliver the project on time.
+
+\subsubsection{Testing}
+The tests, that the team requires to have a working deliverable, entail testing for functionality, usability, interface, performance, and user experience. However, the main concern regarding testing the project is determining how to come up with an effective test plan that tests all the different aspects of the project.
+
+\subsubsection{Scope}
+The team does not currently envision the scope to be a risk as the project seems doable as it is. However, further down the line, as team members are designing, documenting, implementing and testing the project, they will be able to determine if the project size is too large and if project goals have to be modified. Thus, project scope is potentially a future risk.
+
+\subsubsection{Future Goal Changes}
+The project seems reasonable the way it is planned out. However, from previous years of experience with software development, team members knows that future issues will arise, that currently have been missed or were not thought of or known of, that might force the team to change it's goals or original plan of design and implementation.
+
+\subsubsection{Libraries}
+The team does not anticipate any concerns with library installations as standardized frameworks will be used.
+
+\subsubsection{Hardware}
+There are no hardware risks or concerns as this is purely a software project.
+
+\subsection{Plan to Overcome Risks}
+
+\subsubsection{Human Computer Interface and User Experience}
+Discussing with the stakeholders and devising user-acceptance testing should be the path to overcoming the interface-related risk. Also, the team aims to put one developer in charge of specifically researching methods of improving the app's user experience.
+
+\subsubsection{Design and Implementation}
+Frequent meeting and communication should be enough to ensure adequate transfer of the software-design-related knowledge and expertise some team members have more of than others. 
+
+\subsubsection{Testing}
+The team aims to go beyond just unit testing and high code coverage statistics; end-to-end testing and user acceptance testing should also be considered and implemented to ensure smooth usability. As the project progresses, the team aims to dedicate special attention and time to devising a clear testing architecture.
+
+\subsubsection{Scope}
+It will be tried to minimize this risk by intelligently dividing tasks and providing realistic estimates for how long each task will take. If the team realizes some things to be out of scope later down the line, then they can meet with stakeholders to narrow down on what should be prioritized and what should be left as a stretch goal.
+
+\subsubsection{Future Goal Changes}
+Trying to stay flexible and meet twice a week. If some goals change, then devising a plan with the time and effort scope at a later date should be a viable route.
+.
+
+\section{Technology}
+
+\subsection{Specific Programming Language}
+For this mobile app, Javascript will be used as the main programming language, as it is aimed to use React Native and Express JS (two Javascript based frameworks) to build the app's front end and back end respectively.
+\subsection{Unit Testing Framework}
+The well resourced, well documented Javascript unit testing framework the development team has collectively expressed favour for is Jest, hence this will be the framework of choice.
+\subsection{Continuous Integration}
+As the development team is generally comfortable with Github and that is the version control platform that has been opted for, it makes sense to use Githiub's own Continuous Integration features to support real time integration of incoming code.
+\subsection{Performace Measuring Tool}
+After conducting research, it has been decided that Sentry will be the tool of choice due to the vast functionality it offers in regards to performance measuring and debugging.
+\subsection{Libraries}
+This would a dynamic, extensible list so it is better describred generally like this:  React, Express, Node js all associated libraries with said frameworks. 
+\subsection{Tools}
+Recipe Finder (https://www.edamam.com/), Workout Tracker(https://wger.de/en/software/api), Sleep Tracker (https://developers.google.com/location-context/sleep), IDE's: VS Code and Android Studio.
+
+
+\section{Coding Standard}
+The team can use the Google JS Style Guide as a benchmark for coding standard and stylistic specs: https://google.github.io/styleguide/jsguide.html
+
+\section{Project Scheduling}
+Gantt chart will be used for project scheduling, showing key deliverables and progress. Will be updated regularly throughout the project:
+\url{https://github.com/BillNguyen1999/REVITALIZE/tree/main/projectschedule/REVITALIZE.pdf}.
+
 \end{document}
