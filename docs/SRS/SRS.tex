@@ -73,6 +73,8 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 \subsection{Activity Diagram}
 
 \section{Functional Requirements}
+\begin{enumerate}[{BE}1.] 
+\item The user launches the application
 \begin{enumerate}[{FR}1.]
 	\item  The system must display a login page upon the start of the application.
 	\item  The login page must display fillable username and password  textboxes
@@ -81,14 +83,26 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 	\item  The login page must display a stay logged in checkbox
 	\item  The system must save prior login information if the stayed logged in checkbox is checked
 	\item  The login page must display a sign up button that redirects to a signup page
+	\item  The system msut check the validity of the iput parameters in the login page
+\end{enumerate}
+
+\item The user selects the sign up button
+\begin{enumerate}[resume*]
 	\item  The signup page must display fillable username, password, email textboxes
 	\item  The signup page must display a signup button
 	\item  The system must check the validity of the input parameters in the signup page
-	\item  The system msut check the validity of the iput parameters in the login page
+\end{enumerate}
+
+\item The user enters the main page after successful login
+\begin{enumerate}[resume*]
 	\item  The system must display a calender with the current date on successful login
 	\item  The system must have a previous day and next day button on each page after successful login
 	\item  The system must display a back button on each user interface after a section is selected
 	\item  The system must display the sections Diet,Excercise and Rest on the current calender day
+\end{enumerate}
+
+\item The user enters the Diet section
+\begin{enumerate}[resume*]
 	\item  The system must prompt the user to height, input dietery, weight,  calorie information on initial launch of Diet section
 	\item  The system must save initial user height, dietery, wieght, calorie information
 	\item  The Diet section must initialize with a list of food logged on the current calener day
@@ -101,13 +115,22 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 	\item  The Diet section must have an add custom meal button
 	\item  The add custom meal button must have fillable textboxes for recipe information
 	\item  The previous day and next day button must launch the previous or next calender entry of the user section
+\end{enumerate}
+
+\item The user enters the Workout section
+\begin{enumerate}[resume*]
 	\item  The Workout section must initialize with a preset list of excercises on the current calender day
 	\item  The Workout section must have an add excercise and delete excercise button
 	\item  The excercises must display an edit excercise button that launches the changeable excercise information when clicked
 	\item  The Workout section must have an add excercise and delete excercise button
 	\item  The Workout section must prompt the user to add repititions and sets of each excercise logged in the current calender day
+\end{enumerate}
+
+\item The user enters the Rest section
+\begin{enumerate}[resume*]
 	\item  The Rest section must launch with the sleep statistics of the current calender day
 	\item  The system must allow the user alter innacurate sleep data
+\end{enumerate}
 \end{enumerate}
 
 \section{Non-functional Requirements}
