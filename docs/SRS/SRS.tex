@@ -34,6 +34,9 @@
 		\midrule
 		September 29th, 2022 & Youssef Dahab & Project Drivers \\
 		October 1st, 2022 & Youssef Dahab & Added Goals of the Project \\
+		October 1st, 2022 & Syed Bokhari & Added Functional Requirements and Use Case Diagram \\
+		October 2nd, 2022 & Bill Nguyen & Added Non-Functional Requirements and Use Case Diagram \\
+		October 3rd, 2022 & Syed Bokhari & Added Work Partitioning Tables \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -69,6 +72,53 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 \section{Context Diagrams}
 
 \section{Functional Decomposition Diagrams}
+
+\subsubsection{Work Partitioning}
+\begin{table}[h!]
+\caption{Work Partitioning Events}
+    \centering
+    \begin{tabular}{|c|p{3.5cm}|c|p{3.5cm}|}
+    \hline
+    \textbf{Event Number} & \centering\textbf{Event Name} & \textbf{Input} & \textbf{Output} \\
+    \hline
+    1 & Launch the application login page & Touch & Main Calender Menu \\
+    \hline
+    2 & Opening the sign up page & Touch & Login Page \\
+    \hline
+    3 & Opening the main calender menu & Touch & Diet Menu, Workout Menu, Rest Menu \\
+    \hline
+    4 & Opening the diet menu  & Touch & Food List \\
+    \hline
+    5 & Opening the workout menu & Touch & Excercise List \\
+    \hline
+    5 & Opening the rest menu & Touch & Sleep log \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{Work Partitioning Summaries}
+    \centering
+    \begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Event Number} & \textbf{Summary} \\
+    \hline
+    1 & The user, through the touch input, decides to launch the applicaiton.The application launches with the login page and after successful credentials the main calender menu will be shown. \\
+    \hline
+    2 & The user, through the touch input, decides to open the sign up page. After successful credentials the login page will be shown. \\
+    \hline
+    2 & The user, through the touch input, decides to enter the main calender menu. The user can use touch input to select either the diet menu, workout menu or the rest menu. \\
+    \hline
+    2 & The user, through the touch input, decides to enter the diet menu. The user can use touch input to view the list of logged food for the calender day, add custom meals, add recipes and search recipes. The user can also navigate through the calender for previous date food entries. \\
+    \hline
+    2 & The user, through the touch input, decides to enter the workout menu. The user can use touch input to view the list of logged excercises for the calender day, add custom excercises, add preset excercises, and update set and repitition values for each excercise. The user can also navigate through the calender for previous date workout entries. \\
+    \hline
+    2 & The user, through the touch input, decides to enter the rest menu. The user can use touch input to alter the sleep data for the current calender date if innacurate. The user can also navigate through the calender for previous date sleep logs. \\
+    \hline
+    \end{tabular}
+\end{table}
+
+
 
 \subsection{Use Case Diagram}
 \begin{figure}[H]
