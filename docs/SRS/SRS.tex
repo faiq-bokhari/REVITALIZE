@@ -12,6 +12,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{multirow}
 
 \title{System Requirements Specification\\\progname}
 
@@ -40,6 +41,8 @@
 	October 4th, 2022 & Youssef Dahab & Added Open issues and New Problems \\
 	October 5th, 2022 & Youssef Dahab & Completed Project Issues, Reflection Appendix, Fixed Spelling Errors\\
 	October 5th, 2022 & Mahmoud Anklis & Added Non-Functional Requirements\\
+	October 5th, 2022 & Hasan Kibria & Added Constraints and Context Diagram \\
+	October 5th, 2022 & Syed Bokhari & Added Dates of Completion and Traceability Matrix \\
 	October 5th, 2022 & Logan Brown & Added Activity Diagram\\
 	\bottomrule
 \end{tabularx}
@@ -72,8 +75,60 @@ Individuals who may not use the application directly for themselves or are not d
 Team 13 members building the REVITALIZE application along with Dr.Spencer Smith and the 4G06 TAs.
 
 \section{Project Constraints}
+\subsection{Mandated Constraints}
+\subsubsection{MC 1}
+\begin{itemize}
+\item Description: Total project monetary constraints must not exceed \$750\\
+\item Rationale: The project must be financially feasible as a no-profit, student-created piece of work
+\end{itemize}
 
-\section{Context Diagrams}
+\subsubsection{MC 2}
+\begin{itemize}
+\item Description:The entire project and its ordered subtasks must be completed as per the deadlines defined by one of the facilitating stakeholders (Dr. Smith)
+\item Rationale:This project is also graded as part of a university course and hence must adhere to strict deadlines
+\end{itemize}
+
+\subsection{Naming Conventions and Terminology}
+\label{sub:Naming Conventions and Terminology}
+\begin{table}[H]
+\caption{Terms and Definitions}
+\centering
+\begin{tabular}{|c|p{10cm}|}
+\hline
+\textbf{Term} & \textbf{Definition}\\
+\hline
+Main Calender Menu & Main page of application after login page, here one can navigate their way to other menus.\\
+\hline
+Diet Menu & Menu page with functionality naturally inherent to diet-related data\\
+\hline
+Workout Menu & Menu page with functionality naturally inherent to exercise-related data\\
+\hline
+Rest Menu &Menu page with functionality naturally inherent to sleep-related data\\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Relevant Facts and Assumptions}
+\subsubsection{Facts}
+\begin{itemize}
+\item The average daily caloris intake for an adult is 2000 calories
+\item The average amount of daily sleep required by an adult is 6-8 hours
+\end{itemize}
+
+\subsubsection{Assumptions}
+\begin{itemize}
+\item User is familiar with basic additive and multiplicative mathematics
+\item User knows how to operate a smart mobiile phone
+\item User can read english at a limited working proficiency
+\end{itemize}
+\section{Context Diagram}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{cont_diag.png}
+\caption{\textcolor{black} Context diagram for Revitalize}
+\end{figure}
+
 
 \section{Functional Decomposition Diagrams}
 
@@ -85,11 +140,11 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 	\hline
 	\centering\textbf{Event Number} & \centering\textbf{Event Name} & \centering\textbf{Input} & \centering\textbf{Output} & \textbf{Date}\\
 	\hline
-	1 & Launch the application login page & Touch & Main Calendar Menu & October 17th, 2022\\
+	1 & Launch the application login page & Touch & Main Calendar Menu & October 31st, 2022\\
 	\hline
-	2 & Opening the sign up page & Touch & Login Page & October 17th, 2022\\
+	2 & Opening the sign up page & Touch & Login Page & October 31st, 2022\\
 	\hline
-	3 & Opening the main calendar menu & Touch & Diet Menu, Workout Menu, Rest Menu & October 24th, 2022\\
+	3 & Opening the main calendar menu & Touch & Diet Menu, Workout Menu, Rest Menu & October 31st, 2022\\
 	\hline
 	4 & Opening the diet menu  & Touch & Food List & November 14th, 2022\\
 	\hline
@@ -143,7 +198,8 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 \item The user launches the application
 \begin{enumerate}[{FR}1.]
 	\item  The system must display a login page upon the start of the application.
-	\item  The login page must display fillable username and password  textboxes
+	\item  The login page must display fillable username textbox
+	\item  The login page must display fillable password textbox
 	\item  The login page must display a login button
 	\item  The login page must display a forgot password button
 	\item  The login page must display a stay logged in checkbox
@@ -154,7 +210,9 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 
 \item The user selects the sign up button
 \begin{enumerate}[resume*]
-	\item  The signup page must display fillable username, password, email textboxes
+	\item  The signup page must display fillable username textbox
+	\item  The signup page must display fillable password textbox
+	\item  The signup page must display fillable email textbox
 	\item  The signup page must display a signup button
 	\item  The system must check the validity of the input parameters in the signup page
 \end{enumerate}
@@ -186,9 +244,9 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 \item The user enters the Workout section
 \begin{enumerate}[resume*]
 	\item  The Workout section must initialize with a preset list of exercises on the current calendar day
-	\item  The Workout section must have an add exercise and delete exercise button
+	\item  The Workout section must have an add exercise button
+	\item  The Workout section must have a delete exercise button
 	\item  The exercises must display an edit exercise button that launches the changeable exercise information when clicked
-	\item  The Workout section must have an add exercise and delete exercise button
 	\item  The Workout section must prompt the user to add repetitions and sets of each exercise logged in the current calendar day
 \end{enumerate}
 
@@ -330,6 +388,225 @@ NOT AVAILABLE
 \subsection{Legal Requirements}
 NOT AVAILABLE
 
+\newpage
+
+\begin{table}[H]
+\begin{center}
+\caption{\textbf{Traceability Matrix for Non-Functional Requirements}}
+\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\cline{3-13}
+& & \multicolumn{11}{ c|}{Requirements} \\ \cline{3-13}
+& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 & FR8 & FR9 & FR10 & FR11 \\ \cline{1-13}
+    \multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
+    \multicolumn{1}{|c| }{LF1} &X&X&X&X&X&X&&X&&X&X  \\ \cline{2-13}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{LF2} &X&X&X&X&X&X&&X&&X&X  \\ \cline{2-13}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH1} &X&X&X&X&X&X&&X&&X&X \\ \cline{2-13}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH2} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{|c| } {UH3} &X&X&X&X&X&X&&X&&X&X \\ \cline{2-13}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH4} &X&X&X&X&X&X&&X&&X&X \\ \cline{2-13}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH5} &X&X&X&X&X&X&&X&&X&X  \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {UH6} &X&X&X&X&X&X&&X&&X&X \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {PE1} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE2} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE3} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE4} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE5} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE1} &&&&&&&X&&X&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE2} &X&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP1} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP2} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP3} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE1} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE2} &&&&&&&&&&& \\ \cline{2-13}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{CU1} &X&X&X&X&X&X&&X&&X&X \\ \cline{2-13}
+
+\end{tabularx}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\caption{\textbf{Traceability Matrix for Non-Functional Requirements Continued}}
+\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\cline{3-12}
+& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
+& & FR12  & FR13 & FR14 & FR15 & FR16 & FR17 & FR18 & FR19 & FR20 & FR21 &\\ \cline{1-12}
+    \multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
+    \multicolumn{1}{|c| }{LF1} &X&X&&X&X&X&X&X&X&X  \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{LF2} &X&X&&X&X&X&X&X&X&X  \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH1} &X&X&&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH2} &&&&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{|c| } {UH3} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH4} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH5} &X&X&X&X&X&X&X&X&X&X  \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {UH6} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {PE1} &&&&X&&&X&X&&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE2} &&&&&&&&&X& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE3} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE4} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE5} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE1} &&&X&X&&&X&&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE2} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP1} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP2} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP3} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE1} &&&X&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE2} &&&X&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{CU1} &X&X&&X&X&X&X&X&X&X \\ \cline{2-12}
+
+\end{tabularx}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\caption{\textbf{Traceability Matrix for Non-Functional Requirements Continued}}
+\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\cline{3-12}
+& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
+& & FR22  & FR23 & FR24 & FR25 & FR26 & FR27 & FR28 & FR29 & FR30 & FR31 &\\ \cline{1-12}
+    \multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
+    \multicolumn{1}{|c| }{LF1} &X&X&X&X&X&X&X&X&X&X  \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{LF2} &X&X&X&X&X&X&X&X&X&X  \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH1} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH2} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{|c| } {UH3} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH4} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH5} &X&X&X&X&X&X&X&X&X&X  \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {UH6}  &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {PE1} &&&X&&X&&&&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE2} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE3} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE4} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE5} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE1} &&&&&X&&&&X&X \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE2} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP1} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP2} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP3} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE1} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE2} &&&&&&&&&& \\ \cline{2-12}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{CU1} &X&X&X&X&X&X&X&X&X&X \\ \cline{2-12}
+
+\end{tabularx}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\caption{\textbf{Traceability Matrix for Non-Functional Requirements Continued}}
+\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\cline{3-8}
+& & \multicolumn{6}{ c|}{Requirements} \\ \cline{3-8}
+& & FR32  & FR33 & FR34 & FR35 & FR36 & F37\\ \cline{1-8}
+    \multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
+    \multicolumn{1}{|c| }{LF1} &X&X&X&X&X&X  \\ \cline{2-8}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{LF2} &X&X&X&X&X&X  \\ \cline{2-8}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH1} &X&X&X&X&X&X \\ \cline{2-8}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH2} &X&X&X&X&X&X \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{|c| } {UH3} &X&X&X&X&X&X \\ \cline{2-8}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH4} &X&X&X&X&X&X \\ \cline{2-8}
+    \multicolumn{1}{|c| }{} 	                  &
+    \multicolumn{1}{|c| }{UH5} &X&X&X&X&X&X  \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {UH6} &X&X&X&X&X&X \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| } {PE1} &&&&&X& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE2} &&&&X&X&X \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE3} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE4} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{PE5} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE1} &&&&&X&X \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{OE2} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP1} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP2} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{MP3} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE1} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{SE2} &&&&&& \\ \cline{2-8}
+    \multicolumn{1}{|c| }{}                        &
+    \multicolumn{1}{ |c| }{CU1} &X&X&X&X&X&X \\ \cline{2-8}
+
+\end{tabularx}
+\end{center}
+\end{table}
+\newpage
+
 \section{Project Issues}
 
 \subsection{Open Issues}
@@ -405,11 +682,13 @@ Possible ideas to make REVITALIZE accessible to all people include designing cle
 
 \noindent Syed Bokhari: Skills relating to API integration and server communication are needed for the technical development of the application. This is needed because the project depends on the use of multiple APIs for the core functionality of its features. Knowledge of server communication is required due to the nature of application development as the dynamic application information requires constant feedback from the server. \\
 
-\noindent Youssef Dahab: The team will collectively need to acquire documentation skills to successfully complete this project. This includes learning how to write requirements (functional and non functional), how to create use case diagrams, class diagrams, activity diagrams, design documents, how to make a hazard analysis, V&V plan and report.\\
+\noindent Youssef Dahab: The team will collectively need to acquire documentation skills to successfully complete this project. This includes learning how to write requirements (functional and non functional), how to create use case diagrams, class diagrams, activity diagrams, design documents, how to make a hazard analysis, V\&V plan and report.\\
 
 \noindent Mahmoud Anklis: The team will need to acquire skills pertaining to app development for Android. This will include setting up an emulator that the application can be run on and tested on. This will also include setting up the most efficient IDE that will enable the team to develop smoothly.\\ 
 
 \noindent Logan Brown: The team will need to learn how to effectively communicate with stakeholders who do not necessarily understand technical aspects of software. More specifically, this includes knowing how to discern and understand what the client wants and effectively implementing it in the end product. Understanding and responding to stakeholder feedback is another important aspect that must be learned.\\
+
+\noindent Hasan Kibria: Skills that need to acquire are development with mobile app frameworks and deployment of a mobile application.\\
 
 \subsection{How Knowledge and Skills Will Be Acquired}
 
@@ -419,9 +698,11 @@ Possible ideas to make REVITALIZE accessible to all people include designing cle
 
 \noindent Youssef Dahab: An approach to acquire such knowledge is to attend 4G06 course lectures and tutorials, and ask questions to the professor and TAs whenever needed. Another approach is to look up 4G0G lecture notes or past notes from relevant courses such as SFWRENG 2AA4 or 3XA3 and to search or read online on how to properly and correctly document requirements, implementation, test plans, and design documents. I will mainly pursue the second approach as I do not often attend lectures.\\
 
-\noindent Mahmoud Anklis: Online research will play a pivotal role in acquiring the knowledge to develop an Android application. This may include videos, blogs, courses, and tutorials that cover topics from developing to setting up an emulator. The online IDE documentation will also be consulted for any IDE issues. App-Dev books may also be used as a resource.\\  
+\noindent Mahmoud Anklis: Online research will play a pivotal role in acquiring the knowledge to develop an Android application. This may include videos, blogs, courses, and tutorials that cover topics from developing to setting up an emulator. The online IDE documentation will also be consulted for any IDE issues. App-Dev books may also be used as a resource.\\
 
-\noindent Logan Brown: Principles drawn from previous courses such as 3RA3, 3I03, as well as lectures in this course will be instrumental in making sure communication goes smoothly. Some trial and error will be required as communication skills are often acquired through experience. Previous experience such as members who have completed co-ops will aid the entire group\\ through teaching what they already know.
+\noindent Logan Brown: Principles drawn from previous courses such as 3RA3, 3I03, as well as lectures in this course will be instrumental in making sure communication goes smoothly. Some trial and error will be required as communication skills are often acquired through experience. Previous experience such as members who have completed co-ops will aid the entire group\\ through teaching what they already know.\\
+	
+\noindent Hasan Kibria: Developing/ deploying the codebase that uses a development mobile app framework and using Stack Overflow/ other online resources for ongoing guidance with regards to development as well as deploying.\\
 
 \newpage 
 
