@@ -40,6 +40,7 @@ urlcolor=cyan           % color of external links
 		\midrule
 		October 15th, 2022 & Bill Nguyen & FMEA \\
 		October 19th, 2022 & Youssef Dahab & Introduction, Purpose, and Scope \\
+        October 19th, 2022 & Logan Brown & System Boundary, Components, and Critical Assumptions\\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -72,12 +73,66 @@ Hence, the purpose of this document is to identify hazards pertaining to the REV
 
 \section{System Boundaries and Components}
 
-\section{Critical Assumptions}
+\subsection{System Boundaries}
+\noindent The system boundary can be outlined using the following elements of the system: 
 
-\wss{These assumptions that are made about the software or system.  You should
-	minimize the number of assumptions that remove potential hazards.  For instance,
-	you could assume a part will never fail, but it is generally better to include
-	this potential failure mode.}
+\begin{enumerate}
+    \item Main application (with the following subsystems)
+    \begin{itemize}
+        \item Login/Authentication
+        \item Database
+        \item Backend server
+        \item Main calendar
+        \item Diet menu
+        \item Workout menu
+        \item Sleep menu
+    \end{itemize}
+    \item APIs
+    \begin{itemize}
+        \item Recipe API
+        \item Workout tracker API
+        \item Google sleep tracker API
+    \end{itemize}
+    \item Android device (device app is installed on)
+\end{enumerate}
+
+\noindent The system boundary includes the application as a whole, the APIs used for its function, and the Android device the app is installed onto. Some of these elements are outside the direct control of REVITALIZE, namely the APIs, server uptime, database uptime, and the Android device itself. However, they are important elements of the system that must be taken into account for proper hazard analysis of the system.
+
+\subsection{Components}
+
+\noindent The components of the system are outlined as followed:
+
+\subsubsection{Login/Authentication System}
+\noindent System that allows users to create an account, login, and have their credentials verified. Users can then access their data and modify health goals and plans.
+
+\subsubsection{Database}
+\noindent System that stores and organizes user health data. Data will be stored to the user's account and is accessible to any device that logs in with said account.
+
+\subsubsection{Server Backend}
+\noindent System that controls the flow of data between the APIs and the application.
+
+\subsubsection{Main Calendar Interface}
+\noindent System that displays current diet, workout, and sleep goals/plans for selected day. Users can select a desired day on the calendar and navigate to the diet, workout, and sleep interfaces which are used to modify user goals and plans.
+
+\subsubsection{Diet Section Interface}
+\noindent System that allows users to search and add recipes aligned with their dietary goals. The recipes chosen by the user are then added to the plan of the selected day. Previously planned recipes are stored for easy access in the future.
+
+\subsubsection{Workout Section Interface}
+\noindent System that allows users to add existing or custom workouts to the selected calendar day. Previous workouts are stored for easy access in the future. 
+
+\subsubsection{Sleep Section Interface}
+\noindent System that tracks and displays user sleep data. Also displays sleep/wake-up times based on user sleep goals and habits. 
+
+\section{Critical Assumptions}
+\noindent 
+\begin{enumerate}
+    \item Assume user is not intentionally acting in a malicious way
+    \item Assume user is not sharing username and password info with anyone else
+    \item Assume user's Android device is functioning properly
+    \item Assume user's Android device does not contain any vulnerabilities
+    \item Assume APIs are up and function properly
+    \item Assume APIs do not contain any vulnerabilities
+\end{enumerate}
 
 \section{Failure Mode and Effect Analysis}
 The next pages will show the full failure mode and effect analysis (FMEA) for REVITALIZE:
