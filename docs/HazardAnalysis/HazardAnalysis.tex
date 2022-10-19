@@ -7,11 +7,11 @@
 \usepackage{pdflscape}
 
 \hypersetup{
-    colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
-    citecolor=green,        % color of links to bibliography
-    filecolor=magenta,      % color of file links
-    urlcolor=cyan           % color of external links
+colorlinks=true,       % false: boxed links; true: colored links
+linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+citecolor=green,        % color of links to bibliography
+filecolor=magenta,      % color of file links
+urlcolor=cyan           % color of external links
 }
 
 \title{Hazard Analysis\\\progname}
@@ -33,15 +33,16 @@
 \pagenumbering{roman}
 
 \begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-\midrule
-October 15th, 2022 & Bill Nguyen & FMEA \\
-... & ... & ...\\
-\bottomrule
-\end{tabularx}
+	\caption{Revision History} \label{TblRevisionHistory}
+	\begin{tabularx}{\textwidth}{llX}
+		\toprule
+		\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
+		\midrule
+		October 15th, 2022 & Bill Nguyen & FMEA \\
+		October 19th, 2022 & Youssef Dahab & Introduction, Purpose, and Scope \\
+        October 19th, 2022 & Logan Brown & System Boundary, Components, and Critical Assumptions\\
+		\bottomrule
+	\end{tabularx}
 \end{table}
 
 ~\newpage
@@ -52,13 +53,23 @@ October 15th, 2022 & Bill Nguyen & FMEA \\
 
 \pagenumbering{arabic}
 
-\wss{You are free to modify this template.}
-
 \section{Introduction}
+This document is a hazard analysis of REVITALIZE.
 
-\wss{You can include your definition of what a hazard is here.}
+\subsection{Hazard Definition}
+As per Nancy Leveson's work, a hazard is a property or condition in a system together with a condition in the environment that has the potential to cause harm or damage. In REVITALIZE, there are safety (keeping records) and security (restricting access to data) hazards.
 
-\section{Scope and Purpose of Hazard Analysis}
+\subsection{Other Used Terms in this Document}
+
+\subsubsection{Failure}
+A failure in the REVITALIZE mobile application could occur when there is a deviation between the actual and expected output. Furthermore, a failure could also occur when a certain state causes REVITALIZE, or a component of REVITALIZE (login, database, etc.), to fail and therefore not achieve its necessary function.
+
+\subsubsection{Safety}
+REVITALIZE's safety is its freedom from harm. However, it's not an absolute. Safety is a global property of REVITALIZE. Therefore, when two or more REVITALIZE components interact together, the resulting emergent behaviour may or may not be safe.
+
+\section{Purpose of Hazard Analysis and Scope}
+Hence, the purpose of this document is to identify hazards pertaining to the REVITALIZE mobile application, and their causes, and then specify ways to eliminate them or mitigate their effect. The team cannot “bolt on” safety after implementing the application. Therefore, by identifying hazards and developing safety requirements before implementing, REVITALIZE team members will be able to react when their application fails to be safe. This becomes beneficial when something “bad” happens. The team will have a recovery plan.
+\\\\ The scope of this project is to create an all in one health and wellness mobile application that allows users to manage their diet, exercise, and sleep by providing them with meal recipe’s based on their nutritional preferences, a personalized workouts planner and a sleep tracker.
 
 \section{System Boundaries and Components}
 
@@ -126,21 +137,21 @@ October 15th, 2022 & Bill Nguyen & FMEA \\
 \section{Failure Mode and Effect Analysis}
 The next pages will show the full failure mode and effect analysis (FMEA) for REVITALIZE:
 \begin{landscape}
-\begin{figure}[ht]
-	\centering
-	\includegraphics[angle=360, scale=1.42]{FMEAPart1.png}
-	\caption{Part 1 of FMEA}
-\end{figure}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[angle=360, scale=1.42]{FMEAPart1.png}
+		\caption{Part 1 of FMEA}
+	\end{figure}
 \end{landscape}
 
 \section{Safety and Security Requirements}
 
 \wss{Newly discovered requirements.  These should also be added to the SRS.  (A
-rationale design process how and why to fake it.)}
+	rationale design process how and why to fake it.)}
 
 \section{Roadmap}
 
 \wss{Which safety requirements will be implemented as part of the capstone timeline?
-Which requirements will be implemented in the future?}
+	Which requirements will be implemented in the future?}
 
 \end{document}
