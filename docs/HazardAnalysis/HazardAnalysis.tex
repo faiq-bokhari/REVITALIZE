@@ -43,6 +43,7 @@ urlcolor=cyan           % color of external links
         		October 19th, 2022 & Logan Brown & System Boundary, Components, and Critical Assumptions\\
 		October 19th, 2022 & Syed Bokhari & FMEA\\
 		October 19th, 2022 & Hasan Kibriai & FMEA\\
+		October 19th, 2022 & Mahmoud Anklis & Safety and Security Requirements\\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -163,10 +164,104 @@ The next pages will show the full failure mode and effect analysis (FMEA) for RE
 \end{landscape}
 
 \section{Safety and Security Requirements}
-
-\wss{Newly discovered requirements.  These should also be added to the SRS.  (A
-	rationale design process how and why to fake it.)}
-
+\begin{enumerate}
+    \item The system should check if the credentials inputted by the user match the credentials in the database.
+    \begin{enumerate}
+        \item Rationale: The user should be able to access their account if the credentials are inputted correctly (i.e matches the database).
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H1-1
+        \end{enumerate}
+    \end{enumerate}
+    \item The system should allow users to reset credentials if a user requests it.
+    \begin{enumerate}
+        \item Rationale: In the case that a user forgets their password or username, they should be able to retrieve their account be resetting the credentials.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H1-1
+        \end{enumerate}
+    \end{enumerate}
+     \item The system should lock a user’s account when the user has inputted the incorrect password 5 times in a row.
+    \begin{enumerate}
+        \item Rationale: To ensure that the account is secured, the account of a user will get locked if multiple unsuccessful login attempts occur. 
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H1-2
+        \end{enumerate}
+    \end{enumerate} 
+     \item The system should be able to roll back changes. 
+    \begin{enumerate}
+        \item Rationale: To ensure the user does not lose their data if an illegal access or a system failure occur and can continue using the application.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H1-3, H3-1
+        \end{enumerate}
+    \end{enumerate} 
+     \item The system notifies users when the system is down (planned outings or unexpected outings) or when an error occurs and when the system will be back online. 
+    \begin{enumerate}
+        \item Rationale: Users can avoid using the application or parts of the application during these times. 
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H1-1, H2-1, H3-2, H7-1, H7-2, H7-3, H8-1, H8-2, H9-1, H9-2
+        \end{enumerate}
+    \end{enumerate}
+    \item The system should limit the number of bots using the application.
+    \begin{enumerate}
+        \item Rationale: The application is intended for human users.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H2-2
+        \end{enumerate}
+    \end{enumerate}
+    \item The system will have daily backups to multiple databases.
+    \begin{enumerate}
+        \item Rationale: Redundancy in data will ensure the safety of the data and protect it from being lost.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H3-1
+        \end{enumerate}
+    \end{enumerate}
+     \item The system allows the user to manually input sleep information.
+    \begin{enumerate}
+        \item Rationale: The sleep functionality can still be used in the case of a sleep API failure.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H9-1
+        \end{enumerate}
+    \end{enumerate}
+    \item The system should store app-progress information on the user’s local machine.
+    \begin{enumerate}
+        \item Rationale: Easier and quicker to access information if stored in machine’s local cache.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H4-1
+        \end{enumerate}
+    \end{enumerate}
+    \item The system should use cloud-based databases.
+    \begin{enumerate}
+        \item Rationale: Provides greater security to users’ data.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H5-1
+        \end{enumerate}
+    \end{enumerate}
+     \item The system will use encryption when storing users’ information.
+    \begin{enumerate}
+        \item Rationale: Provides security for users’ data and ensures developers cannot see users’ data.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H5-2
+        \end{enumerate}
+    \end{enumerate} 
+     \item The system will incorporate rigorous weekly testing.
+    \begin{enumerate}
+        \item Rationale: Ensures proper functionality.
+        \item Associated Hazards
+        \begin{enumerate}
+            \item H6-1, H6-2
+        \end{enumerate}
+    \end{enumerate} 
+\end{enumerate}
 \section{Roadmap}
 
 \wss{Which safety requirements will be implemented as part of the capstone timeline?
