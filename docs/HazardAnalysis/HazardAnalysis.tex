@@ -39,8 +39,8 @@ urlcolor=cyan           % color of external links
 		\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 		\midrule
 		October 15th, 2022 & Bill Nguyen & FMEA \\
-		October 19th, 2022 & Youssef Dahab & Introduction, Purpose, and Scope \\
-        		October 19th, 2022 & Logan Brown & System Boundary, Components, and Critical Assumptions\\
+		October 19th, 2022 & Youssef Dahab & Intro, Purpose, Scope, Roadmap \\
+		October 19th, 2022 & Logan Brown & System Boundary, Components, and Critical Assumptions\\
 		October 19th, 2022 & Syed Bokhari & FMEA\\
 		October 19th, 2022 & Hasan Kibriai & FMEA\\
 		October 19th, 2022 & Mahmoud Anklis & Safety and Security Requirements\\
@@ -80,23 +80,23 @@ Hence, the purpose of this document is to identify hazards pertaining to the REV
 \noindent The system boundary can be outlined using the following elements of the system: 
 
 \begin{enumerate}
-    \item Main application (with the following subsystems)
-    \begin{itemize}
-        \item Login/Authentication
-        \item Database
-        \item Backend server
-        \item Main calendar
-        \item Diet menu
-        \item Workout menu
-        \item Sleep menu
-    \end{itemize}
-    \item APIs
-    \begin{itemize}
-        \item Recipe API
-        \item Workout tracker API
-        \item Google sleep tracker API
-    \end{itemize}
-    \item Android device (device app is installed on)
+	\item Main application (with the following subsystems)
+	\begin{itemize}
+		\item Login/Authentication
+		\item Database
+		\item Backend server
+		\item Main calendar
+		\item Diet menu
+		\item Workout menu
+		\item Sleep menu
+	\end{itemize}
+	\item APIs
+	\begin{itemize}
+		\item Recipe API
+		\item Workout tracker API
+		\item Google sleep tracker API
+	\end{itemize}
+	\item Android device (device app is installed on)
 \end{enumerate}
 
 \noindent The system boundary includes the application as a whole, the APIs used for its function, and the Android device the app is installed onto. Some of these elements are outside the direct control of REVITALIZE, namely the APIs, server uptime, database uptime, and the Android device itself. However, they are important elements of the system that must be taken into account for proper hazard analysis of the system.
@@ -129,12 +129,12 @@ Hence, the purpose of this document is to identify hazards pertaining to the REV
 \section{Critical Assumptions}
 \noindent 
 \begin{enumerate}
-    \item Assume user is not intentionally acting in a malicious way
-    \item Assume user is not sharing username and password info with anyone else
-    \item Assume user's Android device is functioning properly
-    \item Assume user's Android device does not contain any vulnerabilities
-    \item Assume APIs are up and function properly
-    \item Assume APIs do not contain any vulnerabilities
+	\item Assume user is not intentionally acting in a malicious way
+	\item Assume user is not sharing username and password info with anyone else
+	\item Assume user's Android device is functioning properly
+	\item Assume user's Android device does not contain any vulnerabilities
+	\item Assume APIs are up and function properly
+	\item Assume APIs do not contain any vulnerabilities
 \end{enumerate}
 
 \section{Failure Mode and Effect Analysis}
@@ -165,106 +165,105 @@ The next pages will show the full failure mode and effect analysis (FMEA) for RE
 
 \section{Safety and Security Requirements}
 \begin{enumerate}
-    \item The system should check if the credentials inputted by the user match the credentials in the database.
-    \begin{enumerate}
-        \item Rationale: The user should be able to access their account if the credentials are inputted correctly (i.e matches the database).
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H1-1
-        \end{enumerate}
-    \end{enumerate}
-    \item The system should allow users to reset credentials if a user requests it.
-    \begin{enumerate}
-        \item Rationale: In the case that a user forgets their password or username, they should be able to retrieve their account be resetting the credentials.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H1-1
-        \end{enumerate}
-    \end{enumerate}
-     \item The system should lock a user’s account when the user has inputted the incorrect password 5 times in a row.
-    \begin{enumerate}
-        \item Rationale: To ensure that the account is secured, the account of a user will get locked if multiple unsuccessful login attempts occur. 
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H1-2
-        \end{enumerate}
-    \end{enumerate} 
-     \item The system should be able to roll back changes. 
-    \begin{enumerate}
-        \item Rationale: To ensure the user does not lose their data if an illegal access or a system failure occur and can continue using the application.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H1-3, H3-1
-        \end{enumerate}
-    \end{enumerate} 
-     \item The system notifies users when the system is down (planned outings or unexpected outings) or when an error occurs and when the system will be back online. 
-    \begin{enumerate}
-        \item Rationale: Users can avoid using the application or parts of the application during these times. 
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H1-1, H2-1, H3-2, H7-1, H7-2, H7-3, H8-1, H8-2, H9-1, H9-2
-        \end{enumerate}
-    \end{enumerate}
-    \item The system should limit the number of bots using the application.
-    \begin{enumerate}
-        \item Rationale: The application is intended for human users.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H2-2
-        \end{enumerate}
-    \end{enumerate}
-    \item The system will have daily backups to multiple databases.
-    \begin{enumerate}
-        \item Rationale: Redundancy in data will ensure the safety of the data and protect it from being lost.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H3-1
-        \end{enumerate}
-    \end{enumerate}
-     \item The system allows the user to manually input sleep information.
-    \begin{enumerate}
-        \item Rationale: The sleep functionality can still be used in the case of a sleep API failure.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H9-1
-        \end{enumerate}
-    \end{enumerate}
-    \item The system should store app-progress information on the user’s local machine.
-    \begin{enumerate}
-        \item Rationale: Easier and quicker to access information if stored in machine’s local cache.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H4-1
-        \end{enumerate}
-    \end{enumerate}
-    \item The system should use cloud-based databases.
-    \begin{enumerate}
-        \item Rationale: Provides greater security to users’ data.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H5-1
-        \end{enumerate}
-    \end{enumerate}
-     \item The system will use encryption when storing users’ information.
-    \begin{enumerate}
-        \item Rationale: Provides security for users’ data and ensures developers cannot see users’ data.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H5-2
-        \end{enumerate}
-    \end{enumerate} 
-     \item The system will incorporate rigorous weekly testing.
-    \begin{enumerate}
-        \item Rationale: Ensures proper functionality.
-        \item Associated Hazards
-        \begin{enumerate}
-            \item H6-1, H6-2
-        \end{enumerate}
-    \end{enumerate} 
+	\item The system should check if the credentials inputted by the user match the credentials in the database.
+	\begin{enumerate}
+		\item Rationale: The user should be able to access their account if the credentials are inputted correctly (i.e matches the database).
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H1-1
+		\end{enumerate}
+	\end{enumerate}
+	\item The system should allow users to reset credentials if a user requests it.
+	\begin{enumerate}
+		\item Rationale: In the case that a user forgets their password or username, they should be able to retrieve their account be resetting the credentials.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H1-1
+		\end{enumerate}
+	\end{enumerate}
+	\item The system should lock a user’s account when the user has inputted the incorrect password 5 times in a row.
+	\begin{enumerate}
+		\item Rationale: To ensure that the account is secured, the account of a user will get locked if multiple unsuccessful login attempts occur. 
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H1-2
+		\end{enumerate}
+	\end{enumerate} 
+	\item The system should be able to roll back changes. 
+	\begin{enumerate}
+		\item Rationale: To ensure the user does not lose their data if an illegal access or a system failure occur and can continue using the application.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H1-3, H3-1
+		\end{enumerate}
+	\end{enumerate} 
+	\item The system notifies users when the system is down (planned outings or unexpected outings) or when an error occurs and when the system will be back online. 
+	\begin{enumerate}
+		\item Rationale: Users can avoid using the application or parts of the application during these times. 
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H1-1, H2-1, H3-2, H7-1, H7-2, H7-3, H8-1, H8-2, H9-1, H9-2
+		\end{enumerate}
+	\end{enumerate}
+	\item The system should limit the number of bots using the application.
+	\begin{enumerate}
+		\item Rationale: The application is intended for human users.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H2-2
+		\end{enumerate}
+	\end{enumerate}
+	\item The system will have daily backups to multiple databases.
+	\begin{enumerate}
+		\item Rationale: Redundancy in data will ensure the safety of the data and protect it from being lost.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H3-1
+		\end{enumerate}
+	\end{enumerate}
+	\item The system allows the user to manually input sleep information.
+	\begin{enumerate}
+		\item Rationale: The sleep functionality can still be used in the case of a sleep API failure.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H9-1
+		\end{enumerate}
+	\end{enumerate}
+	\item The system should store app-progress information on the user’s local machine.
+	\begin{enumerate}
+		\item Rationale: Easier and quicker to access information if stored in machine’s local cache.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H4-1
+		\end{enumerate}
+	\end{enumerate}
+	\item The system should use cloud-based databases.
+	\begin{enumerate}
+		\item Rationale: Provides greater security to users’ data.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H5-1
+		\end{enumerate}
+	\end{enumerate}
+	\item The system will use encryption when storing users’ information.
+	\begin{enumerate}
+		\item Rationale: Provides security for users’ data and ensures developers cannot see users’ data.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H5-2
+		\end{enumerate}
+	\end{enumerate} 
+	\item The system will incorporate rigorous weekly testing.
+	\begin{enumerate}
+		\item Rationale: Ensures proper functionality.
+		\item Associated Hazards
+		\begin{enumerate}
+			\item H6-1, H6-2
+		\end{enumerate}
+	\end{enumerate} 
 \end{enumerate}
-\section{Roadmap}
 
-\wss{Which safety requirements will be implemented as part of the capstone timeline?
-	Which requirements will be implemented in the future?}
+\section{Roadmap}
+The REVITALIZE team's hazard mitigation strategy began first with identifying potential hazards and then creating new safety and security requirements to mitigate those hazards. This has been accomplished in the previous two sections. After that, each hazard was mapped to its corresponding safety or security requirement. Many of the listed hazards have a medium or high chance of occurring. Hence, SR-1 to SR-5, SR-8, and SR-10 to SR-12 will be implemented as part of the capstone timeline. H2-2, H3-1 and H4-1 have a lower probability of occurring. Therefore, SR-6, SR-7 and SR-9 will be implemented in the future. The last steps in the REVITALIZE team's hazard mitigation strategy entail developing the application and testing to verify that safety and security requirements have been met. It is important to note that this step is not sequential. Rather, it will be a process of development and refinement as future potential vulnerabilities could arise where they will have to be assessed based on severity and probability of occurrence.
 
 \end{document}
