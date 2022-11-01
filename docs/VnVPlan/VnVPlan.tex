@@ -18,7 +18,7 @@
 \begin{document}
 
 \title{Project Title: System Verification and Validation Plan for \progname{}} 
-\author{Author Name}
+\author{\authname}
 \date{\today}
 	
 \maketitle
@@ -30,8 +30,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+October 31st, 2022 & Bill Nguyen & Added Functional Requirements Tests for Login Page\\
+October 31st, 2022 & Bill Nguyen & Added Non Functional Requirements Tests for Look and Feel, Usability and Performance\\
+October 31st, 2022 & Bill Nguyen & Added 3 Questions to Usability Survey\\
 \bottomrule
 \end{tabularx}
 
@@ -301,41 +302,155 @@ How test will be performed: Tester will click on login button and test for scena
 \wss{Tests related to usability could include conducting a usability test and
   survey.}
 
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
+\subsubsection{Look and Feel Testing}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{LF1\\}
 
-Type: 
+Type: Dynamic, Functional, Manual
 					
-Initial State: 
+Initial State: User is using REVITALIZE features
 					
-Input/Condition: 
+Input/Condition: REVITALIZE features are in use
 					
-Output/Result: 
+Output/Result: All UI/UX design and elements matches original design and are displayed correctly and neatly
 					
-How test will be performed: 
+How test will be performed: All related stakeholders will test application with the focus on neatness and attractiveness of UI/UX design of REVITALIZE and answer question 1 of the Usability Survey. Would need an average rating of 8.5 or above out of 10 and assess all stakeholders responses to make improvements
 					
-\item{test-id2\\}
+\item{LF2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Static, Manual
 					
-Initial State: 
+Initial State: A display of all pages in REVITALIZE
 					
-Input: 
+Input/Condition: All displays for all pages in REVITALIZE are at a common point during a user session
 					
-Output: 
+Output/Result: All colours are considered appealing, contrasting and non-intrusive
 					
-How test will be performed: 
+How test will be performed: All related stakeholders will test application with the focus on colour and answer question 2 of the Usability Survey. Would need an average rating of 8.5 or above out of 10 for each factor and assess all stakeholders responses to make improvements
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Usability and Humanity Testing}
 
-...
+\begin{enumerate}
+
+\item{UH1\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: User is using REVITALIZE features
+					
+Input/Condition: REVITALIZE features are in use, using one hand/one finger
+					
+Output/Result: REVITALIZE features are displaying correct outputs and results
+					
+How test will be performed: All related stakeholders with varying size hands/fingers can use all aspects of REVITALIZE using one hand/finger and have an average rating of 9.5 or above for question 3 of the Usability Survey
+					
+\item{UH2\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: Main page of application is displayed
+					
+Input/Condition: User uses main page to access features (Diet, Workout and Rest Section)
+					
+Output/Result: All features take less than 10 seconds to access
+					
+How test will be performed: Stakeholders will navigate to the Diet, Workout and/or Rest section from the main page in 10 seconds or less. 90\% of stakeholders need to be able to navigate to any of the sections in 10 seconds or less
+
+\item{UH3\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: REVITALIZE is loaded but not in use
+					
+Input/Condition: Users in targeted demographic will use all features of REVITALIZE
+					
+Output/Result: Results gathered from survey
+					
+How test will be performed: Primary stakeholders such as teenagers and young adults 14 years or older will test application and fill in survey, with the goal of an approval rating of 85\% or above
+
+\item{UH4\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: REVITALIZE is loaded but not in use
+					
+Input/Condition: User will use all features of REVITALIZE
+					
+Output/Result: User can use and understand basic/common aspects of all features after 3rd iteration
+					
+How test will be performed: Stakeholders will use all features/aspects of REVITALIZE and 85\% of stakeholders should be able to use and understand basic/common aspects of all features in 3 iterations or less.
+
+\item{UH5\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: REVITALIZE is loaded but not in use
+					
+Input/Condition: User will use all features of REVITALIZE
+					
+Output/Result: Results gathered from survey based on consistency of UI aspects such as buttons, drop-downs, words etc.
+					
+How test will be performed: Stakeholders will test application with focus on consistency of UI aspects and fill in survey, with the goal of an approval rating of 85\% or above
+
+\end{enumerate}
+
+\subsubsection{Performance Testing}
+
+\begin{enumerate}
+
+\item{PE1\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: REVITALIZE is loaded but not in use
+					
+Input/Condition: All REVITALIZE features are loaded with appropriate data
+					
+Output/Result: loading time of all REVITALIZE features
+					
+How test will be performed: Developers will run performance tests and ensure that all output data loads within 5 seconds or less for 95\% of all API responses and outputs
+					
+\item{PE2\\}
+
+Type: Dynamic, Functional, Automatic
+					
+Initial State: REVITALIZE is loaded but not in use
+					
+Input/Condition: User uses all features of REVITALIZE where output contain data/numbers
+					
+Output/Result: data/numbers of used features in floating points
+					
+How test will be performed: Developers will run accuracy tests to ensure output data/numbers are accurate for double precision floating points and pass all test cases
+
+\item{PE3\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: REVITALIZE is loaded but not in use
+					
+Input/Condition: Multiple (More than 50) users using REVITALIZE
+					
+Output/Result: Performance metrics (ex. loading time, frames per second etc.)
+					
+How test will be performed: 50 or more users (does not have to be actual people) use/send requests to REVITALIZE application simultaneously and analyze performance trends based on the number of users
+
+\item{PE4\\}
+
+Type: Dynamic, Functional, Manual
+					
+Initial State: REVITALIZE is loaded but not in use
+					
+Input/Condition: User will use all features of REVITALIZE
+					
+Output/Result: Storage percentage of data
+					
+How test will be performed: Developers will try to add as much data as possible to user account and application should be able to store 1 million or more data points for all users
+
+\end{enumerate}
 
 \subsection{Traceability Between Test Cases and Requirements}
 
@@ -476,5 +591,11 @@ Their values are defined in this section for easy maintenance.
 \subsection{Usability Survey Questions?}
 
 \wss{This is a section that would be appropriate for some projects.}
+
+\begin{enumerate}
+    \item How would you rate overall neatness of UI/UX design of REVITALIZE out of 10? What are elements you like related to neatness? What are elements you would improve related to neatness?
+    \item Are colours used in REVITALIZE non-intrusive, appealing and/or contrasting? Rate each factor of non-intrusive, appealing and contrasting out of 10? What are elements you like that elevate these factors? What are elements you would improve to elevate these factors?
+    \item How would you rate the overall ability to use REVITALIZE with only one hand/one finger out of 10? What are elements that help with this? What are elements you would improve?
+\end{enumerate}
 
 \end{document}
