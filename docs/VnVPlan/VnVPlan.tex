@@ -152,51 +152,139 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 	
 \subsection{Tests for Functional Requirements}
 
-\wss{Subsets of the tests may be in related, so this section is divided into
-  different areas.  If there are no identifiable subsets for the tests, this
-  level of document structure can be removed.}
+Subsections of the requirements will be divided into the events from our SRS, which are Login Page, Sign up Page, Main Page, Diet Section, Workout Section and Rest Section. There will be 1 test per functional requirement, and will follow the same order as functional requirements in SRS (ex. FR1 in VnV plan is the test for FR1 in SRS).
 
-\wss{Include a blurb here to explain why the subsections below
-  cover the requirements.  References to the SRS would be good.}
+\subsubsection{Login Page Testing}
 
-\subsubsection{Area of Testing1}
-
-\wss{It would be nice to have a blurb here to explain why the subsections below
-  cover the requirements.  References to the SRS would be good.  If a section
-  covers tests for input constraints, you should reference the data constraints
-  table in the SRS.}
-		
-\paragraph{Title for Test}
+Testing all functional requirements for login page of REVITALIZE. (Refer to BE1 in SRS)
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{FR1\\}
 
-Control: Manual versus Automatic
+Control: Manual
 					
-Initial State: 
+Initial State: Loading stage of the login page
 					
-Input: 
+Input: An event that loads the login page
 					
-Output: \wss{The expected result for the given inputs}
+Output: Login page is displayed with all necessary components
 
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
+Test Case Derivation: Request is made to load login page
 					
-How test will be performed: 
+How test will be performed: Tester will open REVITALIZE application and login page should be displayed
 					
-\item{test-id2\\}
+\item{FR2\\}
 
-Control: Manual versus Automatic
+Control: Manual
 					
-Initial State: 
+Initial State: Login page is displayed with username textbox
 					
-Input: 
+Input: Enter username information in textbox
 					
-Output: \wss{The expected result for the given inputs}
+Output: Username information entered is displayed in textbox
 
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
+Test Case Derivation: User can enter information in username textbox
 
-How test will be performed: 
+How test will be performed: Tester will enter information in username textbox and checks if textbox displays what the tester entered.
+
+\item{FR3\\}
+
+Control: Manual
+					
+Initial State: Login page is displayed with password textbox
+					
+Input: Enter password information in textbox
+					
+Output: password information entered is displayed in textbox via hidden text
+
+Test Case Derivation: User can enter information in password textbox
+
+How test will be performed: Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text.
+
+\item{FR4\\}
+
+Control: Manual
+					
+Initial State: Login page is displayed with login button
+					
+Input: Click login button
+					
+Output: Intended events occurs. Refer to FR9
+
+Test Case Derivation: User clicks login button and a request is made based on username and password text-boxes
+
+How test will be performed: Tester will click on login button and check if request is made correctly
+
+\item{FR5\\}
+
+Control: Manual
+					
+Initial State: Login page is displayed with forgot password button
+					
+Input: Click forgot password button
+					
+Output: Display forgot password screen with textbox to enter email
+
+Test Case Derivation: User clicks forgot password button and request is made to display forgot password screen with textbox to enter email
+
+How test will be performed: Tester will click on forgot password button and checks if forgot password screen is displayed with textbox to enter email
+
+\item{FR6\\}
+
+Control: Manual
+					
+Initial State: Login page is displayed with stay logged in checkbox that is empty
+					
+Input: Click stay logged in checkbox
+					
+Output: Display a check-mark in the stay logged in checkbox if checkbox is empty, else if checkbox contains check-mark already it will then display an empty checkbox
+
+Test Case Derivation: User clicks on stay logged in checkbox and displays appropriate action
+
+How test will be performed: Tester will click on checkbox and checks to see if check-mark is displayed if checkbox was empty and if an empty checkbox appears if checkbox contained a check-mark
+
+\item{FR7\\}
+
+Control: Manual
+					
+Initial State: Loading stage of REVITALIZE where previous state had stay logged in checkbox checked
+					
+Input: An event that loads REVITALIZE
+					
+Output: Display main page, with same data from previous state of main page
+
+Test Case Derivation: User can load REVITALIZE and main page is displayed with same data as the previous time user opened REVITALIZE main page
+
+How test will be performed: Tester will check stay logged in checkbox go to main page, leave REVITALIZE, reopen REVITALIZE and check whether same data from main page is the same from the last time tester opened main page
+
+\item{FR8\\}
+
+Control: Manual
+					
+Initial State: Login page is displayed with sign up button
+					
+Input: Click sign up button
+					
+Output: Loads and displays sign up page
+
+Test Case Derivation: User can click sign up button which loads and displays sign up page
+
+How test will be performed: Tester will click on sign up button and checks if sign up page is displayed
+
+\item{FR9\\}
+
+Control: Manual
+					
+Initial State: Login page is displayed with inputted information in username and password text-boxes
+					
+Input: Click login button
+					
+Output: if failure state, display an invalid password or username banner, else if success state, load and display main page
+
+Test Case Derivation: User clicks login button and request is made based on username and password, and will proceed to main page only if username and password are valid
+
+How test will be performed: Tester will click on login button and test for scenarios when login should be successful and when login should fail
 
 \end{enumerate}
 
