@@ -880,6 +880,104 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 \end{enumerate}
 
+\subsubsection{Operational Testing}
+
+\begin{enumerate}
+	
+	\item{NFR-OE1\\}
+	
+	Type: Dynamic, Functional, Manual
+	
+	Initial State: Internet connection is established on the device
+	
+	Input/Condition: REVITALIZE application is launched
+	
+	Output/Result: REVITALIZE features are all loaded 
+	
+	How test will be performed: Users will connect to the internet on their devices and launch the application. The application should load all features. 
+	
+	
+\end{enumerate}
+
+\subsubsection{Maintainability and Portability Testing}
+
+\begin{enumerate}
+	
+	\item{NFR-MP1\\}
+	
+	Type: Static, Manual
+	
+	Initial State: Existing source code
+	
+	Input/Condition: New source code is added
+	
+	Output/Result: New source code is commented  
+	
+	How test will be performed: Developers will cross-check each other's comments each time new source code is pushed and before it is merged to the main repository 
+	
+	\item{NFR-MP2\\}
+	
+	Type: Static, Automatic
+	
+	Initial State: Existing source code
+	
+	Input/Condition: New source code is added
+	
+	Output/Result: New source code that is added adheres to Google JS Style Guide (refer to SRS)
+	
+	How test will be performed: The ESLint linter tool will scan the source code and ensure it adheres to the Google JS Style Guide for newly developed source code.  
+	
+\end{enumerate}
+
+\subsubsection{Security Testing}
+
+\begin{enumerate}
+	
+	\item{NFR-SE1\\}
+	
+	Type: Dynamic, Functional, Automatic
+	
+	Initial State: REVITALIZE is launched
+	
+	Input/Condition: User creates a new account
+	
+	Output/Result: REVITALIZE sign-up/account features are loaded and secured  
+	
+	How test will be performed: Developers will execute security tests to ensure account information is private and secure. 100\% of the test cases must pass
+	
+	\item{NFR-SE2\\}
+	
+	Type: Dynamic, Functional, Automatic
+	
+	Initial State: REVITALIZE sign-up feature is loaded 
+	
+	Input/Condition: User inputs an email already associated with an existing account
+	
+	Output/Result: Message alerts the user that user already exists with this email.  
+	
+	How test will be performed: Developers will run tests on the Database that stores the users that check to make sure there is no duplication. 100\% of the tests must pass  
+	
+\end{enumerate}
+
+\subsubsection{Cultural and Political Testing}
+
+\begin{enumerate}
+	
+	\item{NFR-CU1\\}
+	
+	Type: Dynamic, Functional, Manual
+	
+	Initial State: REVITALIZE is launched
+	
+	Input/Condition: REVITALIZE features are all loaded
+	
+	Output/Result: English is displayed in all REVITALIZE features
+	
+	How test will be performed: Developers will test the Front-End to ensure English is the language displayed. 
+
+	
+\end{enumerate}
+
 \newpage
 \subsection{Traceability Between Test Cases and Requirements}
 
