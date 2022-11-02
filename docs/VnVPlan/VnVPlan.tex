@@ -161,7 +161,7 @@ Testing all functional requirements for login page of REVITALIZE. (Refer to BE1 
 
 \begin{enumerate}
 
-\item{FR1\\}
+\item{FR-LP-1\\}
 
 Control: Manual
 					
@@ -175,7 +175,7 @@ Test Case Derivation: Request is made to load login page
 					
 How test will be performed: Tester will open REVITALIZE application and login page should be displayed
 					
-\item{FR2\\}
+\item{FR-LP-2\\}
 
 Control: Manual
 					
@@ -189,7 +189,7 @@ Test Case Derivation: User can enter information in username textbox
 
 How test will be performed: Tester will enter information in username textbox and checks if textbox displays what the tester entered.
 
-\item{FR3\\}
+\item{FR-LP-3\\}
 
 Control: Manual
 					
@@ -203,7 +203,7 @@ Test Case Derivation: User can enter information in password textbox
 
 How test will be performed: Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text.
 
-\item{FR4\\}
+\item{FR-LP-4\\}
 
 Control: Manual
 					
@@ -231,7 +231,7 @@ Test Case Derivation: User clicks forgot password button and request is made to 
 
 How test will be performed: Tester will click on forgot password button and checks if forgot password screen is displayed with textbox to enter email
 
-\item{FR6\\}
+\item{FR-LP-6\\}
 
 Control: Manual
 					
@@ -245,7 +245,7 @@ Test Case Derivation: User clicks on stay logged in checkbox and displays approp
 
 How test will be performed: Tester will click on checkbox and checks to see if check-mark is displayed if checkbox was empty and if an empty checkbox appears if checkbox contained a check-mark
 
-\item{FR7\\}
+\item{FR-LP-7\\}
 
 Control: Manual
 					
@@ -259,7 +259,7 @@ Test Case Derivation: User can load REVITALIZE and main page is displayed with s
 
 How test will be performed: Tester will check stay logged in checkbox go to main page, leave REVITALIZE, reopen REVITALIZE and check whether same data from main page is the same from the last time tester opened main page
 
-\item{FR8\\}
+\item{FR-LP-8\\}
 
 Control: Manual
 					
@@ -273,7 +273,7 @@ Test Case Derivation: User can click sign up button which loads and displays sig
 
 How test will be performed: Tester will click on sign up button and checks if sign up page is displayed
 
-\item{FR9\\}
+\item{FR-LP-9\\}
 
 Control: Manual
 					
@@ -296,7 +296,7 @@ Testing all functional requirements for sign page of REVITALIZE. (Refer to BE2 i
 
 \begin{enumerate}
 
-\item{FR10\\}
+\item{FR-SP-1\\}
 
 Control: Manual
 					
@@ -310,7 +310,7 @@ Test Case Derivation: User can enter information in username textbox
 
 How test will be performed: Tester will enter information in username textbox and checks if textbox displays what the tester entered
 					
-\item{FR11\\}
+\item{FR-SP-2 \\}
 
 Control: Manual
 					
@@ -324,7 +324,7 @@ Test Case Derivation: User can enter information in password textbox
 
 How test will be performed: Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text
 
-\item{FR12\\}
+\item{FR-SP-3\\}
 
 Control: Manual
 					
@@ -338,7 +338,7 @@ Test Case Derivation: User can enter information in email textbox
 
 How test will be performed: Tester will enter information in email textbox and checks if textbox displays what the tester entered
 
-\item{FR13\\}
+\item{FR-SP-4\\}
 
 Control: Manual
 					
@@ -352,7 +352,7 @@ Test Case Derivation: User clicks signup button and a request is made based on u
 
 How test will be performed: Tester will click on signup button and check if request is made correctly
 
-\item{FR14\\}
+\item{FR-SP-5\\}
 
 Control: Manual
 					
@@ -375,7 +375,7 @@ Testing all functional requirements for main page of REVITALIZE. (Refer to BE3 i
 
 \begin{enumerate}
 
-\item{FR15\\}
+\item{FR-MP-1\\}
 
 Control: Manual
 					
@@ -389,14 +389,125 @@ Test Case Derivation: Request is made to load main page
 
 How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the correct calender data is loaded
 					
-\item{FR16\\}
+\item{FR-MP-2\\}
 
 Control: Manual
 					
 Initial State: Main page is displayed with previous day and next day buttons
 					
+Input: An event that loads the main page and the previous day and next day  buttons are clicked
+					
+Output: Main page is displayed with previous day and next day buttons. Once the next day button is clicked, the calender refreshes to a new calender with the next day. Once the preivous day button is clicked, the calender refreshed to a new calender with the previous day
+
+Test Case Derivation: Request is made to load main page and the previous day and next day buttons are clicked
+
+How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the previous day and next day buttons are visible. The tester will click the previous day button and visually check if the calender is updated to the date of the previous day. The tester will click the next day button and visually check if the calender is updated to the date of the next day
+
+\item{FR-MP-3\\}
+
+Control: Manual
+					
+Initial State: Each interaction after leaving the main page must have a visible back button
+					
+Input: An event that loads the next user interface after leaving the main page and the back button is clicked
+					
+Output: The next user interface after leaving the main page iis displayed with a back button. Once the back button is clicked, the main page is loaded
+
+Test Case Derivation: Request is to leave the main page and the back button is clicked
+
+How test will be performed: Tester will leave the main page by selecting any of the options on the page. The tester will visually check if a back button is visible on every page that is entered through the main page interaction. The tester will click the back button and visually check if the current page is closed and the main page is loaded. The tester will repeat this process with every page that is  loaded from clicking an interaction from the main page
+					
+\item{FR-MP-4\\}
+
+Control: Manual
+					
+Initial State: Main page is displayed with Diet, Exercise and Rest buttons available to click
+					
+Input: An event that loads the main page and the Diet, Exercise and Rest buttons are clicked
+
+Output: Main page is displayed with Diet, Exercise and Rest buttons. If the Diet button is clicked, the Diet interface is loaded. If the Exercise button is clicked, the Exercise interface is loaded. If the Rest button is clicked, the Rest interface is loaded
+
+Test Case Derivation: Request is made to load main page and the Diet, Exercise and Rest buttons are clicked
+
+How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the Diet, Exercise and Rest buttons are visible. The tester will click the Diet button and visually check if the Diet interface is loaded. the tester will click the Exercise button and visually check if the Exercise interface is loaded. The tester will click the Rest button and visually check if the Rest interface is loaded
 
 \end{enumerate}
+
+\subsubsection{Workout Section Testing}
+
+Testing all functional requirements for workout section of REVITALIZE. (Refer to BE5 in SRS)
+
+\begin{enumerate}
+
+\item{FR-WS-1\\}
+
+Control: Manual
+					
+Initial State: Workout section is initialized with a preset list of exercises on current calender day
+					
+Input: An event that loads the workout section
+					
+Output: A preset list of exercises is loaded for the current calender day
+
+Test Case Derivation: Request is made to load workout section
+
+How test will be performed: Tester will enter the workout section and will visually check if a list of preset exercises are loaded for the current calender day
+					
+\item{FR-WS-2 \\}
+
+Control: Manual
+					
+Initial State: Workout section is displayed with add exercise button
+					
+Input: Click add exercise button
+					
+Output: A dialog box is launched that lets the user fill custom exercise information. the exercise is added to the exercise list of the current calender day
+
+Test Case Derivation: User clicks add exercise button
+
+How test will be performed: Tester will click on add exercise button and will visuallly check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add exercise button. The tester will visually check if the exercise has been added to the list of exercises for the current calender day
+
+\item{FR-WS-3\\}
+
+Initial State: Each exercise in the workout section is displayed with a delete exercise button
+					
+Input: Click delete exercise button
+					
+Output: The exercise is deleted from the exercise list of the current calender day
+
+Test Case Derivation: User clicks delete exercise button
+
+How test will be performed: Tester will click on delete exercise button and will visuallly check if the exercise is deleted from the list of exercises for the current calender day. 
+
+\item{FR-WS-4\\}
+
+Initial State: Each exercise in the workout section is displayed with an edit exercise button
+					
+Input: click edit exercise button
+					
+Output: A fillable dialog box is launched with information of the exercise. Once the edit exercise button is clicked, the dialog box will close and update the exercise information in the list of exercises for the current calender day
+
+Test Case Derivation: User clicks edit exercise button
+
+How test will be performed: Tester will click on edit exercise button and will change the infromation on the fillable dialog box. The tester will click the edit exercise button and will visually check if the information is changed on the exercise list for the current calender day.
+
+\item{FR-WS-5\\}
+
+Control: Manual
+					
+Initial State: Workout section is displayed with list of exercises for current calender day
+					
+Input: An event that loads the workout section
+					
+Output: If repitition and sets for exercises not logged, dialog box for exercise is launched and the missing repitition and set values are highlighted
+
+Test Case Derivation: User launches the workout section. User adds an exercise and does not input repitition and set values.
+
+How test will be performed: Tester will add exercise without inputting values for set and repititions. The user will visually check if the exercise dialog is launched with highlighted missing repititions and set values.
+
+
+\end{enumerate}
+
 ...
 
 \subsection{Tests for Nonfunctional Requirements}
