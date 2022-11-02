@@ -1,5 +1,6 @@
 \documentclass[12pt, titlepage]{article}
-
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
@@ -12,6 +13,13 @@ linkcolor=red,
 urlcolor=blue
 }
 \usepackage[round]{natbib}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
 
 \input{../Comments}
 \input{../Common}
@@ -262,7 +270,7 @@ Testing all functional requirements for login page of REVITALIZE. (Refer to BE1 
 	
 	How test will be performed: Tester will click on login button and check if request is made correctly
 	
-	\item{FR5\\}
+	\item{FR-LP-5\\}
 	
 	Control: Manual
 	
@@ -725,7 +733,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 
 \begin{enumerate}
 	
-	\item{LF1\\}
+	\item{NFR-LF1\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -737,7 +745,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: All related stakeholders will test application with the focus on neatness and attractiveness of UI/UX design of REVITALIZE and answer question 1 of the Usability Survey. Would need an average rating of 8.5 or above out of 10 and assess all stakeholders responses to make improvements
 	
-	\item{LF2\\}
+	\item{NFR-LF2\\}
 	
 	Type: Static, Manual
 	
@@ -755,7 +763,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 
 \begin{enumerate}
 	
-	\item{UH1\\}
+	\item{NFR-UH1\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -767,7 +775,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: All related stakeholders with varying size hands/fingers can use all aspects of REVITALIZE using one hand/finger and have an average rating of 9.5 or above for question 3 of the Usability Survey
 	
-	\item{UH2\\}
+	\item{NFR-UH2\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -779,7 +787,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: Stakeholders will navigate to the Diet, Workout and/or Rest section from the main page in 10 seconds or less. 90\% of stakeholders need to be able to navigate to any of the sections in 10 seconds or less
 	
-	\item{UH3\\}
+	\item{NFR-UH3\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -791,7 +799,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: Primary stakeholders such as teenagers and young adults 14 years or older will test application and fill in survey, with the goal of an approval rating of 85\% or above
 	
-	\item{UH4\\}
+	\item{NFR-UH4\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -803,7 +811,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: Stakeholders will use all features/aspects of REVITALIZE and 85\% of stakeholders should be able to use and understand basic/common aspects of all features in 3 iterations or less.
 	
-	\item{UH5\\}
+	\item{NFR-UH5\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -821,7 +829,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 
 \begin{enumerate}
 	
-	\item{PE1\\}
+	\item{NFR-PE1\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -833,7 +841,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: Developers will run performance tests and ensure that all output data loads within 5 seconds or less for 95\% of all API responses and outputs
 	
-	\item{PE2\\}
+	\item{NFR-PE2\\}
 	
 	Type: Dynamic, Functional, Automatic
 	
@@ -845,7 +853,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: Developers will run accuracy tests to ensure output data/numbers are accurate for double precision floating points and pass all test cases
 	
-	\item{PE3\\}
+	\item{NFR-PE3\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -857,7 +865,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	How test will be performed: 50 or more users (does not have to be actual people) use/send requests to REVITALIZE application simultaneously and analyze performance trends based on the number of users
 	
-	\item{PE4\\}
+	\item{NFR-PE4\\}
 	
 	Type: Dynamic, Functional, Manual
 	
@@ -871,7 +879,160 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 \end{enumerate}
 
+\newpage
 \subsection{Traceability Between Test Cases and Requirements}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Login Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\cline{3-11}
+			& & \multicolumn{9}{ c|}{Requirements} \\ \cline{3-11}
+			& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 & FR8 & FR9 \\ \cline{1-11}
+			\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-7} &&&&&&&X&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-LP-8} &&&&&&&&X& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-LP-9} &&&&&&&&&X \\ \cline{1-11}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Signup Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+			\cline{3-7}
+			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+			& & FR10  & FR11 & FR12 & FR13 & FR14 \\ \cline{1-7}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-SP-1} &X&&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-2} &&X&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-4} &&&&X& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-SP-5} &&&&&X \\ \cline{1-7}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Main Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|}
+			\cline{3-6}
+			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-6}
+			& & FR15  & FR16 & FR17 & FR18 \\ \cline{1-6}
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-MP-1} &X&&& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-2} &&X&& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-3} &&&X& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-4} &&&&X \\ \cline{1-6}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Diet Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\cline{3-12}
+			& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
+			& & FR19  & FR20 & FR21 & FR22 & FR23  & FR24 & FR25-27 & FR28 & FR29 & FR31 \\ \cline{1-12}
+			\multicolumn{1}{ |c| }{\multirow{11}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-3} &&&X&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-4} &&&&X&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-5} &&&&&X&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-6} &&&&&&X&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-7} &&&&&&&X&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-8} &&&&&&&&X&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-9} &&&&&&&&&X& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-10} &&&&&&&&&&X \\ \cline{1-12}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Workout Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+			\cline{3-7}
+			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+			& & FR31  & FR32 & FR33 & FR34 & FR35 \\ \cline{1-7}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-WP-1} &X&&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-2} &&X&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-4} &&&&X& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-WP-5} &&&&&X \\ \cline{1-7}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Rest Section Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & FR36  & FR37 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-RS-1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Look and Feel Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & LF1  & LF2 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-LF1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ NFR-LF22} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
+\end{table}
 
 \wss{Provide a table that shows which test cases are supporting which
 	requirements.}
