@@ -287,10 +287,116 @@ Test Case Derivation: User clicks login button and request is made based on user
 
 How test will be performed: Tester will click on login button and test for scenarios when login should be successful and when login should fail
 
+
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Signup Page Testing}
 
+Testing all functional requirements for sign page of REVITALIZE. (Refer to BE2 in SRS)
+
+\begin{enumerate}
+
+\item{FR10\\}
+
+Control: Manual
+					
+Initial State: Signup page is displayed with username textbox
+					
+Input: Enter username information in textbox
+					
+Output: Username information entered is displayed in textbox
+
+Test Case Derivation: User can enter information in username textbox
+
+How test will be performed: Tester will enter information in username textbox and checks if textbox displays what the tester entered
+					
+\item{FR11\\}
+
+Control: Manual
+					
+Initial State: Signup page is displayed with password textbox
+					
+Input: Enter password information in textbox
+					
+Output: Password information entered is displayed in textbox via hidden text
+
+Test Case Derivation: User can enter information in password textbox
+
+How test will be performed: Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text
+
+\item{FR12\\}
+
+Control: Manual
+					
+Initial State: signup page is displayed with email textbox
+					
+Input: Enter email information in textbox
+					
+Output: Email information entered is displayed in textbox
+
+Test Case Derivation: User can enter information in email textbox
+
+How test will be performed: Tester will enter information in email textbox and checks if textbox displays what the tester entered
+
+\item{FR13\\}
+
+Control: Manual
+					
+Initial State: Signup page is displayed with signup button
+					
+Input: Click signup button
+					
+Output: Intended events occurs. Refer to FR14
+
+Test Case Derivation: User clicks signup button and a request is made based on username, password and email text-boxes
+
+How test will be performed: Tester will click on signup button and check if request is made correctly
+
+\item{FR14\\}
+
+Control: Manual
+					
+Initial State: Signup page is displayed with inputted information in username and password text-boxes
+					
+Input: Click signup button
+					
+Output: if failure state, display an invalid username, password or email banner, else if success state, load and display login page
+
+Test Case Derivation: User clicks signup button and request is made based on username, password and email, and will proceed to login page only if username, password and email are valid
+
+How test will be performed: Tester will click on signup button and test for scenarios when signup should be successful and when signup should fail
+
+
+\end{enumerate}
+
+\subsubsection{Main Page Testing}
+
+Testing all functional requirements for main page of REVITALIZE. (Refer to BE3 in SRS)
+
+\begin{enumerate}
+
+\item{FR15\\}
+
+Control: Manual
+					
+Initial State: Main page is displayed with calender of current date
+					
+Input: An event that loads the main page
+					
+Output: Main page is displayed with all necessary components
+
+Test Case Derivation: Request is made to load main page
+
+How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the correct calender data is loaded
+					
+\item{FR16\\}
+
+Control: Manual
+					
+Initial State: Main page is displayed with previous day and next day buttons
+					
+
+\end{enumerate}
 ...
 
 \subsection{Tests for Nonfunctional Requirements}
