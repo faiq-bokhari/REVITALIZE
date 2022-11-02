@@ -433,6 +433,112 @@ How test will be performed: Tester will successfully login to the REVITALIZE app
 
 \end{enumerate}
 
+\subsubsection{Diet Section Testing}
+
+Testing all functional requirements for rest section of REVITALIZE. (Refer to BE4 in SRS)
+
+\begin{enumerate}
+
+\item{FR-DS-1\\}
+
+Control: Manual
+					
+Initial State: Diet section is initialized for the first time and an initial information dialog is launched
+					
+Input: An event that loads the diet section for the first time
+					
+Output: A fillable dialog box is launched with height, dietary information, weight and calorie information
+
+Test Case Derivation: Request is made to enter diet section for the first time
+
+How test will be performed: Tester will enter rest section for the first time and visually check if the dialog box with correct input information is launched
+					
+\item{FR-DS-2\\}
+
+Control: Manual
+					
+Initial State: Diet section is initialized for the first time and an initial information dialog is launched
+					
+Input: Initial information dialog values are filled
+					
+Output: Initial information values are saved to the database
+
+Test Case Derivation: Initial information dialog is filled
+
+How test will be performed: Tester will fill the initial information dialog after entering the diet section. The tester will visually check the user data in the database to see if the initial information is saved
+					
+
+\item{FR-DS-3\\}
+
+Control: Manual
+					
+Initial State: section section is initialized with a list of food logged for the current calender day
+					
+Input: An event that loads the rest section
+					
+Output: A list of inputted food is loaded for the current calender day
+
+Test Case Derivation: Request is made to enter rest section
+
+How test will be performed: Tester will enter the rest section and will visually check if a list of logged food is loaded for the current calender day
+					
+\item{FR-DS-4 \\}
+
+Control: Manual
+					
+Initial State: Diet section is displayed with add food button
+					
+Input: Click add food button
+					
+Output: A dialog box is launched that lets the user fill custom food information. the food is added to the food log list of the current calender day
+
+Test Case Derivation: User clicks add food button
+
+How test will be performed: Tester will click on add food button and will visuallly check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add food button. The tester will visually check if the food has been added to the list of logged food for the current calender day
+
+\item{FR-DS-5\\}
+
+Control: Manual
+					
+Initial State: Diet section is displayed with search food button
+					
+Input: Click add search food button
+					
+Output: A recipe criteria user interface is launched that displays a list of modifiable criteria and a search button
+
+Test Case Derivation: User clicks search food button
+
+How test will be performed: Tester will click on search food exercise button and will visuallly check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add food button. The tester will visually check if the food has been added to the list of logged food for the current calender day
+
+\item{FR-WS-4\\}
+
+Initial State: Each exercise in the workout section is displayed with an edit exercise button
+					
+Input: click edit exercise button
+					
+Output: A fillable dialog box is launched with information of the exercise. Once the edit exercise button is clicked, the dialog box will close and update the exercise information in the list of exercises for the current calender day
+
+Test Case Derivation: User clicks edit exercise button
+
+How test will be performed: Tester will click on edit exercise button and will change the infromation on the fillable dialog box. The tester will click the edit exercise button and will visually check if the information is changed on the exercise list for the current calender day.
+
+\item{FR-WS-5\\}
+
+Control: Manual
+					
+Initial State: Workout section is displayed with list of exercises for current calender day
+					
+Input: An event that loads the workout section
+					
+Output: If repitition and sets for exercises not logged, dialog box for exercise is launched and the missing repitition and set values are highlighted
+
+Test Case Derivation: User launches the workout section. User adds an exercise and does not input repitition and set values.
+
+How test will be performed: Tester will add exercise without inputting values for set and repititions. The user will visually check if the exercise dialog is launched with highlighted missing repititions and set values.
+
+\end{enumerate}
+
+
 \subsubsection{Workout Section Testing}
 
 Testing all functional requirements for workout section of REVITALIZE. (Refer to BE5 in SRS)
@@ -443,13 +549,13 @@ Testing all functional requirements for workout section of REVITALIZE. (Refer to
 
 Control: Manual
 					
-Initial State: Workout section is initialized with a preset list of exercises on current calender day
+Initial State: Workout section is initialized with a preset list of exercises of the current calender day
 					
 Input: An event that loads the workout section
 					
 Output: A preset list of exercises is loaded for the current calender day
 
-Test Case Derivation: Request is made to load workout section
+Test Case Derivation: Request is made to enter workout section
 
 How test will be performed: Tester will enter the workout section and will visually check if a list of preset exercises are loaded for the current calender day
 					
@@ -505,9 +611,44 @@ Test Case Derivation: User launches the workout section. User adds an exercise a
 
 How test will be performed: Tester will add exercise without inputting values for set and repititions. The user will visually check if the exercise dialog is launched with highlighted missing repititions and set values.
 
-
 \end{enumerate}
 
+
+\subsubsection{Rest Section Testing}
+
+Testing all functional requirements for rest section of REVITALIZE. (Refer to BE6 in SRS)
+
+\begin{enumerate}
+
+\item{FR-RS-1\\}
+
+Control: Manual
+					
+Initial State: Rest section is initialized with the sleep statistics of the current calender day
+					
+Input: An event that loads the rest section
+					
+Output: Sleep statistics are loaded for the current calender day
+
+Test Case Derivation: Request is made to enter rest section
+
+How test will be performed: Tester will enter the rest section and will visually check if slep statistics are loaded for the current calender day
+					
+\item{FR-RS-2 \\}
+
+Control: Manual
+					
+Initial State: Rest section is initialized with the sleep statistics of the current calender day
+					
+Input: Alter sleep data
+					
+Output: The sleep data is updated with user changes
+
+Test Case Derivation: User alters sleep data
+
+How test will be performed: Tester will alter the sleep data and will visually check if the new values are correctly displayed in the sleep statistics
+
+\end{enumerate}
 ...
 
 \subsection{Tests for Nonfunctional Requirements}
