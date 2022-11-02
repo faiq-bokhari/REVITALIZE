@@ -393,15 +393,15 @@ How test will be performed: Tester will successfully login to the REVITALIZE app
 
 Control: Manual
 					
-Initial State: Main page is displayed with previous day and next day buttons
+Initial State: Main page and Diet, Workout, Rest sections are displayed with previous day and next day buttons
 					
-Input: An event that loads the main page and the previous day and next day  buttons are clicked
+Input: An event that loads the main page, Diet, Workout, Rest sections and the previous day and next day  buttons are clicked
 					
-Output: Main page is displayed with previous day and next day buttons. Once the next day button is clicked, the calender refreshes to a new calender with the next day. Once the preivous day button is clicked, the calender refreshed to a new calender with the previous day
+Output: Main page, Diet, Workout, Rest sections are displayed with previous day and next day buttons. Once the next day button is clicked, the calender refreshes  the calender information for the next day. Once the preivous day button is clicked, the calender refreshes the calender information for the previous day.
 
-Test Case Derivation: Request is made to load main page and the previous day and next day buttons are clicked
+Test Case Derivation: Request is made to load main page, Diet, Workout, Rest sections and the previous day and next day buttons are clicked
 
-How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the previous day and next day buttons are visible. The tester will click the previous day button and visually check if the calender is updated to the date of the previous day. The tester will click the next day button and visually check if the calender is updated to the date of the next day
+How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the previous day and next day buttons are visible. The tester will click the previous day button and visually check if the calender is updated to the date of the previous day. The tester will click the next day button and visually check if the calender is updated to the date of the next day. The tester will enter the Diet, Workout and Rest sections and will visually check if the previous day and next day buttons are visible. The tester will click the previous day button and visually check if the calender is updated to the date of the previous day. The tester will click the next day button and visually check if the calender is updated to the date of the next day
 
 \item{FR-MP-3\\}
 
@@ -490,17 +490,17 @@ Initial State: Diet section is displayed with add food button
 					
 Input: Click add food button
 					
-Output: A dialog box is launched that lets the user fill custom food information. the food is added to the food log list of the current calender day
+Output: A user interface is launched that lets the user select between searching for food or adding a custom meal
 
 Test Case Derivation: User clicks add food button
 
-How test will be performed: Tester will click on add food button and will visuallly check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add food button. The tester will visually check if the food has been added to the list of logged food for the current calender day
+How test will be performed: Tester will click on add food button and will visuallly check if the user interface with options for adding a custom meal and searching for food are available.
 
 \item{FR-DS-5\\}
 
 Control: Manual
 					
-Initial State: Diet section is displayed with search food button
+Initial State: Food adding user interface is displayed with search food button
 					
 Input: Click add search food button
 					
@@ -508,33 +508,49 @@ Output: A recipe criteria user interface is launched that displays a list of mod
 
 Test Case Derivation: User clicks search food button
 
-How test will be performed: Tester will click on search food exercise button and will visuallly check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add food button. The tester will visually check if the food has been added to the list of logged food for the current calender day
+How test will be performed: Tester will click on search food exercise button and will visuallly check if a recipe criteria user interface is launched that displays a list of modifiable criteria and a search button
 
-\item{FR-WS-4\\}
-
-Initial State: Each exercise in the workout section is displayed with an edit exercise button
-					
-Input: click edit exercise button
-					
-Output: A fillable dialog box is launched with information of the exercise. Once the edit exercise button is clicked, the dialog box will close and update the exercise information in the list of exercises for the current calender day
-
-Test Case Derivation: User clicks edit exercise button
-
-How test will be performed: Tester will click on edit exercise button and will change the infromation on the fillable dialog box. The tester will click the edit exercise button and will visually check if the information is changed on the exercise list for the current calender day.
-
-\item{FR-WS-5\\}
+\item{FR-DS-6\\}
 
 Control: Manual
 					
-Initial State: Workout section is displayed with list of exercises for current calender day
+Initial State: Recipe criteria user interface is launched
 					
-Input: An event that loads the workout section
+Input: Search criteria is modified and search button is clicked
 					
-Output: If repitition and sets for exercises not logged, dialog box for exercise is launched and the missing repitition and set values are highlighted
+Output: List of recipes are loaded correctly based on constraints of search criteria
 
-Test Case Derivation: User launches the workout section. User adds an exercise and does not input repitition and set values.
+Test Case Derivation: User modifies the search criteria and clicks the search button
 
-How test will be performed: Tester will add exercise without inputting values for set and repititions. The user will visually check if the exercise dialog is launched with highlighted missing repititions and set values.
+How test will be performed: Tester will modify the search criteria and click the search button. The tester will visually check if a recipe list is loaded. The tester will visually check the correcctness of the list based on selected constraints.
+
+\item{FR-DS-7\\}
+
+Control: Manual
+					
+Initial State: Recipe list is loaded based on search constraints
+					
+Input: Add recipe button is clicked
+					
+Output: Selected recipe is added to the list of food logged on the current calender day
+
+Test Case Derivation: User selects the recipe from the recipe list and clicks the add recipe button
+
+How test will be performed: Tester will select a recipe and click the add recipe button. The tester will visually check if the selected recipe has been added to the list of food logged on the current calender day
+
+\item{FR-DS-8 \\}
+
+Control: Manual
+					
+Initial State: Food adding interface is displayed with add custom meal button
+					
+Input: Click add custom meal button
+					
+Output: A dialog box is launched that lets the user fill custom meal information. the meal is added to the food log list of the current calender day
+
+Test Case Derivation: User clicks add custom meal button
+
+How test will be performed: Tester will click on add custom meal button and will visuallly check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add custom meal button. The tester will visually check if the meal has been added to the list of logged food for the current calender day
 
 \end{enumerate}
 
