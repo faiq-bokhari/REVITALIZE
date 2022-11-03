@@ -52,6 +52,7 @@ urlcolor=blue
 	November 1st, 2022 & Youssef Dahab & Added Software Validation Plan\\
 	November 1st, 2022 & Logan Brown & Added General Information and Self Reflection\\
 	November 1st, 2022 & Logan Brown & Added Symbolic Parameters\\
+	November 1st, 2022 & Youssef Dahab & Added Implementation Verification Plan\\
 	\bottomrule
 \end{tabularx}
 
@@ -60,7 +61,7 @@ urlcolor=blue
 \tableofcontents
 
 \listoftables
-\wss{Remove this section if it isn't needed}
+
 
 \listoffigures
 \wss{Remove this section if it isn't needed}
@@ -132,14 +133,9 @@ urlcolor=blue
 
 \section{Plan}
 
-\wss{Introduce this section.   You can provide a roadmap of the sections to
-	come.}
+This section outlines REVITALIZE's VnV plan. It begins with identifying the VnV team. It then moves to discussing the SRS, Design, VnV, and implementation verification plans. This section then concludes with REVITALIZE's software verification plan.
 
 \subsection{Verification and Validation Team}
-
-\wss{You, your classmates and the course instructor.  Maybe your supervisor.
-	You shoud do more than list names.  You should say what each person's role is
-	for the project.  A table is a good way to summarize this information.}
 
 \begin{table}[H]
 	\centering
@@ -172,71 +168,28 @@ REVITALIZE team members are aware that they might have to put on multiple hats o
 
 \subsection{SRS Verification Plan}
 
-\wss{List any approaches you intend to use for SRS verification.  This may just
-	be ad hoc feedback from reviewers, like your classmates, or you may have
-	something more rigorous/systematic in mind..}
-
-\wss{Remember you have an SRS checklist}
-
 The REVITALIZE team's SRS verification plan is to have the SRS reviewed by classmates, group members, and course TA. Classmates already adhocly reviewed REVITALIZE's SRS and provided their feedback. Furthermore, the course TA will review REVITALIZE's SRS to provide more detailed and structured feedback. REVITALIZE team members will meet together to gather all feedback from classmates, other team members and course TA. The team will then assess the feedback and analyze what can be incorporated. After that, the SRS will be refined and updated as part of the SRS verification process.
 
 \subsection{Design Verification Plan}
 
-\wss{Plans for design verification}
-
-\wss{The review will include reviews by your classmates}
-
-\wss{Remember you have MG and MIS checklists}
-
 The REVITALIZE team's design verification plan is to have its design reviewed by classmates, group members, and course TA. The team will gather all feedback from classmates, other group members, and the course TA and incorporate it in the design document. After completing the MG and MIS, the team will ensure that their modules match the system requirements in the SRS. Finally, a design walk-through will be conducted by the team to verify the design.
 
 \subsection{Verification and Validation Plan Verification Plan}
-
-\wss{The verification and validation plan is an artifact that should also be verified.}
-
-\wss{The review will include reviews by your classmates}
-
-\wss{Create a checklists?}
 
 The REVITALIZE teams plan to verify its VnV plan is to have it reviewed by classmates, group members, and course TA. The team will gather all feedback and incorporate it in the VnV plan. The REVITALIZE team will also conduct a walk-through after feedback has been incorporated to verify that every functional and nonfunctional requirement in the SRS has at least one test that tests it in the VnV plan. Team members will then run the tests in the VnV plan to determine if the system requirements stated in the SRS have been met. This way, the team verifies the completeness of the VnV in both directions.\\
 The same process will be followed regarding the unit tests. Each module in the MG and MIS will be matched to the tests written in the VnV plan to verify it.
 
 \subsection{Implementation Verification Plan}
 
-\wss{You should at least point to the tests listed in this document and the unit
-	testing plan.}
-
-\wss{In this section you would also give any details of any plans for static verification of
-	the implementation.  Potential techniques include code walkthroughs, code
-	inspection, static analyzers, etc.}
+REVITALIZE team members will use both a static and dynamic approach to verify the application's implementation. In terms of dynamic methods, automated unit tests will be performed as part of testing the system tests mentioned in section 6. Furthermore, test cases will be monitored to ensure its up to date such that full testing coverage of the code can be done. This includes edge case testing.\\\\
+A prototype testing method will also be used. REVITALIZE will not be implemented in one go. Rather, features and functionality will constantly be added throughout the course of the project. Therefore, REVITALIZE will go through numerous prototypes or phases. This prototype testing will act as an ongoing static and dynamic verification of the REVITALIZE application.\\\\
+Static verification of REVITALIZE's implementation will be done by performing code inspections. Team members will perform code reviews as part of static analysis where each team member will follow the guidelines stated in REVITALIZE's Development Plan. Team members will review each other's code and raise issues to note any concerns. The purpose of conducting static verification of the implementation in this way is to ensure code walk-throughs are completed, concerns are raised, and best implementation practices are followed.
 
 \subsection{Automated Testing and Verification Tools}
-
-\wss{What tools are you using for automated testing.  Likely a unit testing
-	framework and maybe a profiling tool, like ValGrind.  Other possible tools
-	include a static analyzer, make, continuous integration tools, test coverage
-	tools, etc.  Explain your plans for summarizing code coverage metrics.
-	Linters are another important class of tools.  For the programming language
-	you select, you should look at the available linters.  There may also be tools
-	that verify that coding standards have been respected, like flake9 for
-	Python.}
-
-\wss{The details of this section will likely evolve as you get closer to the
-	implementation.}
 
 Automated testing and verification tools have been previously stated in sections 6 and 7 of REVITALIZE's \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/DevelopmentPlan/DevelopmentPlan.pdf}{\color{blue}Development Plan}.
 
 \subsection{Software Validation Plan}
-
-\wss{If there is any external data that can be used for validation, you should
-	point to it here.  If there are no plans for validation, you should state that
-	here.}
-
-\wss{You might want to use review sessions with the stakeholder to check
-	that the requirements document captures the right requirements. Maybe
-	task based inspection?}
-
-\wss{This section might reference back to the SRS verification section.}
 
 The REVITALIZE team's software validation plan includes having a review session with primary and secondary stakeholders to check that the SRS requirements document captures the right requirements. After REVITALIZE's initial release, another session with the stakeholders will be held to validate the implementation. The user will use REVITALIZE for the first time, answer team member questions, and give feedback on the application. After that, as per the feedback, the SRS and the implementation may require modifications such as the addition or removal of particular functionality.
 
@@ -760,13 +713,6 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\wss{The nonfunctional requirements for accuracy will likely just reference the
-	appropriate functional tests from above.  The test cases should mention
-	reporting the relative error for these tests.}
-
-\wss{Tests related to usability could include conducting a usability test and
-	survey.}
-
 \subsubsection{Look and Feel Testing}
 
 \begin{enumerate}
@@ -1263,9 +1209,6 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	\end{center}
 \end{table}
 
-\wss{Provide a table that shows which test cases are supporting which
-	requirements.}
-
 % \section{Unit Test Description}
 
 % \wss{Reference your MIS and explain your overall philosophy for test case
@@ -1411,8 +1354,6 @@ MIN\_DATA\_POINTS = \hypertarget{MIN_DATA_POINTS}{1000000}
 %Their values are defined in this section for easy maintenance.
 
 \subsection{Usability Survey Questions?}
-
-\wss{This is a section that would be appropriate for some projects.}
 
 \begin{enumerate}
 	\item How would you rate overall neatness of UI/UX design of REVITALIZE out of 10? What are elements you like related to neatness? What are elements you would improve related to neatness?
