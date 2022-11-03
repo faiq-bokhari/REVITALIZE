@@ -52,7 +52,7 @@ urlcolor=blue
 	November 1st, 2022 & Youssef Dahab & Added Software Validation Plan\\
 	November 1st, 2022 & Logan Brown & Added General Information and Self Reflection\\
 	November 1st, 2022 & Logan Brown & Added Symbolic Parameters\\
-	November 1st, 2022 & Youssef Dahab & Added Implementation Verification Plan\\
+	November 1st, 2022 & Youssef Dahab & Added Implementation Verification Plan, Self Reflection\\
 	\bottomrule
 \end{tabularx}
 
@@ -61,10 +61,6 @@ urlcolor=blue
 \tableofcontents
 
 \listoftables
-
-
-\listoffigures
-\wss{Remove this section if it isn't needed}
 
 \newpage
 
@@ -101,9 +97,6 @@ urlcolor=blue
 	\bottomrule
 \end{tabular}\\
 
-\wss{symbols, abbreviations or acronyms -- you can simply reference the SRS
-	\citep{SRS} tables, if appropriate}
-
 \newpage
 
 \pagenumbering{arabic}
@@ -139,6 +132,7 @@ This section outlines REVITALIZE's VnV plan. It begins with identifying the VnV 
 
 \begin{table}[H]
 	\centering
+	\caption{\textbf{Verification and Validation Team Member Roles}}
 	\begin{tabular}{|p{3cm}|p{4cm}|p{7cm}|}
 		\hline
 		\multicolumn{1}{|c|}{\textbf{Name}} & \multicolumn{1}{|c|}{\textbf{Role}} & \multicolumn{1}{|c|}{\textbf{Description}}
@@ -1238,39 +1232,39 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 % 	tests were selected.}
 
 % \begin{enumerate}
-	
+
 % 	\item{test-id1\\}
-	
+
 % 	Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
 % 		be automatic}
-	
+
 % 	Initial State: 
-	
+
 % 	Input: 
-	
+
 % 	Output: \wss{The expected result for the given inputs}
-	
+
 % 	Test Case Derivation: \wss{Justify the expected value given in the Output field}
-	
+
 % 	How test will be performed: 
-	
+
 % 	\item{test-id2\\}
-	
+
 % 	Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
 % 		be automatic}
-	
+
 % 	Initial State: 
-	
+
 % 	Input: 
-	
+
 % 	Output: \wss{The expected result for the given inputs}
-	
+
 % 	Test Case Derivation: \wss{Justify the expected value given in the Output field}
-	
+
 % 	How test will be performed: 
-	
+
 % 	\item{...\\}
-	
+
 % \end{enumerate}
 
 % \subsubsection{Module 2}
@@ -1289,32 +1283,32 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 % \subsubsection{Module ?}
 
 % \begin{enumerate}
-	
+
 % 	\item{test-id1\\}
-	
+
 % 	Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
 % 		be automatic}
-	
+
 % 	Initial State: 
-	
+
 % 	Input/Condition: 
-	
+
 % 	Output/Result: 
-	
+
 % 	How test will be performed: 
-	
+
 % 	\item{test-id2\\}
-	
+
 % 	Type: Functional, Dynamic, Manual, Static etc.
-	
+
 % 	Initial State: 
-	
+
 % 	Input: 
-	
+
 % 	Output: 
-	
+
 % 	How test will be performed: 
-	
+
 % \end{enumerate}
 
 % \subsubsection{Module ?}
@@ -1353,7 +1347,7 @@ MIN\_DATA\_POINTS = \hypertarget{MIN_DATA_POINTS}{1000000}
 %The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
 %Their values are defined in this section for easy maintenance.
 
-\subsection{Usability Survey Questions?}
+\subsection{Usability Survey Questions}
 
 \begin{enumerate}
 	\item How would you rate overall neatness of UI/UX design of REVITALIZE out of 10? What are elements you like related to neatness? What are elements you would improve related to neatness?
@@ -1375,6 +1369,8 @@ MIN\_DATA\_POINTS = \hypertarget{MIN_DATA_POINTS}{1000000}
 
 \noindent Logan Brown: My primary role for the VnV plan is to be a Performance Tester. First I would need to know what tools are available for monitoring the performance of our app and then the skill I would need to learn is how to properly analyze the measured metrics. I would also have to know how to simulate performance on a variety of devices with different capabilities.\\
 
+\noindent Youssef Dahab: To contribute to this VnV, I needed to learn how to design a verification plan for the SRS, Design, VnV, and implementation. Furthermore, as a UI/UX tester, I will have to know how to evaulate user experience and have a good understanding of human computer interfaces.\\
+
 \subsection{How Knowledge and Skills Will Be Acquired}
 
 \noindent Bill Nguyen: Knowledge and skills will be acquired by researching techniques on how to write effective unit tests for the back-end for example using the "arrange act assert" and potentially setting minimum thresholds for code/branch coverage to improve consistency and organization of tests. For integration and performance tests also perform research to find effective ways to test back-end with all aspects of project and applying it often.\\
@@ -1386,5 +1382,7 @@ MIN\_DATA\_POINTS = \hypertarget{MIN_DATA_POINTS}{1000000}
 \noindent Hasan Kibria: I hope to acquire this knowledge by reading online docs, looking at code examples, and trying my best to re-emulate tests I find on the internet to fit our specific needs. Once I find myself to be familiar with the technologies and infrastructure at hand, then I would continue to learn by diving deeper into testing principles and following through the targeted test implementation.\\
 
 \noindent Logan Brown: To learn the skills I outlined above I would need to research different performance measuring tools and what they measure using online documentation. Most likely I could use a tool that is a plugin for the development platform we will be using. I will also learn these skills by measuring the performance of simulated versions of the application, making changes to the implementation and seeing the effect these changes have on the performance.\\
+
+\noindent Youssef Dahab: I had two options to acquire these skills and I used both of them. Firstly, I referenced the lecture notes and material to be able to complete the VnV plan. Secondly, I used the internet to gain further knowledge on topics that I needed more clarification on with regards to design, software validation, and implementation. I will also have to review material from SFWRENG 4HC3 to be able to use HCI concepts to better test REVITALIZE's UI and UX.\\
 
 \end{document}
