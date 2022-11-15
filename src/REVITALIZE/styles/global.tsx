@@ -32,4 +32,22 @@ import { StyleSheet, Text, View } from 'react-native';
         alignSelf: "center",
         textTransform: "uppercase"
     },
+    topCenterContainer: {
+        top: 20,
+        center: 5,
+        backgroundColor: "#1e90ff",
+        position: 'absolute', // add if dont work with above
+    },
+    topRightContainer: {
+        top: 20,
+        right: 5,
+        backgroundColor: "#1e90ff",
+        position: 'absolute', // add if dont work with above
+    },
+    topLeftContainer: {
+        top: 20,
+        left: 5,
+        backgroundColor: "#1e90ff",
+        position: 'absolute', // add if dont work with above
+    },
 });
