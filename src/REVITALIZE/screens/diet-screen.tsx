@@ -3,7 +3,6 @@ import { Text, View, TouchableOpacity} from 'react-native';
 import { globalStyles } from '../styles/global';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import moment from 'moment';
-import { TouchableOpacity} from 'react-native';
 
 const DietScreen=({navigation})=>{
     const current = new Date();
@@ -40,15 +39,10 @@ const DietScreen=({navigation})=>{
             <TouchableOpacity onPress={()=>navigation.navigate('Sleep Screen')} style={globalStyles.appButtonContainer}>
                 <Text style={globalStyles.appButtonText}>{"Sleep Section"}</Text>
             </TouchableOpacity>
-        </View>
-const DietScreen=({navigation})=>{
-    return (
-        <View style={globalStyles.container}>
-        <Text style={globalStyles.titleText}>Diet Screen</Text>
-        <TouchableOpacity onPress={()=>navigation.navigate('Recipe List Screen')} style={globalStyles.appButtonContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Recipe List Screen')} style={globalStyles.appButtonContainer}>
                 <Text style={globalStyles.appButtonText}>{"Recipe List"}</Text>
             </TouchableOpacity>
-      </View>
+        </View>
     );
 }
 
