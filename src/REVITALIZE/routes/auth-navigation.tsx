@@ -4,6 +4,7 @@ import MainScreen from '../screens/main-screen';
 import DietScreen from '../screens/diet-screen';
 import ExerciseScreen from '../screens/exercise-screen';
 import SleepScreen from '../screens/sleep-screen';
+import AddExercise from '../screens/Workout/AddExercise';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,7 @@ const AuthNavigationStack = () => {
         <Stack.Screen name="Diet Screen" component={DietScreen} />
         <Stack.Screen name="Exercise Screen" component={ExerciseScreen} />
         <Stack.Screen name="Sleep Screen" component={SleepScreen} />
+        <Stack.Screen name="Add Exercise Screen" component={AddExercise} />
     </Stack.Navigator>
   );
 };
