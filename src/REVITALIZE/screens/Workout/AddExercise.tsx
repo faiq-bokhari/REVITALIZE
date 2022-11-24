@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View} from 'react-native';
-import { SelectList } from 'react-native-dropdown-select-list';
+import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { SelectList }  from 'react-native-dropdown-select-list';
+import NumericInput from 'react-native-numeric-input';
+import { globalStyles } from '../../styles/global';
 
-const AddExercise = () => {
+
+const AddExercise = ({navigation}) => {
     const exercises = [
         {key: '0', value: 'Ab Wheel'},
         {key: '1', value: 'Arnold Press'},
@@ -89,21 +92,70 @@ const AddExercise = () => {
     ];
    
     const [selected, setSelected] = useState("");
+    const [reps, setReps] = useState(0);
+    const [sets, setSets] = useState(0);
+    const [weight, setWeight] = useState(0);
+
+    const handleSave = () => {
+        navigation.navigate("Exercise Screen")
+    }
    
     return (
-        <View>
-            
+        <View style={styles.container}>
             <SelectList 
-                setSelected={setSelected} 
                 data={exercises} 
                 save={"value"}
+                setSelected={setSelected}
             />
+            <Text style={styles.text}>
+                    Sets
+            </Text>  
+            <NumericInput 
+                minValue={0}
+                value={reps}
+                onChange={value => setReps(value)}
+            />
+            <Text style={styles.text}>
+                    Reps
+            </Text>  
+            <NumericInput 
+                minValue={0}
+                value={sets}
+                onChange={value => setSets(value)}
+            />
+            <Text style={styles.text}>
+                    Weight
+            </Text>  
+            <NumericInput 
+                minValue={0}
+                value={weight}
+                onChange={value => setWeight(value)}
+            />    
+            <View style={{marginTop: 260}}>
+                <TouchableOpacity onPress={()=>handleSave()} style={globalStyles.appButtonContainer}>
+                    <Text style={globalStyles.appButtonText}>{"Save Exercise"}</Text>
+                </TouchableOpacity>
+            </View>
             
+
+          
+
             
         </View>
        
     );
 };
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        marginTop: 5,
+    },
+    text: {
+        marginTop: 15,
+    }
+
+})
 
 export default AddExercise;
