@@ -92,4 +92,14 @@ import { StyleSheet, Text, View } from 'react-native';
         fontWeight: 'bold',
         backgroundColor: 'rgba(247,247,247,1.0)',
       },
-     });
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+      },
+      sideText: {
+        flexDirection:"row",
+        alignItems:'center'
+      }
+});
