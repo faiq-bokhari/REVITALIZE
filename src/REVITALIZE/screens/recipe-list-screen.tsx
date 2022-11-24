@@ -2238,7 +2238,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: '13',
+        paddingVertical: 13,
 
     },
 
@@ -2258,7 +2258,7 @@ const styles = StyleSheet.create({
     name: {
         fontWeight: '600',
         fontSize: 16,
-        marginLeft: '1%',
+        marginLeft: 13,
     }
 });
 
