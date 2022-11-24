@@ -2258,7 +2258,7 @@ const styles = StyleSheet.create({
     name: {
         fontWeight: '600',
         fontSize: 16,
-        marginLeft: 13,
+        marginLeft: '1%',
     }
 });
 
