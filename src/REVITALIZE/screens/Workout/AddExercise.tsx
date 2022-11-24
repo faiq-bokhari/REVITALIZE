@@ -4,7 +4,6 @@ import { SelectList }  from 'react-native-dropdown-select-list';
 import NumericInput from 'react-native-numeric-input';
 import { globalStyles } from '../../styles/global';
 
-
 const AddExercise = ({navigation}) => {
     const exercises = [
         {key: '0', value: 'Ab Wheel'},
@@ -96,10 +95,6 @@ const AddExercise = ({navigation}) => {
     const [sets, setSets] = useState(0);
     const [weight, setWeight] = useState(0);
 
-    const handleSave = () => {
-        navigation.navigate("Exercise Screen")
-    }
-   
     return (
         <View style={styles.container}>
             <SelectList 
@@ -132,17 +127,13 @@ const AddExercise = ({navigation}) => {
                 onChange={value => setWeight(value)}
             />    
             <View style={{marginTop: 260}}>
-                <TouchableOpacity onPress={()=>handleSave()} style={globalStyles.appButtonContainer}>
+                <TouchableOpacity 
+                    style={globalStyles.appButtonContainer}
+                    onPress={()=> navigation.navigate("Exercise Screen", {name: selected, reps: reps, sets: sets, weight: weight})} >
                     <Text style={globalStyles.appButtonText}>{"Save Exercise"}</Text>
                 </TouchableOpacity>
             </View>
-            
-
-          
-
-            
         </View>
-       
     );
 };
 
