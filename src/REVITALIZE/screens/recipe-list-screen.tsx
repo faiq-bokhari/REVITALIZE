@@ -2191,13 +2191,14 @@ const RecipeListScreen=({navigation})=>{
     }
 
     const oneRecipe = ({item}) => (
-        <View>
-            <TouchableOpacity onPress={() => goToDetailScreen(item.recipe)}>
-            <Image source={{uri: item.img}}
-            style = {{ width: 200, height: 200 }}
+        <View style={styles.item}>
+                <View style={styles.picContainer}>
+                <TouchableOpacity onPress={() => goToDetailScreen(item.recipe)}>
+                <Image style={styles.pic} source={{uri: item.img} }
             ></Image>
-            <Text>{item.name}</Text>
             </TouchableOpacity>
+                </View>
+            <Text style={styles.name}>{item.name}</Text>
         </View>
         
     )
@@ -2208,16 +2209,57 @@ const RecipeListScreen=({navigation})=>{
         });
     }
 
+    itemSeparator = () => {
+        return <View style={styles.separator}></View>
+
+    };
+
     console.log(JSON.stringify(finalRecipeList, null, "  "));
 
     return (
         <View style={globalStyles.container}>
         <FlatList
             data={finalRecipeList}
-            renderItem = {oneRecipe}>
+            renderItem = {oneRecipe}
+            ItemSeparatorComponent = {itemSeparator}>
         </FlatList>
       </View>
     );
 }
+
+const styles = StyleSheet.create({
+    separator: {
+        height: 1,
+        width: '100%',
+        backgroundColor: '#CCC'
+    },
+
+    item: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: '13',
+
+    },
+
+    picContainer: {
+        backgroundColor: '#D9D9D9',
+        borderRadius: 100,
+        height: 89,
+        width: 89,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    pic: {
+        height: 55,
+        width: 55,
+    },
+    name: {
+        fontWeight: '600',
+        fontSize: 16,
+        marginLeft: 13,
+    }
+});
 
 export default RecipeListScreen
