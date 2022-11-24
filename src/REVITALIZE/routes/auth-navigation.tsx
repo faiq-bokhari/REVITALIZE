@@ -4,7 +4,8 @@ import MainScreen from '../screens/main-screen';
 import DietScreen from '../screens/diet-screen';
 import ExerciseScreen from '../screens/exercise-screen';
 import SleepScreen from '../screens/sleep-screen';
-
+import FilterRecipeScreen from '../screens/filter-recipe';
+import CustomMealScreen from '../screens/custom-meal';
 const Stack = createNativeStackNavigator();
 
 const AuthNavigationStack = () => { 
@@ -22,6 +23,8 @@ const AuthNavigationStack = () => {
         <Stack.Screen name="Diet Screen" component={DietScreen} />
         <Stack.Screen name="Exercise Screen" component={ExerciseScreen} />
         <Stack.Screen name="Sleep Screen" component={SleepScreen} />
+        <Stack.Screen name="Recipe Filter Screen" component={FilterRecipeScreen} />
+        <Stack.Screen name="Custom Meal Screen" component={CustomMealScreen} />
     </Stack.Navigator>
   );
 };

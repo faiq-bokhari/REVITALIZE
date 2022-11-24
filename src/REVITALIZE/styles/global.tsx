@@ -50,4 +50,14 @@ import { StyleSheet, Text, View } from 'react-native';
         backgroundColor: "#1e90ff",
         position: 'absolute', // add if dont work with above
     },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+      },
+      sideText: {
+        flexDirection:"row",
+        alignItems:'center'
+      }
 });
