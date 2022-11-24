@@ -50,4 +50,56 @@ import { StyleSheet, Text, View } from 'react-native';
         backgroundColor: "#1e90ff",
         position: 'absolute', // add if dont work with above
     },
+    listContainer: {
+        // flex: 1,
+        // top: 20,
+        paddingTop: 60,
+        paddingBottom: 10,
+        flex: 1,
+        // flexDirection: 'row',
+        // alignItems: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+       },
+       listContainer2: {
+        // flex: 1,
+        // top: 20,
+        paddingTop: 20,
+        paddingBottom: 10,
+        flex: 1,
+        // flexDirection: 'row',
+        // alignItems: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+       },
+       item: {
+         padding: 10,
+         fontSize: 18,
+        //  height: 44,
+       },
+       listButtonContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    listHeader: {
+        paddingTop: 2,
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingBottom: 2,
+        fontSize: 14,
+        fontWeight: 'bold',
+        backgroundColor: 'rgba(247,247,247,1.0)',
+      },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+      },
+      sideText: {
+        flexDirection:"row",
+        alignItems:'center'
+      }
 });
