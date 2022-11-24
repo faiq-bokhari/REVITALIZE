@@ -43,7 +43,7 @@ const AddFoodScreen=({navigation})=>{
             <TouchableOpacity onPress={()=>navigation.navigate('Search Recipe')} style={globalStyles.appButtonContainer}>
                 <Text style={globalStyles.appButtonText}>{"Search Recipe"}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Sleep Screen')} style={globalStyles.appButtonContainer}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Custom Meal Screen')} style={globalStyles.appButtonContainer}>
                 <Text style={globalStyles.appButtonText}>{"Add Custom Meal +"}</Text>
             </TouchableOpacity>
         </View>

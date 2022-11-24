@@ -9,7 +9,7 @@ import RecipeListScreen from '../screens/recipe-list-screen';
 import RecipeDetailScreen from '../screens/recipe-details-screen';
 import AddFoodScreen from '../screens/add-food';
 
-import FilterRecipeScreen from '../screens/filter-recipe';
+import FilterRecipeScreen2 from '../screens/filter-recipe';
 import CustomMealScreen from '../screens/custom-meal';
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +32,7 @@ const AuthNavigationStack = () => {
         <Stack.Screen name="Recipe List Screen" component={RecipeListScreen} />
         <Stack.Screen name="Recipe Detail Screen" component={RecipeDetailScreen} />
         <Stack.Screen name="Add Food Screen" component={AddFoodScreen} />
-        <Stack.Screen name="Recipe Filter Screen" component={FilterRecipeScreen} />
+        <Stack.Screen name="Search Recipe" component={FilterRecipeScreen2} />
         <Stack.Screen name="Custom Meal Screen" component={CustomMealScreen} />
     </Stack.Navigator>
   );
