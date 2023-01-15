@@ -1,0 +1,369 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{amsmath, mathtools}
+
+\usepackage[round]{natbib}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{colortbl}
+\usepackage{xr}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{xfrac}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{fullpage}
+
+\hypersetup{
+bookmarks=true,     % show bookmarks bar?
+colorlinks=true,       % false: boxed links; true: colored links
+linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+citecolor=blue,      % color of links to bibliography
+filecolor=magenta,  % color of file links
+urlcolor=cyan          % color of external links
+}
+
+\usepackage{array}
+
+\externaldocument{../../SRS/SRS}
+
+\input{../../Comments}
+\input{../../Common}
+
+\begin{document}
+
+\title{Module Interface Specification for \progname{}}
+
+\author{\authname}
+
+\date{\today}
+
+\maketitle
+
+\pagenumbering{roman}
+
+\section{Revision History}
+
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Date 1 & 1.0 & Notes\\
+Date 2 & 1.1 & Notes\\
+\bottomrule
+\end{tabularx}
+
+~\newpage
+
+\section{Symbols, Abbreviations and Acronyms}
+
+See SRS Documentation at \url{https://github.com/BillNguyen1999/REVITALIZE/tree/main/docs/SRS}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l} 
+	\toprule		
+	\textbf{symbol} & \textbf{description}\\
+	\midrule 
+	REVITALIZE & Name of application\\
+	UAT & User Acceptance Testing\\
+	UI/UX & User Interface/User Experience\\
+	HCI & Human-Computer Interface\\
+	MG & Module Guide\\
+	MIS & Module Interface Specification\\
+	SRS & Software Requirements Specification\\
+	VnV & Verification and Validation\\
+	LP & Login Page\\
+	SP & Sign-up Page\\
+	MP & Main Page\\
+	DS & Diet Section\\
+	WS & Workout Section\\
+	RS & Rest Section\\
+	\bottomrule
+\end{tabular}\\
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+
+The following document details the Module Interface Specifications for
+the REVITALIZE app. The REVITALIZE app is an all-in-one health and wellness app, comprised of 1 main 
+section and 3 major subsections. The main section is a calendar which organizes and documents the contents of the 3 subsections. 
+The 3 subsections are the diet section, workout section, and sleep section.
+
+Complementary documents include the System Requirement Specifications
+and Module Guide.  The full documentation and implementation can be
+found at \url{https://github.com/BillNguyen1999/REVITALIZE/tree/main/docs}.
+
+\section{Notation}
+
+The structure of the MIS for modules comes from \citet{HoffmanAndStrooper1995},
+with the addition that template modules have been adapted from
+\cite{GhezziEtAl2003}.  The mathematical notation comes from Chapter 3 of
+\citet{HoffmanAndStrooper1995}.  For instance, the symbol := is used for a
+multiple assignment statement and conditional rules follow the form $(c_1
+\Rightarrow r_1 | c_2 \Rightarrow r_2 | ... | c_n \Rightarrow r_n )$.
+
+The following table summarizes the primitive data types used by \progname. 
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\noindent 
+\begin{tabular}{l l p{7.5cm}} 
+\toprule 
+\textbf{Data Type} & \textbf{Notation} & \textbf{Description}\\ 
+\midrule
+character & char & a single symbol or digit\\
+integer & $\mathbb{Z}$ & a number without a fractional component in (-$\infty$, $\infty$) \\
+natural number & $\mathbb{N}$ & a number without a fractional component in [1, $\infty$) \\
+real & $\mathbb{R}$ & any number in (-$\infty$, $\infty$)\\
+boolean & bool & value can be True (1) or False (0)\\
+user & User & represents user object, for users of REVITALIZE\\
+date & Date & represents date object, which is useful to add/set/manipulate dates\\
+\bottomrule
+\end{tabular} 
+\end{center}
+
+\noindent
+The specification of \progname \ uses some derived data types: sequences, strings, and
+tuples. Sequences are lists filled with elements of the same data type. Strings
+are sequences of characters. Tuples contain a list of values, potentially of
+different types. In addition, \progname \ uses functions, which
+are defined by the data types of their inputs and outputs. Local functions are
+described by giving their type signature followed by their specification.
+
+\section{Module Decomposition}
+
+The following table is taken directly from the Module Guide document for this project.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+
+{Hardware-Hiding} & ~ \\
+\midrule
+
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding} & Input Parameters\\
+& Output Format\\
+& Output Verification\\
+& Temperature ODEs\\
+& Energy Equations\\ 
+& Control Module\\
+& Specification Parameters Module\\
+\midrule
+
+\multirow{3}{0.3\textwidth}{Software Decision} & {Sequence Data Structure}\\
+& ODE Solver\\
+& Plotting\\
+\bottomrule
+
+\end{tabular}
+\caption{Module Hierarchy}
+\label{TblMH}
+\end{table}
+
+\newpage
+~\newpage
+
+\section{MIS of Main Menu} \label{Module} 
+
+\subsection{Main Menu Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Ionicons:} Library for icons}\\
+{\textit{Moment} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+\subsubsection{Exported Types}
+MainScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+\hline
+{displayDietScreen} & User, Date & & \\
+\hline
+{displayExerciseScreen} & User, Date & & \\
+\hline
+{displaySleepScreen} & User, Date & & \\
+\hline
+{displayCalendarScreen} & & & \\
+\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+user: User\\\\
+date: Date
+
+
+\subsubsection{Environment Variables}
+
+dateText: Text object that displays the selected date.\\\\
+dateButton: Button object that displays Calendar Screen when clicked.\\\\
+forwardButton: Button object that displays the next day from current Date value in dateText when clicked\\\\
+backwardButton: Button object that displays the previous day from current Date value in dateText when clicked\\\\
+dietButton: Button object that displays Diet Screen when clicked\\\\
+exerciseButton: Button object that displays Exercise Screen when clicked\\\\
+sleepButton: Button object that displays Sleep Screen when clicked
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent displayDietScreen(user, date):
+\begin{itemize}
+\item transition: Navigates to Diet Screen when dietButton is pressed 
+\item exception: None 
+\end{itemize}
+
+\noindent displayExerciseScreen(user, date):
+\begin{itemize}
+\item transition: Navigates to Exercise Screen when exerciseButton is pressed
+\item exception: None 
+\end{itemize}
+
+\noindent displaySleepScreen(user, date):
+\begin{itemize}
+\item transition: Navigates to Sleep Screen when sleepButton is pressed
+\item exception: None 
+\end{itemize}
+
+\noindent displayCalendarScreen():
+\begin{itemize}
+\item transition: Navigates to Calendar Screen when dateButton is pressed
+\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+\noindent forwardSetDate():
+\begin{itemize}
+\item transition: date.value := date.value + 1. Sets the next day from the current Date value in dateText when clicked.  
+\item exception: None 
+\end{itemize}
+
+\noindent backwardSetDate():
+\begin{itemize}
+\item transition: date.value := date.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
+\item exception: None 
+\end{itemize}
+
+\section{MIS of Calendar} \label{Module} 
+
+\subsection{Calendar Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{react-native-calendars:} Library useful for implementing calendars in react-native}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+\subsubsection{Exported Types}
+CalendarScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+\hline
+{onDayPress} & & & \\
+\hline
+{onMonthChange} & & & \\
+\hline
+{onPressArrowLeft} & & & \\
+\hline
+{onPressArrowRight} & & & \\
+\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+date: Date
+
+\subsubsection{Environment Variables}
+
+monthText: Text object that displays the selected month.\\\\
+forwardMonthButton: Button object that displays the next month from current month value in monthText when clicked\\\\
+backwardMonthButton: Button object that displays the previous month from current month value in monthText when clicked
+
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent onDayCalendar():
+\begin{itemize}
+\item transition: Changes date value to selected date value in CalendarScreen 
+\item exception: None
+\end{itemize}
+
+\noindent onMonthChange():
+\begin{itemize}
+\item transition: Changes date.month.value to new date.month.value and monthText will be changed to string value of new date.month.value
+\item exception: None 
+\end{itemize}
+
+\noindent onPressArrowRight():
+\begin{itemize}
+\item transition: date.month.value := date.month.value + 1. Sets the next date.month.value from the current date.month.value in monthText when clicked
+\item exception: None 
+\end{itemize}
+
+\noindent onPressArrowLeft():
+\begin{itemize}
+\item transition: date.month.value := date.month.value - 1. Sets the previous date.month.value from the current date.month.value in monthText when clicked
+\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+\newpage
+
+\bibliographystyle {plainnat}
+\bibliography {../../../refs/References}
+
+\newpage
+
+\section{Appendix} \label{Appendix}
+
+\wss{Extra information if required}
+
+\end{document}
