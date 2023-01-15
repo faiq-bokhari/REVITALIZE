@@ -156,76 +156,182 @@ The following table is taken directly from the Module Guide document for this pr
 \newpage
 ~\newpage
 
-\section{MIS of \wss{Module Name}} \label{Module} \wss{Use labels for
-  cross-referencing}
+\section{MIS of Main Menu} \label{Module} 
 
-\wss{You can reference SRS labels, such as R\ref{R_Inputs}.}
-
-\wss{It is also possible to use \LaTeX for hypperlinks to external documents.}
-
-\subsection{Module}
-
-\wss{Short name for the module}
+\subsection{Main Menu Module}
 
 \subsection{Uses}
-
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Ionicons:} Library for icons}\\
+{\textit{Moment} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
 
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
 
+\subsubsection{Exported Types}
+MainScreen = this
+
 \subsubsection{Exported Access Programs}
 
-\begin{center}
-\begin{tabular}{p{2cm} p{4cm} p{4cm} p{2cm}}
+\begin{tabular}{| l | l | l | l |}
 \hline
-\textbf{Name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions} \\
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
 \hline
-\wss{accessProg} & - & - & - \\
+{displayDietScreen} & User, Date & & \\
+\hline
+{displayExerciseScreen} & User, Date & & \\
+\hline
+{displaySleepScreen} & User, Date & & \\
+\hline
+{displayCalendarScreen} & & & \\
 \hline
 \end{tabular}
-\end{center}
 
 \subsection{Semantics}
 
 \subsubsection{State Variables}
 
-\wss{Not all modules will have state variables.  State variables give the module
-  a memory.}
+user: User\\\\
+date: Date
+
 
 \subsubsection{Environment Variables}
 
-\wss{This section is not necessary for all modules.  Its purpose is to capture
-  when the module has external interaction with the environment, such as for a
-  device driver, screen interface, keyboard, file, etc.}
+dateText: Text object that displays the selected date.\\\\
+dateButton: Button object that displays Calendar Screen when clicked.\\\\
+forwardButton: Button object that displays the next day from current Date value in dateText when clicked\\\\
+backwardButton: Button object that displays the previous day from current Date value in dateText when clicked\\\\
+dietButton: Button object that displays Diet Screen when clicked\\\\
+exerciseButton: Button object that displays Exercise Screen when clicked\\\\
+sleepButton: Button object that displays Sleep Screen when clicked
 
 \subsubsection{Assumptions}
 
-\wss{Try to minimize assumptions and anticipate programmer errors via
-  exceptions, but for practical purposes assumptions are sometimes appropriate.}
+N/A
 
 \subsubsection{Access Routine Semantics}
 
-\noindent \wss{accessProg}():
+\noindent displayDietScreen(user, date):
 \begin{itemize}
-\item transition: \wss{if appropriate} 
-\item output: \wss{if appropriate} 
-\item exception: \wss{if appropriate} 
+\item transition: Navigates to Diet Screen when dietButton is pressed 
+\item exception: None 
 \end{itemize}
 
-\wss{A module without environment variables or state variables is unlikely to
-  have a state transition.  In this case a state transition can only occur if
-  the module is changing the state of another module.}
+\noindent displayExerciseScreen(user, date):
+\begin{itemize}
+\item transition: Navigates to Exercise Screen when exerciseButton is pressed
+\item exception: None 
+\end{itemize}
 
-\wss{Modules rarely have both a transition and an output.  In most cases you
-  will have one or the other.}
+\noindent displaySleepScreen(user, date):
+\begin{itemize}
+\item transition: Navigates to Sleep Screen when sleepButton is pressed
+\item exception: None 
+\end{itemize}
+
+\noindent displayCalendarScreen():
+\begin{itemize}
+\item transition: Navigates to Calendar Screen when dateButton is pressed
+\item exception: None 
+\end{itemize}
 
 \subsubsection{Local Functions}
 
-\wss{As appropriate} \wss{These functions are for the purpose of specification.
-  They are not necessarily something that is going to be implemented
-  explicitly.  Even if they are implemented, they are not exported; they only
-  have local scope.}
+\noindent forwardSetDate():
+\begin{itemize}
+\item transition: date.value := date.value + 1. Sets the next day from the current Date value in dateText when clicked.  
+\item exception: None 
+\end{itemize}
+
+\noindent backwardSetDate():
+\begin{itemize}
+\item transition: date.value := date.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
+\item exception: None 
+\end{itemize}
+
+\section{MIS of Calendar} \label{Module} 
+
+\subsection{Calendar Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{react-native-calendars:} Library useful for implementing calendars in react-native}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+\subsubsection{Exported Types}
+CalendarScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+\hline
+{onDayPress} & & & \\
+\hline
+{onMonthChange} & & & \\
+\hline
+{onPressArrowLeft} & & & \\
+\hline
+{onPressArrowRight} & & & \\
+\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+date: Date
+
+\subsubsection{Environment Variables}
+
+monthText: Text object that displays the selected month.\\\\
+forwardMonthButton: Button object that displays the next month from current month value in monthText when clicked\\\\
+backwardMonthButton: Button object that displays the previous month from current month value in monthText when clicked
+
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent onDayCalendar():
+\begin{itemize}
+\item transition: Changes date value to selected date value in CalendarScreen 
+\item exception: None
+\end{itemize}
+
+\noindent onMonthChange():
+\begin{itemize}
+\item transition: Changes date.month.value to new date.month.value and monthText will be changed to string value of new date.month.value
+\item exception: None 
+\end{itemize}
+
+\noindent onPressArrowRight():
+\begin{itemize}
+\item transition: date.month.value := date.month.value + 1. Sets the next date.month.value from the current date.month.value in monthText when clicked
+\item exception: None 
+\end{itemize}
+
+\noindent onPressArrowLeft():
+\begin{itemize}
+\item transition: date.month.value := date.month.value - 1. Sets the previous date.month.value from the current date.month.value in monthText when clicked
+\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
 
 \newpage
 
