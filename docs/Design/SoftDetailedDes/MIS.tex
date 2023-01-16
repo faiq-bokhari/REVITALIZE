@@ -51,11 +51,11 @@ urlcolor=cyan          % color of external links
 \section{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
-\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
-\midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
-\bottomrule
+	\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+	\midrule
+	Date 1 & 1.0 & Notes\\
+	Date 2 & 1.1 & Notes\\
+	\bottomrule
 \end{tabularx}
 
 ~\newpage
@@ -117,21 +117,21 @@ multiple assignment statement and conditional rules follow the form $(c_1
 The following table summarizes the primitive data types used by \progname. 
 
 \begin{center}
-\renewcommand{\arraystretch}{1.2}
-\noindent 
-\begin{tabular}{l l p{7.5cm}} 
-\toprule 
-\textbf{Data Type} & \textbf{Notation} & \textbf{Description}\\ 
-\midrule
-character & char & a single symbol or digit\\
-integer & $\mathbb{Z}$ & a number without a fractional component in (-$\infty$, $\infty$) \\
-natural number & $\mathbb{N}$ & a number without a fractional component in [1, $\infty$) \\
-real & $\mathbb{R}$ & any number in (-$\infty$, $\infty$)\\
-boolean & bool & value can be True (1) or False (0)\\
-user & User & represents user object, for users of REVITALIZE\\
-date & Date & represents date object, which is useful to add/set/manipulate dates\\
-\bottomrule
-\end{tabular} 
+	\renewcommand{\arraystretch}{1.2}
+	\noindent 
+	\begin{tabular}{l l p{7.5cm}} 
+		\toprule 
+		\textbf{Data Type} & \textbf{Notation} & \textbf{Description}\\ 
+		\midrule
+		character & char & a single symbol or digit\\
+		integer & $\mathbb{Z}$ & a number without a fractional component in (-$\infty$, $\infty$) \\
+		natural number & $\mathbb{N}$ & a number without a fractional component in [1, $\infty$) \\
+		real & $\mathbb{R}$ & any number in (-$\infty$, $\infty$)\\
+		boolean & bool & value can be True (1) or False (0)\\
+		user & User & represents user object, for users of REVITALIZE\\
+		date & Date & represents date object, which is useful to add/set/manipulate dates\\
+		\bottomrule
+	\end{tabular} 
 \end{center}
 
 \noindent
@@ -147,32 +147,32 @@ described by giving their type signature followed by their specification.
 The following table is taken directly from the Module Guide document for this project.
 
 \begin{table}[h!]
-\centering
-\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
-\toprule
-\textbf{Level 1} & \textbf{Level 2}\\
-\midrule
-
-{Hardware-Hiding} & ~ \\
-\midrule
-
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding} & Input Parameters\\
-& Output Format\\
-& Output Verification\\
-& Temperature ODEs\\
-& Energy Equations\\ 
-& Control Module\\
-& Specification Parameters Module\\
-\midrule
-
-\multirow{3}{0.3\textwidth}{Software Decision} & {Sequence Data Structure}\\
-& ODE Solver\\
-& Plotting\\
-\bottomrule
-
-\end{tabular}
-\caption{Module Hierarchy}
-\label{TblMH}
+	\centering
+	\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+		\toprule
+		\textbf{Level 1} & \textbf{Level 2}\\
+		\midrule
+		
+		{Hardware-Hiding} & ~ \\
+		\midrule
+		
+		\multirow{7}{0.3\textwidth}{Behaviour-Hiding} & Input Parameters\\
+		& Output Format\\
+		& Output Verification\\
+		& Temperature ODEs\\
+		& Energy Equations\\ 
+		& Control Module\\
+		& Specification Parameters Module\\
+		\midrule
+		
+		\multirow{3}{0.3\textwidth}{Software Decision} & {Sequence Data Structure}\\
+		& ODE Solver\\
+		& Plotting\\
+		\bottomrule
+		
+	\end{tabular}
+	\caption{Module Hierarchy}
+	\label{TblMH}
 \end{table}
 
 \newpage
@@ -200,17 +200,17 @@ MainScreen = this
 \subsubsection{Exported Access Programs}
 
 \begin{tabular}{| l | l | l | l |}
-\hline
-{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
-\hline
-{displayDietScreen} & User, Date & & \\
-\hline
-{displayExerciseScreen} & User, Date & & \\
-\hline
-{displaySleepScreen} & User, Date & & \\
-\hline
-{displayCalendarScreen} & & & \\
-\hline
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{displayDietScreen} & User, Date & & \\
+	\hline
+	{displayExerciseScreen} & User, Date & & \\
+	\hline
+	{displaySleepScreen} & User, Date & & \\
+	\hline
+	{displayCalendarScreen} & & & \\
+	\hline
 \end{tabular}
 
 \subsection{Semantics}
@@ -239,40 +239,40 @@ N/A
 
 \noindent displayDietScreen(user, date):
 \begin{itemize}
-\item transition: Navigates to Diet Screen when dietButton is pressed 
-\item exception: None 
+	\item transition: Navigates to Diet Screen when dietButton is pressed 
+	\item exception: None 
 \end{itemize}
 
 \noindent displayExerciseScreen(user, date):
 \begin{itemize}
-\item transition: Navigates to Exercise Screen when exerciseButton is pressed
-\item exception: None 
+	\item transition: Navigates to Exercise Screen when exerciseButton is pressed
+	\item exception: None 
 \end{itemize}
 
 \noindent displaySleepScreen(user, date):
 \begin{itemize}
-\item transition: Navigates to Sleep Screen when sleepButton is pressed
-\item exception: None 
+	\item transition: Navigates to Sleep Screen when sleepButton is pressed
+	\item exception: None 
 \end{itemize}
 
 \noindent displayCalendarScreen():
 \begin{itemize}
-\item transition: Navigates to Calendar Screen when dateButton is pressed
-\item exception: None 
+	\item transition: Navigates to Calendar Screen when dateButton is pressed
+	\item exception: None 
 \end{itemize}
 
 \subsubsection{Local Functions}
 
 \noindent forwardSetDate():
 \begin{itemize}
-\item transition: date.value := date.value + 1. Sets the next day from the current Date value in dateText when clicked.  
-\item exception: None 
+	\item transition: date.value := date.value + 1. Sets the next day from the current Date value in dateText when clicked.  
+	\item exception: None 
 \end{itemize}
 
 \noindent backwardSetDate():
 \begin{itemize}
-\item transition: date.value := date.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
-\item exception: None 
+	\item transition: date.value := date.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
+	\item exception: None 
 \end{itemize}
 
 \section{MIS of Calendar} \label{Module} 
@@ -296,17 +296,17 @@ CalendarScreen = this
 \subsubsection{Exported Access Programs}
 
 \begin{tabular}{| l | l | l | l |}
-\hline
-{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
-\hline
-{onDayPress} & & & \\
-\hline
-{onMonthChange} & & & \\
-\hline
-{onPressArrowLeft} & & & \\
-\hline
-{onPressArrowRight} & & & \\
-\hline
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{onDayPress} & & & \\
+	\hline
+	{onMonthChange} & & & \\
+	\hline
+	{onPressArrowLeft} & & & \\
+	\hline
+	{onPressArrowRight} & & & \\
+	\hline
 \end{tabular}
 
 \subsection{Semantics}
@@ -329,31 +329,105 @@ N/A
 
 \noindent onDayCalendar():
 \begin{itemize}
-\item transition: Changes date value to selected date value in CalendarScreen 
-\item exception: None
+	\item transition: Changes date value to selected date value in CalendarScreen 
+	\item exception: None
 \end{itemize}
 
 \noindent onMonthChange():
 \begin{itemize}
-\item transition: Changes date.month.value to new date.month.value and monthText will be changed to string value of new date.month.value
-\item exception: None 
+	\item transition: Changes date.month.value to new date.month.value and monthText will be changed to string value of new date.month.value
+	\item exception: None 
 \end{itemize}
 
 \noindent onPressArrowRight():
 \begin{itemize}
-\item transition: date.month.value := date.month.value + 1. Sets the next date.month.value from the current date.month.value in monthText when clicked
-\item exception: None 
+	\item transition: date.month.value := date.month.value + 1. Sets the next date.month.value from the current date.month.value in monthText when clicked
+	\item exception: None 
 \end{itemize}
 
 \noindent onPressArrowLeft():
 \begin{itemize}
-\item transition: date.month.value := date.month.value - 1. Sets the previous date.month.value from the current date.month.value in monthText when clicked
-\item exception: None 
+	\item transition: date.month.value := date.month.value - 1. Sets the previous date.month.value from the current date.month.value in monthText when clicked
+	\item exception: None 
 \end{itemize}
 
 \subsubsection{Local Functions}
 
 N/A
+
+\section{MIS of Sleep} \label{Module} 
+
+\subsection{Container Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{react-native-reanimated}}\\
+{\textit{react-native-redash}}\\
+{\textit{Label:} Module}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+PI := Math (object that provides mathematics functionality and constants)\\
+TAU := 2 * PI\\
+PADDING := 24
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{DisplayContainer} & & & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+date: Date
+
+\subsubsection{Environment Variables}
+BedTimeText: Text object that displays the selected bedtime.\\\\
+WakeUpTimeText: Text object that displays the selected wake up time.\\\\
+SleepTimeText: Text object that displays the total sleep time.\\\\
+ArcStartPos: Polar coordinates object representing starting position of circular slider arc. Modifies bedtime when slid.\\\\
+ArcEndPos: Polar coordinates object representing ending position of circular slider arc. Modifies wake up time when slid.\\\\
+CircularSliderArc: string literal object representing an arc.
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent DisplayContainer():
+\begin{itemize}
+	\item output: display bedtime, wake up time, sleep time, arc starting and ending positions, and circular slider arc
+	\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+\noindent radToMinutes(rad):
+\begin{itemize}
+	\item output: rad * 24 * 60 / TAU
+	\item exception: None 
+\end{itemize}
+
+\noindent absoluteDuration(start, end):
+\begin{itemize}
+	\item output: start $>$ end ? end + (TAU - start) : end - start  
+	\item exception: None 
+\end{itemize}
+
+\noindent formatDuration2(duration):
+\begin{itemize}
+	\item output: format duration to hours followed by minutes.
+	\item exception: None 
+\end{itemize}
 
 \newpage
 
