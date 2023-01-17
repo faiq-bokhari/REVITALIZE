@@ -127,7 +127,7 @@ The following table summarizes the primitive data types used by \progname.
 		integer & $\mathbb{Z}$ & a number without a fractional component in (-$\infty$, $\infty$) \\
 		natural number & $\mathbb{N}$ & a number without a fractional component in [1, $\infty$) \\
 		real & $\mathbb{R}$ & any number in (-$\infty$, $\infty$)\\
-		boolean & bool & value can be True (1) or False (0)\\
+		boolean & $\mathbb{B}$ & value can be True (1) or False (0)\\
 		user & User & represents user object, for users of REVITALIZE\\
 		date & Date & represents date object, which is useful to add/set/manipulate dates\\
 		\bottomrule
@@ -187,12 +187,13 @@ The following table is taken directly from the Module Guide document for this pr
 {\textit{react-native}}\\
 {\textit{globalStyles:} CSS file to change designs of project}\\
 {\textit{Ionicons:} Library for icons}\\
-{\textit{Moment} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
-{\textit{useRoute} react file that is used to navigate between screens of project}\\
+{\textit{Moment:} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
+{\textit{useRoute:} react file that is used to navigate between screens of project}\\
 
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
+N/A
 
 \subsubsection{Exported Types}
 MainScreen = this
@@ -265,13 +266,13 @@ N/A
 
 \noindent forwardSetDate():
 \begin{itemize}
-	\item transition: date.value := date.value + 1. Sets the next day from the current Date value in dateText when clicked.  
+	\item transition: date.day.value := date.day.value + 1. Sets the next day from the current Date value in dateText when clicked.  
 	\item exception: None 
 \end{itemize}
 
 \noindent backwardSetDate():
 \begin{itemize}
-	\item transition: date.value := date.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
+	\item transition: date.day.value := date.day.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
 	\item exception: None 
 \end{itemize}
 
@@ -289,6 +290,7 @@ N/A
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
+N/A
 
 \subsubsection{Exported Types}
 CalendarScreen = this
