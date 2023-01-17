@@ -501,6 +501,78 @@ N/A
 	\item exception: None 
 \end{itemize}
 
+\section{MIS of Sleep} \label{Module} 
+
+\subsection{Circular Slider Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{react-native-reanimated}}\\
+{\textit{react-native-redash}}\\
+{\textit{react-native-svg}}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+PI := Math (object that provides mathematics functionality and constants)\\
+TAU := 2 * PI
+
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{DisplayCircularSlider} & ArcStartPos, ArcEndPos & & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+ArcStartPos: polar coordinates object, representing starting position of circular slider arc, is passed from Container module\\\\
+ArcEndPos: polar coordinates object, representing ending position of circular slider arc, is passed from Container module
+
+\subsubsection{Environment Variables}
+ArcStartPos: Modifies BedTime and SleepTime when slid.\\\\
+ArcEndPos: Modifies WakeUpTime and SleepTime when slid.\\\\
+CircularSliderArc: string literal object representing an arc.
+
+\subsubsection{Assumptions}
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent DisplayCircularSlider(start, end):
+\begin{itemize}
+	\item output: display arc starting position, ending position, and circular slider arc
+	\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+\noindent absoluteDuration(start, end):
+\begin{itemize}
+	\item output: start $>$ end ? end + (TAU - start) : end - start  
+	\item exception: None 
+\end{itemize}
+
+\noindent ConvertArcStartPos(ArcStartPos):
+\begin{itemize}
+	\item output: convert ArcStartPos from polar coordinates to canvas coordinates 
+	\item exception: None 
+\end{itemize}
+
+\noindent ConvertArcEndPos(ArcEndPos):
+\begin{itemize}
+	\item output: convert ArcEndPos from polar coordinates to canvas coordinates 
+	\item exception: None 
+\end{itemize}
+
 \newpage
 
 \bibliographystyle {plainnat}
