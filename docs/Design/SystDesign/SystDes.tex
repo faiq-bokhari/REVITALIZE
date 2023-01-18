@@ -15,6 +15,7 @@
     linkcolor=red,
     urlcolor=blue
 }
+\usepackage{subfig}
 
 \input{../../Comments}
 \input{../../Common}
@@ -46,8 +47,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+January 18th, 2023 & Syed Bokhari & Added user interface figma sketches\\
+January 18th, 2023 & Syed Bokhari & Added interface descriptions and additional information\\
+January 18th, 2023 & Syed Bokhari & Added reflection question answers\\
 \bottomrule
 \end{tabularx}
 
@@ -129,8 +131,45 @@ your system and the environment around it.)}
 
 \section{User Interfaces}
 
-\wss{Design of user interface for software and hardware.  Attach an appendix if
-needed. Drawings, Sketches, Figma}
+\begin{figure}[H]%
+    \centering
+    \subfloat[\centering Start]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p1.png} }}%
+    \subfloat[\centering Signup]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p2.png} }}%
+    \subfloat[\centering Login]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p3.png} }}%
+    \label{fig:example}%
+\end{figure}
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[\centering Main]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p4.png} }}%
+    \subfloat[\centering Diet Main]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p5.png} }}%
+    \subfloat[\centering Diet Search/Add Custom Meal]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p6.png} }}%
+    \label{fig:example}%
+\end{figure}
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[\centering Diet Add Custom Meal]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p7.png} }}%
+    \subfloat[\centering Diet Recipe Search]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p8.png} }}%
+    \subfloat[\centering Diet Recipe List]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p9.png} }}%
+    \label{fig:example}%
+\end{figure}
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[\centering Diet Recipe Info]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p10.png} }}%
+    \subfloat[\centering Exercise Main]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p11.png} }}%
+    \subfloat[\centering Exercise List]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p12.png} }}%
+    \label{fig:example}%
+\end{figure}
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[\centering Exercuse Details]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p13.png} }}%
+    \subfloat[\centering Sleep]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p14.png} }}%
+    \label{fig:example}%
+\end{figure}
+
 
 \section{Design of Hardware}
 
@@ -164,8 +203,20 @@ circuit diagrams, etc}
 
 \section{Interface}
 
-\wss{Include additional information related to the appearance of, and
-interaction with, the user interface}
+figure (a): This is the start screen when launching the application. It offers the user the ability to either sign up or login.
+\\figure (b): This is the signup screen. The user must input valid information and register with confirmation from the database.
+\\figure (c): This is the login screen. The user must input valid credentials to successfully enter the main screen.
+\\figure (d): This is the main screen. The user can select from the three application categories and enter their specific page after click. The user can select the calender value and change the date accordingly to see the information for the given day.
+\\figure (e): This is the diet main screen. The food log is available to view and each entry can be edited or deleted. On the bottom of the screen, the total statistics of the day can be seen. The add item button is clicked to go to figure (f).
+\\figure (f): This is the screen to traverse to the search or add custom meal pages.
+\\figure (g): This is the custom meal screen. The user can input custom information to add to the food log.
+\\figure (h): This is the recipe search screen. The user can select the API query options from the drop down to construct a unique recipe list.
+\\figure (i): This is the recipe list screen. The recipes are listed based on the previous page query. 
+\\figure (j): This is the recipe information screen. Specific information relating to incredients for each recipe is listed.
+\\figure (k): This is the exercise main screen. It displays a list of exercises for the day that can be edited or deleted. A workout can be added by clicking the button.
+\\figure (l): This is the exercise list screen.The screen displays a list of exercises available through the API. Once selected, the user is taken to figure m where they can add the custom information for their exercise. 
+\\figure (m): This is the execise details screen. The user can customize their sets, reps and weight for accurate tracking.
+\\figure (n): This is the sleep screen. The user can alter the clock value if the API sleep tracking was not correct and they can confirm the entry to add to their sleep log. 
 
 \section{Mechanical Hardware}
 
@@ -181,10 +232,15 @@ graduate attribute of Problem Analysis and Design.  Please answer the following 
 \begin{enumerate}
   \item What are the limitations of your solution?  Put another way, given
   unlimited resources, what could you do to make the project better? (LO\_ProbSolutions)
+	
+\textbf{Syed}: Our main features are reliant on the database provided by external APIs. The recipe list and the exercise list can only give the user's the information that is accessable through the API. This limits the design of the app due to the limited query information. 
+
   \item Give a brief overview of other design solutions you considered.  What
   are the benefits and tradeoffs of those other designs compared with the chosen
   design?  From all the potential options, why did you select documented design?
   (LO\_Explores)
+
+\textbf{Syed}: We considered a self serving exercise list, where the user would be able to add their own custom exercises. This seemed like a great option for user customizability, however the tradeoff is that the user must spend a tedious amount of time inputting the information. Instead, we have a preset list of the most common exercises that the user can quickly select and add their sets, repititions and weight.
 \end{enumerate}
 
 \end{document}
