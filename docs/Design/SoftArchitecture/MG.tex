@@ -46,8 +46,7 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+January 17th, 2023 & Bill Nguyen  & Added MG for Main Menu and Calendar\\
 \bottomrule
 \end{tabularx}
 
@@ -187,8 +186,8 @@ below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
 
 \begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
+\item [\refstepcounter{mnum} \mthemnum \label{m1}:] Main Menu
+\item [\refstepcounter{mnum} \mthemnum \label{m2}:] Calendar
 \end{description}
 
 
@@ -202,8 +201,8 @@ actually be implemented.
 {Hardware-Hiding Module} & ~ \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Main Menu\\
+& Calendar\\
 & ?\\
 & ?\\
 & ?\\
@@ -244,41 +243,24 @@ Only the leaf modules in the hierarchy have to be implemented. If a dash
 (\emph{--}) is shown, this means that the module is not a leaf and will not have
 to be implemented.
 
-\subsection{Hardware Hiding Modules (\mref{mHH})}
-
-\begin{description}
-\item[Secrets:]The data structure and algorithm used to implement the virtual
-  hardware.
-\item[Services:]Serves as a virtual hardware used by the rest of the
-  system. This module provides the interface between the hardware and the
-  software. So, the system can use it to display outputs or to accept inputs.
-\item[Implemented By:] OS
-\end{description}
+\subsection{Hardware Hiding Modules }
+N/A
 
 \subsection{Behaviour-Hiding Module}
 
+\subsubsection{Main Menu (\mref{m1})}
 \begin{description}
-\item[Secrets:]The contents of the required behaviours.
-\item[Services:]Includes programs that provide externally visible behaviour of
-  the system as specified in the software requirements specification (SRS)
-  documents. This module serves as a communication layer between the
-  hardware-hiding module and the software decision module. The programs in this
-  module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
+\item[Secrets:]Method to visualize main menu
+\item[Services:]Visualizes main menu by displaying interactive buttons to navigate to Diet, Exercise and/or Sleep section. Also shows current date in the top-center of screen which is clickable to display calendar screen. Finally a backward and forward button to display previous and next day.
+\item[Implemented By:] REVITALIZE
 \end{description}
 
-\subsubsection{Input Format Module (\mref{mInput})}
-
+\subsubsection{Calendar (\mref{m2})}
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
-\item[Implemented By:] [Your Program Name Here]
-\item[Type of Module:] [Record, Library, Abstract Object, or Abstract Data Type]
-  [Information to include for leaf modules in the decomposition by secrets tree.]
+\item[Secrets:]Method to visualize calendar screen
+\item[Services:]Visualizes calendar by dispaying interactive screen that shows current month and the respective days of the month, where user can click on desired day. Also has a backward and forward button to display previous and next month.
+\item[Implemented By:] REVITALIZE
 \end{description}
-
-\subsubsection{Etc.}
 
 
 \subsection{Software Decision Module}

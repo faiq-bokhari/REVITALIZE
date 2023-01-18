@@ -53,8 +53,10 @@ urlcolor=cyan          % color of external links
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 	\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 	\midrule
-	Date 1 & 1.0 & Notes\\
-	Date 2 & 1.1 & Notes\\
+	January 14th, 2023 & Bill Nguyen  & Added MIS for Main Menu and Calendar\\
+	January 14th, 2023 & Bill Nguyen  & Added Introduction, Notation, Acronyms\\
+	January 16th, 2023 & Youssef Dahab & Added Sleep Container Module\\
+	January 17th, 2023 & Youssef Dahab & Added Login, Label, \& Circular Slider Modules\\
 	\bottomrule
 \end{tabularx}
 
@@ -127,7 +129,7 @@ The following table summarizes the primitive data types used by \progname.
 		integer & $\mathbb{Z}$ & a number without a fractional component in (-$\infty$, $\infty$) \\
 		natural number & $\mathbb{N}$ & a number without a fractional component in [1, $\infty$) \\
 		real & $\mathbb{R}$ & any number in (-$\infty$, $\infty$)\\
-		boolean & bool & value can be True (1) or False (0)\\
+		boolean & $\mathbb{B}$ & value can be True (1) or False (0)\\
 		user & User & represents user object, for users of REVITALIZE\\
 		date & Date & represents date object, which is useful to add/set/manipulate dates\\
 		\bottomrule
@@ -178,6 +180,76 @@ The following table is taken directly from the Module Guide document for this pr
 \newpage
 ~\newpage
 
+\section{MIS of Login} \label{Module} 
+
+\subsection{Login Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{displayMainMenuScreen} & NameOrEmail, Password& & \\
+	\hline
+	{displayForgotPasswordScreen} & & & \\
+	\hline
+	{displaySignUpScreen} & & & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+NameOrEmail: string that stores user input of name or email\\\\
+Password: string that stores user passwoord input
+
+\subsubsection{Environment Variables}
+LoginButton: button object that displays Main Menu screen when clicked\\\\
+ForgotPasswordButton: button object that displays Forgot Password screen when clicked\\\\
+SignUpButton: button object that displays Sign Up screen when clicked
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent displayMainMenuScreen(NameOrEmail, Password):
+\begin{itemize}
+	\item transition: navigates to Main Menu screen when login button is pressed after successfully entering name or email and password 
+	\item exception: None 
+\end{itemize}
+
+\noindent displayForgotPasswordScreen():
+\begin{itemize}
+	\item transition: navigates to Forgot Password screen when forgot password link is clicked 
+	\item exception: None 
+\end{itemize}
+
+\noindent displaySignUpScreen():
+\begin{itemize}
+	\item transition: navigates to Sign Up screen when sign up link is clicked 
+	\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+N/A
+
 \section{MIS of Main Menu} \label{Module} 
 
 \subsection{Main Menu Module}
@@ -187,12 +259,13 @@ The following table is taken directly from the Module Guide document for this pr
 {\textit{react-native}}\\
 {\textit{globalStyles:} CSS file to change designs of project}\\
 {\textit{Ionicons:} Library for icons}\\
-{\textit{Moment} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
-{\textit{useRoute} react file that is used to navigate between screens of project}\\
+{\textit{Moment:} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
+{\textit{useRoute:} react file that is used to navigate between screens of project}\\
 
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
+N/A
 
 \subsubsection{Exported Types}
 MainScreen = this
@@ -265,13 +338,13 @@ N/A
 
 \noindent forwardSetDate():
 \begin{itemize}
-	\item transition: date.value := date.value + 1. Sets the next day from the current Date value in dateText when clicked.  
+	\item transition: date.day.value := date.day.value + 1. Sets the next day from the current Date value in dateText when clicked.  
 	\item exception: None 
 \end{itemize}
 
 \noindent backwardSetDate():
 \begin{itemize}
-	\item transition: date.value := date.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
+	\item transition: date.day.value := date.day.value - 1. Sets the previous day from the current Date value in dateText when clicked. 
 	\item exception: None 
 \end{itemize}
 
@@ -289,6 +362,7 @@ N/A
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
+N/A
 
 \subsubsection{Exported Types}
 CalendarScreen = this
@@ -364,14 +438,14 @@ N/A
 {\textit{react-native}}\\
 {\textit{react-native-reanimated}}\\
 {\textit{react-native-redash}}\\
-{\textit{Label:} Module}
+{\textit{Label:} Module}\\
+{\textit{Circular Slider:} Module}
 
 \subsection{Syntax}
 
 \subsubsection{Exported Constants}
 PI := Math (object that provides mathematics functionality and constants)\\
-TAU := 2 * PI\\
-PADDING := 24
+TAU := 2 * PI
 \subsubsection{Exported Types}
 N/A
 
@@ -381,21 +455,24 @@ N/A
 	\hline
 	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
 	\hline
-	{DisplayContainer} & & & \\
+	{DisplayContainer} & start, end & & \\
+	\hline
+	{onSlideCircularArc} & & & \\
 	\hline
 \end{tabular}
 
 \subsection{Semantics}
 
 \subsubsection{State Variables}
-date: Date
+start: the set bedtime\\\\
+end: the set wake up time
 
 \subsubsection{Environment Variables}
-BedTimeText: Text object that displays the selected bedtime.\\\\
-WakeUpTimeText: Text object that displays the selected wake up time.\\\\
-SleepTimeText: Text object that displays the total sleep time.\\\\
-ArcStartPos: Polar coordinates object representing starting position of circular slider arc. Modifies bedtime when slid.\\\\
-ArcEndPos: Polar coordinates object representing ending position of circular slider arc. Modifies wake up time when slid.\\\\
+BedTime: string object that displays the selected bedtime.\\\\
+WakeUpTime: string object that displays the selected wake up time.\\\\
+SleepTime: string object that displays the total sleep time.\\\\
+ArcStartPos: polar coordinates object representing starting position of circular slider arc. Modifies BedTime and SleepTime when slid.\\\\
+ArcEndPos: polar coordinates object representing ending position of circular slider arc. Modifies WakeUpTime and SleepTime when slid.\\\\
 CircularSliderArc: string literal object representing an arc.
 \subsubsection{Assumptions}
 
@@ -407,6 +484,12 @@ N/A
 \begin{itemize}
 	\item output: display bedtime, wake up time, sleep time, arc starting and ending positions, and circular slider arc
 	\item exception: None
+\end{itemize}
+
+\noindent onSlideCircularArc():
+\begin{itemize}
+	\item transition: recalculate total SleepTime based on the modified BedTime or WakeUpTime
+	\item output: display new total SleepTime on screen
 \end{itemize}
 
 \subsubsection{Local Functions}
@@ -425,7 +508,167 @@ N/A
 
 \noindent formatDuration2(duration):
 \begin{itemize}
-	\item output: format duration to hours followed by minutes.
+	\item output: total sleep time formatted in hours followed by minutes.
+	\item exception: None 
+\end{itemize}
+
+\section{MIS of Sleep} \label{Module} 
+
+\subsection{Label Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{react-native-reanimated}}\\
+{\textit{react-native-redash}}\\
+{\textit{@expo/vector-icons}}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+PI := Math (object that provides mathematics functionality and constants)\\
+TAU := 2 * PI
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{DisplayImage} & & & \\
+	\hline
+	{DisplayLabel} & start, end & & \\
+	\hline
+	{onSlideCircularArc} & start, end & & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+start: the set bedtime is passed from Container module\\\\
+end: the set wake up time is passed from Container module
+
+\subsubsection{Environment Variables}
+BedTime: string object that displays the selected bedtime.\\\\
+WakeUpTime: string object that displays the selected wake up time.
+
+\subsubsection{Assumptions}
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent DisplayImage():
+\begin{itemize}
+	\item output: display bed icon, "BEDTIME" text, ring icon, and "WAKE UP" text
+	\item exception: None
+\end{itemize}
+
+\noindent DisplayLabel(start, end):
+\begin{itemize}
+	\item output: display user set BedTime and WakeUpTime
+	\item exception: None
+\end{itemize}
+
+\noindent onSlideCircularArc(start, end):
+\begin{itemize}
+	\item transition: modify BedTime and WakeUpTime values to new BedTime and WakeUpTime values respectively
+	\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+\noindent radToMinutes(rad):
+\begin{itemize}
+	\item output: rad * 24 * 60 / TAU
+	\item exception: None 
+\end{itemize}
+
+\noindent formatDuration(duration):
+\begin{itemize}
+	\item output: set bed time and wake up time in the 24-hour clock format
+	\item exception: None 
+\end{itemize}
+
+\section{MIS of Sleep} \label{Module} 
+
+\subsection{Circular Slider Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{react-native-reanimated}}\\
+{\textit{react-native-redash}}\\
+{\textit{react-native-svg}}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+PI := Math (object that provides mathematics functionality and constants)\\
+TAU := 2 * PI
+
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{DisplayCircularSlider} & ArcStartPos, ArcEndPos & & \\
+	\hline
+	{onSlideCircularArc} & ArcStartPos, ArcEndPos & & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+ArcStartPos: polar coordinates object representing starting position of circular slider arc\\\\
+ArcEndPos: polar coordinates object representing ending position of circular slider arc
+
+\subsubsection{Environment Variables}
+ArcStartPos: Modifies BedTime and SleepTime when slid.\\\\
+ArcEndPos: Modifies WakeUpTime and SleepTime when slid.\\\\
+CircularSliderArc: string literal object representing an arc.
+
+\subsubsection{Assumptions}
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent DisplayCircularSlider(start, end):
+\begin{itemize}
+	\item output: display arc starting position, ending position, and circular slider arc
+	\item exception: None
+\end{itemize}
+
+\noindent onSlideCircularArc(ArcStartPos, ArcEndPos):
+\begin{itemize}
+	\item transition: modify ArcStartPos and ArcEndPos coordinate values to new ArcStartPos and ArcEndPos coordinate values respectively when user slides circular arc
+	\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+\noindent absoluteDuration(start, end):
+\begin{itemize}
+	\item output: start $>$ end ? end + (TAU - start) : end - start  
+	\item exception: None 
+\end{itemize}
+
+\noindent ConvertArcStartPos(ArcStartPos):
+\begin{itemize}
+	\item output: convert ArcStartPos from polar coordinates to canvas coordinates 
+	\item exception: None 
+\end{itemize}
+
+\noindent ConvertArcEndPos(ArcEndPos):
+\begin{itemize}
+	\item output: convert ArcEndPos from polar coordinates to canvas coordinates 
 	\item exception: None 
 \end{itemize}
 
