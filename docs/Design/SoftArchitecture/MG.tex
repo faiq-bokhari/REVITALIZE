@@ -48,7 +48,8 @@ urlcolor=blue
 	\midrule
 	January 17th, 2023 & Bill Nguyen  & Added MG for Main Menu and Calendar\\
 	January 18th, 2023 & Youssef Dahab & Added Intro, MG for Login, Container, Label, \& Circular Slider\\
-	\bottomrule
+	January 18th, 2023 & Hasan Kibria & Added to SRS Connection, Module Decomposition\\	
+\bottomrule
 \end{tabularx}
 
 \newpage
@@ -261,6 +262,48 @@ N/A
 	\item[Implemented By:] REVITALIZE
 \end{description}
 
+\subsubsection{Diet Log Module (\mref{m7})}
+\begin{description}
+	\item[Secrets:]Method to visualize daily diet log screen
+	\item[Services:]Visualizes diet log by displaying interactive table with adherent food entries. Also shows net nutritional intake for the day.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Search or Add Food Module (\mref{m8})}
+\begin{description}
+	\item[Secrets:]Method to visualize decision making screen between adding a custom food adn searching an online recipe
+	\item[Services:]Visualizes decision making screen by displaying two buttons, each representative of the possible decision made, which leads to another screen to help user complete their preferred decision.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Custom Meal Module (\mref{m9})}
+\begin{description}
+	\item[Secrets:]Method to visualize custom meal logger
+	\item[Services:]Visualizes custom meal logger by displaying input fields which take information relative to custom meal.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Search Recipe Module (\mref{m10})}
+\begin{description}
+	\item[Secrets:]Method to visualize app-internal search engine for recipes with custom filterization
+	\item[Services:]Visualizes app-internal search engine for recipes by displaying multiple filtering inputs and a search button which retreives filtered recipe data.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Recipe Results Module (\mref{m11})}
+\begin{description}
+	\item[Secrets:]Method to visualize search results from search query produced through Search Recipe Module
+	\item[Services:]Visualizes search results by displaying a list of scrollable search results with a small description for each result.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Recipe Details Module (\mref{m12})}
+\begin{description}
+	\item[Secrets:]Method to visualize detailed information about each recipe
+	\item[Services:]Visualizes detailed information about each recipe using a paragraph description and an image
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
 
 \subsection{Software Decision Module}
 
@@ -273,6 +316,13 @@ N/A
 	% Changes in these modules are more likely to be motivated by a desire to
 	% improve performance than by externally imposed changes.
 	\item[Implemented By:] --
+\end{description}
+
+\subsubsection{FoodT Module (\mref{m13})}
+\begin{description}
+	\item[Secrets:] Data structure to hold information about each distinct food
+	\item[Services:]
+	\item[Implemented By:] REVITALIZE
 \end{description}
 
 \subsubsection{Etc.}
