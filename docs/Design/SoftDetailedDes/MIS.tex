@@ -56,7 +56,7 @@ urlcolor=cyan          % color of external links
 	January 14th, 2023 & Bill Nguyen  & Added MIS for Main Menu and Calendar\\
 	January 14th, 2023 & Bill Nguyen  & Added Introduction, Notation, Acronyms\\
 	January 16th, 2023 & Youssef Dahab & Added Sleep Container Module\\
-	January 17th, 2023 & Youssef Dahab & Added Label \& Circular Slider Modules\\
+	January 17th, 2023 & Youssef Dahab & Added Login, Label, \& Circular Slider Modules\\
 	\bottomrule
 \end{tabularx}
 
@@ -179,6 +179,76 @@ The following table is taken directly from the Module Guide document for this pr
 
 \newpage
 ~\newpage
+
+\section{MIS of Login} \label{Module} 
+
+\subsection{Login Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{displayMainMenuScreen} & NameOrEmail, Password& & \\
+	\hline
+	{displayForgotPasswordScreen} & & & \\
+	\hline
+	{displaySignUpScreen} & & & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+NameOrEmail: string that stores user input of name or email\\\\
+Password: string that stores user passwoord input
+
+\subsubsection{Environment Variables}
+LoginButton: button object that displays Main Menu screen when clicked\\\\
+ForgotPasswordButton: button object that displays Forgot Password screen when clicked\\\\
+SignUpButton: button object that displays Sign Up screen when clicked
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent displayMainMenuScreen(NameOrEmail, Password):
+\begin{itemize}
+	\item transition: navigates to Main Menu screen when login button is pressed after successfully entering name or email and password 
+	\item exception: None 
+\end{itemize}
+
+\noindent displayForgotPasswordScreen():
+\begin{itemize}
+	\item transition: navigates to Forgot Password screen when forgot password link is clicked 
+	\item exception: None 
+\end{itemize}
+
+\noindent displaySignUpScreen():
+\begin{itemize}
+	\item transition: navigates to Sign Up screen when sign up link is clicked 
+	\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+N/A
 
 \section{MIS of Main Menu} \label{Module} 
 
