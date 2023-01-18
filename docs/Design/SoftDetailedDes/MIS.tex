@@ -431,6 +431,369 @@ N/A
 
 \newpage
 
+\section* {FoodT Module}
+
+\subsection*{Module}
+
+IndicatorT
+
+\subsection* {Uses}
+
+None
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+None
+
+\subsubsection* {Exported Types}
+
+FoodT = \{\\
+    calories, \textit{\#Calories in meal}\\
+    name, \textit{\#Name of meal}\\
+    carbs, \textit{\#Carbohydrates in meal}\\
+    protein, \textit{\#Protein in meal}\\
+    fat \textit{\#Fat in meal}\\
+\}
+
+\subsubsection* {Exported Access Programs}
+
+None
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+None
+
+\subsubsection* {State Invariant}
+
+None
+
+\subsubsection* {Assumptions}
+
+None
+
+\subsubsection* {Considerations}
+
+None
+
+\section{Diet Log Module} \label{Module} 
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Ionicons:} Library for icons}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+\subsubsection{Exported Types}
+DietLogScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+\hline
+{calculateDailyNutrition} &seq of FoodT &seq of $<$String, \(\mathbb{R}\)$>$ &\\
+\hline
+{removeFood} &food: FoodT & & \\
+\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+foodList: seq of FoodT\\
+totalNutrition: seq of $<$String, \(\mathbb{R}\)$>$\\
+date: Date
+
+\subsubsection{Environment Variables}
+
+addFoodButton: Button object that shifts user to Search or Add Food Module.\\\\
+deleteFoodButton: Button object that deletes a food entry from this module when clicked\\\\
+editFoodButton: Button object navigates to Log Meal Module
+
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent calculateDailyNutrition():
+\begin{itemize}
+\item transition: totalNutrition :=$ \sum $ foodList
+\item exception: None 
+\end{itemize}
+
+\noindent removeFood(food: FoodT):
+\begin{itemize}
+\item transition: foodList := \{foodList\} $\backslash$ food. Sets the next date.month.value from the current date.month.value in monthText when clicked
+\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+\section{Search or Add Food Module} \label{Module} 
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+\subsubsection{Exported Types}
+DecisionScreen = this
+
+\subsubsection{Exported Access Programs}
+
+None
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+None
+
+\subsubsection{Environment Variables}
+
+searchRecipeButton: Button object that shifts user to Search Recipe Module.\\\\
+addCustomMealButtom: Button object that shifts user to Log Meal Module\\\\
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent calculateDailyNutrition():
+\begin{itemize}
+\item transition: totalNutrition :=$ \sum $ foodList
+\item exception: None 
+\end{itemize}
+
+\noindent removeFood(food: FoodT):
+\begin{itemize}
+\item transition: foodList := \{foodList\} $\backslash$ food. Sets the next date.month.value from the current date.month.value in monthText when clicked
+\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+\section{Custom Meal Module} \label{Module} 
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{react-native-calendars:} Library useful for implementing calendars in react-native}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+CustomMealScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+\hline
+{saveCustomMeal} &foodInfo: seq of String &FoodT & \\
+\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+foodList: seq of String\\
+
+\subsubsection{Environment Variables}
+
+addButton: Save food information.\\\\
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent saveCustomMeal(foodInfo):
+\begin{itemize}
+\item transition: foodList := foodList $ \cup $ FoodT(foodInfo)
+\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+\newpage
+
+\section{Search Recipe Module} \label{Module} 
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Ionicons:} Library for icons}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/ A
+\subsubsection{Exported Types}
+SearchRecipeScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+\hline
+{searchRecipe} &filterList: seq of $<$String, String$>$ &Seq of  $<$String, String$>$ &\\
+\hline
+{returnRecipeList} &&Seq of  $<$String, String$>$ &\\
+\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+filterList: seq of $<$String, String$>$\\
+recipeList: Seq of  $<$String, String$>$\\
+
+\subsubsection{Environment Variables}
+
+searchRecipeButton: Button object that shifts user to Search Results Module, calls searchRecipe().\\\\
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent searchRecipe(filterList):
+\begin{itemize}
+\item transition: Populates state variable recipeList using external API call.
+\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+\section{Recipe Results Module} \label{Module} 
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{react-native-calendars:} Library useful for implementing calendars in react-native}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+RecipeResultsScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+\hline
+{retrieveRecipeInfo} &recipeLink: String & $<$String, FileObject$>$ & \\
+\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+recipeList: Seq of  $<$String, String$>$\\
+
+\subsubsection{Environment Variables}
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent retrieveRecipeInfo(recipeLink):
+\begin{itemize}
+\item transition: Retrieve details and picture file of recipe found at recipeLink
+\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+\section{Recipe Details Module} \label{Module} 
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Ionicons:} Library for icons}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+\subsubsection{Exported Types}
+RecipeDetailsScreen = this
+
+\subsubsection{Exported Access Programs}
+N/A
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+recipeDetails: seq of $<$String, FileObject$>$\\
+
+\subsubsection{Environment Variables}
+
+addRecipeButton: Add recipe to Daily Food Log.\\\\
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+
+\subsubsection{Local Functions}
+
+N/A
+
+\newpage
+
+
+
 \bibliographystyle {plainnat}
 \bibliography {../../../refs/References}
 
