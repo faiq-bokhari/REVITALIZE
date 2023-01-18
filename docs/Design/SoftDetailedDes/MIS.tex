@@ -55,6 +55,8 @@ urlcolor=cyan          % color of external links
 	\midrule
 	January 14th, 2023 & Bill Nguyen  & Added MIS for Main Menu and Calendar\\
 	January 14th, 2023 & Bill Nguyen  & Added Introduction, Notation, Acronyms\\
+	January 16th, 2023 & Youssef Dahab & Added Sleep Container Module\\
+	January 17th, 2023 & Youssef Dahab & Added Label \& Circular Slider Modules\\
 	\bottomrule
 \end{tabularx}
 
@@ -383,14 +385,17 @@ N/A
 	\hline
 	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
 	\hline
-	{DisplayContainer} & & & \\
+	{DisplayContainer} & start, end & & \\
+	\hline
+	{onSlideCircularArc} & & & \\
 	\hline
 \end{tabular}
 
 \subsection{Semantics}
 
 \subsubsection{State Variables}
-date: Date
+start: the set bedtime\\\\
+end: the set wake up time
 
 \subsubsection{Environment Variables}
 BedTime: string object that displays the selected bedtime.\\\\
@@ -409,6 +414,12 @@ N/A
 \begin{itemize}
 	\item output: display bedtime, wake up time, sleep time, arc starting and ending positions, and circular slider arc
 	\item exception: None
+\end{itemize}
+
+\noindent onSlideCircularArc():
+\begin{itemize}
+	\item transition: recalculate total SleepTime based on the modified BedTime or WakeUpTime
+	\item output: display new total SleepTime on screen
 \end{itemize}
 
 \subsubsection{Local Functions}
@@ -460,6 +471,8 @@ N/A
 	\hline
 	{DisplayLabel} & start, end & & \\
 	\hline
+	{onSlideCircularArc} & start, end & & \\
+	\hline
 \end{tabular}
 
 \subsection{Semantics}
@@ -489,6 +502,12 @@ N/A
 	\item exception: None
 \end{itemize}
 
+\noindent onSlideCircularArc(start, end):
+\begin{itemize}
+	\item transition: modify BedTime and WakeUpTime values to new BedTime and WakeUpTime values respectively
+	\item exception: None
+\end{itemize}
+
 \subsubsection{Local Functions}
 
 \noindent radToMinutes(rad):
@@ -499,7 +518,7 @@ N/A
 
 \noindent formatDuration(duration):
 \begin{itemize}
-	\item output: bed time and wake up time in the 24-hour clock format
+	\item output: set bed time and wake up time in the 24-hour clock format
 	\item exception: None 
 \end{itemize}
 
@@ -531,13 +550,15 @@ N/A
 	\hline
 	{DisplayCircularSlider} & ArcStartPos, ArcEndPos & & \\
 	\hline
+	{onSlideCircularArc} & ArcStartPos, ArcEndPos & & \\
+	\hline
 \end{tabular}
 
 \subsection{Semantics}
 
 \subsubsection{State Variables}
-ArcStartPos: polar coordinates object, representing starting position of circular slider arc, is passed from Container module\\\\
-ArcEndPos: polar coordinates object, representing ending position of circular slider arc, is passed from Container module
+ArcStartPos: polar coordinates object representing starting position of circular slider arc\\\\
+ArcEndPos: polar coordinates object representing ending position of circular slider arc
 
 \subsubsection{Environment Variables}
 ArcStartPos: Modifies BedTime and SleepTime when slid.\\\\
@@ -552,6 +573,12 @@ N/A
 \noindent DisplayCircularSlider(start, end):
 \begin{itemize}
 	\item output: display arc starting position, ending position, and circular slider arc
+	\item exception: None
+\end{itemize}
+
+\noindent onSlideCircularArc(ArcStartPos, ArcEndPos):
+\begin{itemize}
+	\item transition: modify ArcStartPos and ArcEndPos coordinate values to new ArcStartPos and ArcEndPos coordinate values respectively when user slides circular arc
 	\item exception: None
 \end{itemize}
 
