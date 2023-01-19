@@ -58,6 +58,8 @@ urlcolor=cyan          % color of external links
 	January 16th, 2023 & Youssef Dahab & Added Sleep Container Module\\
 	January 17th, 2023 & Youssef Dahab & Added Login, Label, \& Circular Slider Modules\\
 	January 17th, 2023 & Hasan Kibria & Added Diet and Recipe Modules\\
+	January 17th, 2023 & Logan Brown & Added Workout and Sign-up Modules\\
+	January 17th, 2023 & Bill Nguyen  & Added Module Decomposition\\
 	\bottomrule
 \end{tabularx}
 
@@ -156,21 +158,29 @@ The following table is taken directly from the Module Guide document for this pr
 		\textbf{Level 1} & \textbf{Level 2}\\
 		\midrule
 		
-		{Hardware-Hiding} & ~ \\
+		{Hardware-Hiding Module} & ~ \\
 		\midrule
 		
-		\multirow{7}{0.3\textwidth}{Behaviour-Hiding} & Input Parameters\\
-		& Output Format\\
-		& Output Verification\\
-		& Temperature ODEs\\
-		& Energy Equations\\ 
-		& Control Module\\
-		& Specification Parameters Module\\
+		\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Main Menu\\
+		& Calendar\\
+		& Login\\
+		& Container\\
+		& Label\\
+		& Circular Slider\\
+		& Diet Log\\ 
+		& Search or Add Food\\
+		& Custom Meal\\
+		& Search Recipe\\
+		& Recipe Results\\
+		& Recipe Details\\
+		& Workout Display\\
+		& Workout Edit\\
+		& Workout Log\\
+		& Signup\\
 		\midrule
 		
-		\multirow{3}{0.3\textwidth}{Software Decision} & {Sequence Data Structure}\\
-		& ODE Solver\\
-		& Plotting\\
+		\multirow{3}{0.3\textwidth}{Software Decision Module} & FoodT\\
+		& ExerciseT\\
 		\bottomrule
 		
 	\end{tabular}
@@ -245,6 +255,67 @@ N/A
 \noindent displaySignUpScreen():
 \begin{itemize}
 	\item transition: navigates to Sign Up screen when sign up link is clicked 
+	\item exception: None 
+\end{itemize}
+
+\subsubsection{Local Functions}
+N/A
+
+\section{MIS of Sign-up} \label{Module} 
+\subsection{Sign-up Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{useRoute} react file that is used to navigate between screens of project}
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{displayMainMenuScreen} & Name, Email, Password, ConfirmPassword & & \\
+    \hline
+	{displayLoginScreen} & & & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+Name: string that stores user input of name\\\\
+Email: string that stores user email\\\\
+Password: string that stores user password input
+
+\subsubsection{Environment Variables}
+signUpButton: Button object that creates account and navigates to Main Screen\\\\
+loginButton: Button that navigates back to Login Screen\\\\
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent displayMainMenuScreen(Name, Email, Password, ConfirmPassword):
+\begin{itemize}
+	\item transition: navigates to Main Menu screen when sign-up is validated and successful
+	\item exception: None 
+\end{itemize}
+
+\noindent displayLoginScreen():
+\begin{itemize}
+	\item transition: navigates to login screen when login page link is clicked
 	\item exception: None 
 \end{itemize}
 
@@ -1029,6 +1100,273 @@ N/A
 
 \subsubsection{Access Routine Semantics}
 
+
+\subsubsection{Local Functions}
+
+N/A
+
+\section{MIS of Workout} \label{Module} 
+
+\subsection{ExerciseT Module}
+
+\subsection{Uses}
+
+N/A
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+
+N/A
+
+\subsubsection{Exported Types}
+ExerciseT = \{\\
+name: string\\
+reps: $\mathbb{N}$\\
+weight: $\mathbb{N}$\\
+sets: $\mathbb{N}$\\
+\}
+
+\subsubsection{Exported Access Programs}
+
+N/A
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+N/A
+
+\subsubsection{Environment Variables}
+
+N/A
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent getWorkout(user, date):
+\begin{itemize}
+	\item transition: Fetches the date's workout from Workout Log Module
+	\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+\subsection{Workout Display Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Moment:} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
+{\textit{useRoute:} react file that is used to navigate between screens of project}\\
+{\textit{wger:} Rest API providing exercise images and names}\\
+{\textit{Workout Log:} Module for storing workouts}\\
+{\textit{ExerciseT:} Module representing an exercise}\\
+
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+WorkoutScreen = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{getWorkout} & User, Date & Workout: Seq of ExerciseT & \\
+	\hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+user: User\\\\
+date: Date
+
+\subsubsection{Environment Variables}
+
+editButton: Button object that navigates to Workout Edit Module when clicked\\\\
+workout: Text object that displays the current date's workout
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent getWorkout(user, date):
+\begin{itemize}
+	\item transition: out := exerciseT from the date's workout in Workout Log
+	\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+
+\subsection{Workout Edit Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Moment:} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
+{\textit{useRoute:} react file that is used to navigate between screens of project}\\
+{\textit{wger:} Rest API providing exercise images and names}\\
+{\textit{Workout Log:} Module for storing workouts}\\
+{\textit{ExerciseT:} Module representing an exercise}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+N/A
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{setExercise} & exercise: string, exerciseT & & \\
+	\hline
+    {setReps} & reps $\mathbb{N}$, exerciseT & & \\
+    \hline
+    {setWeight} & weight: $\mathbb{N}$, exerciseT & & \\
+    \hline
+    {setSets} & sets: $\mathbb{N}$, exerciseT & &\\
+    \hline
+    {removeExercise} & & &\\
+    \hline
+    {addPreviousWorkout} & name: string & &\\
+    \hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+user: User\\\\
+date: Date\\\\
+units: lbs or kgs\\\\
+workoutName: string\\\\
+exercises: Seq of ExerciseT
+
+\subsubsection{Environment Variables}
+
+addExerciseButton: Button object that adds blank exercise to Workout\\\\
+saveButton: Saves changes to Workout Log\\\\
+exitButton: Button object that leaves Workout Edit
+changeUnitsButton: Toggles the units from lbs to kgs and vice versa\\\\
+removeExerciseButton: Deletes repective exercise from Workout Log
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent setExercise(name, exerciseT):
+\begin{itemize}
+	\item transition: Adds the selected exercise name to Workout Log
+	\item exception: None
+\end{itemize}
+
+\noindent setReps(reps, exerciseT):
+\begin{itemize}
+	\item transition: Saves the selected number of reps to Workout Log
+	\item exception: None
+\end{itemize}
+
+\noindent setWeight(weight, exerciseT):
+\begin{itemize}
+	\item transition: Saves the selected weight in \textit{units} to Workout Log
+	\item exception: None
+\end{itemize}
+
+\noindent setSets(sets, exerciseT):
+\begin{itemize}
+	\item transition: Saves the selected number of sets to Workout Log
+	\item exception: None
+\end{itemize}
+
+\noindent removeExercise():
+\begin{itemize}
+	\item transition: Deletes selected exercise from Workout Log
+	\item exception: None
+\end{itemize}
+
+\subsubsection{Local Functions}
+
+N/A
+
+
+\subsection{Workout Log Module}
+
+\subsection{Uses}
+{\textit{react}}\\
+{\textit{react-native}}\\
+{\textit{globalStyles:} CSS file to change designs of project}\\
+{\textit{Moment:} Library is used for Dates (ex. setting date formats (YY/MM/DD))}\\
+{\textit{useRoute:} react file that is used to navigate between screens of project}\\
+{\textit{wger:} Rest API providing exercise images and names}\\
+
+\subsection{Syntax}
+
+\subsubsection{Exported Constants}
+N/A
+
+\subsubsection{Exported Types}
+WorkoutLog = this
+
+\subsubsection{Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+	\hline
+	{\textbf{Name}} & {\textbf{In}} & {\textbf{Out}} & {\textbf{Exceptions}}\\
+	\hline
+	{setName} & name: string & & \\
+    \hline
+\end{tabular}
+
+\subsection{Semantics}
+
+\subsubsection{State Variables}
+
+user: User\\\\
+date: Date\\\\
+workouts: $<$Seq of ExerciseT, name: string$>$
+
+\subsubsection{Environment Variables}
+
+N/A
+
+\subsubsection{Assumptions}
+
+N/A
+
+\subsubsection{Access Routine Semantics}
+
+\noindent setName(name):
+\begin{itemize}
+	\item transition: Sets the name of workout (default value is date)
+	\item exception: None
+\end{itemize}
 
 \subsubsection{Local Functions}
 

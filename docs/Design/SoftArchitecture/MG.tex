@@ -49,6 +49,9 @@ urlcolor=blue
 	January 17th, 2023 & Bill Nguyen  & Added MG for Main Menu and Calendar\\
 	January 18th, 2023 & Youssef Dahab & Added Intro, MG for Login, Container, Label, \& Circular Slider\\
 	January 18th, 2023 & Hasan Kibria & Added to SRS Connection, Module Decomposition\\	
+	January 18th, 2023 & Syed Bokhari & Matrix Traceability with FR\\	
+	January 18th, 2023 & Bill Nguyen  & Added Module Decomposition and Uses Hierarchy\\
+	January 18th, 2023 & Logan Brown  & Added Anticipated Changes\\
 \bottomrule
 \end{tabularx}
 
@@ -126,11 +129,19 @@ adapted here is called design for
 change.
 
 \begin{description}
-	\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
-	hardware on which the software is running.
-	\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
-	initial input data.
-	\item ...
+	\item[\refstepcounter{acnum} \actheacnum \label{ac1}:] The format the date is stored in
+	\item[\refstepcounter{acnum} \actheacnum \label{ac2}:] The labels of buttons to navigate screens
+	\item[\refstepcounter{acnum} \actheacnum \label{ac3}:] Colouring of screens
+	\item[\refstepcounter{acnum} \actheacnum \label{ac4}:] Input text box length and location
+	\item[\refstepcounter{acnum} \actheacnum \label{ac5}:] Layout of calendar
+	\item[\refstepcounter{acnum} \actheacnum \label{ac6}:] Nutrition display format
+	\item[\refstepcounter{acnum} \actheacnum \label{ac7}:] Recipe search criteria
+	\item[\refstepcounter{acnum} \actheacnum \label{ac8}:] Recipe query result format
+	\item[\refstepcounter{acnum} \actheacnum \label{ac9}:] Custom meal input format
+	\item[\refstepcounter{acnum} \actheacnum \label{ac10}:] Workout display format
+	\item[\refstepcounter{acnum} \actheacnum \label{ac11}:] Exercise list search criteria
+	\item[\refstepcounter{acnum} \actheacnum \label{ac12}:] Exercise query result format
+	\item[\refstepcounter{acnum} \actheacnum \label{ac13}:] Sleep time input (sensitivity of circular scroll bar)
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -169,6 +180,11 @@ actually be implemented.
 	\item [\refstepcounter{mnum} \mthemnum \label{m11}:] Recipe Results
 	\item [\refstepcounter{mnum} \mthemnum \label{m12}:] Recipe Details
 	\item [\refstepcounter{mnum} \mthemnum \label{m13}:] FoodT
+	\item [\refstepcounter{mnum} \mthemnum \label{m14}:] Workout Display
+	\item [\refstepcounter{mnum} \mthemnum \label{m15}:] Workout Edit
+	\item [\refstepcounter{mnum} \mthemnum \label{m16}:] Workout Log
+	\item [\refstepcounter{mnum} \mthemnum \label{m17}:] ExerciseT
+	\item [\refstepcounter{mnum} \mthemnum \label{m18}:] Signup
 \end{description}
 
 
@@ -184,17 +200,24 @@ actually be implemented.
 		
 		\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Main Menu\\
 		& Calendar\\
-		& ?\\
-		& ?\\
-		& ?\\
-		& ?\\
-		& ?\\ 
-		& ?\\
+		& Login\\
+		& Container\\
+		& Label\\
+		& Circular Slider\\
+		& Diet Log\\ 
+		& Search or Add Food\\
+		& Custom Meal\\
+		& Search Recipe\\
+		& Recipe Results\\
+		& Recipe Details\\
+		& Workout Display\\
+		& Workout Edit\\
+		& Workout Log\\
+		& Signup\\
 		\midrule
 		
-		\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-		& ?\\
-		& ?\\
+		\multirow{3}{0.3\textwidth}{Software Decision Module} & FoodT\\
+		& ExerciseT\\
 		\bottomrule
 		
 	\end{tabular}
@@ -347,17 +370,43 @@ requirements and between the modules and the anticipated changes.
 		\toprule
 		\textbf{Req.} & \textbf{Modules}\\
 		\midrule
-		R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-		R2 & \mref{mInput}, \mref{mParams}\\
-		R3 & \mref{mVerify}\\
-		R4 & \mref{mOutput}, \mref{mControl}\\
-		R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-		R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-		R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-		R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-		R9 & \mref{mVerifyOut}\\
-		R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-		R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+		FR1 & \mref{m3}\\
+		FR2 & \mref{m3}\\
+		FR3 & \mref{m3}\\
+		FR4 & \mref{m3}\\
+		FR5 & \mref{m3}\\
+		FR6 & \mref{m3}\\
+		FR7 & \mref{m3}\\
+		FR8 & \mref{m3}\\
+		FR9 & \mref{m3}\\
+		FR10 & \mref{m18}\\
+		FR11 & \mref{m18}\\
+		FR12 & \mref{m18}\\
+		FR13 & \mref{m18}\\
+		FR14 & \mref{m18}\\
+		FR15 & \mref{m1}\\
+		FR16 & \mref{m1}\\
+		FR17 & \mref{m1}\\
+		FR18 & \mref{m1}\\
+		FR19 & \mref{m7}\\
+		FR20 & \mref{m7}\\
+		FR21 & \mref{m7}\\
+		FR22 & \mref{m8}\\
+		FR23 & \mref{m8}\\
+		FR24 & \mref{m8}, \mref{m10}\\
+		FR25 & \mref{m10}\\
+		FR26 & \mref{m11}\\
+		FR27 & \mref{m11}\\
+		FR28 & \mref{m9}\\
+		FR29 & \mref{m9}\\
+		FR30 & \mref{m1}, \mref{m4}, \mref{m7}. \mref{m14}\\
+		FR31 & \mref{m14}\\
+		FR32 & \mref{m14}\\
+		FR33 & \mref{m15}\\
+		FR34 & \mref{m15}\\
+		FR35 & \mref{m17}\\
+		FR36 & \mref{m5}\\
+		FR37 & \mref{m6}\\
 		\bottomrule
 	\end{tabular}
 	\caption{Trace Between Requirements and Modules}
@@ -370,18 +419,18 @@ requirements and between the modules and the anticipated changes.
 		\toprule
 		\textbf{AC} & \textbf{Modules}\\
 		\midrule
-		\acref{acHardware} & \mref{mHH}\\
-		\acref{acInput} & \mref{mInput}\\
-		\acref{acParams} & \mref{mParams}\\
-		\acref{acVerify} & \mref{mVerify}\\
-		\acref{acOutput} & \mref{mOutput}\\
-		\acref{acVerifyOut} & \mref{mVerifyOut}\\
-		\acref{acODEs} & \mref{mODEs}\\
-		\acref{acEnergy} & \mref{mEnergy}\\
-		\acref{acControl} & \mref{mControl}\\
-		\acref{acSeqDS} & \mref{mSeqDS}\\
-		\acref{acSolver} & \mref{mSolver}\\
-		\acref{acPlot} & \mref{mPlot}\\
+		\acref{ac1} & \mref{m1}\\
+		\acref{ac2} & \mref{m1}, \mref{m4}, \mref{m7}, \mref{m14}\\
+		\acref{ac3} & \mref{m1}\\
+		\acref{ac4} & \mref{m1}\\
+		\acref{ac6} & \mref{m7}\\
+		\acref{ac7} & \mref{m10}\\
+		\acref{ac8} & \mref{m11}\\
+		\acref{ac9} & \mref{m9}\\
+		\acref{ac10} & \mref{m14}\\
+		\acref{ac11} & \mref{m14}\\
+		\acref{ac12} & \mref{m14}\\
+		\acref{ac13} & \mref{m6}\\
 		\bottomrule
 	\end{tabular}
 	\caption{Trace Between Anticipated Changes and Modules}
@@ -403,8 +452,8 @@ because they use modules from the lower levels.
 
 \begin{figure}[H]
 	\centering
-	%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
-	\caption{Use hierarchy among modules}
+	\includegraphics[width=0.7\textwidth]{images/MGDAG.png}
+	\caption{Use hierarchy among modules for REVITALIZE}
 	\label{FigUH}
 \end{figure}
 
