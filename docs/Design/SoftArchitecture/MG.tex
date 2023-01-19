@@ -51,7 +51,7 @@ urlcolor=blue
 	January 18th, 2023 & Hasan Kibria & Added to SRS Connection, Module Decomposition\\	
 	January 18th, 2023 & Syed Bokhari & Matrix Traceability with FR\\	
 	January 18th, 2023 & Bill Nguyen  & Added Module Decomposition and Uses Hierarchy\\
-	January 18th, 2023 & Logan Brown  & Added Anticipated Changes\\
+	January 18th, 2023 & Logan Brown  & Added Anticipated Changes, MGs for Workout and Sign-up\\
 \bottomrule
 \end{tabularx}
 
@@ -334,6 +334,34 @@ N/A
 	\item[Implemented By:] REVITALIZE
 \end{description}
 
+\subsubsection{Workout Display Module (\mref{m14})}
+\begin{description}
+	\item[Secrets:]Method to visualize the workout of the day
+	\item[Services:]Visualizes workout screen by displaying the workout on the given date. Also provides 'add workout' button to navigate to the Workout Edit module.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Workout Edit Module (\mref{m15})}
+\begin{description}
+	\item[Secrets:]Method to visualize changes made to the workout of the day
+	\item[Services:]Allows addition and removal of exercises to the workout on the selected date. Provides 'add exercise' and 'save' button to add a new exercise and save changes respectively.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Workout Log Module (\mref{m16})}
+\begin{description}
+	\item[Secrets:]Method to store contents of workouts
+	\item[Services:]Provides structure to store workouts. Provides access to past workouts.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
+\subsubsection{Signup Module (\mref{m18})}
+\begin{description}
+	\item[Secrets:]Method to visualize signup screen 
+	\item[Services:]Provides input text boxes for user to create an account. Also has a signup button and back to login page button to create an account or navigate back to the login page respectively.
+	\item[Implemented By:] REVITALIZE
+\end{description}
+
 
 \subsection{Software Decision Module}
 
@@ -355,7 +383,12 @@ N/A
 	\item[Implemented By:] REVITALIZE
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{ExerciseT Module (\mref{m17})}
+\begin{description}
+	\item[Secrets:]Data structure to describe information of a specific exercise
+	\item[Services:]
+	\item[Implemented By:] REVITALIZE
+\end{description}
 
 \section{Traceability Matrix} \label{SecTM}
 
