@@ -51,12 +51,8 @@ urlcolor=blue
 	January 18th, 2023 & Hasan Kibria & Added to SRS Connection, Module Decomposition\\	
 	January 18th, 2023 & Syed Bokhari & Matrix Traceability with FR\\	
 	January 18th, 2023 & Bill Nguyen  & Added Module Decomposition and Uses Hierarchy\\
-<<<<<<< HEAD
 	January 18th, 2023 & Logan Brown  & Added Anticipated Changes\\
 	January 18th, 2023 & Mahmoud Anklis  & Added Unlikely Changes\\
-=======
-	January 18th, 2023 & Logan Brown  & Added Anticipated Changes, MGs for Workout and Sign-up\\
->>>>>>> 4acef9ad2ef48a20e082099c53dc8bf64a45dd91
 \bottomrule
 \end{tabularx}
 
@@ -83,7 +79,7 @@ This section records information for easy reference.
 	SRS & Software Requirements Specification\\
 	\progname & Explanation of program name\\
 	UC & Unlikely Change \\
-	\wss{etc.} & \wss{...}\\
+	%\wss{etc.} & \wss{...}\\
 	\bottomrule
 \end{tabular}\\
 
@@ -103,7 +99,7 @@ This section records information for easy reference.
 REVITALIZE is an app designed to supply users with the means to improve their health by providing them with meal recipe's based on their nutritional preferences, a personalized workouts planner and a sleep tracker.  
 
 \subsection{Purpose}
-The purpose of this document is to outline REVITALIZE's modular structure using decomposition based on the principle of information hiding to allow project members to easily identify parts within the app ~\citep{Parnas1972a}.
+The purpose of this document is to outline REVITALIZE's modular structure using decomposition based on the principle of information hiding to allow project members to easily identify parts within the app \citep{Parnas1972a}.
 
 \subsection{Scope}
 This document outlines the modules which are based off the requirements specified
@@ -309,7 +305,7 @@ N/A
 
 \subsubsection{Search or Add Food Module (\mref{m8})}
 \begin{description}
-	\item[Secrets:]Method to visualize decision making screen between adding a custom food adn searching an online recipe
+	\item[Secrets:]Method to visualize decision making screen between adding a custom food and searching an online recipe
 	\item[Services:]Visualizes decision making screen by displaying two buttons, each representative of the possible decision made, which leads to another screen to help user complete their preferred decision.
 	\item[Implemented By:] REVITALIZE
 \end{description}
@@ -324,7 +320,7 @@ N/A
 \subsubsection{Search Recipe Module (\mref{m10})}
 \begin{description}
 	\item[Secrets:]Method to visualize app-internal search engine for recipes with custom filterization
-	\item[Services:]Visualizes app-internal search engine for recipes by displaying multiple filtering inputs and a search button which retreives filtered recipe data.
+	\item[Services:]Visualizes app-internal search engine for recipes by displaying multiple filtering inputs and a search button which retrieves filtered recipe data.
 	\item[Implemented By:] REVITALIZE
 \end{description}
 
@@ -372,17 +368,6 @@ N/A
 
 
 \subsection{Software Decision Module}
-
-\begin{description}
-	\item[Secrets:] The design decision based on mathematical theorems, physical
-	facts, or programming considerations. The secrets of this module are
-	\emph{not} described in the SRS.
-	\item[Services:] Includes data structure and algorithms used in the system that
-	do not provide direct interaction with the user. 
-	% Changes in these modules are more likely to be motivated by a desire to
-	% improve performance than by externally imposed changes.
-	\item[Implemented By:] --
-\end{description}
 
 \subsubsection{FoodT Module (\mref{m13})}
 \begin{description}
