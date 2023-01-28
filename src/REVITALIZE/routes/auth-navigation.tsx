@@ -9,6 +9,8 @@ import CalendarScreen from '../screens/calendar-screen';
 import RecipeListScreen from '../screens/recipe-list-screen';
 import RecipeDetailScreen from '../screens/recipe-details-screen';
 import AddFoodScreen from '../screens/add-food';
+import StartScreen from '../screens/start-screen';
+import LoginScreen from '../screens/login-screen';
 
 import FilterRecipeScreen2 from '../screens/filter-recipe';
 import CustomMealScreen from '../screens/custom-meal';
@@ -17,7 +19,7 @@ const Stack = createNativeStackNavigator();
 const AuthNavigationStack = () => { 
   return ( 
     <Stack.Navigator 
-        initialRouteName="MainScreen"
+        initialRouteName="StartPage"
         screenOptions={{
             headerStyle: {
                 backgroundColor: "#1e90ff",
@@ -25,7 +27,9 @@ const AuthNavigationStack = () => {
             headerTintColor: "#fff"
         }}
     >
+        <Stack.Screen name="Start Screen" component={StartScreen} />
         <Stack.Screen name="Main Screen" component={MainScreen} />
+        <Stack.Screen name="Login Screen" component={LoginScreen} />
         <Stack.Screen name="Calendar Screen" component={CalendarScreen} />
         <Stack.Screen name="Diet Logs" component={DietScreen} />
         <Stack.Screen name="Exercise Screen" component={ExerciseScreen} />
