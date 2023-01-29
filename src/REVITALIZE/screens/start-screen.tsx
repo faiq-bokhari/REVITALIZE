@@ -4,13 +4,13 @@ import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { globalStyles } from '../styles/global';
 const StartScreen = ({navigation}) => {
     return (
-            <View style={globalStyles.container}>
-                
-                <TouchableOpacity style={globalStyles.appButtonContainer}>
+            <View style={globalStyles.loginContainer}>                
+
+                <TouchableOpacity style={globalStyles.loginButton}>
                     <Text style={globalStyles.appButtonText}>{"Sign Up"}</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=> navigation.navigate("Login Screen")} style={globalStyles.appButtonContainer}>
+                <TouchableOpacity onPress={()=> navigation.navigate("Login Screen")} style={globalStyles.loginButton}>
                     <Text style={globalStyles.appButtonText}>{"Login"}</Text>
                 </TouchableOpacity>
             </View>

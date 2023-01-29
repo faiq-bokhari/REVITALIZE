@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#1C1B1D",
+    backgroundColor: "white",
     padding: PADDING,
   },
   title: {
@@ -26,8 +26,7 @@ const Bedtime = () => {
   const start = useSharedValue(0);
   const end = useSharedValue(1.5 * Math.PI);
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Next Wake Up Only</Text>
+    <View>
       <Container start={start} end={end}>
         <CircularSlider start={start} end={end} />
       </Container>
