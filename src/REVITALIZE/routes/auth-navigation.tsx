@@ -22,9 +22,9 @@ const AuthNavigationStack = () => {
         initialRouteName="StartScreen"
         screenOptions={{
             headerStyle: {
-                backgroundColor: "#1e90ff",
+                backgroundColor: "#000000",
             },
-            headerTintColor: "#fff"
+            headerTintColor: "#ffffff"
         }}
     >
         <Stack.Screen name="Start Screen" component={StartScreen} />

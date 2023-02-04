@@ -40,11 +40,11 @@ const AddFoodScreen=({navigation})=>{
     
     return (
         <View style={globalStyles.container}>
-            <TouchableOpacity onPress={()=>navigation.navigate('Search Recipe')} style={globalStyles.appButtonContainer}>
-                <Text style={globalStyles.appButtonText}>{"Search Recipe"}</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('Search Recipe')} style={globalStyles.appDietButtonContainer2}>
+                <Text style={globalStyles.appMainScreenText}>{"Search Recipe"}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Custom Meal Screen')} style={globalStyles.appButtonContainer}>
-                <Text style={globalStyles.appButtonText}>{"Add Custom Meal +"}</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('Custom Meal Screen')} style={globalStyles.appDietButtonContainer2}>
+                <Text style={globalStyles.appMainScreenText}>{"Add Custom Meal +"}</Text>
             </TouchableOpacity>
         </View>
     );

@@ -41,24 +41,30 @@ const MainScreen=({navigation})=>{
     },[route.params]);
     
     return (
-        <View style={globalStyles.container}>
-            <TouchableOpacity onPress={goToCalendarScreen} style={globalStyles.topCenterContainer}>
-                <Text style={globalStyles.appButtonText}>{ dateString }</Text>
-            </TouchableOpacity>
+        <View>
+            <View style={globalStyles.date_container}>
             <TouchableOpacity style={globalStyles.topLeftContainer}>
                 <Ionicons.Button onPress={()=> subtractDate()} name= 'arrow-back-outline' />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={goToCalendarScreen}  style={globalStyles.topCenterContainer}>
+                <Text style={globalStyles.appButtonText}>{ dateString }</Text>
             </TouchableOpacity>
             <TouchableOpacity style={globalStyles.topRightContainer}>
                 <Ionicons.Button onPress={()=> addDate()} name= 'arrow-forward-outline' />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Diet Logs')} style={globalStyles.appButtonContainer}>
-                <Text style={globalStyles.appButtonText}>{"Diet Section"}</Text>
+            </View>
+            <View>
+                <Text style={globalStyles.MainPage_Title}>Select Category</Text>
+                <Text style={globalStyles.MainPage_Subtitle}>Which section would you like to explore?</Text>
+            </View>
+            <TouchableOpacity onPress={()=>navigation.navigate('Diet Logs')} style={globalStyles.appDietButtonContainer}>
+                <Text style={globalStyles.appMainScreenText}>{"Diet Section"}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Exercise Screen')} style={globalStyles.appButtonContainer}>
-                <Text style={globalStyles.appButtonText}>{"Exercise Section"}</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('Exercise Screen')} style={globalStyles.appExerciseButtonContainer}>
+                <Text style={globalStyles.appMainScreenText}>{"Exercise Section"}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Sleep Screen')} style={globalStyles.appButtonContainer}>
-                <Text style={globalStyles.appButtonText}>{"Sleep Section"}</Text>
+            <TouchableOpacity onPress={()=>navigation.navigate('Sleep Screen')} style={globalStyles.appSleepButtonContainer}>
+                <Text style={globalStyles.appMainScreenText}>{"Sleep Section"}</Text>
             </TouchableOpacity>
         </View>
     );

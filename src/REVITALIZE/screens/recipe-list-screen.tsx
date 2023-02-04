@@ -2218,10 +2218,13 @@ const RecipeListScreen=({navigation})=>{
 
     return (
         <View style={globalStyles.container}>
+        <Text style={styles.title_text}>Search: </Text>
+        <View style={styles.title_separator}></View>
         <FlatList
             data={finalRecipeList}
             renderItem = {oneRecipe}
-            ItemSeparatorComponent = {itemSeparator}>
+            ItemSeparatorComponent = {itemSeparator}
+            >
         </FlatList>
       </View>
     );
@@ -2229,16 +2232,27 @@ const RecipeListScreen=({navigation})=>{
 
 const styles = StyleSheet.create({
     separator: {
-        height: 1,
+        height: 2,
         width: '100%',
-        backgroundColor: '#CCC'
+        backgroundColor: '#000000',
+    },
+
+    title_separator: {
+        height: 4,
+        width: '100%',
+        backgroundColor: '#000000',
     },
 
     item: {
         flex: 1,
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: "center",
         paddingVertical: 13,
+        backgroundColor: '#fceecb',
+        borderRadius: 100,
+        height: 89,
+        marginTop: 10,
+        marginBottom: 10,
 
     },
 
@@ -2252,14 +2266,23 @@ const styles = StyleSheet.create({
     },
 
     pic: {
-        height: 55,
-        width: 55,
+        borderRadius: 100,
+        height: 89,
+        width: 89,
     },
     name: {
         fontWeight: '600',
         fontSize: 16,
         marginLeft: 13,
+    },
+    title_text: {
+        fontWeight: 'bold',
+        fontSize: 18,
+        textAlign: 'left',
+        width: '100%',
+        marginLeft: 10,
     }
+
 });
 
 export default RecipeListScreen

@@ -4,9 +4,17 @@ import { blue } from 'react-native-redash';
  export const globalStyles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#ffdab9',
+      backgroundColor: '#ffffff',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    date_container: {
+      width:'100%',
+      backgroundColor: '#000000',
+      height: 100,
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      flexDirection: 'row',
     },
     titleText: {
         fontFamily: `Arial`,
@@ -19,11 +27,72 @@ import { blue } from 'react-native-redash';
     },
     appButtonContainer: {
         elevation: 8,
-        backgroundColor: "#1e90ff",
+        backgroundColor: '#000000' ,
         borderRadius: 20,
         paddingVertical: 10,
         paddingHorizontal: 50,
-        marginBottom: 40,
+        marginBottom: 20,
+        marginTop: 20
+    },
+    MainPage_Title: {
+      fontWeight: 'bold',
+      fontSize: 24,
+      textAlign: 'center',
+      width: '100%',    
+      marginTop: 50,
+      marginBottom: 10,
+    },
+    MainPage_Subtitle: {
+      fontWeight: '600',
+      fontSize: 16,
+      textAlign: 'center',
+      width: '100%',    
+    },
+    listTitle: {
+      fontWeight: 'bold',
+      fontSize: 20,
+      textAlign: 'center',
+      textDecorationLine: 'underline',
+      marginBottom: 10,
+    },
+    appDietButtonContainer: {
+      elevation: 8,
+      backgroundColor: "#fceecb",
+      borderRadius: 0,
+      paddingVertical: 50,
+      paddingHorizontal: 50,
+      marginBottom: 10,
+      marginTop: 50,
+      width: 390,
+      
+    },
+    appDietButtonContainer2: {
+      elevation: 8,
+      backgroundColor: "#fceecb",
+      borderRadius: 100,
+      paddingVertical: 20,
+      paddingHorizontal: 50,
+      marginBottom: 50,
+      width: 300,
+      
+    },
+    appExerciseButtonContainer: {
+        elevation: 8,
+        backgroundColor: "#f9cedf",
+        borderRadius: 0,
+        paddingVertical: 50,
+        paddingHorizontal: 50,
+        marginBottom: 10,
+        width: 390,
+    },
+    appSleepButtonContainer: {
+      elevation: 8,
+      backgroundColor: "#1e90ff",
+      borderRadius: 0,
+      paddingVertical: 50,
+      paddingHorizontal: 50,
+      marginBottom: 0,
+      width: 390,
     },
     confirmSleepButton: {
         elevation: 8,
@@ -41,35 +110,84 @@ import { blue } from 'react-native-redash';
         alignSelf: "center",
         textTransform: "uppercase",
     },
+    appMainScreenText: {
+      fontFamily: `Arial`,
+      fontSize: 18,
+      color: "#000000",
+      fontWeight: "bold",
+      alignSelf: "center",
+      textTransform: "uppercase",
+  },
     topCenterContainer: {
-        top: 20,
-        center: 5,
-        backgroundColor: "#1e90ff",
-        position: 'absolute', // add if dont work with above
+        alignSelf: 'center',
+        backgroundColor: "#000000",
+        padding: 10,
     },
     topRightContainer: {
-        top: 20,
-        right: 5,
-        backgroundColor: "#1e90ff",
-        position: 'absolute', // add if dont work with above
+      alignSelf: 'flex-end',
+      backgroundColor: "#000000",
+      padding: 10,
+      
     },
     topLeftContainer: {
-        top: 20,
-        left: 5,
-        backgroundColor: "#1e90ff",
-        position: 'absolute', // add if dont work with above
+      alignSelf: 'flex-start',
+      backgroundColor: "#000000",
+      padding: 10,
     },
     listContainer: {
-        // flex: 1,
-        // top: 20,
-        paddingTop: 60,
-        paddingBottom: 10,
+        backgroundColor: "#fceecb",
         flex: 1,
-        // flexDirection: 'row',
-        // alignItems: 'center',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+        marginTop: 10,
+        width: '90%',
+        borderRadius: 15,
        },
+       listContainer2: {
+        backgroundColor: "#fceecb",
+        flex: 1,
+        width: '90%',
+        borderRadius: 10,
+        marginBottom: 30,
+       },
+       listRowContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems:'center',
+
+       },
+       buttonsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center'
+       },
+       item_Name: {
+        flex:1,
+        padding: 5,
+        alignItems: 'flex-start',
+        
+       //  height: 44,
+      },
+      item_Info: {
+        flex:1,
+        padding: 5,
+        alignItems: 'flex-start',
+        
+       //  height: 44,
+      },
+
+        list_button: {
+        backgroundColor: 'black',
+        borderRadius: 10,
+        margin: 5,
+        paddingLeft: 15,
+        paddingRight: 15,
+        
+       },
+       list_button_text: {
+        color: 'white',
+        fontSize: 18,
+        padding: 5,
+        
+       },
+
     welcomeBack: {
         //top: 300,
         fontSize: 25,
@@ -90,19 +208,7 @@ import { blue } from 'react-native-redash';
         alignItems: 'center',
         justifyContent: 'center',
     },
-       listContainer2: {
-        // flex: 1,
-        // top: 20,
-        paddingTop: 20,
-        paddingBottom: 10,
-        flex: 1,
-        // flexDirection: 'row',
-        // alignItems: 'center',
-        // alignItems: 'center',
-        // justifyContent: 'center',
-       },
        item: {
-         padding: 10,
          fontSize: 18,
         //  height: 44,
        },
@@ -122,7 +228,7 @@ import { blue } from 'react-native-redash';
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
     },
     listHeader: {
         paddingTop: 2,

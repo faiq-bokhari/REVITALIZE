@@ -25,51 +25,77 @@ const RecipeDetailScreen=()=>{
       
   )
 
+  itemSeparator = () => {
+    return <View style={styles.separator}></View>
+
+};
+
     return (
         <View style={globalStyles.container}>
-          <Text style={globalStyles.titleText}>{route.params.recipe.label}</Text>
-          <Text>Ingredients</Text>
+          <Text style={styles.title_text}>{route.params.recipe.label} </Text>
+        <View style={styles.title_separator}></View>
         <FlatList
             data={ingrediantList}
-            renderItem = {oneRecipe}>
+            renderItem = {oneRecipe}
+            ItemSeparatorComponent = {itemSeparator}
+            >
         </FlatList>          
       </View>
     );
 }
 
 const styles = StyleSheet.create({
-  separator: {
-      height: 1,
-      width: '100%',
-      backgroundColor: '#CCC'
-  },
+    separator: {
+        height: 2,
+        width: '100%',
+        backgroundColor: '#000000',
+    },
 
-  item: {
-      flex: 1,
-      flexDirection: 'row',
-      alignItems: 'center',
-      paddingVertical: 13,
+    title_separator: {
+        height: 4,
+        width: '100%',
+        backgroundColor: '#000000',
+    },
 
-  },
+    item: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: "center",
+        paddingVertical: 13,
+        backgroundColor: '#fceecb',
+        borderRadius: 100,
+        height: 89,
+        marginTop: 10,
+        marginBottom: 10,
 
-  picContainer: {
-      backgroundColor: '#D9D9D9',
-      borderRadius: 100,
-      height: 89,
-      width: 89,
-      justifyContent: 'center',
-      alignItems: 'center',
-  },
+    },
 
-  pic: {
-      height: 55,
-      width: 55,
-  },
-  name: {
-      fontWeight: '600',
-      fontSize: 16,
-      marginLeft: 13,
-  }
+    picContainer: {
+        backgroundColor: '#D9D9D9',
+        borderRadius: 100,
+        height: 89,
+        width: 89,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    pic: {
+        borderRadius: 100,
+        height: 89,
+        width: 89,
+    },
+    name: {
+        fontWeight: '600',
+        fontSize: 16,
+        marginLeft: 13,
+    },
+    title_text: {
+        fontWeight: 'bold',
+        fontSize: 18,
+        textAlign: 'left',
+        width: '100%',
+        marginLeft: 10,
+    }
 });
 
 export default RecipeDetailScreen
