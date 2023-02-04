@@ -45,33 +45,33 @@ const FilterRecipeScreen2=({navigation})=>{
     
     return (
         <View style={globalStyles.container}>
-        <Text style= {globalStyles.sideText}> Restrictions</Text>
+        <View style={globalStyles.appDietButtonContainer3}>
         <TextInput
-        style={globalStyles.input}
         onChangeText={changeTextName}
         value={number1}
-        placeholder="vegan, vegetarian, dairy-free, etc..."
+        placeholder="Restrictions"
         keyboardType="default"
         returnKeyType={'done'}
       />
-        <Text style= {globalStyles.sideText}> Calories</Text>
+      </View>
+      <View style={globalStyles.appDietButtonContainer3}>
         <TextInput
-        style={globalStyles.input}
         onChangeText={changeTextCalories}
         value={number2}
         placeholder="Calories"
         keyboardType="numeric"
         returnKeyType={'done'}
       />
-        <Text style= {globalStyles.sideText}> Other</Text>
+            </View>
+        <View style={globalStyles.appDietButtonContainer3}>
         <TextInput
-        style={globalStyles.input}
         onChangeText={changeTextTags}
         value={number3}
         placeholder="Other"
         keyboardType="default"
         returnKeyType={'done'}
       />
+      </View>
         <TouchableOpacity onPress={()=>navigation.navigate('Recipe List Screen')} style={globalStyles.appButtonContainer}>
             <Text style={globalStyles.appButtonText}>{"Search"}</Text>
         </TouchableOpacity>

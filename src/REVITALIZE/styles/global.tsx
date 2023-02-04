@@ -76,6 +76,16 @@ import { blue } from 'react-native-redash';
       width: 300,
       
     },
+    appDietButtonContainer3: {
+      elevation: 8,
+      backgroundColor: "#fceecb",
+      borderRadius: 100,
+      paddingVertical: 20,
+      paddingHorizontal: 20,
+      marginBottom: 20,
+      width: 300,
+      
+    },
     appExerciseButtonContainer: {
         elevation: 8,
         backgroundColor: "#f9cedf",
