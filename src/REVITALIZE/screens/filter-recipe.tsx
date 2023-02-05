@@ -63,11 +63,11 @@ const FilterRecipeScreen2=({navigation})=>{
   const [number2, changeTextCalories] = React.useState("");
   
     const handleItemSelect1 = (item) => {
-        setSelectedItems1([...selectedItems1, item]);
+        setSelectedItems1([...selectedItems1, item.name]);
       };
     
       const handleItemSelect2 = (item) => {
-        setSelectedItems2([...selectedItems2, item]);
+        setSelectedItems2([...selectedItems2, item.name]);
       };
     
     return (

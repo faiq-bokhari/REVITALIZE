@@ -28,14 +28,14 @@ const DietScreen=({navigation})=>{
     return (
         <View style={globalStyles.container}>
             <View style={globalStyles.date_container}>
-            <TouchableOpacity style={globalStyles.topLeftContainer}>
-                <Ionicons.Button onPress={()=> subtractDate()} name= 'arrow-back-outline' />
+            <TouchableOpacity >
+                <Ionicons.Button style={globalStyles.topLeftContainer} onPress={()=> subtractDate()} name= 'arrow-back-outline' />
             </TouchableOpacity>
             <TouchableOpacity style={globalStyles.topCenterContainer}>
                 <Text style={globalStyles.appButtonText}>{ dateString }</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={globalStyles.topRightContainer}>
-                <Ionicons.Button onPress={()=> addDate()} name= 'arrow-forward-outline' />
+            <TouchableOpacity >
+                <Ionicons.Button style={globalStyles.topRightContainer} onPress={()=> addDate()} name= 'arrow-forward-outline' />
             </TouchableOpacity>
             </View>
             <View style={globalStyles.listContainer}>
