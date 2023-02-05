@@ -131,18 +131,15 @@ import { blue } from 'react-native-redash';
     topCenterContainer: {
         alignSelf: 'center',
         backgroundColor: "#000000",
-        padding: 10,
     },
     topRightContainer: {
       alignSelf: 'flex-end',
       backgroundColor: "#000000",
-      padding: 10,
       
     },
     topLeftContainer: {
       alignSelf: 'flex-start',
       backgroundColor: "#000000",
-      padding: 10,
     },
     listContainer: {
         backgroundColor: "#fceecb",
