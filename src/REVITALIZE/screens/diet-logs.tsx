@@ -23,6 +23,10 @@ const DietScreen=({navigation})=>{
     function mybuttonclick() {
       Alert.alert('hi')
   }
+  itemSeparator = () => {
+    return <View style={globalStyles.separator}></View>
+
+};
   
     
     return (
@@ -38,8 +42,8 @@ const DietScreen=({navigation})=>{
                 <Ionicons.Button style={globalStyles.topRightContainer} onPress={()=> addDate()} name= 'arrow-forward-outline' />
             </TouchableOpacity>
             </View>
-            <View style={globalStyles.listContainer}>
             <Text style={globalStyles.listTitle}>Food Log</Text>
+            <View style={globalStyles.listContainer}>
             <FlatList 
         data={[
           {key: 'Pineapple Pizzzaa'},
@@ -47,6 +51,7 @@ const DietScreen=({navigation})=>{
           {key: 'Vanilla Milkshake'},
           {key: 'Cocounut Milkshake'}
         ]}
+        ItemSeparatorComponent = {itemSeparator}
         renderItem={({item}) => <View style={globalStyles.listButtonContainer}>
             <View style={globalStyles.listRowContainer}>
                 <View style={globalStyles.item_Name}>

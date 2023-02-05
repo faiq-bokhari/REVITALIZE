@@ -285,5 +285,22 @@ import { blue } from 'react-native-redash';
       sideText: {
         flexDirection:"row",
         alignItems:'center'
-      }
+      },
+      separator: {
+        height: 2,
+        width: '100%',
+        backgroundColor: '#000000',
+    },
+        item_row: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: "center",
+        paddingVertical: 13,
+        backgroundColor: '#fceecb',
+        borderRadius: 100,
+        height: 89,
+        marginTop: 10,
+        marginBottom: 10,
+
+    },
 });
