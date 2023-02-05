@@ -265,7 +265,7 @@ import { blue } from 'react-native-redash';
         paddingHorizontal: 15,
         borderColor: '#ccc',
         borderWidth: 1,
-        borderRadius: 15, 
+        borderRadius: 30, 
         fontSize: 16,
         marginBottom: 15
       },
@@ -276,7 +276,8 @@ import { blue } from 'react-native-redash';
         paddingVertical: 10,
         paddingHorizontal: 50,
         marginBottom: 10,
-        width: 300
+        width: 300,
+        borderRadius: 30
         //flex: 1,
         //width: 300,
         //justifyContent: 'center',
