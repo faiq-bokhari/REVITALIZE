@@ -205,9 +205,9 @@ import { blue } from 'react-native-redash';
     sleepText: {
         //top: 300,
         fontSize: 25,
-        padding: 15,
+        padding: 9,
         //textAlign: 'center'
-        marginTop: 60,
+        //marginTop: 0,
         fontWeight: 'bold'
     },
     loginContainer: {
