@@ -11,6 +11,7 @@ import RecipeDetailScreen from '../screens/recipe-details-screen';
 import AddFoodScreen from '../screens/add-food';
 import StartScreen from '../screens/start-screen';
 import LoginScreen from '../screens/login-screen';
+import ForgotPasswordScreen from '../screens/forgot-password-screen';
 
 import FilterRecipeScreen2 from '../screens/filter-recipe';
 import CustomMealScreen from '../screens/custom-meal';
@@ -30,6 +31,7 @@ const AuthNavigationStack = () => {
         <Stack.Screen name="Start Screen" component={StartScreen} />
         <Stack.Screen name="Main Screen" component={MainScreen} />
         <Stack.Screen name="Login Screen" component={LoginScreen} />
+        <Stack.Screen name="Forgot Password Screen" component={ForgotPasswordScreen} />
         <Stack.Screen name="Calendar Screen" component={CalendarScreen} />
         <Stack.Screen name="Diet Logs" component={DietScreen} />
         <Stack.Screen name="Exercise Screen" component={ExerciseScreen} />

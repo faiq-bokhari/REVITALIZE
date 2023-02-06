@@ -22,7 +22,7 @@ const LoginScreen=({navigation})=>{
             keyboardType="default"
             />
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('Forgot Password Screen')}>
                 <Text style={globalStyles.forgotPassword}>{"Forgot Password"}</Text>
             </TouchableOpacity>
 
