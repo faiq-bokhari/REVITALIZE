@@ -10,17 +10,13 @@ const RecipeDetailScreen=()=>{
 
     const ingrediantList = [];
 
-    for(const p in route.params.recipe.ingredients){
-        ingrediantList.push({name: route.params.recipe.ingredients[p].text, img: route.params.recipe.ingredients[p].image});
-    }
-
     const oneRecipe = ({item}) => (
       <View style={styles.item}>
               <View style={styles.picContainer}>
-              <Image style={styles.pic} source={{uri: item.img} }
+              <Image style={styles.pic} source={{uri: item.image} }
           ></Image>
               </View>
-          <Text style={styles.name}>{item.name}</Text>
+          <Text style={styles.name}>{item.text}</Text>
       </View>
       
   )
@@ -35,7 +31,7 @@ const RecipeDetailScreen=()=>{
           <Text style={styles.title_text}>{route.params.recipe.label} </Text>
         <View style={styles.title_separator}></View>
         <FlatList
-            data={ingrediantList}
+            data={route.params.recipe.ingredients}
             renderItem = {oneRecipe}
             ItemSeparatorComponent = {itemSeparator}
             >
@@ -88,6 +84,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         fontSize: 16,
         marginLeft: 13,
+        width: "70%",
     },
     title_text: {
         fontWeight: 'bold',

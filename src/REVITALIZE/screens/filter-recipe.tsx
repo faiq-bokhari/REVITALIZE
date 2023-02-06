@@ -8,8 +8,6 @@ import { useRoute } from '@react-navigation/native';
 import SearchableDropdown from 'react-native-searchable-dropdown';
 import SearchableDropdownComponent from './searchable-dropdown-component';
 
-const options = [  { id: 1, name: 'Option 1' },  { id: 2, name: 'Option 2' },  { id: 3, name: 'Option 3' },];
-
 const FilterRecipeScreen2=({navigation})=>{    
     const options1 = [
         { id: 1, name: 'balanced' },
@@ -21,9 +19,9 @@ const FilterRecipeScreen2=({navigation})=>{
       ];
     
       const options2 = [
-        { id: 4, name: 'alcohol-cocktail' },
-        { id: 5, name: 'alcohol-free' },
-        { id: 6, name: 'celery-free' },
+        { id: 39, name: 'alcohol-cocktail' },
+        { id: 40, name: 'alcohol-free' },
+        { id: 41, name: 'celery-free' },
         { id: 7, name: 'crustacean-free' },
         { id: 8, name: 'dairy-free' },
         { id: 9, name: 'DASH' },
@@ -63,12 +61,22 @@ const FilterRecipeScreen2=({navigation})=>{
   const [number2, changeTextCalories] = React.useState("");
   
     const handleItemSelect1 = (item) => {
-        setSelectedItems1([...selectedItems1, item.name]);
+        setSelectedItems1([...selectedItems1, item]);
       };
     
       const handleItemSelect2 = (item) => {
-        setSelectedItems2([...selectedItems2, item.name]);
+        setSelectedItems2([...selectedItems2, item]);
       };
+
+      const goToListScreen = () =>{
+        navigation.navigate('Recipe List Screen', {
+            keyword: number1,
+            calories: number2,
+            diet: selectedItems1,
+            health: selectedItems2,
+        });
+
+    }
     
     return (
         <View style={globalStyles.container}>
@@ -106,7 +114,7 @@ const FilterRecipeScreen2=({navigation})=>{
           <Text key={item.id}>{item.name}</Text>
         ))}
       </View>
-        <TouchableOpacity onPress={()=>navigation.navigate('Recipe List Screen')} style={globalStyles.appButtonContainer}>
+        <TouchableOpacity onPress={() => goToListScreen()} style={globalStyles.appButtonContainer}>
             <Text style={globalStyles.appButtonText}>{"Search"}</Text>
         </TouchableOpacity>
       </View>
