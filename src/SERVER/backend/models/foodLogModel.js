@@ -1,16 +1,22 @@
-import mongoose from 'mongoose'
+const mongoose = require("mongoose");
 
 const foodLogSchema = mongoose.Schema({
-    foodName: String,
-    foodCalories: Number,
-    foodCarbs: Number,
-    foodFats: Number,
-    foodProtein: Number,
-    foodDate: Date
+    foodName: {
+      type: String,
+      required: [true, "Add a  name."],
+    },
+    calories: Number,
+    carbs: Number,
+    fats: Number,
+    protein: Number,
+    foodDate: {
+      type: Date,
+      required: [true, "Provide date for food entry"],
+    },
+    email: {
+      type: String, 
+      required: [true, "Add an email"], 
+    },
 })
 
-const FoodLog = mongoose.model('FoodLog', foodLogSchema)
-
-export default FoodLog
-
-// now do recipe filter one, and try to make and api call td
+module.exports = mongoose.model("FoodLog", foodLogSchema);
