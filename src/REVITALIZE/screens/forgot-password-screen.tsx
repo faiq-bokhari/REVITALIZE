@@ -17,12 +17,6 @@ const ForgotPasswordScreen=({navigation})=>{
 
             <TextInput
             style={globalStyles.loginInput}
-            placeholder="Enter old password"
-            keyboardType="default"
-            />
-
-            <TextInput
-            style={globalStyles.loginInput}
             placeholder="Enter new password"
             keyboardType="default"
             />
