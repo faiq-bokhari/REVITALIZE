@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, TouchableOpacity, FlatList, Button, Alert} from 'react-native';
 import { globalStyles } from '../styles/global';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -9,6 +9,9 @@ const DietScreen=({navigation})=>{
     const [dateString, setDateString] = useState(current.toDateString());
     const [date] = useState(current);
     const meals = [{key:''}, {key:''}, {key:''}, {key:''}];
+
+    const [data, setData] = useState([]);
+
     
     function addDate() {
         date.setDate(date.getDate() + 1);
@@ -20,9 +23,47 @@ const DietScreen=({navigation})=>{
         setDateString(date.toDateString());
     }
 
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01';
+    
+            const response = await fetch(url, {
+                method: 'GET',
+              });
+            const json = await response.json();
+            setData(json);
+             console.log(JSON.stringify(json, null, "  "));
+          } catch (error) {
+            console.error(error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+
+      
+      
+
     function mybuttonclick() {
       Alert.alert('hi')
   }
+
+const DeleteButtonClick = async (item_name) => {
+    try {
+        let url_delete = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01?foodName=' + item_name;
+        console.log(url_delete);
+        const response = await fetch(url_delete, {
+          method: 'POST',
+        });
+        const responseJson = await response.json();
+        console.log(responseJson);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
   itemSeparator = () => {
     return <View style={globalStyles.separator}></View>
 
@@ -45,23 +86,18 @@ const DietScreen=({navigation})=>{
             <Text style={globalStyles.listTitle}>Food Log</Text>
             <View style={globalStyles.listContainer}>
             <FlatList 
-        data={[
-          {key: 'Pineapple Pizzzaa'},
-          {key: 'Chocolate Doughnut'},
-          {key: 'Vanilla Milkshake'},
-          {key: 'Cocounut Milkshake'}
-        ]}
+        data={data.foodLog}
         ItemSeparatorComponent = {itemSeparator}
         renderItem={({item}) => <View style={globalStyles.listButtonContainer}>
             <View style={globalStyles.listRowContainer}>
                 <View style={globalStyles.item_Name}>
-                <Text style={globalStyles.item}>{item.key}</Text>
+                <Text style={globalStyles.item}>{item.foodName}</Text>
                 </View>
           <View style={globalStyles.buttonsContainer}>
           <TouchableOpacity style={globalStyles.list_button}onPress={mybuttonclick}>
             <Text style={globalStyles.list_button_text}>Edit</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={globalStyles.list_button}onPress={mybuttonclick}>
+            <TouchableOpacity style={globalStyles.list_button} onPress={() => DeleteButtonClick(item.foodName)}>
             <Text style={globalStyles.list_button_text}>Delete</Text>
             </TouchableOpacity>
           </View>
