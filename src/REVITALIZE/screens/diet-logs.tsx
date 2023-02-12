@@ -159,23 +159,23 @@ const DeleteButtonClick = async (item_name) => {
       <TouchableOpacity onPress={()=>navigation.navigate('Add Food Screen')} style={globalStyles.appButtonContainer}>
                 <Text style={globalStyles.appButtonText}>{"Add Item +"}</Text>
             </TouchableOpacity>
-            <FlatList style={globalStyles.listContainer2}
-        data={[
-          {key: 'Macronutrients', key1:"Today's intake"},
-          {key: 'Calories', key1:'500'},
-          {key: 'Protein', key1:'500'},
-          {key: 'Fats', key1:'500'},
-          {key: 'Carbs', key1:'500'}
-        ]}
+            <View style={globalStyles.listContainer2}>
+            <Text style={globalStyles.DietPage_Subtitle}>Calories: {data.calories} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Protein: {data.protein} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Carbs: {data.carbs} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Fat: {data.fat} </Text>
+            </View>
+            {/* <FlatList style={globalStyles.listContainer2}
+        data={data}
         renderItem={({item}) => <View style={globalStyles.listRowContainer}>
                 <View style={globalStyles.item_Name}>
-                <Text style={globalStyles.item}>{item.key}</Text>
+                <Text style={globalStyles.item}>Calories: {item.calories}</Text>
                 </View>
                 <View style={globalStyles.item_Info}>
-                <Text style={globalStyles.item}>{item.key1}</Text>
+                <Text style={globalStyles.item}>CARBS: {item.calories}</Text>
                 </View>
           </View>}
-      />
+      /> */}
         </View>
     );
 }

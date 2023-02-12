@@ -5,10 +5,10 @@ import { TouchableOpacity} from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
 
-const RecipeDetailScreen=()=>{
+const RecipeDetailScreen=({navigation})=>{
     const route = useRoute()
 
-    const ingrediantList = [];
+    console.log(route.params.recipe.ingredients);
 
     const oneRecipe = ({item}) => (
       <View style={styles.item}>
@@ -21,6 +21,30 @@ const RecipeDetailScreen=()=>{
       
   )
 
+  const AddMealButtonClick = async () => {
+    try {
+        let url_add_meal = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01?';
+
+          url_add_meal += `foodName=${route.params.recipe.label}&`;
+          url_add_meal += `calories=${route.params.recipe.calories}&`;
+          url_add_meal += `protein=${route.params.recipe.protein}&`;
+          url_add_meal += `carbs=${route.params.recipe.carbs}&`;
+          url_add_meal += `fats=${route.params.recipe.fat}&`;
+          
+          console.log("NEW MEAL");
+          const response = await fetch(url_add_meal, {
+            method: 'POST',
+            
+          });
+          const responseJson = await response.json();
+          console.log(responseJson);
+      } catch (error) {
+        console.error(error);
+      }
+
+      navigation.navigate('Diet Logs');
+    };
+
   itemSeparator = () => {
     return <View style={styles.separator}></View>
 
@@ -28,7 +52,16 @@ const RecipeDetailScreen=()=>{
 
     return (
         <View style={globalStyles.container}>
+                    <TouchableOpacity style={globalStyles.appButtonContainer} onPress={() => AddMealButtonClick()}>
+            <Text style={globalStyles.appButtonText}>{"Add Meal"}</Text>
+        </TouchableOpacity>
           <Text style={styles.title_text}>{route.params.recipe.label} </Text>
+        <View style={styles.title_separator}></View>
+        <Text style={globalStyles.DietPage_Subtitle}>Calories: {route.params.recipe.calories} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Protein: {route.params.recipe.protein} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Carbs: {route.params.recipe.carbs} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Fat: {route.params.recipe.fat} </Text>
+        <Text style={styles.title_text}>Ingredients </Text>
         <View style={styles.title_separator}></View>
         <FlatList
             data={route.params.recipe.ingredients}
