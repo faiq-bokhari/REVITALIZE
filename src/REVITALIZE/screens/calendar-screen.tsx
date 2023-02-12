@@ -1,29 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 import { globalStyles } from '../styles/global';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 import { useRoute } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
+import { DateContext } from './Date-component';
 
 
 const CalendarScreen=({navigation})=>{
-    const current = new Date();
-    const [dateString, setDateString] = useState(current.toDateString());
-    
-    const route = useRoute();
+    const { date, setDate} = useContext(DateContext);    
     return (
 <Calendar
   // Initially visible month. Default = now
-  current={route.params.dateString}
+  current={date.toDateString()}
   // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
 
   // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
   // Handler which gets executed on day press. Default = undefined
   onDayPress={day => {
     console.log('selected day', day);
-    navigation.navigate("Main Screen", {
-        day
-    });
+    setDate(new Date(Date.parse(day.dateString)));
+    navigation.navigate("Main Screen");
   }}
   // Handler which gets executed on day long press. Default = undefined
   onDayLongPress={day => {

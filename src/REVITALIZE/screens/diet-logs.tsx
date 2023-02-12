@@ -1,32 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Text, View, TouchableOpacity, FlatList, Button, Alert} from 'react-native';
 import { globalStyles } from '../styles/global';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import moment from 'moment';
 import { useIsFocused } from '@react-navigation/native';
+import { DateContext } from './Date-component';
 
 const DietScreen=({navigation})=>{
-    const current = new Date();
-    const [dateString, setDateString] = useState(current.toDateString());
-    const [date] = useState(current);
+    // const current = new Date();
+    // const [dateString, setDateString] = useState(current.toDateString());
+    // const [date] = useState(current);
     const isFocused = useIsFocused();
     const [data, setData] = useState([]);
 
+    const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+
+    
+    useEffect(() => {
+      getDietLogData(date);
+    }, [date]);
     
     function addDate() {
-        date.setDate(date.getDate() + 1);
-        setDateString(date.toDateString());
+      addOneDay();
     }
-
+    
     function subtractDate() {
-        date.setDate(date.getDate() - 1);
-        setDateString(date.toDateString());
+      subtractOneDay();
     }
 
-    function getDietLogData() {
+    function getDietLogData(currentDate = date) {
         const fetchData = async () => {
             try {
-              let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01';
+              let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/';
+              url += currentDate.toISOString().split("T")[0];
+              console.log("DATEEEEEEEEEEEEEEEEEEEEEEEE")
+              console.log(currentDate.toISOString().split("T")[0]);
       
               const response = await fetch(url, {
                   method: 'GET',
@@ -91,7 +99,7 @@ const DietScreen=({navigation})=>{
 
 const DeleteButtonClick = async (item_name) => {
     try {
-        let url_delete = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01?foodName=' + item_name;
+        let url_delete = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/' + date.toISOString().split("T")[0] + '?foodName=' + item_name;
         console.log(url_delete);
         const response = await fetch(url_delete, {
           method: 'DELETE',
@@ -99,7 +107,7 @@ const DeleteButtonClick = async (item_name) => {
         const responseJson = await response.json();
         console.log(responseJson);
         try {
-            let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01';
+            let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/' + date.toISOString().split("T")[0];
     
             const response = await fetch(url, {
                 method: 'GET',
@@ -125,13 +133,13 @@ const DeleteButtonClick = async (item_name) => {
         <View style={globalStyles.container}>
             <View style={globalStyles.date_container}>
             <TouchableOpacity >
-                <Ionicons.Button style={globalStyles.topLeftContainer} onPress={()=> subtractDate()} name= 'arrow-back-outline' />
+                <Ionicons.Button style={globalStyles.topLeftContainer} onPress={() => {subtractDate()}} name= 'arrow-back-outline' />
             </TouchableOpacity>
             <TouchableOpacity style={globalStyles.topCenterContainer}>
-                <Text style={globalStyles.appButtonText}>{ dateString }</Text>
+                <Text style={globalStyles.appButtonText}>{ date.toDateString() }</Text>
             </TouchableOpacity>
             <TouchableOpacity >
-                <Ionicons.Button style={globalStyles.topRightContainer} onPress={()=> addDate()} name= 'arrow-forward-outline' />
+                <Ionicons.Button style={globalStyles.topRightContainer} onPress={() => {addDate()}} name= 'arrow-forward-outline' />
             </TouchableOpacity>
             </View>
             <Text style={globalStyles.listTitle}>Food Log</Text>
