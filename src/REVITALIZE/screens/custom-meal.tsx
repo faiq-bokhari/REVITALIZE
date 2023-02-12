@@ -1,7 +1,8 @@
 import { useRoute } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import { globalStyles } from '../styles/global';
+import { DateContext } from './Date-component';
 
 
 const CustomMealScreen=({navigation})=>{
@@ -13,6 +14,7 @@ const CustomMealScreen=({navigation})=>{
     const [mealCarbs, changeTextCarbs] = useState(route.params?.editcarbs.toString() || '');
     const [mealFat, changeTextFat] = useState(route.params?.editfats.toString() || '');
     const [isAlreadyMeal, setIsAlreadyMeal] = useState(false);
+    const { date, addOneDay, subtractOneDay } = useContext(DateContext);
     
 
     // if (route.params.foodName.length > 0) {
@@ -33,7 +35,7 @@ const CustomMealScreen=({navigation})=>{
 
     const AddMealButtonClick = async () => {
       try {
-          let url_add_meal = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01?';
+          let url_add_meal = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/' + date.toISOString().split("T")[0] + '?';
           if (mealName.length > 0) {
             url_add_meal += `foodName=${mealName}&`;
           }
