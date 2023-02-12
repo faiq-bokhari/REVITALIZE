@@ -14,7 +14,7 @@ const registerUser = async (req, res) => {
   //check if user exists
   const userExists = await User.findOne({ email: lowerCaseEmail });
   if (userExists) {
-    res.status(400).json({ success: false, message: "User already exists" });
+    res.status(400).json({ success: false, message: "User already exists. Please login" });
     return;
   }
 
@@ -54,7 +54,7 @@ const loginUser = async (req, res) => {
 
   //check that the user is found
   if (!user) {
-    res.status(400).json({ success: false, message: "Email not found" });
+    res.status(400).json({ success: false, message: "Email not found. Please sign up" });
     return;
   }
   //check that the password is correct
