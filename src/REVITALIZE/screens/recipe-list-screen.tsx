@@ -3,6 +3,7 @@ import { FlatList, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-
 import { globalStyles } from '../styles/global';
 import { useState } from 'react';
 import { useRoute } from '@react-navigation/native';
+import { radToMinutes } from './Sleep/Constants';
 
 
 const RecipeListScreen=({navigation})=>{
@@ -48,7 +49,7 @@ const RecipeListScreen=({navigation})=>{
         <View style={styles.item}>
                 <View style={styles.picContainer}>
                 <TouchableOpacity onPress={() => goToDetailScreen(item)}>
-                <Image style={styles.pic} source={{uri: item.image} }
+                <Image style={styles.pic} source={{uri: item.image}}
             ></Image>
             </TouchableOpacity>
                 </View>
@@ -76,7 +77,7 @@ const RecipeListScreen=({navigation})=>{
 
     return (
         <View style={globalStyles.container}>
-        <Text style={styles.title_text}>Search: </Text>
+        <Text style={styles.title_text}>Search: {route.params.keyword} </Text>
         <View style={styles.title_separator}></View>
         <FlatList
             data={data}

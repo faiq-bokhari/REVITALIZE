@@ -48,6 +48,12 @@ import { blue } from 'react-native-redash';
       textAlign: 'center',
       width: '100%',    
     },
+    DietPage_Subtitle: {
+      fontWeight: '600',
+      fontSize: 16,
+      textAlign: 'left',
+      width: '100%',    
+    },
     listTitle: {
       fontWeight: 'bold',
       fontSize: 20,

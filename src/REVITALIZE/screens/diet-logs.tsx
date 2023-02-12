@@ -3,13 +3,13 @@ import { Text, View, TouchableOpacity, FlatList, Button, Alert} from 'react-nati
 import { globalStyles } from '../styles/global';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import moment from 'moment';
+import { useIsFocused } from '@react-navigation/native';
 
 const DietScreen=({navigation})=>{
     const current = new Date();
     const [dateString, setDateString] = useState(current.toDateString());
     const [date] = useState(current);
-    const meals = [{key:''}, {key:''}, {key:''}, {key:''}];
-
+    const isFocused = useIsFocused();
     const [data, setData] = useState([]);
 
     
@@ -23,10 +23,82 @@ const DietScreen=({navigation})=>{
         setDateString(date.toDateString());
     }
 
-
-    useEffect(() => {
+    function getDietLogData() {
         const fetchData = async () => {
-          try {
+            try {
+              let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01';
+      
+              const response = await fetch(url, {
+                  method: 'GET',
+                });
+              const json = await response.json();
+              setData(json);
+               console.log(JSON.stringify(json, null, "  "));
+            } catch (error) {
+              console.error(error);
+            }
+          };
+      
+          fetchData();
+    }
+    useEffect(() => {
+        getDietLogData();
+ 
+      }, []);
+
+      useEffect(() => {
+        getDietLogData();
+      },[isFocused]);
+      
+      
+
+    function EditButtonClick(mealInfo, foodName = '', protein = '', calories = '', carbs = '', fats = '') {
+        console.log("INFO BELOWWWWWWW");
+        console.log(mealInfo);
+        if (mealInfo.foodName){
+            foodName = mealInfo.foodName;
+            console.log(mealInfo.foodName);
+        }
+        if (mealInfo.protein){
+            protein = mealInfo.protein;
+            console.log(mealInfo.protein);
+
+        }
+        if (mealInfo.calories){
+            calories = mealInfo.calories;
+            console.log(mealInfo.calories);
+        }
+        if (mealInfo.carbs){
+            carbs = mealInfo.carbs;
+            console.log(mealInfo.carbs);
+        }
+        if (mealInfo.fats){
+            fats = mealInfo.fats;
+            console.log(mealInfo.fats);
+        }
+
+
+        navigation.navigate('Custom Meal Screen', {
+            editfoodName: foodName,
+            editcalories: calories,
+            editprotein: protein,
+            editcarbs: carbs,
+            editfats: fats,
+            editcurrentmeal: true,
+        });
+      
+  }
+
+const DeleteButtonClick = async (item_name) => {
+    try {
+        let url_delete = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01?foodName=' + item_name;
+        console.log(url_delete);
+        const response = await fetch(url_delete, {
+          method: 'DELETE',
+        });
+        const responseJson = await response.json();
+        console.log(responseJson);
+        try {
             let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01';
     
             const response = await fetch(url, {
@@ -38,27 +110,6 @@ const DietScreen=({navigation})=>{
           } catch (error) {
             console.error(error);
           }
-        };
-    
-        fetchData();
-      }, []);
-
-      
-      
-
-    function mybuttonclick() {
-      Alert.alert('hi')
-  }
-
-const DeleteButtonClick = async (item_name) => {
-    try {
-        let url_delete = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/2023-02-01?foodName=' + item_name;
-        console.log(url_delete);
-        const response = await fetch(url_delete, {
-          method: 'POST',
-        });
-        const responseJson = await response.json();
-        console.log(responseJson);
       } catch (error) {
         console.error(error);
       }
@@ -94,7 +145,7 @@ const DeleteButtonClick = async (item_name) => {
                 <Text style={globalStyles.item}>{item.foodName}</Text>
                 </View>
           <View style={globalStyles.buttonsContainer}>
-          <TouchableOpacity style={globalStyles.list_button}onPress={mybuttonclick}>
+          <TouchableOpacity style={globalStyles.list_button} onPress={() => EditButtonClick(item)}>
             <Text style={globalStyles.list_button_text}>Edit</Text>
             </TouchableOpacity>
             <TouchableOpacity style={globalStyles.list_button} onPress={() => DeleteButtonClick(item.foodName)}>
@@ -108,23 +159,23 @@ const DeleteButtonClick = async (item_name) => {
       <TouchableOpacity onPress={()=>navigation.navigate('Add Food Screen')} style={globalStyles.appButtonContainer}>
                 <Text style={globalStyles.appButtonText}>{"Add Item +"}</Text>
             </TouchableOpacity>
-            <FlatList style={globalStyles.listContainer2}
-        data={[
-          {key: 'Macronutrients', key1:"Today's intake"},
-          {key: 'Calories', key1:'500'},
-          {key: 'Protein', key1:'500'},
-          {key: 'Fats', key1:'500'},
-          {key: 'Carbs', key1:'500'}
-        ]}
+            <View style={globalStyles.listContainer2}>
+            <Text style={globalStyles.DietPage_Subtitle}>Calories: {data.calories} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Protein: {data.protein} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Carbs: {data.carbs} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Fat: {data.fat} </Text>
+            </View>
+            {/* <FlatList style={globalStyles.listContainer2}
+        data={data}
         renderItem={({item}) => <View style={globalStyles.listRowContainer}>
                 <View style={globalStyles.item_Name}>
-                <Text style={globalStyles.item}>{item.key}</Text>
+                <Text style={globalStyles.item}>Calories: {item.calories}</Text>
                 </View>
                 <View style={globalStyles.item_Info}>
-                <Text style={globalStyles.item}>{item.key1}</Text>
+                <Text style={globalStyles.item}>CARBS: {item.calories}</Text>
                 </View>
           </View>}
-      />
+      /> */}
         </View>
     );
 }
