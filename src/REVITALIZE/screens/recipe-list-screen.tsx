@@ -48,7 +48,7 @@ const RecipeListScreen=({navigation})=>{
         <View style={styles.item}>
                 <View style={styles.picContainer}>
                 <TouchableOpacity onPress={() => goToDetailScreen(item)}>
-                <Image style={styles.pic} source={{uri: item.image} }
+                <Image style={styles.pic} source={{uri: item.image}}
             ></Image>
             </TouchableOpacity>
                 </View>

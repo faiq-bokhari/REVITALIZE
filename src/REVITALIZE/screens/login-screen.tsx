@@ -14,7 +14,7 @@ const LoginScreen=({navigation})=>{
 
         try {
           // send a POST request to the loginUser func in backend to authenticate the user
-          const response = await fetch('http://10.0.0.248:8000/users/login', {
+          const response = await fetch('http://192.168.2.22:8000/users/login', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
