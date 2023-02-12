@@ -4,16 +4,17 @@ const Sleep = require("../models/sleepModel");
 const addSleepData = async (req, res) => {
   const { email, sleepHour, bedHour, sleepMinute, bedMinute, dateAdded } = req.body;
   let lowerCaseEmail = email.toLowerCase();
+  let correctDate = dateAdded.split("T")[0];
 
   //check that all fields are filled in
-  if (!sleepHour || !bedHour || !sleepMinute || !bedMinute || !lowerCaseEmail || !dateAdded) {
+  if (!sleepHour || !bedHour || !sleepMinute || !bedMinute || !lowerCaseEmail || !correctDate) {
     res
       .status(400)
       .json({ success: false, message: "Please fill in all fields for adding sleep data" });
     return;
   }
 
-  const sleepDataExists = await Sleep.findOne({ email: lowerCaseEmail, dateAdded: dateAdded });
+  const sleepDataExists = await Sleep.findOne({ email: lowerCaseEmail, dateAdded: correctDate });
   if (sleepDataExists) {
     res.status(400).json({ success: false, message: "Sleep data already exists" });
     return;
@@ -26,7 +27,7 @@ const addSleepData = async (req, res) => {
     bedHour, 
     sleepMinute, 
     bedMinute, 
-    dateAdded 
+    dateAdded: correctDate
   });
 
   if (sleep) {

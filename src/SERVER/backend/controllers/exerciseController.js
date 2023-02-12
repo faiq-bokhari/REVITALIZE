@@ -7,15 +7,16 @@ const addExerciseData = async (req, res) => {
   let capitalizedName = name.split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(' ');
+  let correctDate = dateAdded.split("T")[0];
   //check that all fields are filled in
-  if (!capitalizedName || !sets || !repititions || !weight || !lowerCaseEmail || !dateAdded) {
+  if (!capitalizedName || !sets || !repititions || !weight || !lowerCaseEmail || !correctDate) {
     res
       .status(400)
       .json({ success: false, message: "Please fill in all fields for adding exercise" });
     return;
   }
 
-  const exerciseDataExists = await Exercise.findOne({ email: lowerCaseEmail, dateAdded: dateAdded, name: capitalizedName });
+  const exerciseDataExists = await Exercise.findOne({ email: lowerCaseEmail, dateAdded: correctDate, name: capitalizedName });
   if (exerciseDataExists) {
     res.status(400).json({ success: false, message: "Exercise data already exists" });
     return;
@@ -28,7 +29,7 @@ const addExerciseData = async (req, res) => {
     sets, 
     repititions, 
     weight, 
-    dateAdded 
+    dateAdded: correctDate 
   });
 
   if (exercise) {
