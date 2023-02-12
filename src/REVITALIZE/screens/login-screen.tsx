@@ -14,7 +14,8 @@ const LoginScreen=({navigation})=>{
 
         try {
           // send a POST request to the loginUser func in backend to authenticate the user
-          const response = await fetch('http://192.168.2.22:8000/users/login', {
+          // change ip back
+          const response = await fetch('http://192.168.2.43:8000/users/login', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -30,6 +31,8 @@ const LoginScreen=({navigation})=>{
             navigation.navigate('Main Screen');
           } else {
             // Authentication failed, show an error message
+            // remove navigate later
+            navigation.navigate('Main Screen');
             alert(data.message);
           }
         } catch (error) {
