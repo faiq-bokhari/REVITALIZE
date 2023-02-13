@@ -4,11 +4,13 @@ import { globalStyles } from '../styles/global';
 import { TouchableOpacity} from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { DateContext } from './Date-component';
+import { EmailContext } from './Email-component';
 
 
 const RecipeDetailScreen=({navigation})=>{
     const route = useRoute()
     const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+    const { email } = useContext(EmailContext);
 
     console.log(route.params.recipe.ingredients);
 
@@ -25,7 +27,7 @@ const RecipeDetailScreen=({navigation})=>{
 
   const AddMealButtonClick = async () => {
     try {
-        let url_add_meal = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/' + date.toISOString().split("T")[0] + '?';
+        let url_add_meal = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
 
           url_add_meal += `foodName=${route.params.recipe.label}&`;
           url_add_meal += `calories=${route.params.recipe.calories}&`;

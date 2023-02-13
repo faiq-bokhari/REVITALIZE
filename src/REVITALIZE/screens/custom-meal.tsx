@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import { globalStyles } from '../styles/global';
 import { DateContext } from './Date-component';
+import { EmailContext } from './Email-component';
 
 
 const CustomMealScreen=({navigation})=>{
@@ -15,6 +16,7 @@ const CustomMealScreen=({navigation})=>{
     const [mealFat, changeTextFat] = useState(route.params?.editfats.toString() || '');
     const [isAlreadyMeal, setIsAlreadyMeal] = useState(false);
     const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+    const { email } = useContext(EmailContext);
     
 
     // if (route.params.foodName.length > 0) {
@@ -35,7 +37,7 @@ const CustomMealScreen=({navigation})=>{
 
     const AddMealButtonClick = async () => {
       try {
-          let url_add_meal = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/' + date.toISOString().split("T")[0] + '?';
+          let url_add_meal = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
           if (mealName.length > 0) {
             url_add_meal += `foodName=${mealName}&`;
           }
