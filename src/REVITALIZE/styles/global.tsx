@@ -114,10 +114,18 @@ import { blue } from 'react-native-redash';
         elevation: 8,
         backgroundColor: "black",
         borderRadius: 20,
-        paddingVertical: 10,
+        paddingVertical: 5,
         paddingHorizontal: 50,
-        marginBottom: 40,
+        marginBottom: 10,
     },
+    updateSleepButton: {
+      elevation: 8,
+      backgroundColor: "black",
+      borderRadius: 20,
+      paddingVertical: 5,
+      paddingHorizontal: 50,
+      marginBottom: 25,
+  },
     appButtonText: {
         fontFamily: `Arial`,
         fontSize: 18,
@@ -210,7 +218,7 @@ import { blue } from 'react-native-redash';
     },
     sleepText: {
         //top: 300,
-        fontSize: 25,
+        fontSize: 19,
         padding: 9,
         //textAlign: 'center'
         //marginTop: 0,
