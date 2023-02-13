@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import React, { useState, useEffect, useContext } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Alert} from 'react-native';
 import { SelectList }  from 'react-native-dropdown-select-list';
 import NumericInput from 'react-native-numeric-input';
 import { globalStyles } from '../../styles/global';
+import { useNavigation } from '@react-navigation/native';
+import { DateContext } from '../Date-component';
 
-const AddExercise = ({navigation}) => {
+
+const AddExercise = ({navigation, route}) => {
+    const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+    
     const exercises = [
         {key: '0', value: 'Ab Wheel'},
         {key: '1', value: 'Arnold Press'},
@@ -90,17 +95,86 @@ const AddExercise = ({navigation}) => {
         {key: '81', value: 'Tricep Extension'},
     ];
    
-    const [selected, setSelected] = useState("");
-    const [reps, setReps] = useState(0);
-    const [sets, setSets] = useState(0);
-    const [weight, setWeight] = useState(0);
+    const [selected, setSelected] = useState(route.params?.editName || "");
+    const [reps, setReps] = useState(route.params?.editReps || 0);
+    const [sets, setSets] = useState(route.params?.editSets || 0);
+    const [weight, setWeight] = useState(route.params?.editWeight || 0);
+
+    const navigateOrBlock = (exercise) => {
+        if (exercise.name.length === 0) {
+            Alert.alert('Invalid Input','Please select exercise')
+        }
+        else if (exercise.repititions === 0 || exercise.sets === 0) {
+            
+            Alert.alert('Invalid Input','Enter Reps/Sets Greater Than 0')
+        }
+        else {
+            addWorkout(exercise)
+            navigation.navigate("Exercise Screen", exercise)
+        }
+    }
+
+  
+    const switchedTo = navigation.addListener('focus', () => {
+        if (route.params !== null) {
+            //navigation.setParams(null);
+            // setSelected("");
+            // setReps(0);
+            // setSets(0);
+            // setWeight(0);
+        }
+    }, [navigation]);
+   
+    function addWorkout (newExercise) {
+        const addData = async () => {
+            try {
+                if(route.params?.editcurrentexercise && route.params?.editcurrentexercise == true){
+                    let url = 'http://192.168.2.43:8000/exercises/test123@gmail.com/' + selected + '/' + date.toISOString().split("T")[0];
+                    const response = await fetch(url, {
+                        method: 'PATCH',
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'application/json',
+                          },
+                          body: JSON.stringify(newExercise)
+                        });
+                      const responseJson = await response.json();
+                      console.log(responseJson);
+                }
+                else {
+                    let url = 'http://192.168.2.43:8000/exercises/';
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(newExercise)
+                    });
+                    const data = await response.json();
+                    if(data.success) {
+                        //console.log(JSON.stringify(newExercise, null, "  "));
+                      }
+                      else {
+                        //console.log('no worky')
+                        //console.log(data.message)
+                        //console.log(JSON.stringify(newExercise, null, "  "));
+                      }
+                }
+            } catch (error) {
+              console.error(error);
+            }
+          }
+        addData();
+      }   
+    
 
     return (
         <View style={styles.container}>
             <SelectList 
                 data={exercises} 
                 save={"value"}
-                setSelected={setSelected}
+                setSelected={(val) => setSelected(val)}
             />
             <Text style={styles.text}>
                     Sets
@@ -129,7 +203,7 @@ const AddExercise = ({navigation}) => {
             <View style={{marginTop: 260}}>
                 <TouchableOpacity 
                     style={globalStyles.appButtonContainer}
-                    onPress={()=> navigation.navigate("Exercise Screen", {name: selected, reps: reps, sets: sets, weight: weight})} >
+                    onPress={() => navigateOrBlock({email: 'test123@gmail.com', name: selected, sets: sets, repititions: reps, weight: weight, dateAdded: date.toISOString().split("T")[0]})} >
                     <Text style={globalStyles.appButtonText}>{"Save Exercise"}</Text>
                 </TouchableOpacity>
             </View>
