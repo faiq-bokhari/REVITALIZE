@@ -41,7 +41,7 @@ export const radToMinutes = (rad: number) => {
   return (24 * 60 * rad) / TAU;
 };
 
-const preFormatDuration = (raw: number) => {
+export const preFormatDuration = (raw: number) => {
   "worklet";
   const duration = Math.round(raw);
   const minutes = duration % 60;
