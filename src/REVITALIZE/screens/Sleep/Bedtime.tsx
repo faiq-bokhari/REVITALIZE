@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const Bedtime = () => {
-  const start = useSharedValue(0);
-  const end = useSharedValue(1.5 * Math.PI);
+const Bedtime = ({ dateString }) => {
+  const start = useSharedValue(0.3 * Math.PI);
+  const end = useSharedValue(1.53 * Math.PI);
   return (
     <View>
-      <Container start={start} end={end}>
+      <Container start={start} end={end} dateString={dateString}>
         <CircularSlider start={start} end={end} />
       </Container>
     </View>

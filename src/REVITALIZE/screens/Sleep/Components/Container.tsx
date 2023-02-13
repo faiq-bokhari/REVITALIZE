@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useState, ReactNode, useContext } from "react";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Animated, { useDerivedValue } from "react-native-reanimated";
 import { ReText } from "react-native-redash";
 
@@ -8,14 +8,19 @@ import {
   formatDuration2,
   radToMinutes,
   absoluteDuration,
+  preFormatDuration
 } from "../Constants";
 
 import Label from "./Label";
+
+import { globalStyles } from '../../../styles/global';
+import { EmailContext } from '../../login-screen';
 
 interface ContainerProps {
   start: Animated.SharedValue<number>;
   end: Animated.SharedValue<number>;
   children: ReactNode;
+  dateString: string;
 }
 
 const styles = StyleSheet.create({
@@ -38,12 +43,58 @@ const styles = StyleSheet.create({
   },
 });
 
-const Container = ({ start, end, children }: ContainerProps) => {
+const Container = ({ start, end, children, dateString }: ContainerProps) => {
+
+  const [bedHour, setBedHour] = useState(1);
+  const [bedMinute, setBedMinute] = useState(1);
+  const [sleepHour, setSleepHour] = useState(1);
+  const [sleepMinute, setSleepMinute] = useState(1);
+
+  const dateAdded = dateString;
+  const email = useContext(EmailContext);
+
   const duration = useDerivedValue(() => {
     const d = absoluteDuration(start.value, end.value);
     return formatDuration2(radToMinutes(d));
   });
+
+  const handleConfirmSleep = async () => {
+
+    setBedHour(preFormatDuration(radToMinutes(start.value)).hours);
+    setBedMinute(preFormatDuration(radToMinutes(start.value)).minutes);
+    setSleepHour(preFormatDuration(radToMinutes(end.value)).hours);
+    setSleepMinute(preFormatDuration(radToMinutes(end.value)).minutes);
+
+    const response = await fetch('http://10.0.0.248:8000/sleeps/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email:email,
+        sleepHour:sleepHour,
+        bedHour:bedHour,
+        sleepMinute:sleepMinute,
+        bedMinute:bedMinute.toString(),
+        dateAdded:dateString
+      })
+    });
+  
+    const result = await response.json();
+
+    if (result.success) {
+      alert(result.message);
+    } 
+
+    else {
+      alert(result.message);
+      //Make an update request here
+    }
+  }
+
   return (
+    <View>
     <View style={styles.container}>
       <View style={styles.values}>
         <Label theta={start} label="BEDTIME" icon="bed" />
@@ -51,6 +102,10 @@ const Container = ({ start, end, children }: ContainerProps) => {
       </View>
       {children}
       <ReText style={styles.duration} text={duration} />
+      </View>
+      <TouchableOpacity onPress={handleConfirmSleep} style={globalStyles.confirmSleepButton}>
+        <Text style={globalStyles.appButtonText}>{"Confirm Sleep"}</Text>
+      </TouchableOpacity>
     </View>
   );
 };

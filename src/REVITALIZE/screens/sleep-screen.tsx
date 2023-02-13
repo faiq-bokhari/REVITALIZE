@@ -32,10 +32,8 @@ function subtractDate() {
             </TouchableOpacity>
             </View>
           <Text style={globalStyles.sleepText}>Sleep</Text>
-          <Bedtime />
-          <TouchableOpacity onPress={()=>navigation.navigate('Sleep Screen')} style={globalStyles.confirmSleepButton}>
-                <Text style={globalStyles.appButtonText}>{"Confirm Sleep"}</Text>
-            </TouchableOpacity>
+
+          <Bedtime dateString={dateString}/>
       </View>
     );
 }
