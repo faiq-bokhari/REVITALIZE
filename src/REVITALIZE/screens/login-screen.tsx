@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native
 import { globalStyles } from '../styles/global';
 
 //Email is made global so it can be accessed in other modules
-export const EmailContext = createContext();
+export const EmailContext = createContext('sleep_yd@gmail.com');
 
 const LoginScreen=({navigation})=>{
 
