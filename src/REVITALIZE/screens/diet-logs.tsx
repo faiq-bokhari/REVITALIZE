@@ -5,6 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import moment from 'moment';
 import { useIsFocused } from '@react-navigation/native';
 import { DateContext } from './Date-component';
+import { EmailContext } from './Email-component';
 
 const DietScreen=({navigation})=>{
     // const current = new Date();
@@ -14,6 +15,9 @@ const DietScreen=({navigation})=>{
     const [data, setData] = useState([]);
 
     const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+    const { email } = useContext(EmailContext);
+
+    
 
     
     useEffect(() => {
@@ -31,7 +35,7 @@ const DietScreen=({navigation})=>{
     function getDietLogData(currentDate = date) {
         const fetchData = async () => {
             try {
-              let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/';
+              let url = 'http://192.168.2.22:8000/foodlog/' + email + '/';
               url += currentDate.toISOString().split("T")[0];
               console.log("DATEEEEEEEEEEEEEEEEEEEEEEEE")
               console.log(currentDate.toISOString().split("T")[0]);
@@ -99,7 +103,7 @@ const DietScreen=({navigation})=>{
 
 const DeleteButtonClick = async (item_name) => {
     try {
-        let url_delete = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/' + date.toISOString().split("T")[0] + '?foodName=' + item_name;
+        let url_delete = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?foodName=' + item_name;
         console.log(url_delete);
         const response = await fetch(url_delete, {
           method: 'DELETE',
@@ -107,7 +111,7 @@ const DeleteButtonClick = async (item_name) => {
         const responseJson = await response.json();
         console.log(responseJson);
         try {
-            let url = 'http://192.168.2.22:8000/foodlog/hasan@gmail.com/' + date.toISOString().split("T")[0];
+            let url = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0];
     
             const response = await fetch(url, {
                 method: 'GET',

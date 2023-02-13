@@ -19,7 +19,7 @@ const CalendarScreen=({navigation})=>{
   // Handler which gets executed on day press. Default = undefined
   onDayPress={day => {
     console.log('selected day', day);
-    setDate(new Date(Date.parse(day.dateString)));
+    setDate(new Date((day.dateString)));
     navigation.navigate("Main Screen");
   }}
   // Handler which gets executed on day long press. Default = undefined

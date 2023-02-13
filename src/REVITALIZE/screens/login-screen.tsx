@@ -1,14 +1,16 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 import { globalStyles } from '../styles/global';
+import EmailProvider, {EmailContext} from "./Email-component";
 
 //Email is made global so it can be accessed in other modules
-export const EmailContext = createContext('sleep_yd@gmail.com');
+//export const EmailContext = createContext('sleep_yd@gmail.com');
 
 const LoginScreen=({navigation})=>{
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { setEmailGlobally } = useContext(EmailContext);
    
       const handleLogin = async () => {
 
@@ -27,7 +29,9 @@ const LoginScreen=({navigation})=>{
       
           if (data.success) {
             // Authentication successful, navigate to the main screen
+            setEmailGlobally(data.email);
             navigation.navigate('Main Screen');
+            
           } else {
             // Authentication failed, show an error message
             alert(data.message);
@@ -38,7 +42,7 @@ const LoginScreen=({navigation})=>{
       };
 
     return (
-        <EmailContext.Provider value={email}>
+
             <View style={globalStyles.loginContainer}>
 
                 <Text style={globalStyles.welcomeBack}>Welcome Back!</Text>
@@ -75,7 +79,6 @@ const LoginScreen=({navigation})=>{
                     <Text style={globalStyles.forgotPassword}>{"Sign Up"}</Text>
                 </TouchableOpacity>
             </View>
-        </EmailContext.Provider>
     );
 }
 
