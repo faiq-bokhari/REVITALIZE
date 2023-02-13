@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { globalStyles } from '../styles/global';
-import AddExercise from './Workout/AddExercise';
+import AddExercise from './AddExercise';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useIsFocused, useRoute } from '@react-navigation/native';
 import { DateContext } from './Date-component';
+import { EmailContext } from './Email-component';
 
   const ExerciseScreen=({navigation})=>{
     const current = new Date();
@@ -14,11 +15,12 @@ import { DateContext } from './Date-component';
     const [isSending, setIsSending] = useState(false);
     const route = useRoute();
     const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+    const { email } = useContext(EmailContext);
  
 
   const DeleteExercise = async (exercise_name) => {
     try {
-        let url_delete = 'http://192.168.2.43:8000/exercises/test123@gmail.com/' + exercise_name + "/2023-02-13" //+ date.toISOString().split("T")[0];
+        let url_delete = 'http://192.168.2.43:8000/exercises/' + email + '/' + exercise_name + '/' + date.toISOString().split("T")[0];
         //console.log(url_delete);
         const response = await fetch(url_delete, {
           method: 'DELETE',
@@ -26,7 +28,7 @@ import { DateContext } from './Date-component';
         const responseJson = await response.json();
         //console.log(responseJson);
         try {
-          let url = 'http://192.168.2.43:8000/exercises/test123@gmail.com/2023-02-13' //+ date.toISOString().split("T")[0];
+          let url = 'http://192.168.2.43:8000/exercises/' + email + '/' + date.toISOString().split("T")[0];
   
           const response = await fetch(url, {
               method: 'GET',
@@ -69,12 +71,13 @@ import { DateContext } from './Date-component';
           editWeight: weight,
           editcurrentexercise: true,
       });
-}
+    }
   
     const switchedTo = navigation.addListener('focus', () => {
-      if (route.params !== null) {
+      if (navigation.isFocused()) {
        // addExercise(route.params);
        getWorkoutData();
+       
       //navigation.setParams(null);
       }
     }, [navigation]);
@@ -95,7 +98,7 @@ import { DateContext } from './Date-component';
   function getWorkoutData(currentDate = date) {
     const fetchData = async () => {
         try {
-          let url = 'http://192.168.2.43:8000/exercises/test123@gmail.com/' + currentDate.toISOString().split("T")[0];
+          let url = 'http://192.168.2.43:8000/exercises/' + email + '/' + currentDate.toISOString().split("T")[0];
   
           const response = await fetch(url, {
               method: 'GET',
@@ -112,12 +115,9 @@ import { DateContext } from './Date-component';
   }
 
   useEffect(() => {
-    getWorkoutData();
+      getWorkoutData(date);   
   },[isFocused]);
 
-  function mybuttonclick() {
-    Alert.alert('hi')
-  }
   
   const itemSeparator = () => {
     return <View style={globalStyles.separator}></View>
@@ -146,7 +146,8 @@ import { DateContext } from './Date-component';
           data={workout.exerciseList}
           renderItem={({ item }) => (
               <View>
-                  <Text style={{textAlign: 'left'}}> {item.name}     {item.repititions}     {item.sets}     {item.weight}</Text>
+                  <Text style={{fontWeight: 'bold'}}> {item.name} </Text>
+                  <Text style={{textAlign: 'left'}}>    {item.repititions}     {item.sets}     {item.weight}</Text>
               </View>
           )}
           ItemSeparatorComponent = {itemSeparator}

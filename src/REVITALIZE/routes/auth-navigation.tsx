@@ -4,7 +4,7 @@ import MainScreen from '../screens/main-screen';
 import DietScreen from '../screens/diet-logs';
 import ExerciseScreen from '../screens/exercise-screen';
 import SleepScreen from '../screens/sleep-screen';
-import AddExercise from '../screens/Workout/AddExercise';
+import AddExercise from '../screens/AddExercise';
 import CalendarScreen from '../screens/calendar-screen';
 import RecipeListScreen from '../screens/recipe-list-screen';
 import RecipeDetailScreen from '../screens/recipe-details-screen';

@@ -2,13 +2,19 @@ import React, { useState, useEffect, useContext } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert} from 'react-native';
 import { SelectList }  from 'react-native-dropdown-select-list';
 import NumericInput from 'react-native-numeric-input';
-import { globalStyles } from '../../styles/global';
+import { globalStyles } from '../styles/global';
 import { useNavigation } from '@react-navigation/native';
-import { DateContext } from '../Date-component';
+import { DateContext } from './Date-component';
+import { EmailContext } from './Email-component';
 
 
 const AddExercise = ({navigation, route}) => {
     const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+    const { email } = useContext(EmailContext);
+    const [selected, setSelected] = useState(route.params?.editName || "");
+    const [reps, setReps] = useState(route.params?.editReps || 0);
+    const [sets, setSets] = useState(route.params?.editSets || 0);
+    const [weight, setWeight] = useState(route.params?.editWeight || 0);
     
     const exercises = [
         {key: '0', value: 'Ab Wheel'},
@@ -94,11 +100,6 @@ const AddExercise = ({navigation, route}) => {
         {key: '80', value: 'Tricep Dip'},
         {key: '81', value: 'Tricep Extension'},
     ];
-   
-    const [selected, setSelected] = useState(route.params?.editName || "");
-    const [reps, setReps] = useState(route.params?.editReps || 0);
-    const [sets, setSets] = useState(route.params?.editSets || 0);
-    const [weight, setWeight] = useState(route.params?.editWeight || 0);
 
     const navigateOrBlock = (exercise) => {
         if (exercise.name.length === 0) {
@@ -110,7 +111,9 @@ const AddExercise = ({navigation, route}) => {
         }
         else {
             addWorkout(exercise)
-            navigation.navigate("Exercise Screen", exercise)
+            setTimeout(() => {
+                navigation.navigate("Exercise Screen", exercise);
+            }, 3000);
         }
     }
 
@@ -129,7 +132,7 @@ const AddExercise = ({navigation, route}) => {
         const addData = async () => {
             try {
                 if(route.params?.editcurrentexercise && route.params?.editcurrentexercise == true){
-                    let url = 'http://192.168.2.43:8000/exercises/test123@gmail.com/' + selected + '/' + date.toISOString().split("T")[0];
+                    let url = 'http://192.168.2.43:8000/exercises/' + email + '/' + selected + '/' + date.toISOString().split("T")[0];
                     const response = await fetch(url, {
                         method: 'PATCH',
                         headers: {
@@ -137,7 +140,7 @@ const AddExercise = ({navigation, route}) => {
                             'Content-Type': 'application/json',
                           },
                           body: JSON.stringify(newExercise)
-                        });
+                    });
                       const responseJson = await response.json();
                       console.log(responseJson);
                 }
@@ -169,41 +172,57 @@ const AddExercise = ({navigation, route}) => {
       }   
     
 
+
+
     return (
         <View style={styles.container}>
-            <SelectList 
+                <SelectList 
                 data={exercises} 
                 save={"value"}
                 setSelected={(val) => setSelected(val)}
-            />
-            <Text style={styles.text}>
+                boxStyles={{borderRadius:20}}
+                placeholder={'                    Exercise List              '}
+                />
+            <Text style={globalStyles.listTitle}>
                     Sets
             </Text>  
             <NumericInput 
                 minValue={0}
                 value={reps}
                 onChange={value => setReps(value)}
+                rounded
+                leftButtonBackgroundColor = '#f9cedf'
+                rightButtonBackgroundColor = '#f9cedf'
+                totalWidth = {150}
             />
-            <Text style={styles.text}>
+            <Text style={globalStyles.listTitle}>
                     Reps
             </Text>  
             <NumericInput 
                 minValue={0}
                 value={sets}
                 onChange={value => setSets(value)}
+                rounded
+                leftButtonBackgroundColor = '#f9cedf'
+                rightButtonBackgroundColor = '#f9cedf'
+                totalWidth = {150}
             />
-            <Text style={styles.text}>
+            <Text style={globalStyles.listTitle}>
                     Weight
             </Text>  
             <NumericInput 
                 minValue={0}
                 value={weight}
                 onChange={value => setWeight(value)}
+                rounded
+                leftButtonBackgroundColor = '#f9cedf'
+                rightButtonBackgroundColor = '#f9cedf'
+                totalWidth = {150}
             />    
             <View style={{marginTop: 260}}>
                 <TouchableOpacity 
                     style={globalStyles.appButtonContainer}
-                    onPress={() => navigateOrBlock({email: 'test123@gmail.com', name: selected, sets: sets, repititions: reps, weight: weight, dateAdded: date.toISOString().split("T")[0]})} >
+                    onPress={() => navigateOrBlock({email: email, name: selected, sets: sets, repititions: reps, weight: weight, dateAdded: date.toISOString().split("T")[0]})} >
                     <Text style={globalStyles.appButtonText}>{"Save Exercise"}</Text>
                 </TouchableOpacity>
             </View>
@@ -215,11 +234,25 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        marginTop: 5,
+        marginTop: 30,
+        justifyContent: 'space-between'
     },
     text: {
-        marginTop: 15,
-    }
+        paddingTop: 30,
+        marginTop: 20,
+        
+    },
+    item: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: "center",
+        paddingVertical: 13,
+        backgroundColor:'#f9cedf',
+        borderRadius: 100,
+        height: 89,
+        marginTop: 10,
+        marginBottom: 10,
+    },
 
 })
 

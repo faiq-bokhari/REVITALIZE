@@ -53,7 +53,8 @@ const LoginScreen=({navigation})=>{
 
                 <TextInput
                 style={globalStyles.loginInput}
-                placeholder="Enter name or email"
+                // Add name input later
+                placeholder="Enter email"
                 keyboardType="default"
                 onChangeText={(text) => setEmail(text)}
                 value={email}
