@@ -131,7 +131,7 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
       <ReText style={styles.duration} text={duration} />
       </View>
       <TouchableOpacity onPress={handleConfirmSleep} style={globalStyles.confirmSleepButton}>
-        <Text style={globalStyles.appButtonText}>{"Confirm Sleep new"}</Text>
+        <Text style={globalStyles.appButtonText}>{"Confirm Sleep"}</Text>
       </TouchableOpacity>
     </View>
   );
