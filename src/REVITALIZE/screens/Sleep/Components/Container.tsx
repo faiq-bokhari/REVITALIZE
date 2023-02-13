@@ -14,7 +14,7 @@ import {
 import Label from "./Label";
 
 import { globalStyles } from '../../../styles/global';
-import { EmailContext } from '../../login-screen';
+import { EmailContext } from '../../Email-component';
 
 interface ContainerProps {
   start: Animated.SharedValue<number>;
@@ -51,7 +51,7 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
   const [sleepMinute, setSleepMinute] = useState(1);
 
   const dateAdded = dateString;
-  const email = useContext(EmailContext);
+  const {email} = useContext(EmailContext);
 
   const duration = useDerivedValue(() => {
     const d = absoluteDuration(start.value, end.value);
@@ -59,7 +59,10 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
   });
 
   const handleUpdateSleep = async (email, dateAdded) => {
-    const response = await fetch('http://192.168.2.22:8000/sleeps/sleep_yd@gmail.com/2023-02-12', {
+    //const response = await fetch('http://10.0.0.248:8000/sleeps/' + email + '/' + date.toISOString().split("T")[0] + '?';
+    //const response = await fetch('http://192.168.2.22:8000/sleeps/sleep_yd@gmail.com/2023-02-12'
+
+    const response = await fetch('http://192.168.2.22:8000/sleeps/' + email + '/' + dateString, {
       method: 'PATCH',
       headers: {
         'Accept': 'application/json',
@@ -132,6 +135,9 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
       </View>
       <TouchableOpacity onPress={handleConfirmSleep} style={globalStyles.confirmSleepButton}>
         <Text style={globalStyles.appButtonText}>{"Confirm Sleep"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={()=>handleUpdateSleep(email, dateAdded)} style={globalStyles.updateSleepButton}>
+        <Text style={globalStyles.appButtonText}>{"Update Sleep"}</Text>
       </TouchableOpacity>
     </View>
   );
