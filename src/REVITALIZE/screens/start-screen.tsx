@@ -6,7 +6,7 @@ const StartScreen = ({navigation}) => {
     return (
             <View style={globalStyles.loginContainer}>                
 
-                <TouchableOpacity style={globalStyles.loginButton}>
+                <TouchableOpacity onPress={()=> navigation.navigate("Sign Up Screen")} style={globalStyles.loginButton}>
                     <Text style={globalStyles.appButtonText}>{"Sign Up"}</Text>
                 </TouchableOpacity>
 
