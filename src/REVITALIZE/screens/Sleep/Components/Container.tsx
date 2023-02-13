@@ -58,6 +58,33 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
     return formatDuration2(radToMinutes(d));
   });
 
+  const handleUpdateSleep = async (email, dateAdded) => {
+    const response = await fetch('http://192.168.2.22:8000/sleeps/sleep_yd@gmail.com/2023-02-12', {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email:email,
+        sleepHour:sleepHour,
+        bedHour:bedHour,
+        sleepMinute:sleepMinute,
+        bedMinute:bedMinute.toString(),
+        dateAdded:dateString
+      })
+    });
+  
+    const result = await response.json();
+
+    if (result.success) {
+      alert(result.message);
+    } 
+    else {
+      alert(result.message);
+    }
+  }
+
   const handleConfirmSleep = async () => {
 
     setBedHour(preFormatDuration(radToMinutes(start.value)).hours);
@@ -65,7 +92,7 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
     setSleepHour(preFormatDuration(radToMinutes(end.value)).hours);
     setSleepMinute(preFormatDuration(radToMinutes(end.value)).minutes);
 
-    const response = await fetch('http://10.0.0.248:8000/sleeps/', {
+    const response = await fetch('http://192.168.2.22:8000/sleeps/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -89,8 +116,8 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
 
     else {
       alert(result.message);
-      //Make an update request here
     }
+    //const updatedSleepData = await handleUpdateSleep(email, dateString);
   }
 
   return (
