@@ -18,5 +18,9 @@ app.use("/sleeps", sleep);
 app.use("/exercises", exercise);
 app.use("/foodlog", foodlog);
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(port, () => console.log(`Server started on port ${port}`));
+}
+
+// app.listen(port, () => console.log(`Server started on port ${port}`));
 module.exports = app;

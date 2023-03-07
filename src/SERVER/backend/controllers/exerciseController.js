@@ -36,7 +36,7 @@ const addExerciseData = async (req, res) => {
 
   if (exercise) {
     res.status(201).json({
-      sucess: true,
+      success: true,
       message: "Success in adding exercise data",
       _id: exercise.id,
       email: exercise.email, 
@@ -47,7 +47,7 @@ const addExerciseData = async (req, res) => {
       dateAdded: exercise.dateAdded
     });
   } else {
-    res.status(400).json({ sucess: false, message: "Exercise data is invalid" });
+    res.status(400).json({ success: false, message: "Exercise data is invalid" });
   }
 };
 
@@ -58,7 +58,7 @@ const getExerciseList = async (req, res) => {
   try {
       const exerciseList = await Exercise.find({email: email, dateAdded: dateAdded});
       
-      res.status(200).json({sucess: true, message: "Success in getting exercise list", exerciseList});
+      res.status(200).json({success: true, message: "Success in getting exercise list", exerciseList});
   } catch (error) {
       res.status(404).json({ success: false, message: "Error in getting exercise list" });
   }
@@ -71,7 +71,7 @@ const getExerciseData = async (req, res) => {
 
     try {
         const exerciseData = await Exercise.findOne({email: email, name: name, dateAdded: dateAdded});
-        res.status(200).json({sucess: true, message: "Success in getting exercise data", exerciseData});
+        res.status(200).json({success: true, message: "Success in getting exercise data", exerciseData});
     } catch (error) {
         res.status(404).json({ success: false, message: "Error in getting exercise data" });
     }
@@ -85,7 +85,7 @@ const updateExerciseData = async (req, res) => {
   try {
     const updatedExerciseData = await Exercise.findOneAndUpdate({email: email, dateAdded: dateAdded, name: name}, {...client}, { new: true})
     if (updatedExerciseData) {
-      res.status(200).json({sucess: true, message: "Success in editing exercise data", updatedExerciseData});
+      res.status(200).json({success: true, message: "Success in editing exercise data", updatedExerciseData});
     } else {
       res.status(400).json({ success: false, message: "Was not able to find appropriate exercise data to edit" });
       return;
@@ -102,7 +102,7 @@ const deleteExerciseData = async (req, res) => {
   try {
     const deletedExerciseData = await Exercise.findOneAndRemove({email: email, dateAdded: dateAdded, name: name})
     if (deletedExerciseData) {
-      res.status(200).json({sucess: true, message: "Success in deleting exercise data", deletedExerciseData});
+      res.status(200).json({success: true, message: "Success in deleting exercise data", deletedExerciseData});
     } else {
       res.status(400).json({ success: false, message: "Was not able to delete slected exercise data" });
       return;
