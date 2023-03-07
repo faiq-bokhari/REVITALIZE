@@ -104,7 +104,7 @@ const deleteExerciseData = async (req, res) => {
     if (deletedExerciseData) {
       res.status(200).json({success: true, message: "Success in deleting exercise data", deletedExerciseData});
     } else {
-      res.status(400).json({ success: false, message: "Was not able to delete slected exercise data" });
+      res.status(400).json({ success: false, message: "Was not able to delete selected exercise data" });
       return;
     }
   } catch (error) {

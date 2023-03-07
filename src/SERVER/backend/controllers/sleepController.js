@@ -32,7 +32,7 @@ const addSleepData = async (req, res) => {
 
   if (sleep) {
     res.status(201).json({
-      sucess: true,
+      success: true,
       message: "Success in adding sleep data",
       _id: sleep.id,
       email: sleep.email, 
@@ -43,7 +43,7 @@ const addSleepData = async (req, res) => {
       dateAdded: sleep.dateAdded
     });
   } else {
-    res.status(400).json({ sucess: false, message: "Sleep data is invalid" });
+    res.status(400).json({ success: false, message: "Sleep data is invalid" });
   }
 };
 
@@ -55,7 +55,7 @@ const getSleepData = async (req, res) => {
   try {
       const sleepData = await Sleep.findOne({email: email, dateAdded: dateAdded});
       
-      res.status(200).json({sucess: true, message: "Success in getting sleep data", sleepData});
+      res.status(200).json({success: true, message: "Success in getting sleep data", sleepData});
   } catch (error) {
       res.status(404).json({ success: false, message: "Error in getting sleep data" });
   }
@@ -67,7 +67,7 @@ const getAllUserSleepData = async (req, res) => {
   try {
       const allUserSleepDatas = await Sleep.find({email: email}).sort({ _id: -1 });
 
-      res.status(200).json({sucess: true, message: "Success in getting all sleep data of user", allUserSleepDatas});
+      res.status(200).json({success: true, message: "Success in getting all sleep data of user", allUserSleepDatas});
   } catch (error) {    
       res.status(404).json({ message: error.message });
   }
@@ -81,7 +81,7 @@ const updateSleepData = async (req, res) => {
   try {
     const updatedSleepData = await Sleep.findOneAndUpdate({email: email, dateAdded: dateAdded}, {...client}, { new: true})
     if (updatedSleepData) {
-      res.status(200).json({sucess: true, message: "Success in editing sleep data", updatedSleepData});
+      res.status(200).json({success: true, message: "Success in editing sleep data", updatedSleepData});
     } else {
       res.status(400).json({ success: false, message: "Was not able to find appropriate sleep data to edit" });
       return;
@@ -98,9 +98,9 @@ const deleteSleepData = async (req, res) => {
   try {
     const deletedSleepData = await Sleep.findOneAndRemove({email: email, dateAdded: dateAdded})
     if (deletedSleepData) {
-      res.status(200).json({sucess: true, message: "Success in deleting sleep data", deletedSleepData});
+      res.status(200).json({success: true, message: "Success in deleting sleep data", deletedSleepData});
     } else {
-      res.status(400).json({ success: false, message: "Was not able to delete slected sleep data" });
+      res.status(400).json({ success: false, message: "Was not able to delete selected sleep data" });
       return;
     }
   } catch (error) {
