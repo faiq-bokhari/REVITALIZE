@@ -497,6 +497,8 @@ This section will not be appropriate for every project.
 
 \subsection{Workout Section}
 \newpage
+
+Unit tests for the workout section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/exercise.test.js}.
 \begin{table}[h]
     \centering
     \small
@@ -548,6 +550,8 @@ This section will not be appropriate for every project.
 
 \subsection{Rest Section}
 
+Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/sleep.test.js}.
+
 \begin{table}[h]
     \centering
     \small
@@ -579,10 +583,10 @@ This section will not be appropriate for every project.
         \hline
         Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
         \hline
-        RS6 & FR-WS-4 & params:\{ email: 'example@gmail.com', dateAdded: '2022-01-01'\},
+        RS6 & FR-RS-2 & params:\{ email: 'example@gmail.com', dateAdded: '2022-01-01'\},
         body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: true, message: 'Success in editing sleep data'\} & \{success: true, message: 'Success in editing sleep data'\} & \textcolor{Green}{PASS} \\
         \hline
-        RS7 & FR-WS-4 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07'\},
+        RS7 & FR-RS-2 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07'\},
           body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \textcolor{Green}{PASS} \\
         \hline
     \end{tabularx}
@@ -602,6 +606,10 @@ Formal testing did not reveal any necessary changes in terms of module interfaci
 \section{Trace to Modules}		
 
 \section{Code Coverage Metrics}
+
+\section{Reflection Appendix}
+
+Bill Nguyen: for the vnv plan, it was more formulation rather than implementation, we looked at how we were going to test our project rather than actually doing it. For the vnv report it was more the implementation of our formulation where we wrote actual unit/automated tests and tested our project fully and than compared it to our vnv plan to see what requirements etc. did we satisfy and maybe find things we need to improve on.
 
 \bibliographystyle{plainnat}
 
