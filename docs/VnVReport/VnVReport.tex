@@ -99,6 +99,7 @@ urlcolor=blue
 	\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 	\midrule
 	March 5th, 2023 & Bill Nguyen & Adding Unit Tests for Workout and Rest Section\\
+	March 8th, 2023 & Hasan Kibria & Adding Unit Tests for Diet Section\\
 	\bottomrule
 \end{tabularx}
 
@@ -595,6 +596,32 @@ Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALI
 
 \newpage
 
+\subsection{Diet Section}
+
+Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/foodLog.test.js}.
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+        \hline
+        Test ID & FR & Some Inputs & Some Expected Values & Corresponding Actual Values & Result \\
+        \hline
+        DS1 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in getting food log'\} & \{success: true, message: 'Success in getting food log'\} & \textcolor{Green}{PASS} \\
+	\hline
+        DS2 & FR-DS-2 & \{email: 'test@gmail.com', foodDate: 2022-03-08, calories: 1\}  & \{success: true, message: 'Meal successfully added', calories: 1\} & \{success: true, message: 'Meal successfully added', calories: 1\} & \textcolor{Green}{PASS} \\
+        \hline
+        DS3 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08, foodName: 'name'\}  & \{success: true, message: 'Success in deleting meal'\} & \{success: true, message: 'Success in deleting meal''\} & \textcolor{Green}{PASS} \\
+        \hline
+        DS4 & FR-RS-8 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in updating meal'\} & \{success: true, message: 'Success in updating meal'\} & \textcolor{Green}{PASS} \\
+        \hline
+    \end{tabularx}
+    \caption{Diet Section Unit Tests Part 1}
+    \label{table:diet-unit-tests}
+\end{table}
+
+\newpage
+
 \section{Changes Due to Testing}
 Formal testing did not reveal any necessary changes in terms of module interfacing, decomposition, or internal design. Changes made to code were to address bugs and logical errors revealed by the testing plan. User interface improvements were made throughout the development process in response to feedback from developers and informal testers.
 
@@ -608,7 +635,11 @@ Formal testing did not reveal any necessary changes in terms of module interfaci
 
 \section{Reflection Appendix}
 
-Bill Nguyen: for the vnv plan, it was more formulation rather than implementation, we looked at how we were going to test our project rather than actually doing it. For the vnv report it was more the implementation of our formulation where we wrote actual unit/automated tests and tested our project fully and than compared it to our vnv plan to see what requirements etc. did we satisfy and maybe find things we need to improve on.
+Bill Nguyen: for the vnv plan, it was more formulation rather than implementation, we looked at how we were going to test our project rather than actually doing it. For the vnv report it 
+was more the implementation of our formulation where we wrote actual unit/automated tests and tested our project fully and than compared it to our vnv plan to see what requirements etc. did we satisfy and maybe find things we need to improve on.\\
+
+Hasan Kibria: In comparison to the vnv plan, the vnv report was more based on practicality an implementation. To complete it fully, there was real code and test cases that had to be thought of an implemented so that they could then be documented in the vnv report. In the vnv plan it was more of an outlook of what we envisioned our testing to look like.\\
+
 
 \bibliographystyle{plainnat}
 
