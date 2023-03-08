@@ -100,7 +100,10 @@ urlcolor=blue
 	\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 	\midrule
 	March 5th, 2023 & Bill Nguyen & Adding Unit Tests for Workout and Rest Section\\
+	March 5th, 2023 & Youssef Dahab & Added Functional Requirements Evaluation\\
+	March 6th, 2023 & Youssef Dahab & Added Changes Due To Testing\\
 	March 8th, 2023 & Hasan Kibria & Adding Unit Tests for Diet Section\\
+	March 8th, 2023 & Youssef Dahab & Added Reflection\\
 	\bottomrule
 \end{tabularx}
 
@@ -113,11 +116,25 @@ urlcolor=blue
 	\toprule		
 	\textbf{symbol} & \textbf{description}\\
 	\midrule 
-	T & Test\\
+	REVITALIZE & Name of application\\
+	SRS & Software Requirements Specification\\
+	VnV & Verification and Validation\\
+	FR & Functional Requirement\\
+	NFR & Non Functional Requirement\\
+	LP & Login Page\\
+	SP & Sign-up Page\\
+	MP & Main Page or Maintainability and Portability Requirements\\
+	DS & Diet Section\\
+	WS & Workout Section\\
+	RS & Rest Section\\
+	LF & Look and Feel Requirements\\
+	UH & Usability and Humanity Requirements\\
+	PE & Performance Requirement\\
+	OE & Operational Requirement\\
+	SE & Security Requirement\\
+	CU & Cultural Requirement\\
 	\bottomrule
 \end{tabular}\\
-
-\wss{symbols, abbreviations or acronyms -- you can reference the SRS tables if needed}
 
 \newpage
 
@@ -131,7 +148,7 @@ urlcolor=blue
 
 \pagenumbering{arabic}
 
-This document ...
+This document details the complete testing process for REVITALIZE, as laid out in the project test plan. It contains an evaluation of the project’s functional and non-functional requirements that are defined in the \hyperlink{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/SRS/SRS.pdf}{\textbf{SRS}}, the changes made due to testing, and an analysis of the traceability between requirements and modules.
 
 \section{Functional Requirements Evaluation}
 
@@ -501,50 +518,50 @@ This section will not be appropriate for every project.
 
 Unit tests for the workout section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/exercise.test.js}.
 \begin{table}[h]
-    \centering
-    \small
-    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-        \hline
-        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-        \hline
-        WS1 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & \textcolor{Green}{PASS} \\
-        \hline
-        WS2 & FR-WS-1 and FR-WS-5 & \{email: 'fail@gmail.com', 'dateAdded: 2022-01-01'\}  & 'Error in getting exercise list' & 'Error in getting exercise list' & \textcolor{Green}{PASS} \\
-        \hline
-        WS3 & FR-WS-2 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding exercise data'}, id: 'exerciseid', email: 'test@gmail.com', name: 'Test Exercise', sets: 3, repetitions: 10, weight: 50, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
-        \hline
-        WS4 & FR-WS-3 & \{email: 'test@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: true, message: 'Success in deleting exercise data'\} & \{success: true, message: 'Success in deleting exercise data'\} & \textcolor{Green}{PASS} \\
-        \hline
-        WS5 & FR-WS-3 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: false, message: 'Was not able to delete selected exercise data'\} & \{success: false, message: 'Was not able to delete selected exercise data'\} & \textcolor{Green}{PASS} \\
-        \hline
-    \end{tabularx}
-    \caption{Workout Section Unit Tests Part 1}
-    \label{table:workout-unit-tests}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+		\hline
+		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+		\hline
+		WS1 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & \textcolor{Green}{PASS} \\
+		\hline
+		WS2 & FR-WS-1 and FR-WS-5 & \{email: 'fail@gmail.com', 'dateAdded: 2022-01-01'\}  & 'Error in getting exercise list' & 'Error in getting exercise list' & \textcolor{Green}{PASS} \\
+		\hline
+		WS3 & FR-WS-2 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding exercise data'}, id: 'exerciseid', email: 'test@gmail.com', name: 'Test Exercise', sets: 3, repetitions: 10, weight: 50, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
+		\hline
+		WS4 & FR-WS-3 & \{email: 'test@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: true, message: 'Success in deleting exercise data'\} & \{success: true, message: 'Success in deleting exercise data'\} & \textcolor{Green}{PASS} \\
+		\hline
+		WS5 & FR-WS-3 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: false, message: 'Was not able to delete selected exercise data'\} & \{success: false, message: 'Was not able to delete selected exercise data'\} & \textcolor{Green}{PASS} \\
+		\hline
+	\end{tabularx}
+	\caption{Workout Section Unit Tests Part 1}
+	\label{table:workout-unit-tests}
 \end{table}
 
 \newpage
 
 \begin{table}[h]
-    \centering
-    \small
-    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-        \hline
-        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-        \hline
-        WS6 & FR-WS-4 & params: \{ email: 'example@gmail.com', dateAdded: '2022-01-01', name: 'exerciseName' \},
-        body: \{ reps: 10, sets: 3 \}  & \{success: true, message: 'Success in editing exercise data'\} & \{success: true, message: 'Success in editing exercise data'\} & \textcolor{Green}{PASS} \\
-        \hline
-        WS7 & FR-WS-4 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' \},
-          body: \{ sets: 3, reps: 10\}  & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \textcolor{Green}{PASS} \\
-        \hline
-        WS8 & FR-WS-1 and FR-WS-5 & \{email: test@gmail.com, name:'pushup', dateAdded: 2022-01-01\}  & \{success: true,
-      message: 'Success in getting exercise data' \} & \{success: true, message: 'Success in getting exercise data' \} & \textcolor{Green}{PASS} \\
-        \hline
-        WS9 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', name: 'pushup', dateAdded: 'invalid-date' \} & \{success: false, message: 'Error in getting exercise data' \} & \{success: false, message: 'Error in getting exercise data' \} & \textcolor{Green}{PASS} \\
-        \hline
-    \end{tabularx}
-    \caption{Workout Section Unit Tests Part 2}
-    \label{table:workout-unit-tests2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+		\hline
+		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+		\hline
+		WS6 & FR-WS-4 & params: \{ email: 'example@gmail.com', dateAdded: '2022-01-01', name: 'exerciseName' \},
+		body: \{ reps: 10, sets: 3 \}  & \{success: true, message: 'Success in editing exercise data'\} & \{success: true, message: 'Success in editing exercise data'\} & \textcolor{Green}{PASS} \\
+		\hline
+		WS7 & FR-WS-4 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' \},
+		body: \{ sets: 3, reps: 10\}  & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \textcolor{Green}{PASS} \\
+		\hline
+		WS8 & FR-WS-1 and FR-WS-5 & \{email: test@gmail.com, name:'pushup', dateAdded: 2022-01-01\}  & \{success: true,
+		message: 'Success in getting exercise data' \} & \{success: true, message: 'Success in getting exercise data' \} & \textcolor{Green}{PASS} \\
+		\hline
+		WS9 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', name: 'pushup', dateAdded: 'invalid-date' \} & \{success: false, message: 'Error in getting exercise data' \} & \{success: false, message: 'Error in getting exercise data' \} & \textcolor{Green}{PASS} \\
+		\hline
+	\end{tabularx}
+	\caption{Workout Section Unit Tests Part 2}
+	\label{table:workout-unit-tests2}
 \end{table}
 
 \newpage
@@ -554,45 +571,45 @@ Unit tests for the workout section: \url{https://github.com/BillNguyen1999/REVIT
 Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/sleep.test.js}.
 
 \begin{table}[h]
-    \centering
-    \small
-    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-        \hline
-        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-        \hline
-        RS1 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in getting sleep data'\} & \{success: true, message: 'Success in getting sleep data'\} & \textcolor{Green}{PASS} \\
-        \hline
-        RS2 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: 'invalid-date'\}  & \{success: false, message: 'Error in getting sleep data'\} & \{success: false, message: 'Error in getting sleep data'\} & \textcolor{Green}{PASS} \\
-        \hline
-        RS3 & FR-RS-1 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding sleep data'}, id: 'sleepid', email: 'test@gmail.com', sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
-        \hline
-        RS4 & FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in deleting sleep data'\} & \{success: true, message: 'Success in deleting sleep data'\} & \textcolor{Green}{PASS} \\
-        \hline
-        RS5 & FR-RS-2 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01'\}  & \{success: false, message: 'Was not able to delete selected sleep data'\} & \{success: false, message: 'Was not able to delete selected sleep data'\} & \textcolor{Green}{PASS} \\
-        \hline
-    \end{tabularx}
-    \caption{Rest Section Unit Tests Part 1}
-    \label{table:rest-unit-tests}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+		\hline
+		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+		\hline
+		RS1 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in getting sleep data'\} & \{success: true, message: 'Success in getting sleep data'\} & \textcolor{Green}{PASS} \\
+		\hline
+		RS2 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: 'invalid-date'\}  & \{success: false, message: 'Error in getting sleep data'\} & \{success: false, message: 'Error in getting sleep data'\} & \textcolor{Green}{PASS} \\
+		\hline
+		RS3 & FR-RS-1 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding sleep data'}, id: 'sleepid', email: 'test@gmail.com', sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
+		\hline
+		RS4 & FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in deleting sleep data'\} & \{success: true, message: 'Success in deleting sleep data'\} & \textcolor{Green}{PASS} \\
+		\hline
+		RS5 & FR-RS-2 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01'\}  & \{success: false, message: 'Was not able to delete selected sleep data'\} & \{success: false, message: 'Was not able to delete selected sleep data'\} & \textcolor{Green}{PASS} \\
+		\hline
+	\end{tabularx}
+	\caption{Rest Section Unit Tests Part 1}
+	\label{table:rest-unit-tests}
 \end{table}
 
 \newpage
 
 \begin{table}[h]
-    \centering
-    \small
-    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-        \hline
-        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-        \hline
-        RS6 & FR-RS-2 & params:\{ email: 'example@gmail.com', dateAdded: '2022-01-01'\},
-        body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: true, message: 'Success in editing sleep data'\} & \{success: true, message: 'Success in editing sleep data'\} & \textcolor{Green}{PASS} \\
-        \hline
-        RS7 & FR-RS-2 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07'\},
-          body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \textcolor{Green}{PASS} \\
-        \hline
-    \end{tabularx}
-    \caption{Rest Section Unit Tests Part 2}
-    \label{table:rest-unit-tests2}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+		\hline
+		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+		\hline
+		RS6 & FR-RS-2 & params:\{ email: 'example@gmail.com', dateAdded: '2022-01-01'\},
+		body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: true, message: 'Success in editing sleep data'\} & \{success: true, message: 'Success in editing sleep data'\} & \textcolor{Green}{PASS} \\
+		\hline
+		RS7 & FR-RS-2 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07'\},
+		body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \textcolor{Green}{PASS} \\
+		\hline
+	\end{tabularx}
+	\caption{Rest Section Unit Tests Part 2}
+	\label{table:rest-unit-tests2}
 \end{table}
 
 \newpage
@@ -602,23 +619,23 @@ Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALI
 Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/foodLog.test.js}.
 
 \begin{table}[h]
-    \centering
-    \small
-    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-        \hline
-        Test ID & FR & Some Inputs & Some Expected Values & Corresponding Actual Values & Result \\
-        \hline
-        DS1 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in getting food log'\} & \{success: true, message: 'Success in getting food log'\} & \textcolor{Green}{PASS} \\
-	\hline
-        DS2 & FR-DS-2 & \{email: 'test@gmail.com', foodDate: 2022-03-08, calories: 1\}  & \{success: true, message: 'Meal successfully added', calories: 1\} & \{success: true, message: 'Meal successfully added', calories: 1\} & \textcolor{Green}{PASS} \\
-        \hline
-        DS3 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08, foodName: 'name'\}  & \{success: true, message: 'Success in deleting meal'\} & \{success: true, message: 'Success in deleting meal''\} & \textcolor{Green}{PASS} \\
-        \hline
-        DS4 & FR-RS-8 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in updating meal'\} & \{success: true, message: 'Success in updating meal'\} & \textcolor{Green}{PASS} \\
-        \hline
-    \end{tabularx}
-    \caption{Diet Section Unit Tests Part 1}
-    \label{table:diet-unit-tests}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+		\hline
+		Test ID & FR & Some Inputs & Some Expected Values & Corresponding Actual Values & Result \\
+		\hline
+		DS1 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in getting food log'\} & \{success: true, message: 'Success in getting food log'\} & \textcolor{Green}{PASS} \\
+		\hline
+		DS2 & FR-DS-2 & \{email: 'test@gmail.com', foodDate: 2022-03-08, calories: 1\}  & \{success: true, message: 'Meal successfully added', calories: 1\} & \{success: true, message: 'Meal successfully added', calories: 1\} & \textcolor{Green}{PASS} \\
+		\hline
+		DS3 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08, foodName: 'name'\}  & \{success: true, message: 'Success in deleting meal'\} & \{success: true, message: 'Success in deleting meal''\} & \textcolor{Green}{PASS} \\
+		\hline
+		DS4 & FR-RS-8 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in updating meal'\} & \{success: true, message: 'Success in updating meal'\} & \textcolor{Green}{PASS} \\
+		\hline
+	\end{tabularx}
+	\caption{Diet Section Unit Tests Part 1}
+	\label{table:diet-unit-tests}
 \end{table}
 
 \newpage
@@ -924,13 +941,11 @@ Formal testing did not reveal any necessary changes in terms of module interfaci
 \section{Code Coverage Metrics}
 
 \section{Reflection Appendix}
-Bill Nguyen: for the vnv plan, it was more formulation rather than implementation, we looked at how we were going to test our project rather than actually doing it. For the vnv report it 
-was more the implementation of our formulation where we wrote actual unit/automated tests and tested our project fully and than compared it to our vnv plan to see what requirements etc. did we satisfy and maybe find things we need to improve on.\\
+Bill Nguyen: for the vnv plan, it was more formulation rather than implementation, we looked at how we were going to test our project rather than actually doing it. For the vnv report it was more the implementation of our formulation where we wrote actual unit/automated tests and tested our project fully and than compared it to our vnv plan to see what requirements etc. did we satisfy and maybe find things we need to improve on.\\\\
+Hasan Kibria: In comparison to the vnv plan, the vnv report was more based on practicality an implementation. To complete it fully, there was real code and test cases that had to be thought of an implemented so that they could then be documented in the vnv report. In the vnv plan it was more of an outlook of what we envisioned our testing to look like.\\\\
+Syed Bokhari: The VNV plan focuses on formulating the testing approach and strategies, while the VNV report is more concerned with the implementation and documentation of the actual testing process. The VNV report involves the creation and execution of test cases, which are then compared to the plan to identify any gaps or areas for improvement. The VNV plan provides a high-level view of the testing process, while the VNV report is a more detailed account of the actual testing activities.\\\\
+Youssef Dahab: Both the VnV plan and VnV report take inspiration from the functional and non-functional requirements in the SRS document. The VnV plan described how we were going to test our functional and non-functional requirements while the VnV report described the results of performing those tests.\\\\
 
-Hasan Kibria: In comparison to the vnv plan, the vnv report was more based on practicality an implementation. To complete it fully, there was real code and test cases that had to be thought of an implemented so that they could then be documented in the vnv report. In the vnv plan it was more of an outlook of what we envisioned our testing to look like.\\
-
-Syed Bokhari: The VNV plan focuses on formulating the testing approach and strategies, while the VNV report is more concerned with the implementation and documentation of the actual testing process. The VNV report involves the creation and execution of test cases, which are then compared to the plan to identify any gaps or areas for improvement. The VNV plan provides a high-level view of the testing process, while the VNV report is a more detailed account of the actual testing activities.
-\\
 \bibliographystyle{plainnat}
 
 \bibliography{../../refs/References}
