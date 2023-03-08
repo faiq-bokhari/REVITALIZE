@@ -133,7 +133,7 @@ describe('Update Sleep Data', () => {
   
     it("Should return status 400 when appropriate sleep data to edit was not found", async () => {
       const req = {
-          params: { email: 'test@gmail.com', dateAdded: '2022-03-07' },
+          params: { email: 'notfound@gmail.com', dateAdded: '2022-03-07' },
           body: { 
             sleepHour: 12,
             bedHour: 11, 
@@ -152,7 +152,7 @@ describe('Update Sleep Data', () => {
         await updateSleepData(req, res)
     
         expect(Sleep.findOneAndUpdate).toHaveBeenCalledWith(
-          { email: 'test@gmail.com', dateAdded: '2022-03-07' },
+          { email: 'notfound@gmail.com', dateAdded: '2022-03-07' },
           { 
             sleepHour: 12,
             bedHour: 11, 
@@ -196,7 +196,7 @@ describe('Delete SleepData', () => {
   it('should return 400 status code if sleep data was not found', async () => {
     const mockReq = {
       params: {
-        email: 'test@gmail.com',
+        email: 'notfound@gmail.com',
         dateAdded: '2022-01-01'
       }
     };
@@ -209,7 +209,7 @@ describe('Delete SleepData', () => {
 
     await deleteSleepData(mockReq, mockRes);
 
-    expect(Sleep.findOneAndRemove).toHaveBeenCalledWith({ email: 'test@gmail.com', dateAdded: '2022-01-01' });
+    expect(Sleep.findOneAndRemove).toHaveBeenCalledWith({ email: 'notfound@gmail.com', dateAdded: '2022-01-01' });
     expect(mockRes.status).toHaveBeenCalledWith(400);
     expect(mockRes.json).toHaveBeenCalledWith({ success: false, message: 'Was not able to delete selected sleep data' });
   });

@@ -98,8 +98,7 @@ urlcolor=blue
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 	\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 	\midrule
-	Date 1 & 1.0 & Notes\\
-	Date 2 & 1.1 & Notes\\
+	March 5th, 2023 & Bill Nguyen & Adding Unit Tests for Workout and Rest Section\\
 	\bottomrule
 \end{tabularx}
 
@@ -495,6 +494,103 @@ This document ...
 This section will not be appropriate for every project.
 
 \section{Unit Testing}
+
+\subsection{Workout Section}
+\newpage
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+        \hline
+        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+        \hline
+        WS1 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & \textcolor{Green}{PASS} \\
+        \hline
+        WS2 & FR-WS-1 and FR-WS-5 & \{email: 'fail@gmail.com', 'dateAdded: 2022-01-01'\}  & 'Error in getting exercise list' & 'Error in getting exercise list' & \textcolor{Green}{PASS} \\
+        \hline
+        WS3 & FR-WS-2 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding exercise data'}, id: 'exerciseid', email: 'test@gmail.com', name: 'Test Exercise', sets: 3, repetitions: 10, weight: 50, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
+        \hline
+        WS4 & FR-WS-3 & \{email: 'test@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: true, message: 'Success in deleting exercise data'\} & \{success: true, message: 'Success in deleting exercise data'\} & \textcolor{Green}{PASS} \\
+        \hline
+        WS5 & FR-WS-3 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: false, message: 'Was not able to delete selected exercise data'\} & \{success: false, message: 'Was not able to delete selected exercise data'\} & \textcolor{Green}{PASS} \\
+        \hline
+    \end{tabularx}
+    \caption{Workout Section Unit Tests Part 1}
+    \label{table:workout-unit-tests}
+\end{table}
+
+\newpage
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+        \hline
+        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+        \hline
+        WS6 & FR-WS-4 & params: \{ email: 'example@gmail.com', dateAdded: '2022-01-01', name: 'exerciseName' \},
+        body: \{ reps: 10, sets: 3 \}  & \{success: true, message: 'Success in editing exercise data'\} & \{success: true, message: 'Success in editing exercise data'\} & \textcolor{Green}{PASS} \\
+        \hline
+        WS7 & FR-WS-4 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' \},
+          body: \{ sets: 3, reps: 10\}  & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \textcolor{Green}{PASS} \\
+        \hline
+        WS8 & FR-WS-1 and FR-WS-5 & \{email: test@gmail.com, name:'pushup', dateAdded: 2022-01-01\}  & \{success: true,
+      message: 'Success in getting exercise data' \} & \{success: true, message: 'Success in getting exercise data' \} & \textcolor{Green}{PASS} \\
+        \hline
+        WS9 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', name: 'pushup', dateAdded: 'invalid-date' \} & \{success: false, message: 'Error in getting exercise data' \} & \{success: false, message: 'Error in getting exercise data' \} & \textcolor{Green}{PASS} \\
+        \hline
+    \end{tabularx}
+    \caption{Workout Section Unit Tests Part 2}
+    \label{table:workout-unit-tests2}
+\end{table}
+
+\newpage
+
+\subsection{Rest Section}
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+        \hline
+        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+        \hline
+        RS1 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in getting sleep data'\} & \{success: true, message: 'Success in getting sleep data'\} & \textcolor{Green}{PASS} \\
+        \hline
+        RS2 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: 'invalid-date'\}  & \{success: false, message: 'Error in getting sleep data'\} & \{success: false, message: 'Error in getting sleep data'\} & \textcolor{Green}{PASS} \\
+        \hline
+        RS3 & FR-RS-1 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding sleep data'}, id: 'sleepid', email: 'test@gmail.com', sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
+        \hline
+        RS4 & FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in deleting sleep data'\} & \{success: true, message: 'Success in deleting sleep data'\} & \textcolor{Green}{PASS} \\
+        \hline
+        RS5 & FR-RS-2 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01'\}  & \{success: false, message: 'Was not able to delete selected sleep data'\} & \{success: false, message: 'Was not able to delete selected sleep data'\} & \textcolor{Green}{PASS} \\
+        \hline
+    \end{tabularx}
+    \caption{Rest Section Unit Tests Part 1}
+    \label{table:rest-unit-tests}
+\end{table}
+
+\newpage
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+        \hline
+        Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+        \hline
+        RS6 & FR-WS-4 & params:\{ email: 'example@gmail.com', dateAdded: '2022-01-01'\},
+        body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: true, message: 'Success in editing sleep data'\} & \{success: true, message: 'Success in editing sleep data'\} & \textcolor{Green}{PASS} \\
+        \hline
+        RS7 & FR-WS-4 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07'\},
+          body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \textcolor{Green}{PASS} \\
+        \hline
+    \end{tabularx}
+    \caption{Rest Section Unit Tests Part 2}
+    \label{table:rest-unit-tests2}
+\end{table}
+
+\newpage
 
 \section{Changes Due to Testing}
 Formal testing did not reveal any necessary changes in terms of module interfacing, decomposition, or internal design. Changes made to code were to address bugs and logical errors revealed by the testing plan. User interface improvements were made throughout the development process in response to feedback from developers and informal testers.

@@ -117,7 +117,7 @@ describe('Update Exercise Data', () => {
   
     it("Should return status 400 when appropriate exercise data to edit was not found", async () => {
       const req = {
-          params: { email: 'test@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' },
+          params: { email: 'notfound@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' },
           body: { sets: 3, reps: 10 }
         }
         // mock the response object
@@ -131,7 +131,7 @@ describe('Update Exercise Data', () => {
         await updateExerciseData(req, res)
     
         expect(Exercise.findOneAndUpdate).toHaveBeenCalledWith(
-          { email: 'test@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' },
+          { email: 'notfound@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' },
           { sets: 3, reps: 10 },
           { new: true }
         )
@@ -171,7 +171,7 @@ describe('Delete ExerciseData', () => {
   it('should return 400 status code if exercise data was not found', async () => {
     const mockReq = {
       params: {
-        email: 'test@gmail.com',
+        email: 'notfound@gmail.com',
         dateAdded: '2022-01-01',
         name: 'push-ups'
       }
@@ -185,7 +185,7 @@ describe('Delete ExerciseData', () => {
 
     await deleteExerciseData(mockReq, mockRes);
 
-    expect(Exercise.findOneAndRemove).toHaveBeenCalledWith({ email: 'test@gmail.com', dateAdded: '2022-01-01', name: 'push-ups' });
+    expect(Exercise.findOneAndRemove).toHaveBeenCalledWith({ email: 'notfound@gmail.com', dateAdded: '2022-01-01', name: 'push-ups' });
     expect(mockRes.status).toHaveBeenCalledWith(400);
     expect(mockRes.json).toHaveBeenCalledWith({ success: false, message: 'Was not able to delete selected exercise data' });
   });
@@ -213,7 +213,7 @@ describe('getExerciseList', () => {
 
   it('should return a 404 status and error message when an error occurs', async () => {
     // Arrange
-    const req = { params: { email: 'test@gmail.com', dateAdded: '2022-01-01' } };
+    const req = { params: { email: 'fail@gmail.com', dateAdded: '2022-01-01' } };
     const res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn(),
