@@ -21,7 +21,7 @@ urlcolor=blue
 \usepackage{mdframed}
 \usepackage{lscape}
 \usepackage{multirow}
-
+\newcommand{\comma}{,}
 
 \input{../Comments}
 
@@ -190,8 +190,7 @@ This document ...
 	type = Manual,
 	init = Login page is displayed with stay logged in checkbox that is empty,
 	input = Click stay logged in checkbox,
-	output = Display a check-mark in the stay logged in checkbox if checkbox is empty.
-	Else if checkbox contains check-mark already it will then display an empty checkbox,
+	output = Display a check-mark in the stay logged in checkbox if checkbox is empty. Else if checkbox contains check-mark already it will then display an empty checkbox,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
@@ -202,7 +201,7 @@ This document ...
 	init = Loading stage of REVITALIZE where previous state had stay logged in
 	checkbox checked,
 	input = An event that loads REVITALIZE,
-	output = Display main page, with same data from previous state of main page,
+	output = Display main page \comma{,} with same data from previous state of main page,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
