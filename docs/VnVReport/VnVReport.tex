@@ -21,6 +21,7 @@ urlcolor=blue
 \usepackage{mdframed}
 \usepackage{lscape}
 \usepackage{multirow}
+\usepackage{float}
 \newcommand{\comma}{,}
 
 \input{../Comments}
@@ -202,7 +203,7 @@ This document ...
 	init = Loading stage of REVITALIZE where previous state had stay logged in
 	checkbox checked,
 	input = An event that loads REVITALIZE,
-	output = Display main page \comma{,} with same data from previous state of main page,
+	output = Display main page \comma{} with same data from previous state of main page,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
@@ -223,7 +224,7 @@ This document ...
 	init = Login page is displayed with inputted information in username and pass-
 	word text-boxes,
 	input = Click login button,
-	output = If failure state\comma{,} display an invalid password or username banner. Else if success state\comma{,} load and display main page,
+	output = If failure state\comma{} display an invalid password or username banner. Else if success state\comma{} load and display main page,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
@@ -296,9 +297,9 @@ This document ...
 	name = {FR-MP-2},
 	desc = Testing that the application has a previous day and a next day button on each page after successful login,
 	type = Manual,
-	init = Main page and Diet\comma{,} Workout\comma{,} Rest sections are displayed with previous day and next day buttons,
-	input = An event that loads the main page\comma{,} Diet\comma{,} Workout\comma{,} Rest sections and the previous day and next day buttons are clicked,
-	output = Main page\comma{,} Diet\comma{,} Workout\comma{,} Rest sections are displayed with previous day and next day buttons. Once the next day button is clicked\comma{,} the calendar refreshes the calendar information for the next day. Once the previous day button is clicked\comma{,} the calendar refreshes the calendar information for the previous day,
+	init = Main page and Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons,
+	input = An event that loads the main page\comma{} Diet\comma{} Workout\comma{} Rest sections and the previous day and next day buttons are clicked,
+	output = Main page\comma{} Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons. Once the next day button is clicked\comma{} the calendar refreshes the calendar information for the next day. Once the previous day button is clicked\comma{} the calendar refreshes the calendar information for the previous day,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
@@ -314,11 +315,11 @@ This document ...
 }
 \testauto{
 	name = {FR-MP-4},
-	desc = Testing that the application displays the sections Diet\comma{,} Exercise\comma{,} and Rest on the current calendar day,
+	desc = Testing that the application displays the sections Diet\comma{} Exercise\comma{} and Rest on the current calendar day,
 	type = Manual,
-	init = Main page is displayed with Diet\comma{,} Exercise and Rest buttons available to click,
-	input = An event that loads the main page and the Diet\comma{,} Exercise and Rest buttons are clicked,
-	output = Main page is displayed with Diet\comma{,} Exercise and Rest buttons. If the Diet button is clicked\comma{,} the Diet interface is loaded. If the Exercise button is clicked\comma{,} the Exercise interface is loaded. If the Rest button is clicked\comma{,} the Rest interface is loaded,
+	init = Main page is displayed with Diet\comma{} Exercise and Rest buttons available to click,
+	input = An event that loads the main page and the Diet\comma{} Exercise and Rest buttons are clicked,
+	output = Main page is displayed with Diet\comma{} Exercise and Rest buttons. If the Diet button is clicked\comma{} the Diet interface is loaded. If the Exercise button is clicked\comma{} the Exercise interface is loaded. If the Rest button is clicked\comma{} the Rest interface is loaded,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
@@ -326,17 +327,17 @@ This document ...
 \subsection{Diet Section Page}
 \testauto{
 	name = {FR-DS-1},
-	desc = Testing that application prompts the user to height\comma{,} input dietary\comma{,} weight\comma{,} calorie information on initial launch of Diet section,
+	desc = Testing that application prompts the user to height\comma{} input dietary\comma{} weight\comma{} calorie information on initial launch of Diet section,
 	type = Manual,
 	init = Diet section is initialized for the first time and an initial information dialog is launched,
 	input = An event that loads the diet section for the first time,
-	output = A fillable dialog box is launched with height\comma{,} dietary information\comma{,} weight and calorie information,
+	output = A fillable dialog box is launched with height\comma{} dietary information\comma{} weight and calorie information,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
 \testauto{
 	name = {FR-DS-2},
-	desc = Testing that the application saves initial user height\comma{,} dietary\comma{,} weight\comma{,} calorie information,
+	desc = Testing that the application saves initial user height\comma{} dietary\comma{} weight\comma{} calorie information,
 	type = Manual,
 	init = Diet section is initialized for the first time and an initial information dialog is launched,
 	input = Initial information dialog values are filled,
@@ -628,19 +629,308 @@ Formal testing did not reveal any necessary changes in terms of module interfaci
 \section{Automated Testing}
 
 \section{Trace to Requirements}
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Login Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\cline{3-11}
+			& & \multicolumn{9}{ c|}{Requirements} \\ \cline{3-11}
+			& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 & FR8 & FR9 \\ \cline{1-11}
+			\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-7} &&&&&&&X&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-LP-8} &&&&&&&&X& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-LP-9} &&&&&&&&&X \\ \cline{1-11}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Signup Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+			\cline{3-7}
+			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+			& & FR10  & FR11 & FR12 & FR13 & FR14 \\ \cline{1-7}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-SP-1} &X&&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-2} &&X&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-4} &&&&X& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-SP-5} &&&&&X \\ \cline{1-7}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Main Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+			\cline{3-7}
+			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-7}
+			& & FR15  & FR16 & FR17 & FR18 & FR30 \\ \cline{1-7}
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-MP-1} &X&&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-2} &&X&&&X \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-4} &&&&X& \\ \cline{1-7}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Diet Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\cline{3-12}
+			& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
+			& & FR19  & FR20 & FR21 & FR22 & FR23-25  & FR26 & FR27 & FR28 & FR29 & F30 \\ \cline{1-12}
+			\multicolumn{1}{ |c| }{\multirow{11}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-3} &&&X&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-4} &&&&X&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-5} &&&&&X&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-6} &&&&&&X&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-7} &&&&&&&X&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-8} &&&&&&&&X&X& \\ \cline{1-12}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Workout Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+			\cline{3-7}
+			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+			& & FR31  & FR32 & FR33 & FR34 & FR35 \\ \cline{1-7}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-WP-1} &X&&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-2} &&X&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-4} &&&&X& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-WP-5} &&&&&X \\ \cline{1-7}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Rest Section Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & FR36  & FR37 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-RS-1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Look and Feel Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & LF1  & LF2 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-LF1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ NFR-LF22} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Usability and Humanity Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|}
+			\cline{3-8}
+			& & \multicolumn{6}{ c|}{Requirements} \\ \cline{3-8}
+			& & UH1  & UH2 & UH3 & UH4 & UH5 & UH6 \\ \cline{1-8}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-UH1} &X&&&&& \\ \cline{2-8}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-UH2} &&X&&&& \\ \cline{2-8}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-UH3} &&&X&&& \\ \cline{2-8}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-UH4} &&&&X&&\\ \cline{2-8}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{NFR-UH5} &&&&&X& \\ \cline{1-8}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Perfromance Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+			\cline{3-7}
+			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+			& & PE1  & PE2 & PE3 & PE4 & PE5 \\ \cline{1-7}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-PE1} &X&&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-PE2} &&X&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-PE3} &&&&X& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-PE4} &&&&&X \\ \cline{1-7}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Operational Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & OE1  & OE2 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-OE1} &X& \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Maintainability and Portability Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
+			\cline{3-5}
+			& & \multicolumn{3}{ c|}{Requirements} \\ \cline{3-5}
+			& & MP1  & MP2 & MP3 \\ \cline{1-5}
+			\multicolumn{1}{ |c| }{\multirow{2}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-MP1} &X&& \\ \cline{2-5}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ NFR-MP2} &&X& \\ \cline{1-5}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Security Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & SE1  & SE2 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{NFR-SE1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{NFR-SE2} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Cultural and Political Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|}
+			\cline{3-3}
+			& & \multicolumn{1}{ c|}{Requirements} \\ \cline{3-3}
+			& & CU1 \\ \cline{1-3}
+			\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{NFR-CU1} &X \\ \cline{1-3}
+		\end{tabularx}
+	\end{center}
+\end{table}
 
 \section{Trace to Modules}		
-
+\begin{table}[H]
+	\centering
+	\small
+	\renewcommand{\arraystretch}{0.9}
+	\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+		\toprule
+		\textbf{Req.} & \textbf{Modules}\\
+		\midrule
+		FR-LP-1 & M3\\
+		FR-LP-2 & M3\\
+		FR-LP-3 & M3\\
+		FR-LP-4 & M3\\
+		FR-LP-5 & M3\\
+		FR-LP-6 & M3\\
+		FR-LP-7 & M3\\
+		FR-LP-8 & M3\\
+		FR-LP-9 & M3\\
+		FR-SP-1 & M18\\
+		FR-SP-2 & M18\\
+		FR-SP-3 & M18\\
+		FR-SP-4 & M18\\
+		FR-SP-5 & M18\\
+		FR-MP-1 & M1\\
+		FR-MP-2 & M1\\
+		FR-MP-3 & M1\\
+		FR-MP-4 & M1\\
+		FR-DS-1 & M7\\
+		FR-DS-2 & M7\\
+		FR-DS-3 & M7\\
+		FR-DS-4 & M8\\
+		FR-DS-5 & M8, M10\\
+		FR-DS-6 & M11\\
+		FR-DS-7 & M11\\
+		FR-DS-8 & M9\\
+		FR-WP-1 & M14\\
+		FR-WP-2 & M14\\
+		FR-WP-3 & M15\\
+		FR-WP-4 & M15\\
+		FR-WP-5 & M17\\
+		FR-RS-1 & M5\\
+		FR-RS-2 & M6\\
+		\bottomrule
+	\end{tabular}
+	\caption{Trace Between Requirements and Modules}
+	\label{TblRT}
+\end{table}
 \section{Code Coverage Metrics}
 
 \section{Reflection Appendix}
-
 Bill Nguyen: for the vnv plan, it was more formulation rather than implementation, we looked at how we were going to test our project rather than actually doing it. For the vnv report it 
 was more the implementation of our formulation where we wrote actual unit/automated tests and tested our project fully and than compared it to our vnv plan to see what requirements etc. did we satisfy and maybe find things we need to improve on.\\
 
 Hasan Kibria: In comparison to the vnv plan, the vnv report was more based on practicality an implementation. To complete it fully, there was real code and test cases that had to be thought of an implemented so that they could then be documented in the vnv report. In the vnv plan it was more of an outlook of what we envisioned our testing to look like.\\
 
-
+Syed Bokhari: The VNV plan focuses on formulating the testing approach and strategies, while the VNV report is more concerned with the implementation and documentation of the actual testing process. The VNV report involves the creation and execution of test cases, which are then compared to the plan to identify any gaps or areas for improvement. The VNV plan provides a high-level view of the testing process, while the VNV report is a more detailed account of the actual testing activities.
+\\
 \bibliographystyle{plainnat}
 
 \bibliography{../../refs/References}
