@@ -44,7 +44,7 @@ const addMeal = async (req, res) => {
       }
     
   } catch (error) {
-    res.status(400).json({ success: false, message: error.message });
+    res.status(400).json({ success: false, message: "Didn't find meal." });
   }
 
 };
@@ -131,7 +131,7 @@ const deleteMeal = async (req, res) => {
     const deletedMeal = await FoodLog.findOneAndRemove({email: lowerCaseEmail, foodDate: foodDate, foodName: foodName})
     res.status(200).json({success: true, message: "Success in deleting meal", deletedMeal});
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: "Unable to delete."});
   }
 }
 module.exports = { addMeal, getFoodLog, updateMeal, deleteMeal };
