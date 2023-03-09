@@ -42,16 +42,16 @@ urlcolor=blue
 \setkeys[TP]{test}{#1}
 \refstepcounter{TestNum}
 \begin{mdframed}[linewidth=1pt]
-	\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
-		{\bf Test \#\theTestNum:} & {\bf \cmdTP@test@name}\\[\baselineskip]
-		{\bf Description:} & \cmdTP@test@desc\\[0.5\baselineskip]
-		{\bf Type:} & \cmdTP@test@type\\[0.5\baselineskip]
-		{\bf Initial State:} & \cmdTP@test@init\\[0.5\baselineskip]
-		{\bf Input:} & \cmdTP@test@input\\[0.5\baselineskip]
-		{\bf Output:} & \cmdTP@test@output\\[0.5\baselineskip]
-		{\bf Expected:} & \cmdTP@test@pass\\[\baselineskip]
-		{\bf Result:} & \cmdTP@test@result
-	\end{tabularx}
+\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
+	{\bf Test \#\theTestNum:} & {\bf \cmdTP@test@name}\\[\baselineskip]
+	{\bf Description:} & \cmdTP@test@desc\\[0.5\baselineskip]
+	{\bf Type:} & \cmdTP@test@type\\[0.5\baselineskip]
+	{\bf Initial State:} & \cmdTP@test@init\\[0.5\baselineskip]
+	{\bf Input:} & \cmdTP@test@input\\[0.5\baselineskip]
+	{\bf Output:} & \cmdTP@test@output\\[0.5\baselineskip]
+	{\bf Expected:} & \cmdTP@test@pass\\[\baselineskip]
+	{\bf Result:} & \cmdTP@test@result
+\end{tabularx}
 \end{mdframed}
 }
 
@@ -59,13 +59,13 @@ urlcolor=blue
 \setkeys[TP]{test}{#1}
 \refstepcounter{TestNum}
 \begin{mdframed}[linewidth=1pt]
-	\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
-		{\bf Test \#\theTestNum:} & {\bf \cmdTP@test@name}\\[\baselineskip]
-		{\bf Description:} & \cmdTP@test@desc\\[0.5\baselineskip]
-		{\bf Type:} & \cmdTP@test@type\\[0.5\baselineskip]
-		{\bf Pass:} & \cmdTP@test@pass\\[\baselineskip]
-		{\bf Result:} & \cmdTP@test@result
-	\end{tabularx}
+\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
+	{\bf Test \#\theTestNum:} & {\bf \cmdTP@test@name}\\[\baselineskip]
+	{\bf Description:} & \cmdTP@test@desc\\[0.5\baselineskip]
+	{\bf Type:} & \cmdTP@test@type\\[0.5\baselineskip]
+	{\bf Pass:} & \cmdTP@test@pass\\[\baselineskip]
+	{\bf Result:} & \cmdTP@test@result
+\end{tabularx}
 \end{mdframed}
 }
 
@@ -73,21 +73,27 @@ urlcolor=blue
 \setkeys[TP]{test}{#1}
 \refstepcounter{TestNum}
 \begin{mdframed}[linewidth=1pt]
-	\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
-		{\bf Test \#\theTestNum:} & {\bf \cmdTP@test@name}\\[\baselineskip]
-		{\bf Description:} & \cmdTP@test@desc\\[0.5\baselineskip]
-		{\bf Type:} & \cmdTP@test@type\\[0.5\baselineskip]
-		{\bf Tester(s):} & \cmdTP@test@user\\[0.5\baselineskip]
-		{\bf Pass:} & \cmdTP@test@pass\\[\baselineskip]
-		{\bf Result:} & \cmdTP@test@result
-	\end{tabularx}
+\begin{tabularx}{\textwidth}{@{}p{3cm}X@{}}
+	{\bf Test \#\theTestNum:} & {\bf \cmdTP@test@name}\\[\baselineskip]
+	{\bf Description:} & \cmdTP@test@desc\\[0.5\baselineskip]
+	{\bf Type:} & \cmdTP@test@type\\[0.5\baselineskip]
+	{\bf Tester(s):} & \cmdTP@test@user\\[0.5\baselineskip]
+	{\bf Pass:} & \cmdTP@test@pass\\[\baselineskip]
+	{\bf Result:} & \cmdTP@test@result
+\end{tabularx}
 \end{mdframed}
 }
 
 \begin{document}
 
 \title{Verification and Validation Report: REVITALIZE} 
-\author{Author Name}
+\author{Team 13, 
+\\ Bill Nguyen
+\\ Syed Bokhari
+\\ Hasan Kibria
+\\ Mahmoud Anklis
+\\ Youssef Dahab
+\\ Logan Brown}
 \date{\today}
 
 \maketitle
@@ -97,14 +103,14 @@ urlcolor=blue
 \section{Revision History}
 
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
-	\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
-	\midrule
-	March 5th, 2023 & Bill Nguyen & Adding Unit Tests for Workout and Rest Section\\
-	March 5th, 2023 & Youssef Dahab & Added Functional Requirements Evaluation\\
-	March 6th, 2023 & Youssef Dahab & Added Changes Due To Testing\\
-	March 8th, 2023 & Hasan Kibria & Adding Unit Tests for Diet Section\\
-	March 8th, 2023 & Youssef Dahab & Added Reflection\\
-	\bottomrule
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+March 5th, 2023 & Bill Nguyen & Adding Unit Tests for Workout and Rest Section\\
+March 5th, 2023 & Youssef Dahab & Added Functional Requirements Evaluation\\
+March 6th, 2023 & Youssef Dahab & Added Changes Due To Testing\\
+March 8th, 2023 & Hasan Kibria & Adding Unit Tests for Diet Section\\
+March 8th, 2023 & Youssef Dahab & Added Reflection\\
+\bottomrule
 \end{tabularx}
 
 ~\newpage
@@ -113,27 +119,27 @@ urlcolor=blue
 
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{l l} 
-	\toprule		
-	\textbf{symbol} & \textbf{description}\\
-	\midrule 
-	REVITALIZE & Name of application\\
-	SRS & Software Requirements Specification\\
-	VnV & Verification and Validation\\
-	FR & Functional Requirement\\
-	NFR & Non Functional Requirement\\
-	LP & Login Page\\
-	SP & Sign-up Page\\
-	MP & Main Page or Maintainability and Portability Requirements\\
-	DS & Diet Section\\
-	WS & Workout Section\\
-	RS & Rest Section\\
-	LF & Look and Feel Requirements\\
-	UH & Usability and Humanity Requirements\\
-	PE & Performance Requirement\\
-	OE & Operational Requirement\\
-	SE & Security Requirement\\
-	CU & Cultural Requirement\\
-	\bottomrule
+\toprule		
+\textbf{symbol} & \textbf{description}\\
+\midrule 
+REVITALIZE & Name of application\\
+SRS & Software Requirements Specification\\
+VnV & Verification and Validation\\
+FR & Functional Requirement\\
+NFR & Non Functional Requirement\\
+LP & Login Page\\
+SP & Sign-up Page\\
+MP & Main Page or Maintainability and Portability Requirements\\
+DS & Diet Section\\
+WS & Workout Section\\
+RS & Rest Section\\
+LF & Look and Feel Requirements\\
+UH & Usability and Humanity Requirements\\
+PE & Performance Requirement\\
+OE & Operational Requirement\\
+SE & Security Requirement\\
+CU & Cultural Requirement\\
+\bottomrule
 \end{tabular}\\
 
 \newpage
@@ -154,349 +160,349 @@ This document details the complete testing process for REVITALIZE, as laid out i
 
 \subsection{Login Page}
 \testauto{
-	name = {FR-LP-1},
-	desc = Testing that login page is displayed upon starting the application,
-	type = Manual,
-	init = Loading stage of the login page,
-	input = An event that loads the login page,
-	output = Login page is displayed with all necessary components,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-1},
+desc = Testing that login page is displayed upon starting the application,
+type = Manual,
+init = Loading stage of the login page,
+input = An event that loads the login page,
+output = Login page is displayed with all necessary components,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-2},
-	desc = Testing that login page displays fillable username textbox,
-	type = Manual,
-	init = Login page is displayed with username textbox,
-	input = Enter username information in textbox,
-	output = Username information entered is displayed in textbox,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-2},
+desc = Testing that login page displays fillable username textbox,
+type = Manual,
+init = Login page is displayed with username textbox,
+input = Enter username information in textbox,
+output = Username information entered is displayed in textbox,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-3},
-	desc = Testing that login page displays fillable password textbox,
-	type = Manual,
-	init = Login page is displayed with password textbox,
-	input = Enter password information in textbox,
-	output = Password information entered is displayed in textbox via hidden text,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-3},
+desc = Testing that login page displays fillable password textbox,
+type = Manual,
+init = Login page is displayed with password textbox,
+input = Enter password information in textbox,
+output = Password information entered is displayed in textbox via hidden text,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-4},
-	desc = Testing that login page displays login button,
-	type = Manual,
-	init = Login page is displayed with login button,
-	input = Click the login button,
-	output = User logs in after the system checks the validity of the input parameters in the login page,
-	pass = Login button is displayed and user logged in successfully,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-4},
+desc = Testing that login page displays login button,
+type = Manual,
+init = Login page is displayed with login button,
+input = Click the login button,
+output = User logs in after the system checks the validity of the input parameters in the login page,
+pass = Login button is displayed and user logged in successfully,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-5},
-	desc = Testing that login page displays forgot password button,
-	type = Manual,
-	init = Login page is displayed with forgot password button,
-	input = Click forgot password button,
-	output = Display forgot password screen with textbox to enter email,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-5},
+desc = Testing that login page displays forgot password button,
+type = Manual,
+init = Login page is displayed with forgot password button,
+input = Click forgot password button,
+output = Display forgot password screen with textbox to enter email,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-6},
-	desc = Testing that login page displays a stay looged in checkbox,
-	type = Manual,
-	init = Login page is displayed with stay logged in checkbox that is empty,
-	input = Click stay logged in checkbox,
-	output = Display a check-mark in the stay logged in checkbox if checkbox is empty. Else if checkbox contains check-mark already it will then display an empty checkbox,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-6},
+desc = Testing that login page displays a stay looged in checkbox,
+type = Manual,
+init = Login page is displayed with stay logged in checkbox that is empty,
+input = Click stay logged in checkbox,
+output = Display a check-mark in the stay logged in checkbox if checkbox is empty. Else if checkbox contains check-mark already it will then display an empty checkbox,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-7},
-	desc = Testing that application saves prior login information if stay logged in checkbox is checked,
-	type = Manual,
-	init = Loading stage of REVITALIZE where previous state had stay logged in
-	checkbox checked,
-	input = An event that loads REVITALIZE,
-	output = Display main page \comma{} with same data from previous state of main page,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-7},
+desc = Testing that application saves prior login information if stay logged in checkbox is checked,
+type = Manual,
+init = Loading stage of REVITALIZE where previous state had stay logged in
+checkbox checked,
+input = An event that loads REVITALIZE,
+output = Display main page \comma{} with same data from previous state of main page,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-8},
-	desc = Testing that login page displays sign-up button that redirects to sign-up page,
-	type = Manual,
-	init = Login page is displayed with sign up button,
-	input = Click sign up button,
-	output = Loads and displays sign up page,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-8},
+desc = Testing that login page displays sign-up button that redirects to sign-up page,
+type = Manual,
+init = Login page is displayed with sign up button,
+input = Click sign up button,
+output = Loads and displays sign up page,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-LP-9},
-	desc = Testing if application checks validity of input parameters in login page,
-	type = Manual,
-	init = Login page is displayed with inputted information in username and pass-
-	word text-boxes,
-	input = Click login button,
-	output = If failure state\comma{} display an invalid password or username banner. Else if success state\comma{} load and display main page,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-LP-9},
+desc = Testing if application checks validity of input parameters in login page,
+type = Manual,
+init = Login page is displayed with inputted information in username and pass-
+word text-boxes,
+input = Click login button,
+output = If failure state\comma{} display an invalid password or username banner. Else if success state\comma{} load and display main page,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 
 \subsection{Signup Page}
 \testauto{
-	name = {FR-SP-1},
-	desc = Testing that signup page displays fillable username textbox,
-	type = Manual,
-	init = Signup page is displayed with username textbox,
-	input = Enter username information in textbox,
-	output = Username information entered is displayed in textbox,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-SP-1},
+desc = Testing that signup page displays fillable username textbox,
+type = Manual,
+init = Signup page is displayed with username textbox,
+input = Enter username information in textbox,
+output = Username information entered is displayed in textbox,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-SP-2},
-	desc = Testing that signup page displays fillable password textbox,
-	type = Manual,
-	init = Signup page is displayed with password textbox,
-	input = Enter password information in textbox,
-	output = Password information entered is displayed in textbox via hidden text,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-SP-2},
+desc = Testing that signup page displays fillable password textbox,
+type = Manual,
+init = Signup page is displayed with password textbox,
+input = Enter password information in textbox,
+output = Password information entered is displayed in textbox via hidden text,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-SP-3},
-	desc = Testing that signup page displays fillable email textbox,
-	type = Manual,
-	init = Signup page is displayed with email textbox,
-	input = Enter email information in textbox,
-	output = Email information entered is displayed in textbox,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-SP-3},
+desc = Testing that signup page displays fillable email textbox,
+type = Manual,
+init = Signup page is displayed with email textbox,
+input = Enter email information in textbox,
+output = Email information entered is displayed in textbox,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-SP-4},
-	desc = Testing that signup page displays signup button,
-	type = Manual,
-	init = Signup page is displayed with signup button,
-	input = Click the signup button,
-	output = User signs up after the system checks the validity of the input parameters on the signup page,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-SP-4},
+desc = Testing that signup page displays signup button,
+type = Manual,
+init = Signup page is displayed with signup button,
+input = Click the signup button,
+output = User signs up after the system checks the validity of the input parameters on the signup page,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-SP-5},
-	desc = Testing if application checks validity of input parameters in signup page,
-	type = Manual,
-	init = Signup page is displayed with inputted information in username and
-	password text-boxes,
-	input = Click signup button,
-	output = If failure state then display an invalid username/password or email banner. Else if success state then load and display login page,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-SP-5},
+desc = Testing if application checks validity of input parameters in signup page,
+type = Manual,
+init = Signup page is displayed with inputted information in username and
+password text-boxes,
+input = Click signup button,
+output = If failure state then display an invalid username/password or email banner. Else if success state then load and display login page,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 
 \subsection{Main Page}
 \testauto{
-	name = {FR-MP-1},
-	desc = Testing that the application displays a calendar with current date on successful login,
-	type = Manual,
-	init = Main page is displayed with calender of current date,
-	input = An event that loads the main page,
-	output = Main page is displayed with all necessary components,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-MP-1},
+desc = Testing that the application displays a calendar with current date on successful login,
+type = Manual,
+init = Main page is displayed with calender of current date,
+input = An event that loads the main page,
+output = Main page is displayed with all necessary components,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-MP-2},
-	desc = Testing that the application has a previous day and a next day button on each page after successful login,
-	type = Manual,
-	init = Main page and Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons,
-	input = An event that loads the main page\comma{} Diet\comma{} Workout\comma{} Rest sections and the previous day and next day buttons are clicked,
-	output = Main page\comma{} Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons. Once the next day button is clicked\comma{} the calendar refreshes the calendar information for the next day. Once the previous day button is clicked\comma{} the calendar refreshes the calendar information for the previous day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-MP-2},
+desc = Testing that the application has a previous day and a next day button on each page after successful login,
+type = Manual,
+init = Main page and Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons,
+input = An event that loads the main page\comma{} Diet\comma{} Workout\comma{} Rest sections and the previous day and next day buttons are clicked,
+output = Main page\comma{} Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons. Once the next day button is clicked\comma{} the calendar refreshes the calendar information for the next day. Once the previous day button is clicked\comma{} the calendar refreshes the calendar information for the previous day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-MP-3},
-	desc = Testing that a back button is displayed on each user interface after a section is selected,
-	type = Manual,
-	init = Each interaction after leaving the main page must have a visible back button,
-	input = An event that loads the next user interface after leaving the main page and the back button is clicked,
-	output = The next user interface after leaving the main page is displayed with a back button. Once the back button is clicked the main page is loaded,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-MP-3},
+desc = Testing that a back button is displayed on each user interface after a section is selected,
+type = Manual,
+init = Each interaction after leaving the main page must have a visible back button,
+input = An event that loads the next user interface after leaving the main page and the back button is clicked,
+output = The next user interface after leaving the main page is displayed with a back button. Once the back button is clicked the main page is loaded,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-MP-4},
-	desc = Testing that the application displays the sections Diet\comma{} Exercise\comma{} and Rest on the current calendar day,
-	type = Manual,
-	init = Main page is displayed with Diet\comma{} Exercise and Rest buttons available to click,
-	input = An event that loads the main page and the Diet\comma{} Exercise and Rest buttons are clicked,
-	output = Main page is displayed with Diet\comma{} Exercise and Rest buttons. If the Diet button is clicked\comma{} the Diet interface is loaded. If the Exercise button is clicked\comma{} the Exercise interface is loaded. If the Rest button is clicked\comma{} the Rest interface is loaded,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-MP-4},
+desc = Testing that the application displays the sections Diet\comma{} Exercise\comma{} and Rest on the current calendar day,
+type = Manual,
+init = Main page is displayed with Diet\comma{} Exercise and Rest buttons available to click,
+input = An event that loads the main page and the Diet\comma{} Exercise and Rest buttons are clicked,
+output = Main page is displayed with Diet\comma{} Exercise and Rest buttons. If the Diet button is clicked\comma{} the Diet interface is loaded. If the Exercise button is clicked\comma{} the Exercise interface is loaded. If the Rest button is clicked\comma{} the Rest interface is loaded,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 
 \subsection{Diet Section Page}
 \testauto{
-	name = {FR-DS-1},
-	desc = Testing that application prompts the user to height\comma{} input dietary\comma{} weight\comma{} calorie information on initial launch of Diet section,
-	type = Manual,
-	init = Diet section is initialized for the first time and an initial information dialog is launched,
-	input = An event that loads the diet section for the first time,
-	output = A fillable dialog box is launched with height\comma{} dietary information\comma{} weight and calorie information,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-1},
+desc = Testing that application prompts the user to height\comma{} input dietary\comma{} weight\comma{} calorie information on initial launch of Diet section,
+type = Manual,
+init = Diet section is initialized for the first time and an initial information dialog is launched,
+input = An event that loads the diet section for the first time,
+output = A fillable dialog box is launched with height\comma{} dietary information\comma{} weight and calorie information,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-DS-2},
-	desc = Testing that the application saves initial user height\comma{} dietary\comma{} weight\comma{} calorie information,
-	type = Manual,
-	init = Diet section is initialized for the first time and an initial information dialog is launched,
-	input = Initial information dialog values are filled,
-	output = Initial information values are saved to the database,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-2},
+desc = Testing that the application saves initial user height\comma{} dietary\comma{} weight\comma{} calorie information,
+type = Manual,
+init = Diet section is initialized for the first time and an initial information dialog is launched,
+input = Initial information dialog values are filled,
+output = Initial information values are saved to the database,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-DS-3},
-	desc = Testing that the application initializes with a list of food logged on the current calendar day,
-	type = Manual,
-	init = Section is initialized with a list of food logged for the current calendar day,
-	input = An event that loads the rest section,
-	output = A list of inputted food is loaded for the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-3},
+desc = Testing that the application initializes with a list of food logged on the current calendar day,
+type = Manual,
+init = Section is initialized with a list of food logged for the current calendar day,
+input = An event that loads the rest section,
+output = A list of inputted food is loaded for the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-DS-4},
-	desc = Testing that Diet section displays add food button,
-	type = Manual,
-	init = Diet section is displayed with add food button,
-	input = Click add food button,
-	output = A user interface is launched that lets the user select between searching for food or adding a custom meal,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-4},
+desc = Testing that Diet section displays add food button,
+type = Manual,
+init = Diet section is displayed with add food button,
+input = Click add food button,
+output = A user interface is launched that lets the user select between searching for food or adding a custom meal,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-DS-5},
-	desc = Testing that Diet section displays search food button,
-	type = Manual,
-	init = Food adding user interface is displayed with search food button,
-	input = Click the search food button,
-	output = A recipe criteria user interface is launched that displays a list of modifiable criteria and a search button,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-5},
+desc = Testing that Diet section displays search food button,
+type = Manual,
+init = Food adding user interface is displayed with search food button,
+input = Click the search food button,
+output = A recipe criteria user interface is launched that displays a list of modifiable criteria and a search button,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-DS-6},
-	desc = Testing that search food button launches recipe criteria user interface,
-	type = Manual,
-	init = Recipe criteria user interface is launched,
-	input = Search criteria is modied and search button is clicked,
-	output = List of recipes are loaded correctly based on constraints of search criteria,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-6},
+desc = Testing that search food button launches recipe criteria user interface,
+type = Manual,
+init = Recipe criteria user interface is launched,
+input = Search criteria is modied and search button is clicked,
+output = List of recipes are loaded correctly based on constraints of search criteria,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-DS-7},
-	desc = Testing that recipe search displays correct recipe values based on input constraints,
-	type = Manual,
-	init = Recipe list is loaded based on search constraints,
-	input = Add recipe button is clicked,
-	output = Selected recipe is added to the list of food logged on the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-7},
+desc = Testing that recipe search displays correct recipe values based on input constraints,
+type = Manual,
+init = Recipe list is loaded based on search constraints,
+input = Add recipe button is clicked,
+output = Selected recipe is added to the list of food logged on the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-DS-8},
-	desc =  Testing that add custom meal button adds meal to list of logged food for the current calendar day upon filling necessary recipe information textboxes,
-	type = Manual,
-	init = Food adding interface is displayed with add custom meal button,
-	input = Click add custom meal button,
-	output = A dialog box is launched that lets the user fill in custom meal information. The meal is added to the food log list of the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-DS-8},
+desc =  Testing that add custom meal button adds meal to list of logged food for the current calendar day upon filling necessary recipe information textboxes,
+type = Manual,
+init = Food adding interface is displayed with add custom meal button,
+input = Click add custom meal button,
+output = A dialog box is launched that lets the user fill in custom meal information. The meal is added to the food log list of the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 
 \subsection{Workout Section Page}
 \testauto{
-	name = {FR-WS-1},
-	desc = Testing that the Workout section initializes with a preset list of exercises on the current calendar day,
-	type = Manual,
-	init = Workout section is initialized with a preset list of exercises of the current calendar day,
-	input = An event that loads the workout section,
-	output = A preset list of exercises is loaded for the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-WS-1},
+desc = Testing that the Workout section initializes with a preset list of exercises on the current calendar day,
+type = Manual,
+init = Workout section is initialized with a preset list of exercises of the current calendar day,
+input = An event that loads the workout section,
+output = A preset list of exercises is loaded for the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-WS-2},
-	desc = Testing that the Workout section has add exercise button,
-	type = Manual,
-	init = Workout section is displayed with add exercise button,
-	input = Click add exercise button,
-	output = A dialog box is launched that lets the user ll custom exercise information. The exercise is added to the exercise list of the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-WS-2},
+desc = Testing that the Workout section has add exercise button,
+type = Manual,
+init = Workout section is displayed with add exercise button,
+input = Click add exercise button,
+output = A dialog box is launched that lets the user ll custom exercise information. The exercise is added to the exercise list of the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-WS-3},
-	desc = Testing that the Workout section has delete exercise button,
-	type = Manual,
-	init = Each exercise in the workout section is displayed with a delete exercise button,
-	input = Click delete exercise button,
-	output = The exercise is deleted from the exercise list of the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-WS-3},
+desc = Testing that the Workout section has delete exercise button,
+type = Manual,
+init = Each exercise in the workout section is displayed with a delete exercise button,
+input = Click delete exercise button,
+output = The exercise is deleted from the exercise list of the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-WS-4},
-	desc = Testing that exercises display an edit exercise button that launches the changeable exercise information when clicked,
-	type = Manual,
-	init = Each exercise in the workout section is displayed with an edit exercise button,
-	input = click edit exercise button,
-	output = A fillable dialog box is launched with information of the exercise. Once
-	the edit exercise button is clicked the dialog box will close and update the exercise
-	information in the list of exercises for the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-WS-4},
+desc = Testing that exercises display an edit exercise button that launches the changeable exercise information when clicked,
+type = Manual,
+init = Each exercise in the workout section is displayed with an edit exercise button,
+input = click edit exercise button,
+output = A fillable dialog box is launched with information of the exercise. Once
+the edit exercise button is clicked the dialog box will close and update the exercise
+information in the list of exercises for the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-WS-5},
-	desc = Testing that the Workout section prompts the user to add repetitions and sets of each exercise logged in the current calendar day,
-	type = Manual,
-	init = Workout section is displayed with list of exercises for current calendar day,
-	input = An event that loads the workout section,
-	output = If repetition and sets for exercises not logged then dialog box for exercise is launched and the missing repetition and set values are highlighted,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-WS-5},
+desc = Testing that the Workout section prompts the user to add repetitions and sets of each exercise logged in the current calendar day,
+type = Manual,
+init = Workout section is displayed with list of exercises for current calendar day,
+input = An event that loads the workout section,
+output = If repetition and sets for exercises not logged then dialog box for exercise is launched and the missing repetition and set values are highlighted,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 
 \subsection{Rest Section Page}
 \testauto{
-	name = {FR-RS-1},
-	desc = Testing that Rest section launches with sleep statistics of current calendar day,
-	type = Manual,
-	init = Rest section is initialized with the sleep statistics of the current calendar day,
-	input = An event that loads the rest section,
-	output = Sleep statistics are loaded for the current calendar day,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-RS-1},
+desc = Testing that Rest section launches with sleep statistics of current calendar day,
+type = Manual,
+init = Rest section is initialized with the sleep statistics of the current calendar day,
+input = An event that loads the rest section,
+output = Sleep statistics are loaded for the current calendar day,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 \testauto{
-	name = {FR-RS-2},
-	desc = Testing that user can alter inaccurate sleep data,
-	type = Manual,
-	init = Rest section is initialized with the sleep statistics of the current calendar day,
-	input = Alter sleep data,
-	output = The sleep data is updated with user changes,
-	pass = ,
-	result = \textcolor{Green}{PASS}
+name = {FR-RS-2},
+desc = Testing that user can alter inaccurate sleep data,
+type = Manual,
+init = Rest section is initialized with the sleep statistics of the current calendar day,
+input = Alter sleep data,
+output = The sleep data is updated with user changes,
+pass = ,
+result = \textcolor{Green}{PASS}
 }
 
 \section{Nonfunctional Requirements Evaluation}
@@ -518,50 +524,50 @@ This section will not be appropriate for every project.
 
 Unit tests for the workout section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/exercise.test.js}.
 \begin{table}[h]
-	\centering
-	\small
-	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-		\hline
-		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-		\hline
-		WS1 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & \textcolor{Green}{PASS} \\
-		\hline
-		WS2 & FR-WS-1 and FR-WS-5 & \{email: 'fail@gmail.com', 'dateAdded: 2022-01-01'\}  & 'Error in getting exercise list' & 'Error in getting exercise list' & \textcolor{Green}{PASS} \\
-		\hline
-		WS3 & FR-WS-2 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding exercise data'}, id: 'exerciseid', email: 'test@gmail.com', name: 'Test Exercise', sets: 3, repetitions: 10, weight: 50, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
-		\hline
-		WS4 & FR-WS-3 & \{email: 'test@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: true, message: 'Success in deleting exercise data'\} & \{success: true, message: 'Success in deleting exercise data'\} & \textcolor{Green}{PASS} \\
-		\hline
-		WS5 & FR-WS-3 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: false, message: 'Was not able to delete selected exercise data'\} & \{success: false, message: 'Was not able to delete selected exercise data'\} & \textcolor{Green}{PASS} \\
-		\hline
-	\end{tabularx}
-	\caption{Workout Section Unit Tests Part 1}
-	\label{table:workout-unit-tests}
+\centering
+\small
+\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+	\hline
+	Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+	\hline
+	WS1 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & [{ name: 'Exercise 1' }, { name: 'Exercise 2' }] & \textcolor{Green}{PASS} \\
+	\hline
+	WS2 & FR-WS-1 and FR-WS-5 & \{email: 'fail@gmail.com', 'dateAdded: 2022-01-01'\}  & 'Error in getting exercise list' & 'Error in getting exercise list' & \textcolor{Green}{PASS} \\
+	\hline
+	WS3 & FR-WS-2 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding exercise data'}, id: 'exerciseid', email: 'test@gmail.com', name: 'Test Exercise', sets: 3, repetitions: 10, weight: 50, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
+	\hline
+	WS4 & FR-WS-3 & \{email: 'test@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: true, message: 'Success in deleting exercise data'\} & \{success: true, message: 'Success in deleting exercise data'\} & \textcolor{Green}{PASS} \\
+	\hline
+	WS5 & FR-WS-3 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01', name:'push-ups'\}  & \{success: false, message: 'Was not able to delete selected exercise data'\} & \{success: false, message: 'Was not able to delete selected exercise data'\} & \textcolor{Green}{PASS} \\
+	\hline
+\end{tabularx}
+\caption{Workout Section Unit Tests Part 1}
+\label{table:workout-unit-tests}
 \end{table}
 
 \newpage
 
 \begin{table}[h]
-	\centering
-	\small
-	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-		\hline
-		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-		\hline
-		WS6 & FR-WS-4 & params: \{ email: 'example@gmail.com', dateAdded: '2022-01-01', name: 'exerciseName' \},
-		body: \{ reps: 10, sets: 3 \}  & \{success: true, message: 'Success in editing exercise data'\} & \{success: true, message: 'Success in editing exercise data'\} & \textcolor{Green}{PASS} \\
-		\hline
-		WS7 & FR-WS-4 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' \},
-		body: \{ sets: 3, reps: 10\}  & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \textcolor{Green}{PASS} \\
-		\hline
-		WS8 & FR-WS-1 and FR-WS-5 & \{email: test@gmail.com, name:'pushup', dateAdded: 2022-01-01\}  & \{success: true,
-		message: 'Success in getting exercise data' \} & \{success: true, message: 'Success in getting exercise data' \} & \textcolor{Green}{PASS} \\
-		\hline
-		WS9 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', name: 'pushup', dateAdded: 'invalid-date' \} & \{success: false, message: 'Error in getting exercise data' \} & \{success: false, message: 'Error in getting exercise data' \} & \textcolor{Green}{PASS} \\
-		\hline
-	\end{tabularx}
-	\caption{Workout Section Unit Tests Part 2}
-	\label{table:workout-unit-tests2}
+\centering
+\small
+\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+	\hline
+	Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+	\hline
+	WS6 & FR-WS-4 & params: \{ email: 'example@gmail.com', dateAdded: '2022-01-01', name: 'exerciseName' \},
+	body: \{ reps: 10, sets: 3 \}  & \{success: true, message: 'Success in editing exercise data'\} & \{success: true, message: 'Success in editing exercise data'\} & \textcolor{Green}{PASS} \\
+	\hline
+	WS7 & FR-WS-4 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07', name: 'push-ups' \},
+	body: \{ sets: 3, reps: 10\}  & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \{success: false, message: "Was not able to find appropriate exercise data to edit" \} & \textcolor{Green}{PASS} \\
+	\hline
+	WS8 & FR-WS-1 and FR-WS-5 & \{email: test@gmail.com, name:'pushup', dateAdded: 2022-01-01\}  & \{success: true,
+	message: 'Success in getting exercise data' \} & \{success: true, message: 'Success in getting exercise data' \} & \textcolor{Green}{PASS} \\
+	\hline
+	WS9 & FR-WS-1 and FR-WS-5 & \{email: 'test@gmail.com', name: 'pushup', dateAdded: 'invalid-date' \} & \{success: false, message: 'Error in getting exercise data' \} & \{success: false, message: 'Error in getting exercise data' \} & \textcolor{Green}{PASS} \\
+	\hline
+\end{tabularx}
+\caption{Workout Section Unit Tests Part 2}
+\label{table:workout-unit-tests2}
 \end{table}
 
 \newpage
@@ -571,45 +577,45 @@ Unit tests for the workout section: \url{https://github.com/BillNguyen1999/REVIT
 Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/sleep.test.js}.
 
 \begin{table}[h]
-	\centering
-	\small
-	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-		\hline
-		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-		\hline
-		RS1 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in getting sleep data'\} & \{success: true, message: 'Success in getting sleep data'\} & \textcolor{Green}{PASS} \\
-		\hline
-		RS2 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: 'invalid-date'\}  & \{success: false, message: 'Error in getting sleep data'\} & \{success: false, message: 'Error in getting sleep data'\} & \textcolor{Green}{PASS} \\
-		\hline
-		RS3 & FR-RS-1 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding sleep data'}, id: 'sleepid', email: 'test@gmail.com', sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
-		\hline
-		RS4 & FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in deleting sleep data'\} & \{success: true, message: 'Success in deleting sleep data'\} & \textcolor{Green}{PASS} \\
-		\hline
-		RS5 & FR-RS-2 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01'\}  & \{success: false, message: 'Was not able to delete selected sleep data'\} & \{success: false, message: 'Was not able to delete selected sleep data'\} & \textcolor{Green}{PASS} \\
-		\hline
-	\end{tabularx}
-	\caption{Rest Section Unit Tests Part 1}
-	\label{table:rest-unit-tests}
+\centering
+\small
+\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+	\hline
+	Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+	\hline
+	RS1 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in getting sleep data'\} & \{success: true, message: 'Success in getting sleep data'\} & \textcolor{Green}{PASS} \\
+	\hline
+	RS2 & FR-RS-1 and FR-RS-2 & \{email: 'test@gmail.com', dateAdded: 'invalid-date'\}  & \{success: false, message: 'Error in getting sleep data'\} & \{success: false, message: 'Error in getting sleep data'\} & \textcolor{Green}{PASS} \\
+	\hline
+	RS3 & FR-RS-1 & \multicolumn{3}{p{8cm}|}{\centering \{ \textcolor{Green}{success: true, message: 'Success in adding sleep data'}, id: 'sleepid', email: 'test@gmail.com', sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: '2022-03-07'\}}  &  \textcolor{Green}{PASS}\\
+	\hline
+	RS4 & FR-RS-2 & \{email: 'test@gmail.com', dateAdded: '2022-01-01'\}  & \{success: true, message: 'Success in deleting sleep data'\} & \{success: true, message: 'Success in deleting sleep data'\} & \textcolor{Green}{PASS} \\
+	\hline
+	RS5 & FR-RS-2 & \{email: 'notfound@gmail.com', dateAdded: '2022-01-01'\}  & \{success: false, message: 'Was not able to delete selected sleep data'\} & \{success: false, message: 'Was not able to delete selected sleep data'\} & \textcolor{Green}{PASS} \\
+	\hline
+\end{tabularx}
+\caption{Rest Section Unit Tests Part 1}
+\label{table:rest-unit-tests}
 \end{table}
 
 \newpage
 
 \begin{table}[h]
-	\centering
-	\small
-	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-		\hline
-		Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
-		\hline
-		RS6 & FR-RS-2 & params:\{ email: 'example@gmail.com', dateAdded: '2022-01-01'\},
-		body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: true, message: 'Success in editing sleep data'\} & \{success: true, message: 'Success in editing sleep data'\} & \textcolor{Green}{PASS} \\
-		\hline
-		RS7 & FR-RS-2 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07'\},
-		body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \textcolor{Green}{PASS} \\
-		\hline
-	\end{tabularx}
-	\caption{Rest Section Unit Tests Part 2}
-	\label{table:rest-unit-tests2}
+\centering
+\small
+\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+	\hline
+	Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+	\hline
+	RS6 & FR-RS-2 & params:\{ email: 'example@gmail.com', dateAdded: '2022-01-01'\},
+	body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: true, message: 'Success in editing sleep data'\} & \{success: true, message: 'Success in editing sleep data'\} & \textcolor{Green}{PASS} \\
+	\hline
+	RS7 & FR-RS-2 & params: \{ email: 'notfound@gmail.com', dateAdded: '2022-03-07'\},
+	body: \{ sleepHour: 12, bedHour: 11, sleepMinute: 57, bedMinute: 47\}  & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \{success: false, message: "Was not able to find appropriate sleep data to edit" \} & \textcolor{Green}{PASS} \\
+	\hline
+\end{tabularx}
+\caption{Rest Section Unit Tests Part 2}
+\label{table:rest-unit-tests2}
 \end{table}
 
 \newpage
@@ -619,23 +625,23 @@ Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALI
 Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/foodLog.test.js}.
 
 \begin{table}[h]
-	\centering
-	\small
-	\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
-		\hline
-		Test ID & FR & Some Inputs & Some Expected Values & Corresponding Actual Values & Result \\
-		\hline
-		DS1 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in getting food log'\} & \{success: true, message: 'Success in getting food log'\} & \textcolor{Green}{PASS} \\
-		\hline
-		DS2 & FR-DS-2 & \{email: 'test@gmail.com', foodDate: 2022-03-08, calories: 1\}  & \{success: true, message: 'Meal successfully added', calories: 1\} & \{success: true, message: 'Meal successfully added', calories: 1\} & \textcolor{Green}{PASS} \\
-		\hline
-		DS3 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08, foodName: 'name'\}  & \{success: true, message: 'Success in deleting meal'\} & \{success: true, message: 'Success in deleting meal''\} & \textcolor{Green}{PASS} \\
-		\hline
-		DS4 & FR-RS-8 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in updating meal'\} & \{success: true, message: 'Success in updating meal'\} & \textcolor{Green}{PASS} \\
-		\hline
-	\end{tabularx}
-	\caption{Diet Section Unit Tests Part 1}
-	\label{table:diet-unit-tests}
+\centering
+\small
+\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+	\hline
+	Test ID & FR & Some Inputs & Some Expected Values & Corresponding Actual Values & Result \\
+	\hline
+	DS1 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in getting food log'\} & \{success: true, message: 'Success in getting food log'\} & \textcolor{Green}{PASS} \\
+	\hline
+	DS2 & FR-DS-2 & \{email: 'test@gmail.com', foodDate: 2022-03-08, calories: 1\}  & \{success: true, message: 'Meal successfully added', calories: 1\} & \{success: true, message: 'Meal successfully added', calories: 1\} & \textcolor{Green}{PASS} \\
+	\hline
+	DS3 & FR-DS-3 & \{email: 'test@gmail.com', foodDate: 2022-03-08, foodName: 'name'\}  & \{success: true, message: 'Success in deleting meal'\} & \{success: true, message: 'Success in deleting meal''\} & \textcolor{Green}{PASS} \\
+	\hline
+	DS4 & FR-RS-8 & \{email: 'test@gmail.com', foodDate: 2022-03-08\}  & \{success: true, message: 'Success in updating meal'\} & \{success: true, message: 'Success in updating meal'\} & \textcolor{Green}{PASS} \\
+	\hline
+\end{tabularx}
+\caption{Diet Section Unit Tests Part 1}
+\label{table:diet-unit-tests}
 \end{table}
 
 \newpage
@@ -647,296 +653,296 @@ Formal testing did not reveal any necessary changes in terms of module interfaci
 
 \section{Trace to Requirements}
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Login Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|}
-			\cline{3-11}
-			& & \multicolumn{9}{ c|}{Requirements} \\ \cline{3-11}
-			& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 & FR8 & FR9 \\ \cline{1-11}
-			\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&&&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&&&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&&&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&&&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X&&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-7} &&&&&&&X&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-LP-8} &&&&&&&&X& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-LP-9} &&&&&&&&&X \\ \cline{1-11}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Login Page Functional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|}
+		\cline{3-11}
+		& & \multicolumn{9}{ c|}{Requirements} \\ \cline{3-11}
+		& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 & FR8 & FR9 \\ \cline{1-11}
+		\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&&&& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&&& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&&&& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&&&& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&&&& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X&&& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-LP-7} &&&&&&&X&& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ FR-LP-8} &&&&&&&&X& \\ \cline{2-11}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ FR-LP-9} &&&&&&&&&X \\ \cline{1-11}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Signup Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-			\cline{3-7}
-			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
-			& & FR10  & FR11 & FR12 & FR13 & FR14 \\ \cline{1-7}
-			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-SP-1} &X&&&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-SP-2} &&X&&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-SP-3} &&&X&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-SP-4} &&&&X& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-SP-5} &&&&&X \\ \cline{1-7}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Signup Page Functional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+		\cline{3-7}
+		& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+		& & FR10  & FR11 & FR12 & FR13 & FR14 \\ \cline{1-7}
+		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ FR-SP-1} &X&&&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-SP-2} &&X&&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-SP-3} &&&X&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-SP-4} &&&&X& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ FR-SP-5} &&&&&X \\ \cline{1-7}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Main Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-			\cline{3-7}
-			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-7}
-			& & FR15  & FR16 & FR17 & FR18 & FR30 \\ \cline{1-7}
-			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-MP-1} &X&&&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-MP-2} &&X&&&X \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-MP-3} &&&X&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-MP-4} &&&&X& \\ \cline{1-7}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Main Page Functional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+		\cline{3-7}
+		& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-7}
+		& & FR15  & FR16 & FR17 & FR18 & FR30 \\ \cline{1-7}
+		\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ FR-MP-1} &X&&&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-MP-2} &&X&&&X \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-MP-3} &&&X&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-MP-4} &&&&X& \\ \cline{1-7}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Diet Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-			\cline{3-12}
-			& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
-			& & FR19  & FR20 & FR21 & FR22 & FR23-25  & FR26 & FR27 & FR28 & FR29 & F30 \\ \cline{1-12}
-			\multicolumn{1}{ |c| }{\multirow{11}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-3} &&&X&&&&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-4} &&&&X&&&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-5} &&&&&X&&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-6} &&&&&&X&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-7} &&&&&&&X&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-8} &&&&&&&&X&X& \\ \cline{1-12}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Diet Page Functional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+		\cline{3-12}
+		& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
+		& & FR19  & FR20 & FR21 & FR22 & FR23-25  & FR26 & FR27 & FR28 & FR29 & F30 \\ \cline{1-12}
+		\multicolumn{1}{ |c| }{\multirow{11}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&&& \\ \cline{2-12}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&&& \\ \cline{2-12}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-DS-3} &&&X&&&&&&& \\ \cline{2-12}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-DS-4} &&&&X&&&&&& \\ \cline{2-12}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-DS-5} &&&&&X&&&&& \\ \cline{2-12}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-DS-6} &&&&&&X&&&& \\ \cline{2-12}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-DS-7} &&&&&&&X&&& \\ \cline{2-12}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-DS-8} &&&&&&&&X&X& \\ \cline{1-12}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Workout Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-			\cline{3-7}
-			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
-			& & FR31  & FR32 & FR33 & FR34 & FR35 \\ \cline{1-7}
-			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-WP-1} &X&&&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-WP-2} &&X&&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-WP-3} &&&X&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-WP-4} &&&&X& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-WP-5} &&&&&X \\ \cline{1-7}
-		\end{tabularx}
-	\end{center}
-\end{table}
-
-
-\begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Rest Section Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-			\cline{3-4}
-			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-			& & FR36  & FR37 \\ \cline{1-4}
-			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-RS-1} &X& \\ \cline{2-4}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{1-4}
-		\end{tabularx}
-	\end{center}
-\end{table}
-
-\begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Look and Feel Nonfunctional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-			\cline{3-4}
-			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-			& & LF1  & LF2 \\ \cline{1-4}
-			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ NFR-LF1} &X& \\ \cline{2-4}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ NFR-LF22} &&X \\ \cline{1-4}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Workout Page Functional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+		\cline{3-7}
+		& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+		& & FR31  & FR32 & FR33 & FR34 & FR35 \\ \cline{1-7}
+		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ FR-WP-1} &X&&&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-WP-2} &&X&&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-WP-3} &&&X&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ FR-WP-4} &&&&X& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ FR-WP-5} &&&&&X \\ \cline{1-7}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Usability and Humanity Nonfunctional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|}
-			\cline{3-8}
-			& & \multicolumn{6}{ c|}{Requirements} \\ \cline{3-8}
-			& & UH1  & UH2 & UH3 & UH4 & UH5 & UH6 \\ \cline{1-8}
-			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ NFR-UH1} &X&&&&& \\ \cline{2-8}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-UH2} &&X&&&& \\ \cline{2-8}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-UH3} &&&X&&& \\ \cline{2-8}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-UH4} &&&&X&&\\ \cline{2-8}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{NFR-UH5} &&&&&X& \\ \cline{1-8}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Rest Section Functional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+		\cline{3-4}
+		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+		& & FR36  & FR37 \\ \cline{1-4}
+		\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ FR-RS-1} &X& \\ \cline{2-4}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{1-4}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Perfromance Nonfunctional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-			\cline{3-7}
-			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
-			& & PE1  & PE2 & PE3 & PE4 & PE5 \\ \cline{1-7}
-			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ NFR-PE1} &X&&&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-PE2} &&X&&& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-PE3} &&&&X& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-PE4} &&&&&X \\ \cline{1-7}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Look and Feel Nonfunctional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+		\cline{3-4}
+		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+		& & LF1  & LF2 \\ \cline{1-4}
+		\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ NFR-LF1} &X& \\ \cline{2-4}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ NFR-LF22} &&X \\ \cline{1-4}
+	\end{tabularx}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Usability and Humanity Nonfunctional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|}
+		\cline{3-8}
+		& & \multicolumn{6}{ c|}{Requirements} \\ \cline{3-8}
+		& & UH1  & UH2 & UH3 & UH4 & UH5 & UH6 \\ \cline{1-8}
+		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ NFR-UH1} &X&&&&& \\ \cline{2-8}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ NFR-UH2} &&X&&&& \\ \cline{2-8}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ NFR-UH3} &&&X&&& \\ \cline{2-8}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ NFR-UH4} &&&&X&&\\ \cline{2-8}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{NFR-UH5} &&&&&X& \\ \cline{1-8}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Operational Nonfunctional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-			\cline{3-4}
-			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-			& & OE1  & OE2 \\ \cline{1-4}
-			\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ NFR-OE1} &X& \\ \cline{1-4}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Perfromance Nonfunctional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+		\cline{3-7}
+		& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+		& & PE1  & PE2 & PE3 & PE4 & PE5 \\ \cline{1-7}
+		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ NFR-PE1} &X&&&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ NFR-PE2} &&X&&& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ NFR-PE3} &&&&X& \\ \cline{2-7}
+		\multicolumn{1}{|c| }{} 	                  &
+		\multicolumn{1}{|c| }{ NFR-PE4} &&&&&X \\ \cline{1-7}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Maintainability and Portability Nonfunctional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
-			\cline{3-5}
-			& & \multicolumn{3}{ c|}{Requirements} \\ \cline{3-5}
-			& & MP1  & MP2 & MP3 \\ \cline{1-5}
-			\multicolumn{1}{ |c| }{\multirow{2}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ NFR-MP1} &X&& \\ \cline{2-5}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ NFR-MP2} &&X& \\ \cline{1-5}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Operational Nonfunctional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+		\cline{3-4}
+		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+		& & OE1  & OE2 \\ \cline{1-4}
+		\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ NFR-OE1} &X& \\ \cline{1-4}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Security Nonfunctional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-			\cline{3-4}
-			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-			& & SE1  & SE2 \\ \cline{1-4}
-			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{NFR-SE1} &X& \\ \cline{2-4}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{NFR-SE2} &&X \\ \cline{1-4}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Maintainability and Portability Nonfunctional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
+		\cline{3-5}
+		& & \multicolumn{3}{ c|}{Requirements} \\ \cline{3-5}
+		& & MP1  & MP2 & MP3 \\ \cline{1-5}
+		\multicolumn{1}{ |c| }{\multirow{2}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{ NFR-MP1} &X&& \\ \cline{2-5}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{ NFR-MP2} &&X& \\ \cline{1-5}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \begin{table}[H]
-	\begin{center}
-		\caption{\textbf{Traceability Matrix for Cultural and Political Nonfunctional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|}
-			\cline{3-3}
-			& & \multicolumn{1}{ c|}{Requirements} \\ \cline{3-3}
-			& & CU1 \\ \cline{1-3}
-			\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{NFR-CU1} &X \\ \cline{1-3}
-		\end{tabularx}
-	\end{center}
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Security Nonfunctional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+		\cline{3-4}
+		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+		& & SE1  & SE2 \\ \cline{1-4}
+		\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{NFR-SE1} &X& \\ \cline{2-4}
+		\multicolumn{1}{|c| }{}                        &
+		\multicolumn{1}{|c| }{NFR-SE2} &&X \\ \cline{1-4}
+	\end{tabularx}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+	\caption{\textbf{Traceability Matrix for Cultural and Political Nonfunctional Requirements}}
+	\begin{tabularx}{\textwidth}{cc|c|c|c|c|}
+		\cline{3-3}
+		& & \multicolumn{1}{ c|}{Requirements} \\ \cline{3-3}
+		& & CU1 \\ \cline{1-3}
+		\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
+		\multicolumn{1}{|c| }{NFR-CU1} &X \\ \cline{1-3}
+	\end{tabularx}
+\end{center}
 \end{table}
 
 \section{Trace to Modules}		
 \begin{table}[H]
-	\centering
-	\small
-	\renewcommand{\arraystretch}{0.9}
-	\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
-		\toprule
-		\textbf{Req.} & \textbf{Modules}\\
-		\midrule
-		FR-LP-1 & M3\\
-		FR-LP-2 & M3\\
-		FR-LP-3 & M3\\
-		FR-LP-4 & M3\\
-		FR-LP-5 & M3\\
-		FR-LP-6 & M3\\
-		FR-LP-7 & M3\\
-		FR-LP-8 & M3\\
-		FR-LP-9 & M3\\
-		FR-SP-1 & M18\\
-		FR-SP-2 & M18\\
-		FR-SP-3 & M18\\
-		FR-SP-4 & M18\\
-		FR-SP-5 & M18\\
-		FR-MP-1 & M1\\
-		FR-MP-2 & M1\\
-		FR-MP-3 & M1\\
-		FR-MP-4 & M1\\
-		FR-DS-1 & M7\\
-		FR-DS-2 & M7\\
-		FR-DS-3 & M7\\
-		FR-DS-4 & M8\\
-		FR-DS-5 & M8, M10\\
-		FR-DS-6 & M11\\
-		FR-DS-7 & M11\\
-		FR-DS-8 & M9\\
-		FR-WP-1 & M14\\
-		FR-WP-2 & M14\\
-		FR-WP-3 & M15\\
-		FR-WP-4 & M15\\
-		FR-WP-5 & M17\\
-		FR-RS-1 & M5\\
-		FR-RS-2 & M6\\
-		\bottomrule
-	\end{tabular}
-	\caption{Trace Between Requirements and Modules}
-	\label{TblRT}
+\centering
+\small
+\renewcommand{\arraystretch}{0.9}
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+	\toprule
+	\textbf{Req.} & \textbf{Modules}\\
+	\midrule
+	FR-LP-1 & M3\\
+	FR-LP-2 & M3\\
+	FR-LP-3 & M3\\
+	FR-LP-4 & M3\\
+	FR-LP-5 & M3\\
+	FR-LP-6 & M3\\
+	FR-LP-7 & M3\\
+	FR-LP-8 & M3\\
+	FR-LP-9 & M3\\
+	FR-SP-1 & M18\\
+	FR-SP-2 & M18\\
+	FR-SP-3 & M18\\
+	FR-SP-4 & M18\\
+	FR-SP-5 & M18\\
+	FR-MP-1 & M1\\
+	FR-MP-2 & M1\\
+	FR-MP-3 & M1\\
+	FR-MP-4 & M1\\
+	FR-DS-1 & M7\\
+	FR-DS-2 & M7\\
+	FR-DS-3 & M7\\
+	FR-DS-4 & M8\\
+	FR-DS-5 & M8, M10\\
+	FR-DS-6 & M11\\
+	FR-DS-7 & M11\\
+	FR-DS-8 & M9\\
+	FR-WP-1 & M14\\
+	FR-WP-2 & M14\\
+	FR-WP-3 & M15\\
+	FR-WP-4 & M15\\
+	FR-WP-5 & M17\\
+	FR-RS-1 & M5\\
+	FR-RS-2 & M6\\
+	\bottomrule
+\end{tabular}
+\caption{Trace Between Requirements and Modules}
+\label{TblRT}
 \end{table}
 \section{Code Coverage Metrics}
 
