@@ -113,10 +113,41 @@ urlcolor=blue
 	\textbf{symbol} & \textbf{description}\\
 	\midrule 
 	T & Test\\
+	REVITALIZE & Name of application\\
+	UAT & User Acceptance Testing\\
+	UI/UX & User Interface/User Experience\\
+	HCI & Human-Computer Interface\\
+	MG & Module Guide\\
+	MIS & Module Interface Specification\\
+	SRS & Software Requirements Specification\\
+	VnV & Verification and Validation\\
+	FR & Functional Requirement\\
+	NFR & Non Functional Requirement\\
+	SE & Security Requirement\\
+	LP & Login Page\\
+	SP & Sign-up Page\\
+	MP & Main Page or Maintainability and Portability Requirements\\
+	DS & Diet Section\\
+	WS & Workout Section\\
+	RS & Rest Section\\
+	LF & Look and Feel Requirements\\
+	UH & Usability and Humanity Requirements\\
+	PE & Performance Requirement\\
+	OE & Operational Requirement\\
+	SE & Security Requirement\\
+	CU & Cultural Requirement\\
 	\bottomrule
 \end{tabular}\\
 
-\wss{symbols, abbreviations or acronyms -- you can reference the SRS tables if needed}
+\subsection{Symbolic Parameters}
+
+\noindent MINIMUM\_TEST\_SCORE = \hypertarget{MINIMUM_TEST_SCORE}{8.5}\\
+MINIMUM\_TEST\_SCORE\_2 = \hypertarget{MINIMUM_TEST_SCORE_2}{9.5}\\
+MAXIMUM\_ACCESS\_TIME = \hypertarget{MAXIMUM_ACCESS_TIME}{10}\\
+MIN\_APPROVAL\_RATING = \hypertarget{MIN_APPROVAL_RATING}{85\%}\\
+MIN\_APPROVAL\_RATING\_2 = \hypertarget{MIN_APPROVAL_RATING_2}{95\%}\\
+MIN\_USER\_LOAD = \hypertarget{MIN_USER_LOAD}{50}\\
+MIN\_DATA\_POINTS = \hypertarget{MIN_DATA_POINTS}{1000000}
 
 \newpage
 
@@ -379,7 +410,7 @@ This document ...
 	desc = Testing that search food button launches recipe criteria user interface,
 	type = Manual,
 	init = Recipe criteria user interface is launched,
-	input = Search criteria is modied and search button is clicked,
+	input = Search criteria is modified and search button is clicked,
 	output = List of recipes are loaded correctly based on constraints of search criteria,
 	pass = ,
 	result = \textcolor{Green}{PASS}
@@ -422,7 +453,7 @@ This document ...
 	type = Manual,
 	init = Workout section is displayed with add exercise button,
 	input = Click add exercise button,
-	output = A dialog box is launched that lets the user ll custom exercise information. The exercise is added to the exercise list of the current calendar day,
+	output = A dialog box is launched that lets the user fill custom exercise information. The exercise is added to the exercise list of the current calendar day,
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
@@ -483,11 +514,164 @@ This document ...
 
 \section{Nonfunctional Requirements Evaluation}
 
-\subsection{Usability}
+\subsection{Look and Feel}
+
+\testmanual{
+	name = {NFR-LF1},
+	desc = Testing that UI/UX elements are displayed neatly and correctly,
+	type = Manual,
+	user = Stakeholders,
+	pass = Average Q1 survey score of at least \hyperlink{MINIMUM_TEST_SCORE}{MINIMUM\_TEST\_SCORE},
+	result = \textcolor{Green}{PASSED} with an agreement of 8.8 out of 10
+}
+
+\testmanual{
+	name = {NFR-LF2},
+	desc = Testing that colours used are acceptable,
+	type = Manual,
+	user = Stakeholders,
+	pass = Average Q2 survey score of at least \hyperlink{MINIMUM_TEST_SCORE}{MINIMUM\_TEST\_SCORE},
+	result = \textcolor{Green}{PASSED} with an agreement of 10 out of 10
+}
+
+\subsection{Usability and Humanity}
+
+\testmanual{
+	name = {NFR-UH1},
+	desc = Testing accessibility of application using navigation ability with one finger,
+	type = Manual,
+	user = Stakeholders,
+	pass = Average survey score of at least \hyperlink{MINIMUM_TEST_SCORE_2}{MINIMUM\_TEST\_SCORE\_2},
+	result = \textcolor{Green}{PASSED} with an agreement of 10 out of 10
+}
+
+\testmanual{
+	name = {NFR-UH2},
+	desc = Testing navigation speed between screens,
+	type = Manual,
+	user = Stakeholders,
+	pass = Average survey score of at least \hyperlink{MAXIMUM_ACCESS_TIME}{MAXIMUM\_ACCESS\_TIME},
+	result = \textcolor{Green}{PASSED} with an agreement of 10 out of 10
+}
+
+\testmanual{
+	name = {NFR-UH3},
+	desc = Testing overall accessibility through average survey result,
+	type = Manual,
+	user = Stakeholders,
+	pass = Average survey score of at least \hyperlink{MINIMUM_TEST_SCORE}{MINIMUM\_TEST\_SCORE},
+	result = \textcolor{Green}{PASSED} with an agreement of 9.3
+}
+
+\testmanual{
+	name = {NFR-UH4},
+	desc = Testing learnability of application,
+	type = Manual,
+	user = Stakeholders,
+	pass = \hyperlink{MIN_APPROVAL_RATING}{MIN\_APPROVAL\_RATING} of stakeholders understand functionality in 3 iterations or less,
+	result = \textcolor{Green}{PASS}
+}
+
+\testmanual{
+	name = {NFR-UH5},
+	desc = Testing consistency of UI,
+	type = Manual,
+	user = Stakeholders,
+	pass = Average survey score of at least \hyperlink{MINIMUM_TEST_SCORE}{MINIMUM\_TEST\_SCORE},
+	result = \textcolor{Green}{PASSED} with an agreement of 9 out of 10
+}
 
 \subsection{Performance}
 
-\subsection{etc.}
+\testmanual{
+	name = {NFR-PE1},
+	desc = Testing load times of API responses and outputs,
+	type = Manual,
+	user = Developers,
+	pass = Load times below 5 seconds,
+	result = \textcolor{Green}{PASS}
+}
+
+\testmanual{
+	name = {NFR-PE2},
+	desc = Testing accuracy of calculated values that contain data/numbers,
+	type = Manual,
+	user = Developers,
+	pass = ,
+	result = \textcolor{Green}{PASS}
+}
+
+\testmanual{
+	name = {NFR-PE3},
+	desc = Testing system performance under high load,
+	type = Manual,
+	user = Developers,
+	pass = Previous metrics still pass with \hyperlink{MIN_USER_LOAD}{MIN\_USER\_LOAD} users,
+	result = \textcolor{Green}{Tentative Pass}
+}
+
+\testmanual{
+	name = {NFR-PE4},
+	desc = Testing system performance with large amounts of user data,
+	type = Manual,
+	user = Developers,
+	pass = Previous metrics still pass with \hyperlink{MIN_DATA_POINTS}{MIN\_DATA\_POINTS} per user,
+	result = \textcolor{Green}{PASS}
+}
+
+\subsection{Operational}
+
+\testmanual{
+	name = {NFR-OE1},
+	desc = Testing if all features are loaded with stable internet connection,
+	type = Manual,
+	user = Developers,
+	pass = ,
+	result = \textcolor{Green}{PASS}
+}
+
+\subsection{Maintainability and Portability}
+
+\testmanual{
+	name = {NFR-MP1},
+	desc = Testing maintainability through cross referencing developer comments,
+	type = Manual,
+	user = Developers,
+	pass = ,
+	result = \textcolor{Green}{PASS}
+}
+
+\subsection{Security}
+
+\testmanual{
+	name = {NFR-SE1},
+	desc = Testing that passwords are hashed and user data is secure,
+	type = Manual,
+	user = Developers,
+	pass = ,
+	result = \textcolor{Green}{PASS}
+}
+
+\testmanual{
+	name = {NFR-SE2},
+	desc = Testing that emails can only have 1 associated account,
+	type = Manual,
+	user = Developers,
+	pass = ,
+	result = \textcolor{Green}{PASS}
+}
+
+\subsection{Cultural and Political}
+
+\testmanual{
+	name = {NFR-CU1},
+	desc = Testing that the displayed language is in English,
+	type = Manual,
+	user = Developers,
+	pass = ,
+	result = \textcolor{Green}{PASS}
+}
+
 
 \section{Comparison to Existing Implementation}	
 
