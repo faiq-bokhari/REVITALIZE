@@ -111,6 +111,7 @@ March 6th, 2023 & Youssef Dahab & Added Changes Due To Testing\\
 March 8th, 2023 & Hasan Kibria & Adding Unit Tests for Diet Section\\
 March 8th, 2023 & Youssef Dahab & Added Reflection\\
 March 8th, 2023 & Logan Brown & Added Non-Functional Requirements Evaluation\\
+March 8th, 2023 & Mahmoud Anklis & Added Unit Tests for the User Section and Reflection\\
 \bottomrule
 \end{tabularx}
 
@@ -810,11 +811,31 @@ Unit tests for the rest section: \url{https://github.com/BillNguyen1999/REVITALI
 
 \newpage
 
+\subsection{User Section}
+
+Unit tests for the User section: \url{https://github.com/BillNguyen1999/REVITALIZE/blob/main/src/SERVER/backend/test/user.test.js}.
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|X|X|p{3cm}|p{2.5cm}|p{2.5cm}|X|}
+	\hline
+	Test ID & FR & Inputs & Expected Values & Actual Values & Result \\
+	\hline
+	US1 & FR-SP-1, FR-SP-2, FR-SP-3 and FR-SP-5  & \{name:'Test Name',email: 'test123@gmail.com', password: '12345'\}  & Status Code = 201 & Status Code = 201 & \textcolor{Green}{PASS} \\
+	\hline
+	
+\end{tabularx}
+\caption{User Section Unit Test}
+\label{table:workout-unit-tests}
+\end{table}
+
+\newpage
+
 \section{Changes Due to Testing}
 Formal testing did not reveal any necessary changes in terms of module interfacing, decomposition, or internal design. Changes made to code were to address bugs and logical errors revealed by the testing plan. User interface improvements were made throughout the development process in response to feedback from developers and informal testers.
 
 \section{Automated Testing}
-
+Jest was used to automate the unit tests
 \section{Trace to Requirements}
 \begin{table}[H]
 \begin{center}
@@ -1109,13 +1130,14 @@ Formal testing did not reveal any necessary changes in terms of module interfaci
 \label{TblRT}
 \end{table}
 \section{Code Coverage Metrics}
-
+N/A
 \section{Reflection Appendix}
 Bill Nguyen: for the vnv plan, it was more formulation rather than implementation, we looked at how we were going to test our project rather than actually doing it. For the vnv report it was more the implementation of our formulation where we wrote actual unit/automated tests and tested our project fully and than compared it to our vnv plan to see what requirements etc. did we satisfy and maybe find things we need to improve on.\\\\
 Hasan Kibria: In comparison to the vnv plan, the vnv report was more based on practicality an implementation. To complete it fully, there was real code and test cases that had to be thought of an implemented so that they could then be documented in the vnv report. In the vnv plan it was more of an outlook of what we envisioned our testing to look like.\\\\
 Syed Bokhari: The VNV plan focuses on formulating the testing approach and strategies, while the VNV report is more concerned with the implementation and documentation of the actual testing process. The VNV report involves the creation and execution of test cases, which are then compared to the plan to identify any gaps or areas for improvement. The VNV plan provides a high-level view of the testing process, while the VNV report is a more detailed account of the actual testing activities.\\\\
 Youssef Dahab: Both the VnV plan and VnV report take inspiration from the functional and non-functional requirements in the SRS document. The VnV plan described how we were going to test our functional and non-functional requirements while the VnV report described the results of performing those tests.\\\\
 Logan Brown: The VnV plan was more abstract without knowledge of the implementation. The VnV report documents the more refined and directed tests that were performed which could now be completed due to the implementation being more concrete. I have a better idea of how VnV is carried out and the importance of "faking the design process" in the initial stages to make later VnV much easier.\\\\
+Mahmoud Anklis: The VnV plan is designed to come up with a testing and verification methodology that would ensure that the software application adheres to the functional and non-functional requirements. On the other hand, the VnV report focuses on the actual execution of the tests which requires implementation steps.\\\\
 
 \bibliographystyle{plainnat}
 
