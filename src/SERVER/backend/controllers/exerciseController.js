@@ -16,8 +16,7 @@ const addExerciseData = async (req, res) => {
   let capitalizedName = name.split(' ')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(' ');
-  //let correctDate = dateAdded.split("T")[0];
-
+  // let correctDate = dateAdded.split("T")[0];
   const exerciseDataExists = await Exercise.findOne({ email: lowerCaseEmail, dateAdded: dateAdded, name: capitalizedName });
   if (exerciseDataExists) {
     res.status(400).json({ success: false, message: "Exercise data already exists" });
@@ -82,8 +81,14 @@ const updateExerciseData = async (req, res) => {
   const { email: email, dateAdded: dateAdded, name: name } = req.params
   const client = req.body
 
+  let capitalizedName = name.split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+
+  client.name = capitalizedName;
+
   try {
-    const updatedExerciseData = await Exercise.findOneAndUpdate({email: email, dateAdded: dateAdded, name: name}, {...client}, { new: true})
+    const updatedExerciseData = await Exercise.findOneAndUpdate({email: email, dateAdded: dateAdded, name: capitalizedName}, {...client}, { new: true})
     if (updatedExerciseData) {
       res.status(200).json({success: true, message: "Success in editing exercise data", updatedExerciseData});
     } else {
@@ -99,8 +104,14 @@ const updateExerciseData = async (req, res) => {
 const deleteExerciseData = async (req, res) => {
   const { email: email, dateAdded: dateAdded, name: name } = req.params
 
+  let capitalizedName = name.split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+
+  console.log(dateAdded);
+
   try {
-    const deletedExerciseData = await Exercise.findOneAndRemove({email: email, dateAdded: dateAdded, name: name})
+    const deletedExerciseData = await Exercise.findOneAndRemove({email: email, dateAdded: dateAdded, name: capitalizedName})
     if (deletedExerciseData) {
       res.status(200).json({success: true, message: "Success in deleting exercise data", deletedExerciseData});
     } else {
