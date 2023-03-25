@@ -113,26 +113,27 @@ const AddExercise = ({navigation, route}) => {
             addWorkout(exercise)
             setTimeout(() => {
                 navigation.navigate("Exercise Screen", exercise);
-            }, 3000);
+            }, 200);
         }
     }
 
   
-    const switchedTo = navigation.addListener('focus', () => {
-        if (route.params !== null) {
-            //navigation.setParams(null);
-            // setSelected("");
-            // setReps(0);
-            // setSets(0);
-            // setWeight(0);
-        }
-    }, [navigation]);
+    // const switchedTo = navigation.addListener('focus', () => {
+    //     if (route.params !== null) {
+    //         //navigation.setParams(null);
+    //         // setSelected("");
+    //         // setReps(0);
+    //         // setSets(0);
+    //         // setWeight(0);
+    //     }
+    // }, [navigation]);
    
     function addWorkout (newExercise) {
         const addData = async () => {
             try {
                 if(route.params?.editcurrentexercise && route.params?.editcurrentexercise == true){
-                    let url = 'http://192.168.2.43:8000/exercises/' + email + '/' + selected + '/' + date.toISOString().split("T")[0];
+                    let url = 'http://192.168.2.43:8000/exercises/' + email + '/' + selected + '/';
+                    url += date.toISOString().split("T")[0];
                     const response = await fetch(url, {
                         method: 'PATCH',
                         headers: {

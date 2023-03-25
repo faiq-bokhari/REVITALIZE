@@ -47,7 +47,7 @@ const MainScreen=({navigation})=>{
                 <Ionicons.Button style={globalStyles.topLeftContainer} onPress={()=> subtractOneDay()} name= 'arrow-back-outline' />
             </TouchableOpacity>
             <TouchableOpacity onPress={goToCalendarScreen}  style={globalStyles.topCenterContainer}>
-                <Text style={globalStyles.appButtonText}>{ date.toDateString() }</Text>
+                <Text style={globalStyles.appButtonText}>{ date.toUTCString().substring(0,16) }</Text>
             </TouchableOpacity>
             <TouchableOpacity >
                 <Ionicons.Button style={globalStyles.topRightContainer} onPress={()=> addOneDay()} name= 'arrow-forward-outline' />

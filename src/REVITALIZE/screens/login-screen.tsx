@@ -36,7 +36,7 @@ const LoginScreen=({navigation})=>{
           } else {
             // Authentication failed, show an error message
             // remove navigate later
-            //navigation.navigate('Main Screen');
+            // navigation.navigate('Main Screen');
             alert(data.message);
           }
         } catch (error) {

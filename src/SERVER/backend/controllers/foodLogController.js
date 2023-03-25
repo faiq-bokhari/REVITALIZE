@@ -62,7 +62,7 @@ const getFoodLog = async (req, res) => {
   
       const foodLog = await FoodLog.find({email: lowerCaseEmail, foodDate: foodDate});
       let carbs = 0;
-      let fat = 0;
+      let fats = 0;
       let protein = 0;
       let calories = 0;
 
@@ -73,15 +73,15 @@ const getFoodLog = async (req, res) => {
         if(foodLog[i].protein){
           protein += foodLog[i].protein;
         }
-        if(foodLog[i].fat){
-          fat += foodLog[i].fat;
+        if(foodLog[i].fats){
+          fats += foodLog[i].fats;
         }
         if(foodLog[i].carbs){
           carbs += foodLog[i].carbs;
         }
       }
       
-      res.status(200).json({success: true, message: "Success in getting food log", foodLog, calories, carbs, protein, fat});
+      res.status(200).json({success: true, message: "Success in getting food log", foodLog, calories, carbs, protein, fats});
   } catch (error) {
       res.status(404).json({ success: false, message: "Error in getting food log" });
   }

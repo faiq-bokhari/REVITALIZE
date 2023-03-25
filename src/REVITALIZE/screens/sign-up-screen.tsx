@@ -43,12 +43,13 @@ const SignUpScreen=({navigation})=>{
           const data = await response.json();
       
           if (data.success) {
-            //Alert.alert('Congrats!','Your account has been successfully created');
+            Alert.alert('Congrats!','Your account has been successfully created');
             navigation.navigate('Login Screen');
             
           } else {
             // remove navigate later
             //navigation.navigate('Main Screen');
+            console.log('bruh')
             alert(data.message);
           }
         } catch (error) {

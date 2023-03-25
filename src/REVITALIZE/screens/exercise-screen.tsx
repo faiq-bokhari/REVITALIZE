@@ -8,11 +8,10 @@ import { DateContext } from './Date-component';
 import { EmailContext } from './Email-component';
 
   const ExerciseScreen=({navigation})=>{
-    const current = new Date();
-    const [dateString, setDateString] = useState(current.toDateString());
+    //const current = new Date();
+    //const [dateString, setDateString] = useState(current.toDateString());
     const isFocused = useIsFocused();
     const [workout, setWorkout] = useState([]);
-    const [isSending, setIsSending] = useState(false);
     const route = useRoute();
     const { date, addOneDay, subtractOneDay } = useContext(DateContext);
     const { email } = useContext(EmailContext);
@@ -72,21 +71,48 @@ import { EmailContext } from './Email-component';
           editcurrentexercise: true,
       });
     }
+
+    function getWorkoutData(currentDate = date) {
+      const fetchData = async () => {
+          try {
+            let url = 'http://192.168.2.43:8000/exercises/' + email + '/';
+            url += currentDate.toISOString().split("T")[0];
+    
+            const response = await fetch(url, {
+                method: 'GET',
+              });
+            const json = await response.json();
+            setWorkout(json);
+             //console.log(JSON.stringify(json, null, "  "));
+          } catch (error) {
+            console.error(error);
+          }
+        };
   
-    const switchedTo = navigation.addListener('focus', () => {
-      if (navigation.isFocused()) {
-       // addExercise(route.params);
-       getWorkoutData();
-       
-      //navigation.setParams(null);
-      }
-    }, [navigation]);
-   
+        fetchData();
+    }
+
 
     useEffect(() => {
-      getWorkoutData(date);
-    }, [date]);
+      getWorkoutData();
+    });
+
+    // useEffect(() => {
+    //   getWorkoutData();
+    // },[isFocused]);
     
+    useEffect(() => {
+      const unsubscribe = navigation.addListener('focus', () => {
+        
+        getWorkoutData();
+        console.log('Page refreshed!');
+        console.log(date)
+      });
+  
+      // Return the unsubscribe function to clean up the listener
+      return unsubscribe;
+    }, [navigation]);
+
     function addDate() {
       addOneDay();
     }
@@ -94,30 +120,6 @@ import { EmailContext } from './Email-component';
     function subtractDate() {
       subtractOneDay();
     }
-
-  function getWorkoutData(currentDate = date) {
-    const fetchData = async () => {
-        try {
-          let url = 'http://192.168.2.43:8000/exercises/' + email + '/' + currentDate.toISOString().split("T")[0];
-  
-          const response = await fetch(url, {
-              method: 'GET',
-            });
-          const json = await response.json();
-          setWorkout(json);
-           //console.log(JSON.stringify(json, null, "  "));
-        } catch (error) {
-          console.error(error);
-        }
-      };
-  
-      fetchData();
-  }
-
-  useEffect(() => {
-      getWorkoutData(date);   
-  },[isFocused]);
-
   
   const itemSeparator = () => {
     return <View style={globalStyles.separator}></View>
@@ -133,7 +135,7 @@ import { EmailContext } from './Email-component';
                 <Ionicons.Button style={globalStyles.topLeftContainer} onPress={()=> subtractDate()} name= 'arrow-back-outline' />
             </TouchableOpacity>
             <TouchableOpacity style={globalStyles.topCenterContainer}>
-                <Text style={globalStyles.appButtonText}>{ date.toDateString() }</Text>
+                <Text style={globalStyles.appButtonText}>{ date.toUTCString().substring(0,16) }</Text>
             </TouchableOpacity>
             <TouchableOpacity >
                 <Ionicons.Button style={globalStyles.topRightContainer} onPress={()=> addDate()} name= 'arrow-forward-outline' />
@@ -158,7 +160,11 @@ import { EmailContext } from './Email-component';
               Reps: {item.repititions} | Sets: {item.sets} | Weight: {item.weight} </Text>
           </View>
           <View style={globalStyles.buttonsContainer}>
-          
+
+          <TouchableOpacity style={globalStyles.list_button}onPress={() => EditExercise(item)}>
+          <Text style={globalStyles.list_button_text}>Edit</Text>
+          </TouchableOpacity>
+
           <TouchableOpacity style={globalStyles.list_button}onPress={() => DeleteExercise(item.name)}>
           <Text style={globalStyles.list_button_text}>Delete</Text>
           </TouchableOpacity>

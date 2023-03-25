@@ -35,7 +35,7 @@ const DietScreen=({navigation})=>{
     function getDietLogData(currentDate = date) {
         const fetchData = async () => {
             try {
-              let url = 'http://192.168.2.22:8000/foodlog/' + email + '/';
+              let url = 'http://192.168.2.43:8000/foodlog/' + email + '/';
               url += currentDate.toISOString().split("T")[0];
               console.log("DATEEEEEEEEEEEEEEEEEEEEEEEE")
               console.log(currentDate.toISOString().split("T")[0]);
@@ -103,7 +103,7 @@ const DietScreen=({navigation})=>{
 
 const DeleteButtonClick = async (item_name) => {
     try {
-        let url_delete = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?foodName=' + item_name;
+        let url_delete = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?foodName=' + item_name;
         console.log(url_delete);
         const response = await fetch(url_delete, {
           method: 'DELETE',
@@ -111,7 +111,7 @@ const DeleteButtonClick = async (item_name) => {
         const responseJson = await response.json();
         console.log(responseJson);
         try {
-            let url = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0];
+            let url = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0];
     
             const response = await fetch(url, {
                 method: 'GET',
@@ -140,7 +140,7 @@ const DeleteButtonClick = async (item_name) => {
                 <Ionicons.Button style={globalStyles.topLeftContainer} onPress={() => {subtractDate()}} name= 'arrow-back-outline' />
             </TouchableOpacity>
             <TouchableOpacity style={globalStyles.topCenterContainer}>
-                <Text style={globalStyles.appButtonText}>{ date.toDateString() }</Text>
+                <Text style={globalStyles.appButtonText}>{ date.toUTCString().substring(0,16) }</Text>
             </TouchableOpacity>
             <TouchableOpacity >
                 <Ionicons.Button style={globalStyles.topRightContainer} onPress={() => {addDate()}} name= 'arrow-forward-outline' />
@@ -172,10 +172,10 @@ const DeleteButtonClick = async (item_name) => {
                 <Text style={globalStyles.appButtonText}>{"Add Item +"}</Text>
             </TouchableOpacity>
             <View style={globalStyles.listContainer2}>
-            <Text style={globalStyles.DietPage_Subtitle}>Calories: {data.calories} </Text>
-        <Text style={globalStyles.DietPage_Subtitle}>Protein: {data.protein} </Text>
-        <Text style={globalStyles.DietPage_Subtitle}>Carbs: {data.carbs} </Text>
-        <Text style={globalStyles.DietPage_Subtitle}>Fat: {data.fat} </Text>
+            <Text style={globalStyles.DietPage_Subtitle}>Calories: {Math.round(data.calories)} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Protein: {Math.round(data.protein)} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Carbs: {Math.round(data.carbs)} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Fat: {Math.round(data.fats)} </Text>
             </View>
             {/* <FlatList style={globalStyles.listContainer2}
         data={data}

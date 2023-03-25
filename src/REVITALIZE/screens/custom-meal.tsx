@@ -37,7 +37,7 @@ const CustomMealScreen=({navigation})=>{
 
     const AddMealButtonClick = async () => {
       try {
-          let url_add_meal = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
+          let url_add_meal = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
           if (mealName.length > 0) {
             url_add_meal += `foodName=${mealName}&`;
           }

@@ -27,7 +27,7 @@ const RecipeDetailScreen=({navigation})=>{
 
   const AddMealButtonClick = async () => {
     try {
-        let url_add_meal = 'http://192.168.2.22:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
+        let url_add_meal = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
 
           url_add_meal += `foodName=${route.params.recipe.label}&`;
           url_add_meal += `calories=${route.params.recipe.calories}&`;
@@ -61,10 +61,10 @@ const RecipeDetailScreen=({navigation})=>{
         </TouchableOpacity>
           <Text style={styles.title_text}>{route.params.recipe.label} </Text>
         <View style={styles.title_separator}></View>
-        <Text style={globalStyles.DietPage_Subtitle}>Calories: {route.params.recipe.calories} </Text>
-        <Text style={globalStyles.DietPage_Subtitle}>Protein: {route.params.recipe.protein} </Text>
-        <Text style={globalStyles.DietPage_Subtitle}>Carbs: {route.params.recipe.carbs} </Text>
-        <Text style={globalStyles.DietPage_Subtitle}>Fat: {route.params.recipe.fat} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Calories: {Math.round(route.params.recipe.calories)} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Protein: {Math.round(route.params.recipe.protein)} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Carbs: {Math.round(route.params.recipe.carbs)} </Text>
+        <Text style={globalStyles.DietPage_Subtitle}>Fat: {Math.round(route.params.recipe.fat)} </Text>
         <Text style={styles.title_text}>Ingredients </Text>
         <View style={styles.title_separator}></View>
         <FlatList

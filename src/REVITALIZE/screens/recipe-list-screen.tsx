@@ -16,7 +16,7 @@ const RecipeListScreen=({navigation})=>{
     useEffect(() => {
         const fetchData = async () => {
           try {
-            let url = 'http://192.168.2.22:8000/recipefilter?';
+            let url = 'http://192.168.2.43:8000/recipefilter?';
             if (route.params.keyword) {
               url += `keyWord=${route.params.keyword}&`;
             }
