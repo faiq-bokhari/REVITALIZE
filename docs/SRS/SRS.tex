@@ -13,6 +13,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{multirow}
+\usepackage{ulem}
+
 
 \title{System Requirements Specification\\\progname}
 
@@ -196,64 +198,84 @@ Team 13 members building the REVITALIZE application along with Dr.Spencer Smith 
 \section{Functional Requirements}
 \begin{enumerate}[{BE}1.] 
 	\item The user launches the application
-	\begin{enumerate}[{FR}1.]
-		\item  The system must display a login page upon the start of the application.
-		\item  The login page must display fillable username textbox
-		\item  The login page must display fillable password textbox
-		\item  The login page must display a login button
-		\item  The login page must display a forgot password button
-		\item  The login page must display a stay logged in checkbox
-		\item  The system must save prior login information if the stayed logged in checkbox is checked
-		\item  The login page must display a sign up button that redirects to a signup page
-		\item  The system must check the validity of the input parameters in the login page
+	\begin{enumerate}[1.]
+\item {\textcolor{red}{\sout{The system must display a login page upon the start of the application.}}} \\
+{\textcolor{red}{FR1. The application must require users to log in before accessing the main screen.}}
+\item {\textcolor{red}{\sout{The login page must display fillable username textbox.}}} \\
+{\textcolor{red}{FR2. The system should allow users to log in using a username and password.}}
+\item {\textcolor{red}{\sout{The login page must display fillable password textbox.}}} 
+\item {\textcolor{red}{\sout{The login page must display a login button.}}} 
+\item {\textcolor{red}{\sout{The login page must display a forgot password button.}}} \\
+{\textcolor{red}{FR3. The system must allow users to reset their password if they forget it.}}
+\item {\textcolor{red}{\sout{The login page must display a stay logged in checkbox.}}} 
+\item {\textcolor{red}{\sout{The system must save prior login information if the stayed logged in checkbox is checked.}}} 
+\item {\textcolor{red}{\sout{The login page must display a sign up button that redirects to a signup page.}}} \\
+{\textcolor{red}{FR4. The system must allow users to sign up for a new account.}}
+\item FR5. The system must check the validity of the input parameters in the login page
+\item {\textcolor{red}{FR6. The system should display appropriate error messages if there are issues with the login input parameters.}}
+\item {\textcolor{red}{FR7. The system should provide appropriate feedback to the user after a successful login}}
 	\end{enumerate}
 	
 	\item The user selects the sign up button
 	\begin{enumerate}[resume*]
-		\item  The signup page must display fillable username textbox
-		\item  The signup page must display fillable password textbox
-		\item  The signup page must display fillable email textbox
-		\item  The signup page must display a signup button
-		\item  The system must check the validity of the input parameters in the signup page
+\item {\textcolor{red}{\sout{The signup page must display fillable username textbox}}}
+\\{\textcolor{red}{FR8. The system should allow users to sign up with a unique username, password, and email.}}
+\item {\textcolor{red}{\sout{The signup page must display fillable password textbox}}}
+\item {\textcolor{red}{\sout{The signup page must display fillable email textbox}}}
+\item {\textcolor{red}{\sout{The signup page must display a signup button}}}
+\item FR9. The system must check the validity of the input parameters in the signup page
+\item {\textcolor{red}{FR10. The system should display appropriate error messages if there are issues with the signup input parameters.}}
+\item {\textcolor{red}{FR11. The system should provide appropriate feedback to the user after a successful signup.}}
 	\end{enumerate}
 	
 	\item The user enters the main page after successful login
 	\begin{enumerate}[resume*]
-		\item  The system must display a calendar with the current date on successful login
-		\item  The system must have a previous day and next day button on each page after successful login
-		\item  The system must display a back button on each user interface after a section is selected
-		\item  The system must display the sections Diet, Exercise and Rest on the current calendar day
+\item {\color{red}\sout{The system must display a calendar with the current date on successful login}}
+\\{\textcolor{red}{FR12. The system should allow a calendar to be launched to select dates.}}
+\item {\color{red}\sout{The system must have a previous day and next day button on each page after successful login}}
+\\{\textcolor{red}{FR13. The system should allow the user to navigate to the previous or next day on the calendar.}}
+\item {\color{red}\sout{The system must display a back button on each user interface after a section is selected}}
+\\{\textcolor{red}{FR14. The system should allow the user to go back to the previous screen or section using a back button.}}
+\item {\color{red}\sout{The system must display the sections Diet, Exercise and Rest on the current calendar day.}}
+\\{\textcolor{red}{FR15. The system should allow the user to select and view the Diet, Exercise, and Rest sections for the current calendar day.}}
 	\end{enumerate}
 	
 	\item The user enters the Diet section
 	\begin{enumerate}[resume*]
-		\item  The system must prompt the user to height, input dietary, weight,  calorie information on initial launch of Diet section
-		\item  The system must save initial user height, dietary, weight, calorie information
-		\item  The Diet section must initialize with a list of food logged on the current calendar day
-		\item  The Diet section must display an add food button
-		\item  The Diet section must display a search food button
-		\item  The search food button must launch a recipe criteria user interface
-		\item  The recipe criteria user interface must display a list of modifiable criteria and a search button
-		\item  The recipe search must display correct recipe values based on constraints
-		\item  The recipe search must display a select recipe and add recipe button
-		\item  The Diet section must have an add custom meal button
-		\item  The add custom meal button must have fillable textboxes for recipe information
-		\item  The previous day and next day button must launch the previous or next calendar entry of the user section
+\item {\color{red}\sout{The system must prompt the user to height, input dietary, weight, calorie information on initial launch of Diet section}}
+\item {\color{red}\sout{The system must save initial user height, dietary, weight, calorie information}}
+		\item FR16. The Diet section must initialize with a list of food logged on the current calendar day
+\item {\color{red}\sout{The Diet section must display an add food button}}\\
+\textcolor{red}{FR17. The Diet section should allow the user to add, edit and delete food entries in the food log}
+\item {\color{red}\sout{The Diet section must display a search food button}}\\
+\textcolor{red}{FR18. The Diet section should allow the user to search for food}
+\item \textcolor{red}{\sout{The search food button must launch a recipe criteria user interface}}\\
+\textcolor{red}{FR19. The search food functionality should allow the user to modify criteria and search for recipes}
+\item \textcolor{red}{\sout{The recipe criteria user interface must display a list of modifiable criteria and a search button}}
+\item FR20. The recipe search must display correct recipe values based on constraints
+\item \textcolor{red}{\sout{The recipe search must display a select recipe and add recipe button}}\\
+\textcolor{red}{FR21. The recipe search should allow the user to select and add a recipe}
+\item \textcolor{red}{\sout{The Diet section must have an add custom meal button}}\\
+\textcolor{red}{FR22. The Diet section should allow the user to add a custom meal}
+\item \textcolor{red}{\sout{The add custom meal button must have fillable textboxes for recipe information}}\\
+\textcolor{red}{FR23. The add custom meal functionality should allow the user to input recipe information}
+\item \textcolor{red}{\sout{The previous day and next day button must launch the previous or next calendar entry of the user section.}}
 	\end{enumerate}
 	
 	\item The user enters the Workout section
 	\begin{enumerate}[resume*]
-		\item  The Workout section must initialize with a preset list of exercises on the current calendar day
-		\item  The Workout section must have an add exercise button
-		\item  The Workout section must have a delete exercise button
-		\item  The exercises must display an edit exercise button that launches the changeable exercise information when clicked
-		\item  The Workout section must prompt the user to add repetitions and sets of each exercise logged in the current calendar day
+		\item  FR24. The Workout section must initialize with a preset list of exercises on the current calendar day
+\item {\color{red}\sout{The Workout section must have an add exercise button}}\\
+\textcolor{red}{FR25. The Workout section should allow the user to add, edit and delete exercise entries in the exercise log}
+\item {\color{red}\sout{The Workout section must have a delete exercise button}}
+\item {\color{red}\sout{The exercises must display an edit exercise button that launches the changeable exercise information when clicked}}
+		\item  FR26. The Workout section must prompt the user to add repetitions and sets of each exercise logged in the current calendar day
 	\end{enumerate}
 	
 	\item The user enters the Rest section
 	\begin{enumerate}[resume*]
-		\item  The Rest section must launch with the sleep statistics of the current calendar day
-		\item  The system must allow the user to alter inaccurate sleep data
+		\item  FR27. The Rest section must launch with the sleep statistics of the current calendar day
+		\item  FR28. The system must allow the user to alter inaccurate sleep data
 	\end{enumerate}
 \end{enumerate}
 
