@@ -8,6 +8,13 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{ulem}
+
 \hypersetup{
 colorlinks,
 citecolor=blue,
@@ -231,8 +238,8 @@ actually be implemented.
 
 \section{Connection Between Requirements and Design} \label{SecConnection}
 
-The system design of REVITALIZE is founded upon the requirements previously set in the SRS. It is designed to cater for every single requirement attributed to this project. Hence, the design is decomposed into modular pieces of functionality which each help serve the fulfillment of aforementioned requirements. Specifications on how each module relates to (a) requirement(s) can be found in Section 8.\\
-The functional outlook of each module can be understood by its name and, if needed, its access programs detailed in the MIS. After realizing the functionality of each module, the connections outlined in the Traceability Matrix in Section 8 should be clear and easily comprehended.
+The system design of REVITALIZE is founded upon the requirements previously set in the SRS. It is designed to cater for every single requirement attributed to this project. Hence, the design is decomposed into modular pieces of functionality which each help serve the fulfillment of aforementioned requirements. Specifications on how each module relates to (a) requirement(s) can be found in Section \textcolor{red}{\sout{8}} \textcolor{red}{\ref{SecTM}}.\\
+The functional outlook of each module can be understood by its name and, if needed, its access programs detailed in the MIS. After realizing the functionality of each module, the connections outlined in the Traceability Matrix in Section \textcolor{red}{\sout{8}} \textcolor{red}{\ref{SecTM}} should be clear and easily comprehended.
 \section{Module Decomposition} \label{SecMD}
 
 Modules are decomposed according to the principle of ``information hiding''
@@ -285,7 +292,7 @@ N/A
 \subsubsection{Label (\mref{m5})}
 \begin{description}
 	\item[Secrets:]Method to visualize certain components in sleep screen
-	\item[Services:]Visualizes bed icon, ”BEDTIME” text, ring icon, ”WAKE UP” text, user set bed-time and wake-up time in sleep screen.
+	\item[Services:]Visualizes bed icon, \textcolor{red}{\sout{"}}\textcolor{red}{``}BEDTIME" text, ring icon, \textcolor{red}{\sout{"}}\textcolor{red}{``}WAKE UP" text, user set bed-time and wake-up time in sleep screen.
 	\item[Implemented By:] REVITALIZE
 \end{description}
 
@@ -372,14 +379,14 @@ N/A
 \subsubsection{FoodT Module (\mref{m13})}
 \begin{description}
 	\item[Secrets:] Data structure to hold information about each distinct food
-	\item[Services:]
+	\item[Services:] \textcolor{red}{None}
 	\item[Implemented By:] REVITALIZE
 \end{description}
 
 \subsubsection{ExerciseT Module (\mref{m17})}
 \begin{description}
 	\item[Secrets:]Data structure to describe information of a specific exercise
-	\item[Services:]
+	\item[Services:] \textcolor{red}{None}
 	\item[Implemented By:] REVITALIZE
 \end{description}
 
