@@ -52,6 +52,42 @@
 
 \newpage
 \tableofcontents
+
+\newpage
+\section{\textcolor{red}{Reference Material}}
+
+\textcolor{red}{This section records information for easy reference.}
+
+\subsection{\textcolor{red}{Abbreviations and Acronyms}}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l}
+\toprule
+\textbf{\textcolor{red}{symbol}} & \textbf{\textcolor{red}{description}}\\
+\midrule
+\textcolor{red}{BE} & \textcolor{red}{Behaviour Event} \\
+\textcolor{red}{FR} & \textcolor{red}{Functional Requirement} \\
+\textcolor{red}{LF} & \textcolor{red}{Look and Feel Requirement} \\
+\textcolor{red}{UH} & \textcolor{red}{Usability and Humanity Requirement} \\
+\textcolor{red}{PE} & \textcolor{red}{Performance Requirement} \\
+\textcolor{red}{OE} & \textcolor{red}{Operational Requirement} \\
+\textcolor{red}{MP} & \textcolor{red}{Maintainability and Portability Requirement} \\
+\textcolor{red}{SE} & \textcolor{red}{Security Requirement} \\
+\textcolor{red}{CU} & \textcolor{red}{Cultural and Political Requirement} \\
+\textcolor{red}{AC} & \textcolor{red}{Anticipated Change} \\
+\textcolor{red}{DAG} & \textcolor{red}{Directed Acyclic Graph} \\
+\textcolor{red}{M} & \textcolor{red}{Module} \\
+\textcolor{red}{MG} & \textcolor{red}{Module Guide} \\
+\textcolor{red}{OS} & \textcolor{red}{Operating System} \\
+\textcolor{red}{R} & \textcolor{red}{Requirement} \\
+\textcolor{red}{SC} & \textcolor{red}{Scientific Computing} \\
+\textcolor{red}{SRS} & \textcolor{red}{Software Requirements Specification} \\
+\textcolor{red}{\progname} & \textcolor{red}{Explanation of program name} \\
+\textcolor{red}{UC} & \textcolor{red}{Unlikely Change} \\
+%\wss{etc.} & \wss{...}\\
+\bottomrule
+\end{tabular}\
+
 \newpage
 
 \section{Project Drivers}
@@ -311,8 +347,7 @@ Team 13 members building the REVITALIZE application along with Dr. Spencer Smith
 \end{enumerate}
 
 \subsubsection{Personalization and Internationalization Requirements}
-\noindent NOT AVAILABLE
-
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 \subsubsection{Learning Requirements}
 \begin{enumerate}[resume*] 
 	\item Users without any prior experience should be able to use and understand the application within 3 iterations of each feature.\\
@@ -339,7 +374,7 @@ Team 13 members building the REVITALIZE application along with Dr. Spencer Smith
 \end{enumerate}
 
 \subsubsection{Safety-Critical Requirements}
-\noindent NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 
 \subsubsection{Precision or Accuracy Requirements}
 \begin{enumerate}[resume*] 
@@ -354,19 +389,19 @@ Team 13 members building the REVITALIZE application along with Dr. Spencer Smith
 \end{enumerate}
 
 \subsubsection{Robustness or Fault-Tolerance Requirements}
-\noindent NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 
 \subsubsection{Capacity Requirements}
 \begin{enumerate}[resume*] 
 	\item Application can be used by a large amounts of users simultaneously.\\
-	{\textbf{Fit Criterion:} Application can withstand the usage of at least 50+ users without performance being affected. }
+	{\textbf{Fit Criterion:} Application can withstand the usage of at least 50+ users without performance being affected. \textcolor{red}{Database load management tests will be completed using data dumps into the database} }
 	\item Application can store/save large amount of data.\\
-	{\textbf{Fit Criterion:} Application can store/save 1 million+ of data points for all users. }
+	{\textbf{Fit Criterion:} Application can store/save 1 million+ of data points for all users. \textcolor{red}{Database load management tests will be completed using data dumps into the database}}
 \end{enumerate}
 
 \subsection{Operational Requirements}
 \subsubsection{Expected Physical Environment}
-NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 \subsubsection{Expected Technological Environment}
 \begin{enumerate}[{OE}1.] 
 	\item The application is required to connect to the internet.\\
@@ -384,7 +419,7 @@ NOT AVAILABLE
 \end{enumerate}
 
 \subsubsection{Portability Requirements}
-NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 \subsubsection{Adaptability Requirements}
 \begin{enumerate}[resume*] 
 	\item The application must be able to run on Android 11+. \\
@@ -399,13 +434,13 @@ NOT AVAILABLE
 	{\textbf{Fit Criterion:} The application will create only one account per email. }
 \end{enumerate}
 \subsubsection{Privacy Requirements}
-NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 \begin{enumerate}[{PR}1.] 
 	\item {\textcolor{red}{The application must secure user private data}} \\
 	{\textbf{Fit Criterion:} {\textcolor{red}{Developers will execute tests to ensure the user data is associated to the correct credentials.}}}
 \end{enumerate}
 \subsubsection{Immunity Requirements}
-NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 \subsection{Cultural and Political Requirements}
 \subsubsection{Cultural Requirements}
 \begin{enumerate}[{CU}1] 
@@ -413,9 +448,132 @@ NOT AVAILABLE
 	{\textbf{Fit Criterion:} 100\% of the application's contents will be in English. }
 \end{enumerate}
 \subsubsection{Political Requirements}
-NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
 \subsection{Legal Requirements}
-NOT AVAILABLE
+\textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
+
+
+\section{\textcolor{red}{Anticipated and Unlikely Changes}}
+
+\textcolor{red}{This section lists possible changes to the system. According to the likeliness
+of the change, the possible changes are classified into two
+categories. Anticipated changes are listed in Section 2, and
+unlikely changes are listed in Section 3.}
+
+\subsection{\textcolor{red}{Anticipated Changes}}
+
+\textcolor{red}{Anticipated changes are the source of the information that is to be hidden
+inside the modules. Ideally, changing one of the anticipated changes will only
+require changing the one module that hides the associated decision. The approach
+adapted here is called design for change.}
+
+\begin{description}
+\item[\textcolor{red}{1.}] \textcolor{red}{The format the date is stored in}
+\item[\textcolor{red}{2.}] \textcolor{red}{The labels of buttons to navigate screens}
+\item[\textcolor{red}{3.}] \textcolor{red}{Colouring of screens}
+\item[\textcolor{red}{4.}] \textcolor{red}{Input text box length and location}
+\item[\textcolor{red}{5.}] \textcolor{red}{Layout of calendar}
+\item[\textcolor{red}{6.}] \textcolor{red}{Nutrition display format}
+\item[\textcolor{red}{7.}] \textcolor{red}{Recipe search criteria}
+\item[\textcolor{red}{8.}] \textcolor{red}{Recipe query result format}
+\item[\textcolor{red}{9.}] \textcolor{red}{Custom meal input format}
+\item[\textcolor{red}{10.}] \textcolor{red}{Workout display format}
+\item[\textcolor{red}{11.}] \textcolor{red}{Exercise list search criteria}
+\item[\textcolor{red}{12.}] \textcolor{red}{Exercise query result format}
+\item[\textcolor{red}{13.}] \textcolor{red}{Sleep time input (sensitivity of circular scroll bar)}
+\end{description}
+
+\subsection{\textcolor{red}{Unlikely Changes}}
+
+\textcolor{red}{The module design should be as general as possible. However, a general system is
+more complex. Sometimes this complexity is not necessary. Fixing some design
+decisions at the system architecture stage can simplify the software design. If
+these decision should later need to be changed, then many parts of the design
+will potentially need to be modified. Hence, it is not intended that these
+decisions will be changed.}
+
+\begin{description}
+\item[\textcolor{red}{1.}] \textcolor{red}{Input/Output devices
+(Input: File and/or Keyboard, Output: File, Memory, and/or Screen)}
+\item[\textcolor{red}{2.}] \textcolor{red}{The Android operating system}
+\item[\textcolor{red}{3.}] \textcolor{red}{The calls to the Meal API to search for recipes based on nutritional input}
+\item[\textcolor{red}{4.}] \textcolor{red}{The database to store user information}
+\item[\textcolor{red}{5.}] \textcolor{red}{The selection of different exercises}
+\end{description}
+
+
+\section{Project Issues}
+
+\subsection{Open Issues}
+The REVITALIZE team members have not completed their investigation of how to make mobile applications compatible with screen reader tools to make REVITALIZE accessible to users with impaired vision.\\
+
+Moreover, the level of difficulty of maintaining and scaling this project is an open issue as it is highly dependent on the implementation. The team has not yet completed it's assessment of the projection of users, costs, and allocated budget to make a current decision on the maintainability and scalability of the project.\\
+
+Another open issue is regarding the way capacity testing will be conducted:
+\begin{itemize}
+	\item The team has yet to determine how it will find and group a large pool of people simultaneously, ideally 50 or more, to test the application's performance before launch.
+	\item Determining how to gather large masses user data points, ideally 1 million+, to test the application's storage capacity and performance.
+\end{itemize}
+
+\subsection{Off-the-Shelf Solutions}
+There are available products that are similar to the application. An application called MyFitnessPal tracks user goals and calories, breaks down ingredients, and logs activities. Another available mobile application is Samsung Health that tracks various aspects of a user's daily life contributing to their well being such as physical activity, diet, and sleep. It's main dashboard provides access to different features such as dietary monitoring (calories and nutrients absorbed), weight tracking, and sleep monitoring. 
+
+\subsection{New Problems}
+Potential new problems that the REVITALIZE team can encounter include:
+\begin{itemize}
+	\item API failures
+	\item Server connection errors
+	\item Copy right issues
+\end{itemize}
+API failures can occur as a result of connectivity issues, a connection breakdown to the URL, or if it's overloaded with requests from the REVITALIZE application. It is possible to encounter copyright issues when using images from the internet to add visuals to the application. This may or may not complicate the graphical user interface design process. A server connection error is less common but may occur due to a network connection error or if the server is offline.
+
+\subsection{Tasks}
+Tasks are scheduled and delegated as per the project \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/projectschedule/REVITALIZE.pdf}{\color{blue}Gantt Chart}. It will be updated throughout the project to include required tasks and their completion status.
+
+\subsection{Migration to the New Product}
+\textcolor{red}{\sout{NA}}\newline{\color{red} N/A}
+
+\subsection{Risks}
+\begin{itemize}
+	\item Risk 1: Project may be too complex to complete in eight months because it makes use of multiple built-in and external libraries, other frameworks and application programming interfaces
+	\begin{itemize}
+		\item Probability of risk becoming a problem: Medium
+		\item Contingency plan: Change project scope to meet the minimum number of goals and requirements set by the team to deliver the project
+	\end{itemize}
+	\item Risk 2: What if primary stakeholders are not too excited about using the REVITALIZE application after it's launched?
+	\begin{itemize}
+		\item Probability of risk becoming a problem: Medium
+		\item Contingency plan: REVITALIZE team members shall speak to primary stakeholders and listen to their feedback to improve the application.
+	\end{itemize}
+\item \textcolor{red}{Risk 3:} \textcolor{red}{The POC may be too simple and not correctly showcase the variety of features.}
+\begin{itemize}
+\item \textcolor{red}{Probability of risk becoming a problem:} \textcolor{red}{Medium}
+\item \textcolor{red}{Contingency plan:} \textcolor{red}{REVITALIZE team members shall prioritize delivery of the core features during development to ensure that the POC demo will showcase the multitude of features available.}
+\end{itemize}
+\end{itemize}
+
+\subsection{Costs}
+The estimated time cost to deliver this project is eight months. This includes gathering requirements, designing, documenting, implementing, and testing. The cost of launching REVITALIZE to the Google Play Store and App Store are 25\$ and 99\$ respectively.[1]
+
+\subsection{User Documentation and Training}
+No user documentation is required to use REVITALIZE. Users will be able to download REVITALIZE as a mobile application from either the Google Play Store or App Store. No training is necessary as using REVITALIZE will be intuitive.
+
+\subsection{Waiting Room}
+Ideas that are currently in the waiting room that shall be developed, given enough time, include:
+\begin{itemize}
+	\item Personal Trainer Integration
+	\begin{itemize}
+		\item A user's personal trainer can set their diet, workout, and sleep schedules. The trainer can also view user's progress and adjust their schedules.
+	\end{itemize}
+	\item Sleep Data Predictor
+	\begin{itemize}
+		\item A sleep data predictor that takes users sleep data to extrapolate their health conditions and give tips on optimizing their sleep.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Ideas for Solutions}
+Possible ideas to make REVITALIZE accessible to all people include designing clear layouts, increasing font sizes, increasing text visibility, using large buttons and controls, and describing user interface elements. Another idea to prevent API failures is to run tests to monitor and track API performance from early development through production.
+
 
 \newpage
 
@@ -634,74 +792,6 @@ NOT AVAILABLE
 		\end{tabularx}
 	\end{center}
 \end{table}
-\newpage
-
-\section{Project Issues}
-
-\subsection{Open Issues}
-The REVITALIZE team members have not completed their investigation of how to make mobile applications compatible with screen reader tools to make REVITALIZE accessible to users with impaired vision.\\
-
-Moreover, the level of difficulty of maintaining and scaling this project is an open issue as it is highly dependent on the implementation. The team has not yet completed it's assessment of the projection of users, costs, and allocated budget to make a current decision on the maintainability and scalability of the project.\\
-
-Another open issue is regarding the way capacity testing will be conducted:
-\begin{itemize}
-	\item The team has yet to determine how it will find and group a large pool of people simultaneously, ideally 50 or more, to test the application's performance before launch.
-	\item Determining how to gather large masses user data points, ideally 1 million+, to test the application's storage capacity and performance.
-\end{itemize}
-
-\subsection{Off-the-Shelf Solutions}
-There are available products that are similar to the application. An application called MyFitnessPal tracks user goals and calories, breaks down ingredients, and logs activities. Another available mobile application is Samsung Health that tracks various aspects of a user's daily life contributing to their well being such as physical activity, diet, and sleep. It's main dashboard provides access to different features such as dietary monitoring (calories and nutrients absorbed), weight tracking, and sleep monitoring. 
-
-\subsection{New Problems}
-Potential new problems that the REVITALIZE team can encounter include:
-\begin{itemize}
-	\item API failures
-	\item Server connection errors
-	\item Copy right issues
-\end{itemize}
-API failures can occur as a result of connectivity issues, a connection breakdown to the URL, or if it's overloaded with requests from the REVITALIZE application. It is possible to encounter copyright issues when using images from the internet to add visuals to the application. This may or may not complicate the graphical user interface design process. A server connection error is less common but may occur due to a network connection error or if the server is offline.
-
-\subsection{Tasks}
-Tasks are scheduled and delegated as per the project \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/projectschedule/REVITALIZE.pdf}{\color{blue}Gantt Chart}. It will be updated throughout the project to include required tasks and their completion status.
-
-\subsection{Migration to the New Product}
-NA
-
-\subsection{Risks}
-\begin{itemize}
-	\item Risk 1: Project may be too complex to complete in eight months because it makes use of multiple built-in and external libraries, other frameworks and application programming interfaces
-	\begin{itemize}
-		\item Probability of risk becoming a problem: Medium
-		\item Contingency plan: Change project scope to meet the minimum number of goals and requirements set by the team to deliver the project
-	\end{itemize}
-	\item Risk 2: What if primary stakeholders are not too excited about using the REVITALIZE application after it's launched?
-	\begin{itemize}
-		\item Probability of risk becoming a problem: Medium
-		\item Contingency plan: REVITALIZE team members shall speak to primary stakeholders and listen to their feedback to improve the application.
-	\end{itemize}
-\end{itemize}
-
-\subsection{Costs}
-The estimated time cost to deliver this project is eight months. This includes gathering requirements, designing, documenting, implementing, and testing. The cost of launching REVITALIZE to the Google Play Store and App Store are 25\$ and 99\$ respectively.[1]
-
-\subsection{User Documentation and Training}
-No user documentation is required to use REVITALIZE. Users will be able to download REVITALIZE as a mobile application from either the Google Play Store or App Store. No training is necessary as using REVITALIZE will be intuitive.
-
-\subsection{Waiting Room}
-Ideas that are currently in the waiting room that shall be developed, given enough time, include:
-\begin{itemize}
-	\item Personal Trainer Integration
-	\begin{itemize}
-		\item A user's personal trainer can set their diet, workout, and sleep schedules. The trainer can also view user's progress and adjust their schedules.
-	\end{itemize}
-	\item Sleep Data Predictor
-	\begin{itemize}
-		\item A sleep data predictor that takes users sleep data to extrapolate their health conditions and give tips on optimizing their sleep.
-	\end{itemize}
-\end{itemize}
-
-\subsection{Ideas for Solutions}
-Possible ideas to make REVITALIZE accessible to all people include designing clear layouts, increasing font sizes, increasing text visibility, using large buttons and controls, and describing user interface elements. Another idea to prevent API failures is to run tests to monitor and track API performance from early development through production.
 
 \section{Reflection Appendix}
 
