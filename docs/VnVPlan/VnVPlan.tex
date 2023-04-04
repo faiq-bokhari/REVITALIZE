@@ -20,6 +20,7 @@ urlcolor=blue
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{multirow}
+\usepackage{ulem}
 
 \input{../Comments}
 \input{../Common}
@@ -36,23 +37,24 @@ urlcolor=blue
 
 \section{Revision History}
 
-\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
-	\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}XX}
+	\toprule {\bf Date} & {\bf Version} & {\bf Developer}& {\bf Notes}\\
 	\midrule
-	October 31st, 2022 & Bill Nguyen & Added Functional Requirements Tests for Login Page\\
-	October 31st, 2022 & Bill Nguyen & Added Non Functional Requirements Tests for Look and Feel, Usability and Performance\\
-	October 31st, 2022 & Bill Nguyen & Added 3 Questions to Usability Survey\\
-	November 1st, 2022 & Youssef Dahab & Added VnV Team, SRS Verification Plan\\
-	November 1st, 2022 & Bill Nguyen & Self Reflection\\
-	November 1st, 2022 & Youssef Dahab & Added Design Verification Plan\\
-	November 1st, 2022 & Syed Bokhari & Added Functional Requirement Tests for Signup Page, Main Page, Diet Section, Workout Section, Rest Section\\
-	November 1st, 2022 & Youssef Dahab & Added VnV Verification Plan\\
-	November 1st, 2022 & Mahmoud Anklis & Added Non Functional Requirements Tests for Operational, Maintainability and Portability, Security and Cultural and Political\\
-	November 1st, 2022 & Mahmoud Anklis & Added Self Reflection as well as Symbols, Abbreviations and Acronyms\\
-	November 1st, 2022 & Youssef Dahab & Added Software Validation Plan\\
-	November 1st, 2022 & Logan Brown & Added General Information and Self Reflection\\
-	November 1st, 2022 & Logan Brown & Added Symbolic Parameters\\
-	November 1st, 2022 & Youssef Dahab & Added Implementation Verification Plan, Self Reflection\\
+	October 31st, 2022 & 0.0 & Bill Nguyen & Added Functional Requirements Tests for Login Page\\
+	October 31st, 2022 & 0.0 & Bill Nguyen & Added Non Functional Requirements Tests for Look and Feel, Usability and Performance\\
+	October 31st, 2022 & 0.0 & Bill Nguyen & Added 3 Questions to Usability Survey\\
+	November 1st, 2022 & 0.0 & Youssef Dahab & Added VnV Team, SRS Verification Plan\\
+	November 1st, 2022 & 0.0 & Bill Nguyen & Self Reflection\\
+	November 1st, 2022 & 0.0 & Youssef Dahab & Added Design Verification Plan\\
+	November 1st, 2022 & 0.0 & Syed Bokhari & Added Functional Requirement Tests for Signup Page, Main Page, Diet Section, Workout Section, Rest Section\\
+	November 1st, 2022 & 0.0 & Youssef Dahab & Added VnV Verification Plan\\
+	November 1st, 2022 & 0.0 & Mahmoud Anklis & Added Non Functional Requirements Tests for Operational, Maintainability and Portability, Security and Cultural and Political\\
+	November 1st, 2022 & 0.0 & Mahmoud Anklis & Added Self Reflection as well as Symbols, Abbreviations and Acronyms\\
+	November 1st, 2022 & 0.0 & Youssef Dahab & Added Software Validation Plan\\
+	November 1st, 2022 & 0.0 & Logan Brown & Added General Information and Self Reflection\\
+	November 1st, 2022 & 0.0 & Logan Brown & Added Symbolic Parameters\\
+	November 1st, 2022 & 0.0 & Youssef Dahab & Added Implementation Verification Plan, Self Reflection\\
+    April 1st, 2023 & 1.0 & Bill Nguyen & Made Suggested Changes to Functional Requirements\\
 	\bottomrule
 \end{tabularx}
 
@@ -191,7 +193,7 @@ The REVITALIZE team's software validation plan includes having a review session 
 
 \subsection{Tests for Functional Requirements}
 
-Subsections of the requirements will be divided into the events from our SRS, which are Login Page, Sign up Page, Main Page, Diet Section, Workout Section and Rest Section. There will be 1 test per functional requirement, and will follow the same order as functional requirements in SRS (ex. FR1 in VnV plan is the test for FR1 in SRS).
+Subsections of the requirements will be divided into the events from our SRS, which are Login Page, Sign up Page, Main Page, Diet Section, Workout Section and Rest Section. There will be 1 test per functional requirement, and will follow the same order as functional requirements in SRS (\textcolor{red}{\sout{ex.}} \textcolor{red}{eg.} FR1 in VnV plan is the test for FR1 in SRS).
 
 \subsubsection{Login Page Testing}
 
@@ -200,8 +202,10 @@ Testing all functional requirements for login page of REVITALIZE. (Refer to BE1 
 \begin{enumerate}
 	
 	\item{FR-LP-1\\}
+
+        \textcolor{red}{Description: Verifies that the login page loads correctly when requested, and that all necessary components are present on the page}
 	
-	Control: Manual
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
 	Initial State: Loading stage of the login page
 	
@@ -211,119 +215,161 @@ Testing all functional requirements for login page of REVITALIZE. (Refer to BE1 
 	
 	Test Case Derivation: Request is made to load login page
 	
-	How test will be performed: Tester will open REVITALIZE application and login page should be displayed
-	
+	How test will be performed: \textcolor{red}{\sout{Tester will open REVITALIZE application and login page should be displayed}} \textcolor{red}{The tester will open the REVITALIZE application. The tester will initiate the event that loads the login page.
+        The tester will verify that the login page is displayed with all necessary components, such as the username and password fields and a "Login" button.
+        If the login page is not displayed as expected, the test will fail.
+        If the login page is displayed as expected, the test will pass.}
+        
 	\item{FR-LP-2\\}
+
+        \textcolor{red}{Description: Verifies that a user can successfully log in by providing valid username and password information}
 	
-	Control: Manual
+	Control: \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional, Dynamic}
 	
-	Initial State: Login page is displayed with username textbox
+	Initial State: \textcolor{red}{\sout{Login page is displayed with username textbox}} \textcolor{red}{Login page is displayed with username and password textboxes}
 	
-	Input: Enter username information in textbox
+ Input:  \textcolor{red}{\sout{Enter username information in textbox}} \textcolor{red}{Valid username/email and password information entered in their respective textboxes (Valid Inputs: email = "johndoe@gmail.com" and password = "qwerty{}123") }
 	
-	Output: Username information entered is displayed in textbox
+	Output: \textcolor{red}{\sout{Username information entered is displayed in textbox}}
+        \textcolor{red}{Returns a success message and user is successfully logged in and redirected to the main page}
+ 
+	Test Case Derivation: \textcolor{red}{\sout{User can enter information in username textbox}} \textcolor{red}{User should be able to log in by providing valid username/email and password information}
 	
-	Test Case Derivation: User can enter information in username textbox
+	How test will be performed: \textcolor{red}{\sout{Tester will enter information in username textbox and checks if textbox displays what the tester entered.}} \textcolor{red}{ Open the login page and ensure that the username textbox is displayed. Enter valid username and password information in their respective textboxes. Click on the "Login" button. Verify that the user is successfully logged in and redirected to the home page}
+
+        \textcolor{red}{\item{FR-LP-3\\}}
+
+        \textcolor{red}{Description: Verifies that a user fails to log when providing invalid username/email and password information}
 	
-	How test will be performed: Tester will enter information in username textbox and checks if textbox displays what the tester entered.
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	\item{FR-LP-3\\}
+	\textcolor{red}{Initial State: Login page is displayed with username and password textboxes (Users Current Data: email = "johndoe@gmail.com" and password = "qwerty{}123")}
 	
-	Control: Manual
+	\textcolor{red}{Input: Invalid username/email and password information entered in their respective textboxes (Invalid Input 1: email = "notjohndoe@gmail.com" and password = "qwerty{}123"), (Invalid Input 2: email = "" and password = ""), (Invalid Input 3: email = "johndoe@gmail.com" and password = "wrongqwerty{}123")}
 	
-	Initial State: Login page is displayed with password textbox
+	\textcolor{red}{Output: User unsuccessfully logins and returns 400 message (Invalid Output 1: "Email not found. Please sign up"), (Invalid Output 2: "Please fill in all fields"), (Invalid Output 3: "Incorrect password")}
 	
-	Input: Enter password information in textbox
+	\textcolor{red}{Test Case Derivation: User should not be able to log in by providing invalid username/email and password information}
 	
-	Output: password information entered is displayed in textbox via hidden text
+	\textcolor{red}{Open the login page and ensure that the username textbox is displayed. Enter invalid username and password information in their respective textboxes. Click on the "Login" button. Verify that the user is unsuccessfully logged in and appropirate error message is returned}
+
+\item{\textcolor{red}{\sout{FR-LP-3}}\\}
 	
-	Test Case Derivation: User can enter information in password textbox
+	\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Login page is displayed with password textbox}}
+
+\textcolor{red}{\sout{Input: Enter password information in textbox}}
+
+\textcolor{red}{\sout{Output: password information entered is displayed in textbox via hidden text}}
+
+\textcolor{red}{\sout{Test Case Derivation: User can enter information in password textbox}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text.}}
+
+\item{\textcolor{red}{\sout{FR-LP-4}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Login page is displayed with login button}}
+
+\textcolor{red}{\sout{Input: Click login button}}
+
+\textcolor{red}{\sout{Output: Intended events occurs. Refer to FR9}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks login button and a request is made based on username and password text-boxes}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on login button and check if request is made correctly.}}
 	
-	How test will be performed: Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text.
+    \item{\textcolor{red}{FR-LP-4}\\}
+
+        \textcolor{red}{Description: Verifies that the forget password page loads correctly when requested, and that all necessary components are present on the page}
 	
-	\item{FR-LP-4\\}
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
-	Control: Manual
+	Initial State: Login page is displayed with "forgot password" button
 	
-	Initial State: Login page is displayed with login button
+	Input: \textcolor{red}{\sout{Click forgot password button}} \textcolor{red}{User clicks on the "forgot password" button}
 	
-	Input: Click login button
+	Output: \textcolor{red}{\sout{Display forgot password screen with textbox to enter email}} \textcolor{red}{The system displays the "forgot password" screen with a text box to enter the email.}
 	
-	Output: Intended events occurs. Refer to FR9
-	
-	Test Case Derivation: User clicks login button and a request is made based on username and password text-boxes
-	
-	How test will be performed: Tester will click on login button and check if request is made correctly
-	
-	\item{FR-LP-5\\}
-	
-	Control: Manual
-	
-	Initial State: Login page is displayed with forgot password button
-	
-	Input: Click forgot password button
-	
-	Output: Display forgot password screen with textbox to enter email
-	
-	Test Case Derivation: User clicks forgot password button and request is made to display forgot password screen with textbox to enter email
+	Test Case Derivation: \textcolor{red}{\sout{User clicks forgot password button and request is made to display forgot password screen with textbox to enter email}} \textcolor{red}{By clicking on the "forgot password" button, the system should display the "forgot password" screen with a textbox to enter the email.}
 	
 	How test will be performed: Tester will click on forgot password button and checks if forgot password screen is displayed with textbox to enter email
+
+         \textcolor{red}{\item{FR-LP-5\\}}
+
+        \textcolor{red}{Description: Verifies the system must allow users to reset their password if they forget it}
 	
-	\item{FR-LP-6\\}
+	\textcolor{red}{Control: Manual, Functional, Dynamic}
 	
-	Control: Manual
+	\textcolor{red}{Initial State: The user is on the login page and has forgotten their password}
 	
-	Initial State: Login page is displayed with stay logged in checkbox that is empty
+	\textcolor{red}{Input: One string: the user's registered email address}
 	
-	Input: Click stay logged in checkbox
+	\textcolor{red}{Output: An email sent to the user's registered email address with a link to reset their password}
 	
-	Output: Display a check-mark in the stay logged in checkbox if checkbox is empty, else if checkbox contains check-mark already it will then display an empty checkbox
+	\textcolor{red}{Test Case Derivation: This test case is derived from the functional requirement that the system must allow users to reset their password if they forget it}
 	
-	Test Case Derivation: User clicks on stay logged in checkbox and displays appropriate action
+	\textcolor{red}{How test will be performed: [Enter a valid email address registered with the account. Expected Output: An email will be sent to the user's registered email address with a link to reset their password] [Enter an invalid email address. Expected Output: An error message should be displayed informing the user that the email address is invalid]}
 	
-	How test will be performed: Tester will click on checkbox and checks to see if check-mark is displayed if checkbox was empty and if an empty checkbox appears if checkbox contained a check-mark
+\item{\textcolor{red}{\sout{FR-LP-6}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Login page is displayed with stay logged in checkbox that is empty}}
+
+\textcolor{red}{\sout{Input: Click stay logged in checkbox}}
+
+\textcolor{red}{\sout{Output: Display a check-mark in the stay logged in checkbox if checkbox is empty, else if checkbox contains check-mark already it will then display an empty checkbox}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks on stay logged in checkbox and displays appropriate action}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on checkbox and checks to see if check-mark is displayed if checkbox was empty and if an empty checkbox appears if checkbox contained a check-mark}}
+
+\item{\textcolor{red}{\sout{FR-LP-7}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Loading stage of REVITALIZE where previous state had stay logged in checkbox checked}}
+
+\textcolor{red}{\sout{Input: An event that loads REVITALIZE}}
+
+\textcolor{red}{\sout{Output: Display main page, with same data from previous state of main page}}
+
+\textcolor{red}{\sout{Test Case Derivation: User can load REVITALIZE and main page is displayed with same data as the previous time user opened REVITALIZE main page}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will check stay logged in checkbox go to main page, leave REVITALIZE, reopen REVITALIZE and check whether same data from main page is the same from the last time tester opened main page}}
 	
-	\item{FR-LP-7\\}
+        \textcolor{red}{\item{FR-LP-6\\}}
+
+        \textcolor{red}{Description: Verifies that the login page displays a sign up button that redirects to the sign up page when clicked}
 	
-	Control: Manual
-	
-	Initial State: Loading stage of REVITALIZE where previous state had stay logged in checkbox checked
-	
-	Input: An event that loads REVITALIZE
-	
-	Output: Display main page, with same data from previous state of main page
-	
-	Test Case Derivation: User can load REVITALIZE and main page is displayed with same data as the previous time user opened REVITALIZE main page
-	
-	How test will be performed: Tester will check stay logged in checkbox go to main page, leave REVITALIZE, reopen REVITALIZE and check whether same data from main page is the same from the last time tester opened main page
-	
-	\item{FR-LP-8\\}
-	
-	Control: Manual
+	\textcolor{red}{Control: Manual, Functional, Dynamic}
 	
 	Initial State: Login page is displayed with sign up button
 	
-	Input: Click sign up button
+	Input: Click on the sign up button
 	
-	Output: Loads and displays sign up page
+	Output: \textcolor{red}{\sout{Loads and displays sign up page}} \textcolor{red}{The system redirects the user to the sign up page.}
 	
 	Test Case Derivation: User can click sign up button which loads and displays sign up page
 	
-	How test will be performed: Tester will click on sign up button and checks if sign up page is displayed
+	How test will be performed: \textcolor{red}{\sout{Tester will click on sign up button and checks if sign up page is displayed}} \textcolor{red}{Navigate to the login page. Click on the "Sign up" button. Verify that the system redirects the user to the sign up page}
 	
-	\item{FR-LP-9\\}
+\item{\textcolor{red}{\sout{FR-LP-9}}\\}
 	
-	Control: Manual
-	
-	Initial State: Login page is displayed with inputted information in username and password text-boxes
-	
-	Input: Click login button
-	
-	Output: if failure state, display an invalid password or username banner, else if success state, load and display main page
-	
-	Test Case Derivation: User clicks login button and request is made based on username and password, and will proceed to main page only if username and password are valid
-	
-	How test will be performed: Tester will click on login button and test for scenarios when login should be successful and when login should fail
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Login page is displayed with inputted information in username and password text-boxes}}
+
+\textcolor{red}{\sout{Input: Click login button}}
+
+\textcolor{red}{\sout{Output: if failure state, display an invalid password or username banner, else if success state, load and display main page}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks login button and request is made based on username and password, and will proceed to main page only if username and password are valid}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on login button and test for scenarios when login should be successful and when login should fail}}
 	
 	
 \end{enumerate}
@@ -335,76 +381,126 @@ Testing all functional requirements for sign page of REVITALIZE. (Refer to BE2 i
 \begin{enumerate}
 	
 	\item{FR-SP-1\\}
+
+        \textcolor{red}{Description: Verifies that a new user can sign up to REVITALIZE successfully}
 	
-	Control: Manual
+	Control: \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional,           Dynamic}
 	
-	Initial State: Signup page is displayed with username textbox
+	Initial State: \textcolor{red}{\sout{Signup page is displayed with username textbox}} \textcolor{red}{Signup page is displayed with a blank textboxes for username, email, password and confirm password }
 	
-	Input: Enter username information in textbox
+	Input: \textcolor{red}{\sout{Enter username information in textbox}} \textcolor{red}{Enter username, email, password and confirm password information in their respective textboxes. (Valid Inputs: Username = john123, Password = PasSw0rd145, Email = john123@gmail.com, Confirm Password = PasSw0rd145) }
 	
-	Output: Username information entered is displayed in textbox
+	Output: \textcolor{red}{\sout{Username information entered is displayed in textbox} } \textcolor{red}{ Upon clicking the "Sign up" button, the user's account is created and the user is logged in to the system. (Valid Output: successful message of "Congrats!','Your account has been successfully created" and user added to database) }
 	
-	Test Case Derivation: User can enter information in username textbox
+	Test Case Derivation: \textcolor{red}{\sout{User can enter information in username textbox}} \textcolor{red}{The user can successfully sign up for the system with a unique username, password, and email.} 
 	
-	How test will be performed: Tester will enter information in username textbox and checks if textbox displays what the tester entered
+	How test will be performed: \textcolor{red}{\sout{Tester will enter information in username textbox and checks if textbox displays what the tester entered}} \textcolor{red}{Tester will navigate to the signup page and verify that the username, password, email and confirm password textboxes are present and blank. Tester will enter a valid username, password, and email in the textboxes and click the "sign up" button. Tester will verify that the user is added to the database and that their username is displayed.}
 	
 	\item{FR-SP-2 \\}
+        \textcolor{red}{Description: Verifies that a new user can not sign up to REVITALIZE when there is invalid information}
 	
-	Control: Manual
+	Control: \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional,           Dynamic}
+
+        Initial State: \textcolor{red}{\sout{Signup page is displayed with password textbox}} \textcolor{red}{Signup page is displayed with a blank textboxes for username, email, password and confirm password }
 	
-	Initial State: Signup page is displayed with password textbox
+	Input: \textcolor{red}{\sout{Enter password information in textbox}} \textcolor{red}{Enter invalid username, email, password and confirm password information in their respective textboxes. (Invalid Input: Username = !* , Password = abc123, Email = invalid-a-gmail, Confirm Password = abc123)}
 	
-	Input: Enter password information in textbox
+	Output: \textcolor{red}{\sout{Password information entered is displayed in textbox via hidden text}} \textcolor{red}{Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "Invalid Input, Improper Email Address")}
 	
-	Output: Password information entered is displayed in textbox via hidden text
+	Test Case Derivation:  \textcolor{red}{\sout{User can enter information in password textbox}} \textcolor{red}{The user unsuccessfully sign ups.} 
 	
-	Test Case Derivation: User can enter information in password textbox
+	How test will be performed: \textcolor{red}{\sout{Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text}} \textcolor{red}{Tester will navigate to the signup page and verify that the username, password, email and confirm password textboxes are present and blank. Tester will enter a invalid username, password, and email in the textboxes and click the "sign up" button. Tester will verify that failure message appears and user is not added into the database.}
+
+         \textcolor{red}{\item{FR-SP-3\\}}
+
+        \textcolor{red}{Description: Verifies that a new user can not sign up to REVITALIZE when email already exists in database}
 	
-	How test will be performed: Tester will enter information in password textbox and checks if textbox displays what the tester entered via hidden text
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	\item{FR-SP-3\\}
+	\textcolor{red}{Initial State: Signup page is displayed with a blank textboxes for username, email, password and confirm password. One user already exists in database (Username = john123, Password = PasSw0rd145, Email = john123@gmail.com, Confirm Password = PasSw0rd145)}
 	
-	Control: Manual
+	\textcolor{red}{Input: Enter same username, email, password and confirm password of existing user. (Invalid Input: Username = john123, Password = PasSw0rd145, Email = john123@gmail.com, Confirm Password = PasSw0rd145)}
 	
-	Initial State: signup page is displayed with email textbox
+	\textcolor{red}{Output: Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "User already exists. Please login")}
 	
-	Input: Enter email information in textbox
+	\textcolor{red}{Test Case Derivation: The user unsuccessfully sign ups.}
 	
-	Output: Email information entered is displayed in textbox
+	\textcolor{red}{\textcolor{red}{Tester will navigate to the signup page and verify that the username, password, email and confirm password textboxes are present and blank. Tester will enter an existing username, password, and email in the textboxes and click the "sign up" button. Tester will verify that failure message appears and user is not added into the database.}}
+
+ \textcolor{red}{\item{FR-SP-4\\}}
+
+        \textcolor{red}{Description: Verifies that a new user can not sign up to REVITALIZE when there are empty fields}
 	
-	Test Case Derivation: User can enter information in email textbox
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	How test will be performed: Tester will enter information in email textbox and checks if textbox displays what the tester entered
+	\textcolor{red}{Initial State: Signup page is displayed with a blank textboxes for username, email, password and confirm password.}
 	
-	\item{FR-SP-4\\}
+	\textcolor{red}{Input: Do not enter username, email, password and confirm password textboxes. (Invalid Input: Username = "" , Password = "", Email = "", Confirm Password = "")}
 	
-	Control: Manual
+	\textcolor{red}{Output: Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "Please fill in all fields")}
 	
-	Initial State: Signup page is displayed with signup button
+	\textcolor{red}{Test Case Derivation: The user unsuccessfully sign ups.}
 	
-	Input: Click signup button
+	\textcolor{red}{\textcolor{red}{Tester will navigate to the signup page and verify that the username, password, email and confirm password textboxes are present and blank. Tester not enter a username, password, and email in the textboxes and click the "sign up" button. Tester will verify that failure message appears and user is not added into the database.}}
+
+  \textcolor{red}{\item{FR-SP-5\\}}
+
+        \textcolor{red}{Description: Verifies that a new user can not sign up to REVITALIZE when password and confirm password fields do not match}
 	
-	Output: Intended events occurs. Refer to FR14
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	Test Case Derivation: User clicks signup button and a request is made based on username, password and email text-boxes
+	\textcolor{red}{Initial State: Signup page is displayed with a blank textboxes for username, email, password and confirm password.}
 	
-	How test will be performed: Tester will click on signup button and check if request is made correctly
+	\textcolor{red}{Input: Enter any username and email but enter password and confirm password that do not match. (Invalid Input: Username = "Bob Test" , Password = "qwerty123", Email = "bobtest@gmail.com", Confirm Password = "ytrewq321")}
 	
-	\item{FR-SP-5\\}
+	\textcolor{red}{Output: Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "Invalid Input, Passwords do not match")}
 	
-	Control: Manual
+	\textcolor{red}{Test Case Derivation: The user unsuccessfully sign ups.}
 	
-	Initial State: Signup page is displayed with inputted information in username and password text-boxes
+	\textcolor{red}{\textcolor{red}{Tester will navigate to the signup page and verify that the username, password, email and confirm password textboxes are present and blank. Tester will enter a username, email and mismatching passwords in the textboxes and click the "sign up" button. Tester will verify that failure message appears and user is not added into the database.}}
 	
-	Input: Click signup button
+\item{\textcolor{red}{\sout{FR-SP-3}}
 	
-	Output: if failure state, display an invalid username, password or email banner, else if success state, load and display login page
-	
-	Test Case Derivation: User clicks signup button and request is made based on username, password and email, and will proceed to login page only if username, password and email are valid
-	
-	How test will be performed: Tester will click on signup button and test for scenarios when signup should be successful and when signup should fail
-	
-	
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: signup page is displayed with email textbox}}
+
+\textcolor{red}{\sout{Input: Enter email information in textbox}}
+
+\textcolor{red}{\sout{Output: Email information entered is displayed in textbox}}
+
+\textcolor{red}{\sout{Test Case Derivation: User can enter information in email textbox}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will enter information in email textbox and checks if textbox displays what the tester entered}}
+
+\item{\textcolor{red}{\sout{FR-SP-4}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Signup page is displayed with signup button}}
+
+\textcolor{red}{\sout{Input: Click signup button}}
+
+\textcolor{red}{\sout{Output: Intended events occurs. Refer to FR14}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks signup button and a request is made based on username, password and email text-boxes}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on signup button and check if request is made correctly}}
+
+\item{\textcolor{red}{\sout{FR-SP-5}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Signup page is displayed with inputted information in username and password text-boxes}}
+
+\textcolor{red}{\sout{Input: Click signup button}}
+
+\textcolor{red}{\sout{Output: if failure state, display an invalid username, password or email banner, else if success state, load and display login page}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks signup button and request is made based on username, password and email, and will proceed to login page only if username, password and email are valid}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on signup button and test for scenarios when signup should be successful and when signup should fail}}
+
 \end{enumerate}
 
 \subsubsection{Main Page Testing}
@@ -414,8 +510,10 @@ Testing all functional requirements for main page of REVITALIZE. (Refer to BE3 i
 \begin{enumerate}
 	
 	\item{FR-MP-1\\}
+
+        \textcolor{red}{Description: Verifies the system should allow a calendar to be launched to select dates}
 	
-	Control: Manual
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
 	Initial State: Main page is displayed with calender of current date
 	
@@ -428,8 +526,10 @@ Testing all functional requirements for main page of REVITALIZE. (Refer to BE3 i
 	How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the correct calender data is loaded
 	
 	\item{FR-MP-2\\}
+ 
+        \textcolor{red}{Description: Verifies the system should allow the user to navigate to the previous or next day on the calendar}
 	
-	Control: Manual
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
 	Initial State: Main page and Diet, Workout, Rest sections are displayed with previous day and next day buttons
 	
@@ -442,22 +542,26 @@ Testing all functional requirements for main page of REVITALIZE. (Refer to BE3 i
 	How test will be performed: Tester will successfully login to the REVITALIZE application and will visually check if the previous day and next day buttons are visible. The tester will click the previous day button and visually check if the calender is updated to the date of the previous day. The tester will click the next day button and visually check if the calender is updated to the date of the next day. The tester will enter the Diet, Workout and Rest sections and will visually check if the previous day and next day buttons are visible. The tester will click the previous day button and visually check if the calender is updated to the date of the previous day. The tester will click the next day button and visually check if the calender is updated to the date of the next day
 	
 	\item{FR-MP-3\\}
+
+        \textcolor{red}{Description: Verifies the system should allow the user to go back to the previous screen or section using a back button}
 	
-	Control: Manual
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
 	Initial State: Each interaction after leaving the main page must have a visible back button
 	
 	Input: An event that loads the next user interface after leaving the main page and the back button is clicked
 	
-	Output: The next user interface after leaving the main page iis displayed with a back button. Once the back button is clicked, the main page is loaded
+	Output: The next user interface after leaving the main page is displayed with a back button. Once the back button is clicked, the main page is loaded
 	
 	Test Case Derivation: Request is to leave the main page and the back button is clicked
 	
 	How test will be performed: Tester will leave the main page by selecting any of the options on the page. The tester will visually check if a back button is visible on every page that is entered through the main page interaction. The tester will click the back button and visually check if the current page is closed and the main page is loaded. The tester will repeat this process with every page that is  loaded from clicking an interaction from the main page
 	
 	\item{FR-MP-4\\}
+
+        \textcolor{red}{Description: Verifies the system should allow the user to select and view the Diet, Exercise, and Rest sections for the current calendar day}
 	
-	Control: Manual
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
 	Initial State: Main page is displayed with Diet, Exercise and Rest buttons available to click
 	
@@ -477,118 +581,170 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 
 \begin{enumerate}
 	
-	\item{FR-DS-1\\}
+\item{\textcolor{red}{\sout{FR-DS-1}}
 	
-	Control: Manual
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Diet section is initialized for the first time and an initial information dialog is launched}}
+
+\textcolor{red}{\sout{Input: An event that loads the diet section for the first time}}
+
+\textcolor{red}{\sout{Output: A fillable dialog box is launched with height, dietary information, weight and calorie information}}
+
+\textcolor{red}{\sout{Test Case Derivation: Request is made to enter diet section for the first time}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will enter rest section for the first time and visually check if the dialog box with correct input information is launched}}
+
+\item{\textcolor{red}{\sout{FR-DS-2}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Diet section is initialized for the first time and an initial information dialog is launched}}
+
+\textcolor{red}{\sout{Input: Initial information dialog values are filled}}
+
+\textcolor{red}{\sout{Output: Initial information values are saved to the database}}
+
+\textcolor{red}{\sout{Test Case Derivation: Initial information dialog is filled}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will fill the initial information dialog after entering the diet section. The tester will visually check the user data in the database to see if the initial information is saved}}
 	
-	Initial State: Diet section is initialized for the first time and an initial information dialog is launched
+	\item{\textcolor{red}{FR-DS-1\\}}
+
+        \textcolor{red}{Description: Verifies that the Diet section must initialize with a list of food logged on the current calendar day}
 	
-	Input: An event that loads the diet section for the first time
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
-	Output: A fillable dialog box is launched with height, dietary information, weight and calorie information
+	Initial State: \textcolor{red}{\sout{section}} \textcolor{red}{Diet}} section is initialized with a list of food logged for the current calender day. \textcolor{red}{Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: [(foodName = "Oven Fried Chicken II", calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com"),  (foodName = "Lasagna", calories = 100, carbs = 70, fats = 140, protein = 145, foodDate = 2022-10-25 email = "test@gmail.com")]}
 	
-	Test Case Derivation: Request is made to enter diet section for the first time
+	Input: \textcolor{red}{\sout{An event that loads the rest section}} \textcolor{red}{An event that loads/gets the food log for email = test@gmail.com and foodDate = 2022-10-25}
 	
-	How test will be performed: Tester will enter rest section for the first time and visually check if the dialog box with correct input information is launched
+	Output: A list of inputted food is loaded for the current calender day \textcolor{red}{. For email = test@gmail.com and foodDate = 2022-10-25, will return a successful message = "Success in getting food log", a list of food names = ["Oven Fried Chicken II", "Lasagna"] and get the total calories, carbs, fats and proteins for the calendar day [calories = 200 + 100, carbs = 50 + 70, fats = 120 + 140, protein = 125 + 145] }
 	
-	\item{FR-DS-2\\}
+	Test Case Derivation: \textcolor{red}{\sout{Request is made to enter rest section}} \textcolor{red}{Request is made to get/load the food log for email = test@gmail.com and foodDate = 2022-10-25 and request is successful}
 	
-	Control: Manual
+	How test will be performed: \textcolor{red}{\sout{Tester will enter the rest section and will visually check if a list of logged food is loaded for the current calender day}} \textcolor{red}{Ensure that the current calendar day has at least one food item logged in the database. Enter the diet section by selecting it from the REVITALIZE main page or by clicking on the diet section button. Observe the screen and check that a list of the food items logged for the current calendar day is displayed. Verify that the list contains all the food items logged for the current calendar day and user and that the items matches the information in the database}
 	
-	Initial State: Diet section is initialized for the first time and an initial information dialog is launched
+	\item{\textcolor{red}{FR-DS-2\\}}
+
+  \textcolor{red}{Description: Verifies that a new meal can be added to database successfully}
 	
-	Input: Initial information dialog values are filled
+	Control: \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional,           Dynamic}
 	
-	Output: Initial information values are saved to the database
+	Initial State: \textcolor{red}{\sout{Diet section is displayed with add food button}} \textcolor{red}{Database for Diet Section is empty and user (test@gmail.com) wants to add any type of meal (searched recipe or custom meal), for the selected day (2022-10-25)}
 	
-	Test Case Derivation: Initial information dialog is filled
+	Input: \textcolor{red}{\sout{Click add food button}} \textcolor{red}{Fill in the required fields for adding a new meal in the database (foodName = "Oven Fried Chicken II", calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com")}
 	
-	How test will be performed: Tester will fill the initial information dialog after entering the diet section. The tester will visually check the user data in the database to see if the initial information is saved
+	Output: \textcolor{red}{\sout{A user interface is launched that lets the user select between searching for food or adding a custom meal}} \textcolor{red}{Input gets added to the database and should have the following success message = "Meal successfully added"}
 	
+	Test Case Derivation: \textcolor{red}{\sout{User clicks add food button}} \textcolor{red}{User successfully adds meal to database}
 	
-	\item{FR-DS-3\\}
+	How test will be performed:  \textcolor{red}{\sout{Tester will click on add food button and will visuallly check if the user interface with options for adding a custom meal and searching for food are available.}}  \textcolor{red}{Tester will fill in the necessary fields for adding a meal. Tester will call the appropriate function that adds meal to the database. Tester will then verify the database and see whether the meal was successfully added into the database}
+
+ \item{\textcolor{red}{FR-DS-3\\}}
+
+ \textcolor{red}{Description: Verifies that an existing meal can be updated to database successfully}
 	
-	Control: Manual
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	Initial State: section section is initialized with a list of food logged for the current calender day
+	\textcolor{red}{Initial State: Database for Diet Section has an existing meal for user (test@gmail.com) with the following data (foodName = "Oven Fried Chicken II", calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com") and user wants to edit calories and protein data}
 	
-	Input: An event that loads the rest section
+	\textcolor{red}{Input: Fill in the fields for the user wants to update in the database (calories = 300, protein = 225, foodDate = 2022-10-25 email = "test@gmail.com")}
 	
-	Output: A list of inputted food is loaded for the current calender day
+	\textcolor{red}{Output: Input gets updated to the database and should have the following success message = "Success in updating meal" and the updated meal data should look like this (foodName = "Oven Fried Chicken II", calories = 300, carbs = 50, fats = 120, protein = 225, foodDate = 2022-10-25 email = "test@gmail.com")}
 	
-	Test Case Derivation: Request is made to enter rest section
+	\textcolor{red}{Test Case Derivation: The user successfully updates existing meal}
 	
-	How test will be performed: Tester will enter the rest section and will visually check if a list of logged food is loaded for the current calender day
+	\textcolor{red}{Tester will fill in the necessary fields they want for updating a meal. Tester will call the appropriate function that updates meal to the database. Tester will then verify the database and see whether the meal was successfully updated into the database}
+
+  \item{\textcolor{red}{FR-DS-4\\}}
+
+ \textcolor{red}{Description: Verifies that an existing meal can be deleted from database successfully}
 	
-	\item{FR-DS-4 \\}
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	Control: Manual
+	\textcolor{red}{Initial State: Database for Diet Section has an existing meal for user (test@gmail.com) with the following data (foodName = "Oven Fried Chicken II" calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com") and user wants to delete this meal data}
 	
-	Initial State: Diet section is displayed with add food button
+	\textcolor{red}{Input: Fill in the email, food date and food name fields for the user to delete meal data in the database (foodName = "Oven Fried Chicken II", foodDate = 2022-10-25 email = "test@gmail.com" )}
 	
-	Input: Click add food button
+	\textcolor{red}{Output: Selected meal data is deleted from the database and should have the following success message = "Success in deleting meal"}
 	
-	Output: A user interface is launched that lets the user select between searching for food or adding a custom meal
+	\textcolor{red}{Test Case Derivation: The user successfully deletes existing meal}
 	
-	Test Case Derivation: User clicks add food button
+	\textcolor{red}{Tester checks database for an existing meal data. Tester will fill in the necessary fields that are needed to delete specific meal data. Tester will call the appropriate function that deletes the meal from the database. Tester will then verify the database and see whether the meal was successfully deleted from the database}
+
+   \item{\textcolor{red}{FR-DS-5\\}}
+
+ \textcolor{red}{Description: Verifies that searching for a recipe/meal is successful}
 	
-	How test will be performed: Tester will click on add food button and will visuallly check if the user interface with options for adding a custom meal and searching for food are available.
+	\textcolor{red}{Control: Manual, Functional, Dynamic}
 	
-	\item{FR-DS-5\\}
+	\textcolor{red}{Initial State: User wants to search for recipe and Diet Recipe Search Screen is loaded, with appropriate textboxes (Name of Meal and Calories) and appropriate dropdowns (List of Diet Types and List of Food Restrictions and Preferences)}
 	
-	Control: Manual
+	\textcolor{red}{Input: Fill all textboxes and dropdowns (foodName = "Chicken", Calories = 1000, Diet Type = "high-protein", Food Restrictions and Preferences = "low-sugar")}
 	
-	Initial State: Food adding user interface is displayed with search food button
+	\textcolor{red}{Output: Should return a wide range of recipes and meals that satisfies all the conditions from the input}
 	
-	Input: Click search food button
+	\textcolor{red}{Test Case Derivation: The user successfully searches for a recipe}
 	
-	Output: A recipe criteria user interface is launched that displays a list of modifiable criteria and a search button
+	\textcolor{red}{Enter the Diet Recipe Search Screen. Fill in the required inputs. Click the search recipe button. Verify to see if a large array of recipes are displayed, matching the information provided in the inputs}
 	
-	Test Case Derivation: User clicks search food button
+\item{\textcolor{red}{\sout{FR-DS-5}}\}
 	
-	How test will be performed: Tester will click on search food exercise button and will visuallly check if a recipe criteria user interface is launched that displays a list of modifiable criteria and a search button
-	
-	\item{FR-DS-6\\}
-	
-	Control: Manual
-	
-	Initial State: Recipe criteria user interface is launched
-	
-	Input: Search criteria is modified and search button is clicked
-	
-	Output: List of recipes are loaded correctly based on constraints of search criteria
-	
-	Test Case Derivation: User modifies the search criteria and clicks the search button
-	
-	How test will be performed: Tester will modify the search criteria and click the search button. The tester will visually check if a recipe list is loaded. The tester will visually check the correctness of the list based on selected constraints.
-	
-	\item{FR-DS-7\\}
-	
-	Control: Manual
-	
-	Initial State: Recipe list is loaded based on search constraints
-	
-	Input: Add recipe button is clicked
-	
-	Output: Selected recipe is added to the list of food logged on the current calendar day
-	
-	Test Case Derivation: User selects the recipe from the recipe list and clicks the add recipe button
-	
-	How test will be performed: Tester will select a recipe and click the add recipe button. The tester will visually check if the selected recipe has been added to the list of food logged on the current calendar day
-	
-	\item{FR-DS-8 \\}
-	
-	Control: Manual
-	
-	Initial State: Food adding interface is displayed with add custom meal button
-	
-	Input: Click add custom meal button
-	
-	Output: A dialog box is launched that lets the user fill custom meal information. The meal is added to the food log list of the current calendar day
-	
-	Test Case Derivation: User clicks add custom meal button
-	
-	How test will be performed: Tester will click on add custom meal button and will visually check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add custom meal button. The tester will visually check if the meal has been added to the list of logged food for the current calendar day
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Food adding user interface is displayed with search food button}}
+
+\textcolor{red}{\sout{Input: Click search food button}}
+
+\textcolor{red}{\sout{Output: A recipe criteria user interface is launched that displays a list of modifiable criteria and a search button}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks search food button}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on search food exercise button and will visuallly check if a recipe criteria user interface is launched that displays a list of modifiable criteria and a search button}}
+
+\item{\textcolor{red}{\sout{FR-DS-6}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Recipe criteria user interface is launched}}
+
+\textcolor{red}{\sout{Input: Search criteria is modified and search button is clicked}}
+
+\textcolor{red}{\sout{Output: List of recipes are loaded correctly based on constraints of search criteria}}
+
+\textcolor{red}{\sout{Test Case Derivation: User modifies the search criteria and clicks the search button}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will modify the search criteria and click the search button. The tester will visually check if a recipe list is loaded. The tester will visually check the correctness of the list based on selected constraints.}}
+
+\item{\textcolor{red}{\sout{FR-DS-7}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Recipe list is loaded based on search constraints}}
+
+\textcolor{red}{\sout{Input: Add recipe button is clicked}}
+
+\textcolor{red}{\sout{Output: Selected recipe is added to the list of food logged on the current calendar day}}
+
+\textcolor{red}{\sout{Test Case Derivation: User selects the recipe from the recipe list and clicks the add recipe button}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will select a recipe and click the add recipe button. The tester will visually check if the selected recipe has been added to the list of food logged on the current calendar day}}
+
+\item{\textcolor{red}{\sout{FR-DS-8}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Food adding interface is displayed with add custom meal button}}
+
+\textcolor{red}{\sout{Input: Click add custom meal button}}
+
+\textcolor{red}{\sout{Output: A dialog box is launched that lets the user fill custom meal information. The meal is added to the food log list of the current calendar day}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks add custom meal button}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on add custom meal button and will visually
+
 	
 \end{enumerate}
 
@@ -600,8 +756,10 @@ Testing all functional requirements for workout section of REVITALIZE. (Refer to
 \begin{enumerate}
 	
 	\item{FR-WS-1\\}
+
+         \textcolor{red}{Verifies that a preset list of exercises are initialized when entering workout section}
 	
-	Control: Manual
+	Control: \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional,           Dynamic}
 	
 	Initial State: Workout section is initialized with a preset list of exercises of the current calendar day
 	
@@ -612,58 +770,126 @@ Testing all functional requirements for workout section of REVITALIZE. (Refer to
 	Test Case Derivation: Request is made to enter workout section
 	
 	How test will be performed: Tester will enter the workout section and will visually check if a list of preset exercises are loaded for the current calendar day
+
+  \item{\textcolor{red}{FR-WS-2\\}}
+
+ \textcolor{red}{Description: Verifies that a new workout can be added to database successfully}
 	
-	\item{FR-WS-2 \\}
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	Control: Manual
+	\textcolor{red}{Initial State: Database for Workout Section
+    is empty and user (test@gmail.com) wants to add new workout, for the selected day (2022-10-25)}
 	
-	Initial State: Workout section is displayed with add exercise button
+	\textcolor{red}{Input: Fill in the required fields for adding a new workout in the
+        database (name = "Bicep Curl", weight = 50, sets =
+        10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com")}
 	
-	Input: Click add exercise button
+	\textcolor{red}{Output: Input gets added to the database and should have the
+        following success message = ”Success in adding exercise data”}
 	
-	Output: A dialog box is launched that lets the user fill custom exercise information. The exercise is added to the exercise list of the current calendar day
+	\textcolor{red}{Test Case Derivation: The user successfully adds workout}
 	
-	Test Case Derivation: User clicks add exercise button
+	\textcolor{red}{ Tester will fill in the necessary fields for adding a workout. Tester will call the appropriate function that adds workout to the database. Tester will then verify the database and see whether the workout was successfully added into the database}
+
+  \item{\textcolor{red}{FR-WS-3\\}}
+
+ \textcolor{red}{Description: Verifies that an existing workout can be updated to database successfully}
 	
-	How test will be performed: Tester will click on add exercise button and will visually check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add exercise button. The tester will visually check if the exercise has been added to the list of exercises for the current calendar day
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	\item{FR-WS-3\\}
+	\textcolor{red}{Initial State: Database for Workout Section has an existing workout for user (test@gmail.com) with the following data (name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com") and user wants to edit sets and repetitions data}
 	
-	Initial State: Each exercise in the workout section is displayed with a delete exercise button
+	\textcolor{red}{Input: Fill in the fields for the user wants to update in the database (sets = 20, repetitions = 25, dateAdded = 2022-10-25 email = "test@gmail.com")}
 	
-	Input: Click delete exercise button
+	\textcolor{red}{Output: Input gets updated to the database and should have the following success message = "Success in editing exercise data" and the updated workout data should look like this (name = "Bicep Curl", weight = 50, sets = 20, repetitions = 25, dateAdded = 2022-10-25, email = "test@gmail.com")}
 	
-	Output: The exercise is deleted from the exercise list of the current calendar day
+	\textcolor{red}{Test Case Derivation: The user successfully updates existing workout}
 	
-	Test Case Derivation: User clicks delete exercise button
+	\textcolor{red}{Tester will fill in the necessary fields they want for updating a workout. Tester will call the appropriate function that updates workout to the database. Tester will then verify the database and see whether the workout was successfully updated into the database}
+
+  \item{\textcolor{red}{FR-WS-4\\}}
+
+ \textcolor{red}{Description: Verifies that an existing workout can be deleted from database successfully}
 	
-	How test will be performed: Tester will click on delete exercise button and will visually check if the exercise is deleted from the list of exercises for the current calendar day. 
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	\item{FR-WS-4\\}
+	\textcolor{red}{Initial State: Database for Workout Section has an existing workout for user (test@gmail.com) with the following data (name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com") and user wants to delete this workout data}
 	
-	Initial State: Each exercise in the workout section is displayed with an edit exercise button
+	\textcolor{red}{Input: Fill in the email, date added and name fields for the user to delete workout data in the database (name = "Bicep Curl", dateAdded = 2022-10-25 email = "test@gmail.com" )}
 	
-	Input: click edit exercise button
+	\textcolor{red}{Output: Selected workout data is deleted from the database and should have the following success message = "Success in deleting exercise data"}
 	
-	Output: A fillable dialog box is launched with information of the exercise. Once the edit exercise button is clicked, the dialog box will close and update the exercise information in the list of exercises for the current calendar day
+	\textcolor{red}{Test Case Derivation: The user successfully deletes existing workout}
 	
-	Test Case Derivation: User clicks edit exercise button
+	\textcolor{red}{Tester checks database for an existing workout data. Tester will fill in the necessary fields that are needed to delete specific workout data. Tester will call the appropriate function that deletes the workout from the database. Tester will then verify the database and see whether the workout was successfully deleted from the database}
+
+   \item{\textcolor{red}{FR-WS-5\\}}
+
+ \textcolor{red}{Description: Verifies that the Workout section must initialize with a list of workouts on the current calendar day}
 	
-	How test will be performed: Tester will click on edit exercise button and will change the information on the fillable dialog box. The tester will click the edit exercise button and will visually check if the information is changed on the exercise list for the current calendar day.
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	\item{FR-WS-5\\}
+	\textcolor{red}{Workout section is initialized with a list of workouts logged for the current calender day. Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: [((name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")]}
 	
-	Control: Manual
+	\textcolor{red}{Input: An event that loads/gets the workout list for email = test@gmail.com and dateAdded = 2022-10-25}
 	
-	Initial State: Workout section is displayed with list of exercises for current calendar day
+	\textcolor{red}{Output: A list of workouts is loaded for the current calender day. For email = test@gmail.com and dateAdded = 2022-10-25, will return a successful message = ”Success in getting exercise list” and will return the following list [((name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")}
 	
-	Input: An event that loads the workout section
+	\textcolor{red}{Test Case Derivation: Request is made to get/load the exercise list for email = test@gmail.com and dateAdded = 2022-10-25 and request is successful}
 	
-	Output: If repetition and sets for exercises not logged, dialog box for exercise is launched and the missing repetition and set values are highlighted
+	\textcolor{red}{Ensure that the current calendar day has at least one workout data logged in the database. Enter the workout section by selecting it from the REVITALIZE main page or by clicking on the workout section button. Observe the screen and check that a list of the workout items logged for the current calendar day is displayed. Verify that the list contains all the workout items logged for the current calendar day and user, and that the items matches the information in the database}
 	
-	Test Case Derivation: User launches the workout section. User adds an exercise and does not input repetition and set values.
+\item{\textcolor{red}{\sout{FR-WS-2}}}
 	
-	How test will be performed: Tester will add exercise without inputting values for set and repetitions. The user will visually check if the exercise dialog is launched with highlighted missing repetitions and set values.
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Workout section is displayed with add exercise button}}
+
+\textcolor{red}{\sout{Input: Click add exercise button}}
+
+\textcolor{red}{\sout{Output: A dialog box is launched that lets the user fill custom exercise information. The exercise is added to the exercise list of the current calendar day}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks add exercise button}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on add exercise button and will visually check if a fillable dialog box is launched. The tester will fill the dialog box information and click the add exercise button. The tester will visually check if the exercise has been added to the list of exercises for the current calendar day}}
+
+\item{\textcolor{red}{\sout{FR-WS-3}}\\}
+
+\textcolor{red}{\sout{Initial State: Each exercise in the workout section is displayed with a delete exercise button}}
+
+\textcolor{red}{\sout{Input: Click delete exercise button}}
+
+\textcolor{red}{\sout{Output: The exercise is deleted from the exercise list of the current calendar day}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks delete exercise button}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on delete exercise button and will visually check if the exercise is deleted from the list of exercises for the current calendar day. }}
+
+\item{\textcolor{red}{\sout{FR-WS-4}}\\}
+
+\textcolor{red}{\sout{Initial State: Each exercise in the workout section is displayed with an edit exercise button}}
+
+\textcolor{red}{\sout{Input: click edit exercise button}}
+
+\textcolor{red}{\sout{Output: A fillable dialog box is launched with information of the exercise. Once the edit exercise button is clicked, the dialog box will close and update the exercise information in the list of exercises for the current calendar day}}
+
+\textcolor{red}{\sout{Test Case Derivation: User clicks edit exercise button}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will click on edit exercise button and will change the information on the fillable dialog box. The tester will click the edit exercise button and will visually check if the information is changed on the exercise list for the current calendar day.}}
+
+\item{\textcolor{red}{\sout{FR-WS-5}}\\}
+
+\textcolor{red}{\sout{Control: Manual}}
+
+\textcolor{red}{\sout{Initial State: Workout section is displayed with list of exercises for current calendar day}}
+
+\textcolor{red}{\sout{Input: An event that loads the workout section}}
+
+\textcolor{red}{\sout{Output: If repetition and sets for exercises not logged, dialog box for exercise is launched and the missing repetition and set values are highlighted}}
+
+\textcolor{red}{\sout{Test Case Derivation: User launches the workout section. User adds an exercise and does not input repetition and set values.}}
+
+\textcolor{red}{\sout{How test will be performed: Tester will add exercise without inputting values for set and repetitions. The user will visually check if the exercise dialog is launched with highlighted missing repetitions and set values.}
 	
 \end{enumerate}
 
@@ -675,8 +901,10 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 \begin{enumerate}
 	
 	\item{FR-RS-1\\}
+ 
+        \textcolor{red}{Description: Verifies that Rest section launches with sleep statistics of current calendar day}
 	
-	Control: Manual
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
 	Initial State: Rest section is initialized with the sleep statistics of the current calendar day
 	
@@ -689,8 +917,10 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	How test will be performed: Tester will enter the rest section and will visually check if sleep statistics are loaded for the current calendar day
 	
 	\item{FR-RS-2 \\}
+
+        \textcolor{red}{Description: Verifies that user can alter inaccurate sleep data}
 	
-	Control: Manual
+	Control: Manual\textcolor{red}{, Functional, Dynamic}
 	
 	Initial State: Rest section is initialized with the sleep statistics of the current calendar day
 	
@@ -701,6 +931,73 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	Test Case Derivation: User alters sleep data
 	
 	How test will be performed: Tester will alter the sleep data and will visually check if the new values are correctly displayed in the sleep statistics
+
+   \item{\textcolor{red}{FR-RS-3\\}}
+
+ \textcolor{red}{Description: Verifies that a new sleep data can be added to database successfully}
+	
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
+	
+	\textcolor{red}{Initial State: Database for Rest Section
+    is empty and user (test@gmail.com) wants to add new sleep data, for the selected day (2022-10-25)}
+	
+	\textcolor{red}{Input: Fill in the required fields for adding new sleep data in the
+        database (email: "test@gmail.com", sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: 2022-10-25)}
+	
+	\textcolor{red}{Output: Input gets added to the database and should have the
+        following success message = ”Success in adding sleep data”}
+	
+	\textcolor{red}{Test Case Derivation: The user successfully adds sleep data}
+	
+	\textcolor{red}{ Tester will fill in the necessary values for adding new sleep data. Tester will call the appropriate function that adds sleep data to the database. Tester will then verify the database and see whether the sleep data was successfully added into the database}
+
+  \item{\textcolor{red}{FR-RS-4\\}}
+
+ \textcolor{red}{Description: Verifies that an existing sleep data can be updated to database successfully}
+	
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
+	
+	\textcolor{red}{Initial State: Database for Rest Section has an existing sleep data for user (test@gmail.com) with the following data (email: "test@gmail.com", sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: 2022-10-25) and user wants to edit sleep hour and sleep minute data}
+	
+	\textcolor{red}{Input: Fill in the fields for the user wants to update in the database ( sleepHour: 2, sleepMinute: 10, dateAdded = 2022-10-25 email = "test@gmail.com")}
+	
+	\textcolor{red}{Output: Input gets updated to the database and should have the following success message = "Success in editing sleep data" and the updated sleep data should look like this (email: "test@gmail.com", sleepHour: 2, bedHour: 10, sleepMinute: 10, bedMinute: 5, dateAdded: 2022-10-25)}
+	
+	\textcolor{red}{Test Case Derivation: The user successfully updates existing sleep data}
+	
+	\textcolor{red}{Tester will fill in the necessary fields they want for updating a sleep data. Tester will call the appropriate function that updates sleep data to the database. Tester will then verify the database and see whether the sleep data was successfully updated into the database}
+
+  \item{\textcolor{red}{FR-RS-5\\}}
+
+ \textcolor{red}{Description: Verifies that an existing sleep data can be deleted from database successfully}
+	
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
+	
+	\textcolor{red}{Initial State: Database for Rest Section has an existing sleep data for user (test@gmail.com) with the following data (email: "test@gmail.com", sleepHour: 2, bedHour: 10, sleepMinute: 10, bedMinute: 5, dateAdded: 2022-10-25) and user wants to delete this sleep data}
+	
+	\textcolor{red}{Input: Fill in the email and date added fields for the user to delete sleep data in the database ( dateAdded = 2022-10-25 email = "test@gmail.com" )}
+	
+	\textcolor{red}{Output: Selected sleep data is deleted from the database and should have the following success message = "Success in deleting sleep data"}
+	
+	\textcolor{red}{Test Case Derivation: The user successfully deletes existing sleep}
+	
+	\textcolor{red}{Tester checks database for an existing sleep data. Tester will fill in the necessary fields that are needed to delete specific sleep data. Tester will call the appropriate function that deletes the sleep data from the database. Tester will then verify the database and see whether the sleep data was successfully deleted from the database}
+
+   \item{\textcolor{red}{FR-RS-6\\}}
+
+ \textcolor{red}{Description: Verifies that the Rest section must initialize with last saved sleep data on the current calendar day}
+	
+	\textcolor{red}{Control: Automatic, Functional, Dynamic}
+	
+	\textcolor{red}{Rest section is initialized with last saved sleep data for the current calender day. Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: (email: "test@gmail.com", sleepHour: 2, bedHour: 10, sleepMinute: 10, bedMinute: 5, dateAdded: 2022-10-25)}
+	
+	\textcolor{red}{Input: An event that loads/gets the last saved sleep data for email = test@gmail.com and dateAdded = 2022-10-25}
+	
+	\textcolor{red}{Output: The last saved sleep data is loaded for the current calender day. For email = test@gmail.com and dateAdded = 2022-10-25, will return a successful message = ”Success in getting sleep data”}
+	
+	\textcolor{red}{Test Case Derivation: Request is made to get/load the last saved sleep data for email = test@gmail.com and dateAdded = 2022-10-25 and request is successful}
+	
+	\textcolor{red}{Ensure that the current calendar day has one sleep data logged in the database. Enter the rest section by selecting it from the REVITALIZE main page or by clicking on the rest section button. Observe the screen and check that the last saved sleep data for the current calendar day is displayed. Verify that the last saved sleep data for the current calendar day and user, and that the item matches the information in the database}
 	
 \end{enumerate}
 ...
