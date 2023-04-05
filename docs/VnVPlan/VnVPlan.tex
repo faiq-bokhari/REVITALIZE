@@ -1500,121 +1500,580 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	\end{center}
 \end{table}
 
-% \section{Unit Test Description}
+\section{Unit Test Description}
 
-% \wss{Reference your MIS and explain your overall philosophy for test case
-% 	selection.}  
-% \wss{This section should not be filled in until after the MIS has
-% 	been completed.}
+\subsection{Unit Testing Scope}
 
-% \subsection{Unit Testing Scope}
+\textcolor{red}{All modules mentioned below were deemed in the unit testing scope. Calendar, Recipe Results and Recipe Details Modules were out of scope since mostly involves third party data. Main Menu, Label, Search or Add Food and Workout Log Modules were out of scope since mostly modules for UI design and deemed unnecessary to create unit tests. FoodT and ExerciseT Modules were out of scope since these are mainly data types and these data types were tested in the other modules mentioned below.}
 
-% \wss{What modules are outside of the scope.  If there are modules that are
-% 	developed by someone else, then you would say here if you aren't planning on
-% 	verifying them.  There may also be modules that are part of your software, but
-% 	have a lower priority for verification than others.  If this is the case,
-% 	explain your rationale for the ranking of module importance.}
 
-% \subsection{Tests for Functional Requirements}
+\subsection{Tests for Functional Requirements}
 
-% \wss{Most of the verification will be through automated unit testing.  If
-% 	appropriate specific modules can be verified by a non-testing based
-% 	technique.  That can also be documented in this section.}
+\subsubsection{\textcolor{red}{Login Module}}
 
-% \subsubsection{Module 1}
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Login Module" as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
 
-% \wss{Include a blurb here to explain why the subsections below cover the module.
-% 	References to the MIS would be good.  You will want tests from a black box
-% 	perspective and from a white box perspective.  Explain to the reader how the
-% 	tests were selected.}
+\begin{enumerate}
 
-% \begin{enumerate}
+	\item{\textcolor{red}{UT-M3-1\\}}
 
-% 	\item{test-id1\\}
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
 
-% 	Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-% 		be automatic}
+	\textcolor{red}{Initial State: A user exists in database}
 
-% 	Initial State: 
+	\textcolor{red}{Input: Create a login request with valid inputs}
 
-% 	Input: 
+	\textcolor{red}{Output: Request is successful and will display success message}
 
-% 	Output: \wss{The expected result for the given inputs}
+	\textcolor{red}{Test Case Derivation: User wants to login into REVITALIZE}
 
-% 	Test Case Derivation: \wss{Justify the expected value given in the Output field}
+	\textcolor{red}{How test will be performed: Jest will create login request with valid inputs}
 
-% 	How test will be performed: 
+	\item{\textcolor{red}{UT-M3-2\\}}
 
-% 	\item{test-id2\\}
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
 
-% 	Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-% 		be automatic}
+	\textcolor{red}{Initial State: A user exists in database}
 
-% 	Initial State: 
+	\textcolor{red}{Input: Create a login request with invalid inputs}
 
-% 	Input: 
+	\textcolor{red}{Output: Request fails and will display a failure message}
 
-% 	Output: \wss{The expected result for the given inputs}
+	\textcolor{red}{Test Case Derivation: User wants to login into REVITALIZE, but have invalid inputs}
 
-% 	Test Case Derivation: \wss{Justify the expected value given in the Output field}
+	\textcolor{red}{How test will be performed: Jest will create login request with invalid inputs}
 
-% 	How test will be performed: 
+\end{enumerate}
 
-% 	\item{...\\}
+\subsubsection{\textcolor{red}{Sign-up Module}}
 
-% \end{enumerate}
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Sign-up Module" as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
 
-% \subsubsection{Module 2}
+\begin{enumerate}
 
-% ...
+	\item{\textcolor{red}{UT-M18-1\\}}
 
-% \subsection{Tests for Nonfunctional Requirements}
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
 
-% \wss{If there is a module that needs to be independently assessed for
-% 	performance, those test cases can go here.  In some projects, planning for
-% 	nonfunctional tests of units will not be that relevant.}
+	\textcolor{red}{Initial State: N/A}
 
-% \wss{These tests may involve collecting performance data from previously
-% 	mentioned functional tests.}
+	\textcolor{red}{Input: Create a sign-up request with valid inputs}
 
-% \subsubsection{Module ?}
+	\textcolor{red}{Output: Request is successful, will display success message and new user will be added into database}
 
-% \begin{enumerate}
+	\textcolor{red}{Test Case Derivation: User wants to sign-up into REVITALIZE}
 
-% 	\item{test-id1\\}
+	\textcolor{red}{How test will be performed: Jest will create sign-up request with valid inputs}
 
-% 	Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-% 		be automatic}
+	\item{\textcolor{red}{UT-M18-2\\}}
 
-% 	Initial State: 
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
 
-% 	Input/Condition: 
+	\textcolor{red}{Initial State: N/A}
 
-% 	Output/Result: 
+	\textcolor{red}{Input: Create a sign-up request with invalid inputs}
 
-% 	How test will be performed: 
+	\textcolor{red}{Output: Request fails and will display a failure message}
 
-% 	\item{test-id2\\}
+	\textcolor{red}{Test Case Derivation: User wants to sign-up into REVITALIZE, but have invalid inputs}
 
-% 	Type: Functional, Dynamic, Manual, Static etc.
+	\textcolor{red}{How test will be performed: Jest will create sign-up request with invalid inputs}
 
-% 	Initial State: 
+\end{enumerate}
 
-% 	Input: 
+\subsubsection{\textcolor{red}{Container Module}}
 
-% 	Output: 
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Container Module" (For the MIS of Sleep) as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
 
-% 	How test will be performed: 
+\begin{enumerate}
 
-% \end{enumerate}
+	\item{\textcolor{red}{UT-M4-1\\}}
 
-% \subsubsection{Module ?}
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
 
-% ...
+	\textcolor{red}{Initial State: Sleep data exists in database}
 
-% \subsection{Traceability Between Test Cases and Modules}
+	\textcolor{red}{Input: Create a get request for existing sleep data with valid inputs}
 
-% \wss{Provide evidence that all of the modules have been considered.}
+	\textcolor{red}{Output: Request is successful, will display success message and return desired sleep request}
+
+	\textcolor{red}{Test Case Derivation: User wants to get a sleep data}
+
+	\textcolor{red}{How test will be performed: Jest will create get request for sleep data with valid inputs}
+
+	\item{\textcolor{red}{UT-M4-2\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Sleep data exists in database}
+
+	\textcolor{red}{Input: Create a get request for existing sleep data with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to get a sleep data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create get request for sleep data with invalid inputs}
+
+\end{enumerate}
+
+\subsubsection{\textcolor{red}{Circular Slider Module}}
+
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Circular Slider Module" (For the MIS of Sleep) as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
+
+\begin{enumerate}
+
+	\item{\textcolor{red}{UT-M6-1\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new sleep data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and new sleep data added into database}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new sleep data}
+
+	\textcolor{red}{How test will be performed: Jest will create a request for sleep data with valid inputs}
+
+	\item{\textcolor{red}{UT-M6-2\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new sleep data with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new sleep data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request for sleep data with invalid inputs}
+
+        \item{\textcolor{red}{UT-M6-3\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Sleep data exists in database}
+
+	\textcolor{red}{Input: Create a request to update sleep data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and existing sleep data is updated into database}
+
+	\textcolor{red}{Test Case Derivation: User wants to update sleep data with valid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to update sleep data with valid inputs}
+
+        \item{\textcolor{red}{UT-M6-4\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Sleep data exists in database}
+
+	\textcolor{red}{Input: Create a request to update sleep data with invalid inputs}
+
+	\textcolor{red}{Output: Request is fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to update sleep data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to update sleep data with invalid inputs}
+
+    \item{\textcolor{red}{UT-M6-5\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Sleep data exists in database}
+
+	\textcolor{red}{Input: Create a request to delete sleep data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and existing sleep data is deleted from database}
+
+	\textcolor{red}{Test Case Derivation: User wants to delete sleep data with valid inputs}
+
+ \textcolor{red}{How test will be performed: Jest will create a request to delete sleep data with valid inputs}
+
+         \item{\textcolor{red}{UT-M6-6\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Sleep data exists in database}
+
+	\textcolor{red}{Input: Create a request to delete sleep data with invalid inputs}
+
+	\textcolor{red}{Output: Request is fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to delete sleep data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to delete sleep data with invalid inputs}
+
+\end{enumerate}
+
+\subsubsection{\textcolor{red}{Diet Log Module}}
+
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Diet Log Module" as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
+
+\begin{enumerate}
+
+	\item{\textcolor{red}{UT-M7-1\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new food data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and new food data added into database}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new food data}
+
+	\textcolor{red}{How test will be performed: Jest will create a request for food data with valid inputs}
+
+	\item{\textcolor{red}{UT-M7-2\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new food data with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new food data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request for food data with invalid inputs}
+
+        \item{\textcolor{red}{UT-M7-3\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Food data exists in database}
+
+	\textcolor{red}{Input: Create a request to update food data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and existing food data is updated into database}
+
+	\textcolor{red}{Test Case Derivation: User wants to update food data with valid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to update food data with valid inputs}
+
+        \item{\textcolor{red}{UT-M7-4\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: food data exists in database}
+
+	\textcolor{red}{Input: Create a request to update food data with invalid inputs}
+
+	\textcolor{red}{Output: Request is fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to update food data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to update food data with invalid inputs}
+
+    \item{\textcolor{red}{UT-M7-5\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Food data exists in database}
+
+	\textcolor{red}{Input: Create a request to delete food data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and existing food data is deleted from database}
+
+	\textcolor{red}{Test Case Derivation: User wants to delete food data with valid inputs}
+
+ \textcolor{red}{How test will be performed: Jest will create a request to delete food data with valid inputs}
+
+         \item{\textcolor{red}{UT-M7-6\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: food data exists in database}
+
+	\textcolor{red}{Input: Create a request to delete food data with invalid inputs}
+
+	\textcolor{red}{Output: Request is fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to delete food data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to delete food data with invalid inputs}
+
+ \item{\textcolor{red}{UT-M7-7\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Food data exists in database}
+
+	\textcolor{red}{Input: Create a get request for existing food data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and return desired food request}
+
+	\textcolor{red}{Test Case Derivation: User wants to get a food data}
+
+	\textcolor{red}{How test will be performed: Jest will create get request for food data with valid inputs}
+
+	\item{\textcolor{red}{UT-M7-8\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Food data exists in database}
+
+	\textcolor{red}{Input: Create a get request for existing food data with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to get a food data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create get request for food data with invalid inputs}
+
+\end{enumerate}
+
+\subsubsection{\textcolor{red}{Custom Meal Module}}
+
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Custom Meal Module" as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
+
+\begin{enumerate}
+
+	\item{\textcolor{red}{UT-M9-1\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new custom meal data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and new custom meal data added into database}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new custom meal data}
+
+	\textcolor{red}{How test will be performed: Jest will create a request for custom meal data with valid inputs}
+
+	\item{\textcolor{red}{UT-M9-2\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new custom meal data with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new custom meal data with invalid inputs}
+
+    \textcolor{red}{How test will be performed: Jest will create a request for customer meal with invalid inputs}
+
+\end{enumerate}
+
+\subsubsection{\textcolor{red}{Search Recipe Module}}
+
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Search Recipe Module" as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
+
+\begin{enumerate}
+
+	\item{\textcolor{red}{UT-M10-1\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to search recipe with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message}
+
+	\textcolor{red}{Test Case Derivation: User wants to search recipe}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to search recipe with valid inputs}
+
+	\item{\textcolor{red}{UT-M10-2\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to search recipe with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to search recipe}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to search recipe with invalid inputs}
+
+\end{enumerate}
+
+\subsubsection{\textcolor{red}{Workout Display Module}}
+
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Workout Display Module" as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
+
+\begin{enumerate}
+
+	\item{\textcolor{red}{UT-M14-1\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Workout data exists in database}
+
+	\textcolor{red}{Input: Create a get request for existing workout data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and return desired workout request}
+
+	\textcolor{red}{Test Case Derivation: User wants to get a workout data}
+
+	\textcolor{red}{How test will be performed: Jest will create get request for workout data with valid inputs}
+
+	\item{\textcolor{red}{UT-M14-2\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Workout data exists in database}
+
+	\textcolor{red}{Input: Create a get request for existing workout data with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to get a workout data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create get request for workout data with invalid inputs}
+
+\end{enumerate}
+
+\subsubsection{\textcolor{red}{Workout Edit Module}}
+
+\textcolor{red}{The upcoming section will feature assessments that pertain to the "Workout Edit Module" as defined in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\color{blue}MIS}. The selection of these tests was made in consideration of typical user workflows.}
+
+\begin{enumerate}
+
+	\item{\textcolor{red}{UT-M15-1\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new workout data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and new workout data added into database}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new workout data}
+
+	\textcolor{red}{How test will be performed: Jest will create a request for workout data with valid inputs}
+
+	\item{\textcolor{red}{UT-M15-2\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: N/A}
+
+	\textcolor{red}{Input: Create a request to add new workout data with invalid inputs}
+
+	\textcolor{red}{Output: Request fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to add new workout data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request for workout data with invalid inputs}
+
+        \item{\textcolor{red}{UT-M15-3\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Workout data exists in database}
+
+	\textcolor{red}{Input: Create a request to update workout data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and existing workout data is updated into database}
+
+	\textcolor{red}{Test Case Derivation: User wants to update workout data with valid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to update workout data with valid inputs}
+
+        \item{\textcolor{red}{UT-M15-4\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Workout data exists in database}
+
+	\textcolor{red}{Input: Create a request to update workout data with invalid inputs}
+
+	\textcolor{red}{Output: Request is fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to update workout data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to update workout data with invalid inputs}
+
+    \item{\textcolor{red}{UT-M15-5\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Workout data exists in database}
+
+	\textcolor{red}{Input: Create a request to delete workout data with valid inputs}
+
+	\textcolor{red}{Output: Request is successful, will display success message and existing workout data is deleted from database}
+
+	\textcolor{red}{Test Case Derivation: User wants to delete workout data with valid inputs}
+
+ \textcolor{red}{How test will be performed: Jest will create a request to delete workout data with valid inputs}
+
+         \item{\textcolor{red}{UT-M15-6\\}}
+
+	\textcolor{red}{Type: Functional, Dynamic, Automatic, Unit}
+
+	\textcolor{red}{Initial State: Workout data exists in database}
+
+	\textcolor{red}{Input: Create a request to delete workout data with invalid inputs}
+
+	\textcolor{red}{Output: Request is fails, will display failure message}
+
+	\textcolor{red}{Test Case Derivation: User wants to delete workout data with invalid inputs}
+
+	\textcolor{red}{How test will be performed: Jest will create a request to delete workout data with invalid inputs}
+
+\end{enumerate}
+
+\subsection{Traceability Between Test Cases and Modules}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+		\toprule
+		\textbf{Test Cases} & \textbf{Modules}\\
+		\midrule
+		\textcolor{red}{UT-M3-1} & \textcolor{red}{M3}\\
+            \textcolor{red}{UT-M3-2} & \textcolor{red}{M3}\\
+            \textcolor{red}{UT-M18-1} & \textcolor{red}{M18}\\
+            \textcolor{red}{UT-M18-2} & \textcolor{red}{M18}\\
+            \textcolor{red}{UT-M4-1} & \textcolor{red}{M4}\\
+            \textcolor{red}{UT-M4-2} & \textcolor{red}{M4}\\
+            \textcolor{red}{UT-M6-1} & \textcolor{red}{M6}\\
+            \textcolor{red}{UT-M6-2} & \textcolor{red}{M6}\\
+            \textcolor{red}{UT-M6-3} & \textcolor{red}{M6}\\
+            \textcolor{red}{UT-M6-4} & \textcolor{red}{M6}\\
+            \textcolor{red}{UT-M6-5} & \textcolor{red}{M6}\\
+            \textcolor{red}{UT-M6-6} & \textcolor{red}{M6}\\
+            \textcolor{red}{UT-M7-1} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M7-2} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M7-3} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M7-4} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M7-5} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M7-6} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M7-7} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M7-8} & \textcolor{red}{M7}\\
+            \textcolor{red}{UT-M9-1} & \textcolor{red}{M9}\\
+            \textcolor{red}{UT-M9-2} & \textcolor{red}{M9}\\
+            \textcolor{red}{UT-M10-1} & \textcolor{red}{M10}\\
+            \textcolor{red}{UT-M10-2} & \textcolor{red}{M10}\\
+            \textcolor{red}{UT-M14-1} & \textcolor{red}{M14}\\
+            \textcolor{red}{UT-M14-2} & \textcolor{red}{M14}\\
+            \textcolor{red}{UT-M15-1} & \textcolor{red}{M15}\\
+            \textcolor{red}{UT-M15-2} & \textcolor{red}{M15}\\
+            \textcolor{red}{UT-M15-3} & \textcolor{red}{M15}\\
+            \textcolor{red}{UT-M15-4} & \textcolor{red}{M15}\\
+            \textcolor{red}{UT-M15-5} & \textcolor{red}{M15}\\
+            \textcolor{red}{UT-M15-6} & \textcolor{red}{M15}\\
+		\bottomrule
+	\end{tabular}
+	\caption{Trace Between Test Cases and Modules}
+	\label{TblRT}
+\end{table}
 
 \bibliographystyle{plainnat}
 
