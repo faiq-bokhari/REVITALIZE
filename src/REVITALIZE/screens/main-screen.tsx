@@ -7,7 +7,7 @@ import { RotateInUpLeft } from 'react-native-reanimated';
 import { useRoute } from '@react-navigation/native';
 import { DateContext } from './Date-component';
 
-//Author: Syed Bokhari
+//Author: Syed Bokhari, Bill Nguyen
 //Date: October 30th, 2022
 //Summary: Front end functionality of the main menu screen. Allows us to go to the calendar, diet section, exercise section, sleep section.
 
