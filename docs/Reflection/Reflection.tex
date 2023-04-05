@@ -2,6 +2,22 @@
 
 \usepackage{tabularx}
 \usepackage{booktabs}
+\hypersetup{
+colorlinks,
+citecolor=blue,
+filecolor=black,
+linkcolor=red,
+urlcolor=blue
+}
+\usepackage[round]{natbib}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{ulem}
 
 \title{Reflection Report on \progname}
 
@@ -24,19 +40,17 @@ Learning Outcomes (LOs) will be assessed based on your reflections.}
 
 \section{Changes in Response to Feedback}
 
-\plt{Summarize the changes made over the course of the project in response to
-feedback from TAs, the instructor, teammates, other teams, the project
-supervisor (if present), and from user testers.}
-
-\plt{For those teams with an external supervisor, please highlight how the feedback 
-from the supervisor shaped your project.  In particular, you should highlight the 
-supervisor's response to your Rev 0 demonstration to them.}
+This section, summarizes the changes made over the course of the project in response to feedback from TAs, the instructor, teammates, other teams, and from user testers. In the final documentation changes are clearly shown by new documentation being highlighted in red (Eg. \textcolor{red}{new change}) and deletion of documentation is shown like this: \textcolor{red}{\sout{deletion}}.
 
 \subsection{SRS and Hazard Analysis}
 
 \subsection{Design and Design Documentation}
 
 \subsection{VnV Plan and Report}
+
+VnV Plan Changes: To start a lot of the system tests for the functional requirements were changed to match changes from SRS. Also from the feedback we were suggested the following "Please do not include too many implementation details but focus on the functionalities (e.g., what is your input and output) of the system. Try to think in this way: what is the input for this action button and what should the system do after I click this button? The most important thing you should care about is not what components you are using but what do you want to achieve", So we completely changed the test cases for the functional requirements to focus more on functionality, rather than implementation and also focused on the inputs and outputs to be more specific with real examples. \\
+
+Also in the VnV plan it was suggested team member's roles were a bit ambiguous, so made changes in order to make it more clear what each member was testing and specifically what sections of the code / application they were testing as well. Another suggestion was to add the unit test section since MIS is now complete, in which we did with appropriate tests and traceability matrix.
 
 \section{Design Iteration (LO11)}
 
@@ -74,10 +88,10 @@ technology?}
 
 \subsection{What Went Wrong?}
 
-\plt{What went wrong in terms of processes and technology?}
+To start in terms of communication plan, plan was to meet every sunday and tuesday for 2 hours, but with a lot of us having 5 other courses and personal life outside of school, there were a few occasions where these dates could not be fulfilled and when trying to find an alternate date it was sometimes difficult to set a new time. Also for a lot of the assignments/tasks we tend to set soft deadlines and strict deadlines, but what we noticed was that usually majority of the team did not meet the soft deadlines and usually followed the strict deadlines. Finally a lot of the communication/project management was done via Discord, Facebook Messenger, Git Issues and Gantt Chart, these tools were effective but sometimes the organization of tasks were not the best, so maybe using a tool such as Jira, where they show tasks via an organized table could have been more effective.
 
 \subsection{What Would you Do Differently Next Time?}
 
-\plt{What will you do differently for your next project?}
+To start, for communication plan every meeting was sunday and tuesday for 2 hours but should have also considered alternate dates such monday for example if team members have conflicts, in order to make meetings more consistent if a conflict arises. Also, as mentioned in what went wrong, team members tended to ignore soft deadlines and tended to only follow strict deadlines maybe should have implemented a mechanism to ensure more soft deadlines were met, such as maybe trying to divide the work into even smaller chunks and have only strict deadlines. Another thing is would have used more tools that have better visuals and improve organization for tasks such as Jira, so it is easier to keep track of work done. Also in the team meeting we did take notes of each meeting, but we could have assigned one note taker per meeting instead of all of us doing it at the same time.
 
 \end{document}
