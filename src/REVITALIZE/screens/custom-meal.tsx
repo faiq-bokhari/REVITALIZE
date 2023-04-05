@@ -5,6 +5,9 @@ import { globalStyles } from '../styles/global';
 import { DateContext } from './Date-component';
 import { EmailContext } from './Email-component';
 
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Front end functionality of the search custom meal. Allows users to manually input nutrient values.
 
 const CustomMealScreen=({navigation})=>{
 // Import required dependencies

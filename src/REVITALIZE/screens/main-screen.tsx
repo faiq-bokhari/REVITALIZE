@@ -7,6 +7,10 @@ import { RotateInUpLeft } from 'react-native-reanimated';
 import { useRoute } from '@react-navigation/native';
 import { DateContext } from './Date-component';
 
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Front end functionality of the main menu screen. Allows us to go to the calendar, diet section, exercise section, sleep section.
+
 const MainScreen=({navigation})=>{ // main component that will be rendered when the MainScreen is called
     const current = new Date();
     const [dateString, setDateString] = useState(current.toDateString()); // create a state for dateString and set it to the current date

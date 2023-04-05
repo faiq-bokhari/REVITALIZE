@@ -5,7 +5,9 @@ import { useState } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { radToMinutes } from './Sleep/Constants';
 
-
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Front end functionality of the recipe list. Allows users to view the list of recipes after the recipe search.
 const RecipeListScreen=({navigation})=>{
 
 // Using React's useState hook to manage the state of the data fetched from the API.
