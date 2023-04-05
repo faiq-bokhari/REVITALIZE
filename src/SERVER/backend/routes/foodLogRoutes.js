@@ -1,3 +1,4 @@
+// routes for food logs
 const express = require("express");
 const router = express.Router();
 const { addMeal, getFoodLog, updateMeal, deleteMeal } = require("../controllers/foodLogController");
