@@ -1,11 +1,14 @@
+// Import necessary packages
 import React, { ComponentProps } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { FontAwesome as Icon } from "@expo/vector-icons";
 import Animated, { useDerivedValue } from "react-native-reanimated";
 import { ReText } from "react-native-redash";
 
+// Import helper functions
 import { formatDuration, radToMinutes } from "../Constants";
 
+// Define styles for the component
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
@@ -24,20 +27,30 @@ const styles = StyleSheet.create({
   },
 });
 
+// Define the props for the Label component
 interface LabelProps {
   theta: Animated.SharedValue<number>;
   label: string;
   icon: ComponentProps<typeof Icon>["name"];
 }
 
+// Define the Label component with a text label and an icon
 const Label = ({ theta, label, icon }: LabelProps) => {
+
+  // Use the useDerivedValue hook to calculate the duration in minutes
   const time = useDerivedValue(() => {
     const minutes = radToMinutes(theta.value);
+
+    // Format the duration as a string
     return formatDuration(minutes);
   });
+
+  // Render the label and the duration using the defined styles
   return (
     <View style={styles.container}>
       <Text style={styles.row}>
+
+        {/* Display icon and set its size */}
         <Icon name={icon} size={16} />
         <Text style={styles.label}>{"\u00A0" + label}</Text>
       </Text>
@@ -46,4 +59,5 @@ const Label = ({ theta, label, icon }: LabelProps) => {
   );
 };
 
+// Export the Label component as the default export 
 export default Label;

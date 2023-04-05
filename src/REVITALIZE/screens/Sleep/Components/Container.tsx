@@ -1,3 +1,4 @@
+// Import required modules and components
 import React, { useState, ReactNode, useContext } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Animated, { useDerivedValue } from "react-native-reanimated";
@@ -16,6 +17,7 @@ import Label from "./Label";
 import { globalStyles } from '../../../styles/global';
 import { EmailContext } from '../../Email-component';
 
+// Define types for the props of Container component
 interface ContainerProps {
   start: Animated.SharedValue<number>;
   end: Animated.SharedValue<number>;
@@ -23,6 +25,7 @@ interface ContainerProps {
   dateString: string;
 }
 
+// Define the styles for the component
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#2C2B2D",
@@ -43,25 +46,30 @@ const styles = StyleSheet.create({
   },
 });
 
+// Define the Container component
 const Container = ({ start, end, children, dateString }: ContainerProps) => {
 
+  // Define state for the bedtime and sleep time
   const [bedHour, setBedHour] = useState(1);
   const [bedMinute, setBedMinute] = useState(1);
   const [sleepHour, setSleepHour] = useState(1);
   const [sleepMinute, setSleepMinute] = useState(1);
 
   const dateAdded = dateString;
+
+  // Get the email value from the EmailContext
   const {email} = useContext(EmailContext);
 
+  // Calculate the duration between start and end times in minutes
   const duration = useDerivedValue(() => {
     const d = absoluteDuration(start.value, end.value);
     return formatDuration2(radToMinutes(d));
   });
 
+  // Define a function to handle updating the sleep record
   const handleUpdateSleep = async (email, dateAdded) => {
-    //const response = await fetch('http://10.0.0.248:8000/sleeps/' + email + '/' + date.toISOString().split("T")[0] + '?';
-    //const response = await fetch('http://192.168.2.22:8000/sleeps/sleep_yd@gmail.com/2023-02-12'
 
+    // make sure fetch uses your ip address to run
     const response = await fetch('http://192.168.2.22:8000/sleeps/' + email + '/' + dateString, {
       method: 'PATCH',
       headers: {
@@ -80,6 +88,7 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
   
     const result = await response.json();
 
+    // Display the success or failure message based on the response from the API
     if (result.success) {
       alert(result.message);
     } 
@@ -88,13 +97,16 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
     }
   }
 
+  // Define a function to handle confirming the sleep record
   const handleConfirmSleep = async () => {
 
+    // Set the bedtime and sleep time in state
     setBedHour(preFormatDuration(radToMinutes(start.value)).hours);
     setBedMinute(preFormatDuration(radToMinutes(start.value)).minutes);
     setSleepHour(preFormatDuration(radToMinutes(end.value)).hours);
     setSleepMinute(preFormatDuration(radToMinutes(end.value)).minutes);
 
+    // Send a POST request to the API to save the sleep record in the database
     const response = await fetch('http://192.168.2.22:8000/sleeps/', {
       method: 'POST',
       headers: {
@@ -113,6 +125,7 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
   
     const result = await response.json();
 
+    // Display the success or failure message based on the response from the API
     if (result.success) {
       alert(result.message);
     } 
@@ -120,22 +133,31 @@ const Container = ({ start, end, children, dateString }: ContainerProps) => {
     else {
       alert(result.message);
     }
-    //const updatedSleepData = await handleUpdateSleep(email, dateString);
   }
 
   return (
     <View>
     <View style={styles.container}>
       <View style={styles.values}>
+
+        {/* Display bed time along with bed icon */}
         <Label theta={start} label="BEDTIME" icon="bed" />
+
+        {/* Display wake up time along with bell icon */}
         <Label theta={end} label="WAKE UP" icon="bell" />
       </View>
+
+      {/* Display circular slider component */}
       {children}
       <ReText style={styles.duration} text={duration} />
       </View>
+
+      {/* Post sleep data, set by user, in the database upon clicking confirm sleep */}
       <TouchableOpacity onPress={handleConfirmSleep} style={globalStyles.confirmSleepButton}>
         <Text style={globalStyles.appButtonText}>{"Confirm Sleep"}</Text>
       </TouchableOpacity>
+
+      {/* Update sleep data, set by user, in the database upon clicking update sleep */}
       <TouchableOpacity onPress={()=>handleUpdateSleep(email, dateAdded)} style={globalStyles.updateSleepButton}>
         <Text style={globalStyles.appButtonText}>{"Update Sleep"}</Text>
       </TouchableOpacity>

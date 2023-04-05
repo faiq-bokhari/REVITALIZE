@@ -1,15 +1,20 @@
+// Import React and various SVG components
 import React from "react";
 import { polar2Canvas } from "react-native-redash";
 import { Circle, Line, G } from "react-native-svg";
 
+// Import constants from the Constants file
 import { CENTER, PADDING, R, SIZE, STROKE, TAU } from "../Constants";
 
+// Define the number of lines and the angular difference between them
 const LINES = 75;
 const DELTA = TAU / LINES;
 
+// Define a Quadrant component that renders an SVG with various lines and circles
 const Quadrant = () => {
   return (
     <>
+      {/* Render a circle as a border for the quadrant */}
       <Circle
         strokeWidth={STROKE}
         stroke="#1C1B1D"
@@ -17,8 +22,12 @@ const Quadrant = () => {
         cy={SIZE / 2}
         r={R}
       />
+
+      {/* Use a mask to create a ring around the circle */}
       <G mask="url(#mask)">
         <Circle fill="#FD9F07" cx={SIZE / 2} cy={SIZE / 2} r={R + PADDING} />
+
+        {/* Render LINES lines with the start and end points determined by their angle */}
         {new Array(LINES).fill(0).map((_, i) => {
           const theta = DELTA * i;
           const p1 = polar2Canvas({ theta, radius: R - PADDING / 2 }, CENTER);
@@ -37,6 +46,8 @@ const Quadrant = () => {
           );
         })}
       </G>
+
+      {/* Render 24 lines indicating hours and minutes */}
       {new Array(24).fill(0).map((_, i) => {
         const theta = (i * TAU) / 24;
         const p1 = polar2Canvas({ theta, radius: R - 2 * PADDING }, CENTER);
@@ -55,6 +66,8 @@ const Quadrant = () => {
               x2={p2.x}
               y2={p2.y}
             />
+
+            {/* Render 4 lines per hour indicating quarter hours */}
             {new Array(4).fill(0).map((_e, j) => {
               const alpha = (i * TAU) / 24 + (j + 1) * (TAU / 24 / 4);
               const s = polar2Canvas(
