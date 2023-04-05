@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Jan, 2023
+Description: forgot password screen UI
+*/
+
 // Importing necessary dependencies
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';

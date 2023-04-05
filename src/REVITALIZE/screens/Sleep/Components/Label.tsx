@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Displays icons and times for bed and wake up components
+*/
+
 // Import necessary packages
 import React, { ComponentProps } from "react";
 import { View, Text, StyleSheet } from "react-native";

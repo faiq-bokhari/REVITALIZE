@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Jan, 2023
+Description: login screen UI
+*/
+
 // Importing necessary dependencies
 import React, { useState, createContext, useContext } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
