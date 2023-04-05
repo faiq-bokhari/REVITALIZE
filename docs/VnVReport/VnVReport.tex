@@ -23,7 +23,28 @@ urlcolor=blue
 \usepackage{multirow}
 \usepackage{float}
 \newcommand{\comma}{,}
-
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{float}
+\hypersetup{
+colorlinks,
+citecolor=blue,
+filecolor=black,
+linkcolor=red,
+urlcolor=blue
+}
+\usepackage[round]{natbib}
+\usepackage{indentfirst}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{ulem}
 \input{../Comments}
 
 \makeatletter
@@ -183,83 +204,51 @@ result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-LP-2},
-desc = Testing that login page displays fillable username textbox,
+desc = Testing that login page displays fillable username textbox\textcolor{red}{es},
 type = Manual,
-init = Login page is displayed with username textbox,
-input = Enter username information in textbox,
-output = Username information entered is displayed in textbox,
+init = Login page is displayed with username \textcolor{red}{and password} textbox\textcolor{red}{es},
+input = \textcolor{red}{\sout{Enter username information in textbox}} \textcolor{red}{Valid username/email and password information entered in their respective textboxes (Valid Inputs: email = "johndoe@gmail.com" and password = "qwerty{}123") },
+output =\textcolor{red}{\sout{Username information entered is displayed in textbox}} \textcolor{red}{Returns a success message and user is successfully logged in and redirected to the main page},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-LP-3},
-desc = Testing that login page displays fillable password textbox,
-type = Manual,
-init = Login page is displayed with password textbox,
-input = Enter password information in textbox,
-output = Password information entered is displayed in textbox via hidden text,
+desc =  \textcolor{red}{Verifies that a user fails to log when providing invalid username/email and password information},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Login page is displayed with username and password textboxes (Users Current Data: email = "johndoe@gmail.com" and password = "qwerty{}123")},
+input = \textcolor{red}{Invalid username/email and password information entered in their respective textboxes (Invalid Input 1: email = "notjohndoe@gmail.com" and password = "qwerty{}123"), (Invalid Input 2: email = "" and password = ""), (Invalid Input 3: email = "johndoe@gmail.com" and password = "wrongqwerty{}123")},
+output = \textcolor{red}{User unsuccessfully logins and returns 400 message (Invalid Output 1: "Email not found. Please sign up"), (Invalid Output 2: "Please fill in all fields"), (Invalid Output 3: "Incorrect password")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-LP-4},
-desc = Testing that login page displays login button,
-type = Manual,
-init = Login page is displayed with login button,
-input = Click the login button,
-output = User logs in after the system checks the validity of the input parameters in the login page,
-pass = Login button is displayed and user logged in successfully,
+desc = \textcolor{red}{Verifies that the forget password page loads correctly when requested, and that all necessary components are present on the page},
+type = Manual\textcolor{red}{, Functional, Dynamic},
+init = Login page is displayed with "forgot password" button,
+input = \textcolor{red}{\sout{Click forgot password button}} \textcolor{red}{User clicks on the "forgot password" button},
+output =  \textcolor{red}{\sout{Display forgot password screen with textbox to enter email}} \textcolor{red}{The system displays the "forgot password" screen with a text box to enter the email.},
+pass =  Tester will click on forgot password button and checks if forgot password screen is displayed with textbox to enter email,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-LP-5},
-desc = Testing that login page displays forgot password button,
-type = Manual,
-init = Login page is displayed with forgot password button,
-input = Click forgot password button,
-output = Display forgot password screen with textbox to enter email,
+desc = \textcolor{red}{ Verifies the system must allow users to reset their password if they forget it},
+type = \textcolor{red}{Manual, Functional, Dynamic},
+init = \textcolor{red}{The user is on the login page and has forgotten their password},
+input = \textcolor{red}{One string: the user's registered email address},
+output =\textcolor{red}{ An email sent to the user's registered email address with a link to reset their password},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-LP-6},
-desc = Testing that login page displays a stay looged in checkbox,
-type = Manual,
-init = Login page is displayed with stay logged in checkbox that is empty,
-input = Click stay logged in checkbox,
-output = Display a check-mark in the stay logged in checkbox if checkbox is empty. Else if checkbox contains check-mark already it will then display an empty checkbox,
-pass = ,
-result = \textcolor{Green}{PASS}
-}
-\testauto{
-name = {FR-LP-7},
-desc = Testing that application saves prior login information if stay logged in checkbox is checked,
-type = Manual,
-init = Loading stage of REVITALIZE where previous state had stay logged in
-checkbox checked,
-input = An event that loads REVITALIZE,
-output = Display main page \comma{} with same data from previous state of main page,
-pass = ,
-result = \textcolor{Green}{PASS}
-}
-\testauto{
-name = {FR-LP-8},
-desc = Testing that login page displays sign-up button that redirects to sign-up page,
-type = Manual,
-init = Login page is displayed with sign up button,
-input = Click sign up button,
-output = Loads and displays sign up page,
-pass = ,
-result = \textcolor{Green}{PASS}
-}
-\testauto{
-name = {FR-LP-9},
-desc = Testing if application checks validity of input parameters in login page,
-type = Manual,
-init = Login page is displayed with inputted information in username and pass-
-word text-boxes,
-input = Click login button,
-output = If failure state\comma{} display an invalid password or username banner. Else if success state\comma{} load and display main page,
+desc =\textcolor{red}{Verifies that the login page displays a sign up button that redirects to the sign up page when clicked},
+type = \textcolor{red}{ Manual, Functional, Dynamic},
+init =  Login page is displayed with sign up button,
+input = Click on the sign up button,
+output = \textcolor{red}{\sout{Loads and displays sign up page}} \textcolor{red}{The system redirects the user to the sign up page.},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
@@ -269,50 +258,49 @@ result = \textcolor{Green}{PASS}
 name = {FR-SP-1},
 desc = Testing that signup page displays fillable username textbox,
 type = Manual,
-init = Signup page is displayed with username textbox,
-input = Enter username information in textbox,
-output = Username information entered is displayed in textbox,
+init = \textcolor{red}{\sout{Signup page is displayed with username textbox}} \textcolor{red}{Signup page is displayed with a blank textboxes for username, email, password and confirm password },
+input = \textcolor{red}{\sout{Enter username information in textbox}} \textcolor{red}{Enter username, email, password and confirm password information in their respective textboxes. (Valid Inputs: Username = john123, Password = PasSw0rd145, Email = john123@gmail.com, Confirm Password = PasSw0rd145) },
+output = \textcolor{red}{\sout{Username information entered is displayed in textbox} } \textcolor{red}{ Upon clicking the "Sign up" button, the user's account is created and the user is logged in to the system. (Valid Output: successful message of "Congrats!','Your account has been successfully created" and user added to database) },
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-SP-2},
-desc = Testing that signup page displays fillable password textbox,
-type = Manual,
-init = Signup page is displayed with password textbox,
-input = Enter password information in textbox,
-output = Password information entered is displayed in textbox via hidden text,
+desc = \textcolor{red}{Testing that a new user can not sign up to REVITALIZE when there is invalid information},
+type = \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{\sout{Signup page is displayed with password textbox}} \textcolor{red}{Signup page is displayed with a blank textboxes for username, email, password and confirm password },
+input =\textcolor{red}{\sout{Enter password information in textbox}} \textcolor{red}{Enter invalid username, email, password and confirm password information in their respective textboxes. (Invalid Input: Username = !* , Password = abc123, Email = invalid-a-gmail, Confirm Password = abc123)},
+output = \textcolor{red}{\sout{Password information entered is displayed in textbox via hidden text}} \textcolor{red}{Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "Invalid Input, Improper Email Address")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-SP-3},
-desc = Testing that signup page displays fillable email textbox,
-type = Manual,
-init = Signup page is displayed with email textbox,
-input = Enter email information in textbox,
-output = Email information entered is displayed in textbox,
+desc = \textcolor{red}{Tests that a new user can not sign up to REVITALIZE when email already exists in database},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Signup page is displayed with a blank textboxes for username, email, password and confirm password. One user already exists in database (Username = john123, Password = PasSw0rd145, Email = john123@gmail.com, Confirm Password = PasSw0rd145)},
+input = \textcolor{red}{Enter same username, email, password and confirm password of existing user. (Invalid Input: Username = john123, Password = PasSw0rd145, Email = john123@gmail.com, Confirm Password = PasSw0rd145)},
+output = \textcolor{red}{Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "User already exists. Please login")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-SP-4},
-desc = Testing that signup page displays signup button,
-type = Manual,
-init = Signup page is displayed with signup button,
-input = Click the signup button,
-output = User signs up after the system checks the validity of the input parameters on the signup page,
+desc = \textcolor{red}{Tests that a new user can not sign up to REVITALIZE when there are empty fields},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Signup page is displayed with a blank textboxes for username, email, password and confirm password.},
+input = \textcolor{red}{Do not enter username, email, password and confirm password textboxes. (Invalid Input: Username = "" , Password = "", Email = "", Confirm Password = "")},
+output = {Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "Please fill in all fields")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-SP-5},
-desc = Testing if application checks validity of input parameters in signup page,
-type = Manual,
-init = Signup page is displayed with inputted information in username and
-password text-boxes,
-input = Click signup button,
-output = If failure state then display an invalid username/password or email banner. Else if success state then load and display login page,
+desc = \textcolor{red}{Tests that a new user can not sign up to REVITALIZE when password and confirm password fields do not match},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Signup page is displayed with a blank textboxes for username, email, password and confirm password.},
+input = \textcolor{red}{Enter any username and email but enter password and confirm password that do not match. (Invalid Input: Username = "Bob Test" , Password = "qwerty123", Email = "bobtest@gmail.com", Confirm Password = "ytrewq321")},
+output = \textcolor{red}{Upon clicking the "sign up" button, the new user's account is not added to database and alert with failure message will appear. (Invalid Output: failure message of "Invalid Input, Passwords do not match")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
@@ -321,7 +309,7 @@ result = \textcolor{Green}{PASS}
 \testauto{
 name = {FR-MP-1},
 desc = Testing that the application displays a calendar with current date on successful login,
-type = Manual,
+type = Manual\textcolor{red}{, Functional, Dynamic},
 init = Main page is displayed with calender of current date,
 input = An event that loads the main page,
 output = Main page is displayed with all necessary components,
@@ -331,7 +319,7 @@ result = \textcolor{Green}{PASS}
 \testauto{
 name = {FR-MP-2},
 desc = Testing that the application has a previous day and a next day button on each page after successful login,
-type = Manual,
+type = Manual\textcolor{red}{,Functional, Dynamic},
 init = Main page and Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons,
 input = An event that loads the main page\comma{} Diet\comma{} Workout\comma{} Rest sections and the previous day and next day buttons are clicked,
 output = Main page\comma{} Diet\comma{} Workout\comma{} Rest sections are displayed with previous day and next day buttons. Once the next day button is clicked\comma{} the calendar refreshes the calendar information for the next day. Once the previous day button is clicked\comma{} the calendar refreshes the calendar information for the previous day,
@@ -341,7 +329,7 @@ result = \textcolor{Green}{PASS}
 \testauto{
 name = {FR-MP-3},
 desc = Testing that a back button is displayed on each user interface after a section is selected,
-type = Manual,
+type = Manual\textcolor{red}{,Functional, Dynamic},
 init = Each interaction after leaving the main page must have a visible back button,
 input = An event that loads the next user interface after leaving the main page and the back button is clicked,
 output = The next user interface after leaving the main page is displayed with a back button. Once the back button is clicked the main page is loaded,
@@ -351,7 +339,7 @@ result = \textcolor{Green}{PASS}
 \testauto{
 name = {FR-MP-4},
 desc = Testing that the application displays the sections Diet\comma{} Exercise\comma{} and Rest on the current calendar day,
-type = Manual,
+type = Manual\textcolor{red}{,Functional, Dynamic},
 init = Main page is displayed with Diet\comma{} Exercise and Rest buttons available to click,
 input = An event that loads the main page and the Diet\comma{} Exercise and Rest buttons are clicked,
 output = Main page is displayed with Diet\comma{} Exercise and Rest buttons. If the Diet button is clicked\comma{} the Diet interface is loaded. If the Exercise button is clicked\comma{} the Exercise interface is loaded. If the Rest button is clicked\comma{} the Rest interface is loaded,
@@ -362,81 +350,51 @@ result = \textcolor{Green}{PASS}
 \subsection{Diet Section Page}
 \testauto{
 name = {FR-DS-1},
-desc = Testing that application prompts the user to height\comma{} input dietary\comma{} weight\comma{} calorie information on initial launch of Diet section,
-type = Manual,
-init = Diet section is initialized for the first time and an initial information dialog is launched,
-input = An event that loads the diet section for the first time,
-output = A fillable dialog box is launched with height\comma{} dietary information\comma{} weight and calorie information,
+desc = \textcolor{red}{Tests that the Diet section must initialize with a list of food logged on the current calendar day},
+type = Manual\textcolor{red}{,Functional, Dynamic},
+init = \textcolor{red}{\sout{section}} \textcolor{red}{Diet} section is initialized with a list of food logged for the current calender day. \textcolor{red}{Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: [(foodName = "Oven Fried Chicken II", calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com"),  (foodName = "Lasagna", calories = 100, carbs = 70, fats = 140, protein = 145, foodDate = 2022-10-25 email = "test@gmail.com")]},
+input = \textcolor{red}{\sout{An event that loads the rest section}} \textcolor{red}{An event that loads/gets the food log for email = test@gmail.com and foodDate = 2022-10-25},
+output = A list of inputted food is loaded for the current calender day \textcolor{red}{. For email = test@gmail.com and foodDate = 2022-10-25, will return a successful message = "Success in getting food log", a list of food names = ["Oven Fried Chicken II", "Lasagna"] and get the total calories, carbs, fats and proteins for the calendar day [calories = 200 + 100, carbs = 50 + 70, fats = 120 + 140, protein = 125 + 145] },
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-DS-2},
-desc = Testing that the application saves initial user height\comma{} dietary\comma{} weight\comma{} calorie information,
-type = Manual,
-init = Diet section is initialized for the first time and an initial information dialog is launched,
-input = Initial information dialog values are filled,
-output = Initial information values are saved to the database,
+desc = \textcolor{red}{Verifies that a new meal can be added to database successfully},
+type = \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{\sout{Diet section is displayed with add food button}} \textcolor{red}{Database for Diet Section is empty and user (test@gmail.com) wants to add any type of meal (searched recipe or custom meal), for the selected day (2022-10-25)},
+input = \textcolor{red}{\sout{Click add food button}} \textcolor{red}{Fill in the required fields for adding a new meal in the database (foodName = "Oven Fried Chicken II", calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com")},
+output = \textcolor{red}{\sout{A user interface is launched that lets the user select between searching for food or adding a custom meal}} \textcolor{red}{Input gets added to the database and should have the following success message = "Meal successfully added"},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-DS-3},
-desc = Testing that the application initializes with a list of food logged on the current calendar day,
-type = Manual,
-init = Section is initialized with a list of food logged for the current calendar day,
-input = An event that loads the rest section,
-output = A list of inputted food is loaded for the current calendar day,
+desc =  \textcolor{red}{Tests that an existing meal can be updated to database successfully},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Database for Diet Section has an existing meal for user (test@gmail.com) with the following data (foodName = "Oven Fried Chicken II", calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com") and user wants to edit calories and protein data},
+input = \textcolor{red}{Fill in the fields for the user wants to update in the database (calories = 300, protein = 225, foodDate = 2022-10-25 email = "test@gmail.com")},
+output =\textcolor{red}{Input gets updated to the database and should have the following success message = "Success in updating meal" and the updated meal data should look like this (foodName = "Oven Fried Chicken II", calories = 300, carbs = 50, fats = 120, protein = 225, foodDate = 2022-10-25 email = "test@gmail.com")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-DS-4},
-desc = Testing that Diet section displays add food button,
-type = Manual,
-init = Diet section is displayed with add food button,
-input = Click add food button,
-output = A user interface is launched that lets the user select between searching for food or adding a custom meal,
+desc =  \textcolor{red}{Verifies that an existing meal can be deleted from database successfully},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Database for Diet Section has an existing meal for user (test@gmail.com) with the following data (foodName = "Oven Fried Chicken II" calories = 200, carbs = 50, fats = 120, protein = 125, foodDate = 2022-10-25 email = "test@gmail.com") and user wants to delete this meal data},
+input = \textcolor{red}{Fill in the email, food date and food name fields for the user to delete meal data in the database (foodName = "Oven Fried Chicken II", foodDate = 2022-10-25 email = "test@gmail.com" )},
+output = \textcolor{red}{Selected meal data is deleted from the database and should have the following success message = "Success in deleting meal"},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-DS-5},
-desc = Testing that Diet section displays search food button,
-type = Manual,
-init = Food adding user interface is displayed with search food button,
-input = Click the search food button,
-output = A recipe criteria user interface is launched that displays a list of modifiable criteria and a search button,
-pass = ,
-result = \textcolor{Green}{PASS}
-}
-\testauto{
-	name = {FR-DS-6},
-	desc = Testing that search food button launches recipe criteria user interface,
-	type = Manual,
-	init = Recipe criteria user interface is launched,
-	input = Search criteria is modified and search button is clicked,
-	output = List of recipes are loaded correctly based on constraints of search criteria,
-	pass = ,
-	result = \textcolor{Green}{PASS}
-}
-\testauto{
-name = {FR-DS-7},
-desc = Testing that recipe search displays correct recipe values based on input constraints,
-type = Manual,
-init = Recipe list is loaded based on search constraints,
-input = Add recipe button is clicked,
-output = Selected recipe is added to the list of food logged on the current calendar day,
-pass = ,
-result = \textcolor{Green}{PASS}
-}
-\testauto{
-name = {FR-DS-8},
-desc =  Testing that add custom meal button adds meal to list of logged food for the current calendar day upon filling necessary recipe information textboxes,
-type = Manual,
-init = Food adding interface is displayed with add custom meal button,
-input = Click add custom meal button,
-output = A dialog box is launched that lets the user fill in custom meal information. The meal is added to the food log list of the current calendar day,
+desc =  \textcolor{red}{Tests that searching for a recipe/meal is successful},
+type = \textcolor{red}{Manual, Functional, Dynamic},
+init = \textcolor{red}{User wants to search for recipe and Diet Recipe Search Screen is loaded, with appropriate textboxes (Name of Meal and Calories) and appropriate dropdowns (List of Diet Types and List of Food Restrictions and Preferences)},
+input = \textcolor{red}{Fill all textboxes and dropdowns (foodName = "Chicken", Calories = 1000, Diet Type = "high-protein", Food Restrictions and Preferences = "low-sugar")},
+output = \textcolor{red}{Should return a wide range of recipes and meals that satisfies all the conditions from the input},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
@@ -445,7 +403,7 @@ result = \textcolor{Green}{PASS}
 \testauto{
 name = {FR-WS-1},
 desc = Testing that the Workout section initializes with a preset list of exercises on the current calendar day,
-type = Manual,
+type = \textcolor{red}{\sout{Manual}} \textcolor{red}{Automatic, Functional, Dynamic},
 init = Workout section is initialized with a preset list of exercises of the current calendar day,
 input = An event that loads the workout section,
 output = A preset list of exercises is loaded for the current calendar day,
@@ -454,43 +412,46 @@ result = \textcolor{Green}{PASS}
 }
 \testauto{
 	name = {FR-WS-2},
-	desc = Testing that the Workout section has add exercise button,
-	type = Manual,
-	init = Workout section is displayed with add exercise button,
-	input = Click add exercise button,
-	output = A dialog box is launched that lets the user fill custom exercise information. The exercise is added to the exercise list of the current calendar day,
+	desc = \textcolor{red}{Verifies that a new workout can be added to database successfully},
+	type = \textcolor{red}{Automatic, Functional, Dynamic},
+	init = \textcolor{red}{Database for Workout Section
+    is empty and user (test@gmail.com) wants to add new workout, for the selected day (2022-10-25)},
+	input = \textcolor{red}{Fill in the required fields for adding a new workout in the
+        database (name = "Bicep Curl", weight = 50, sets =
+        10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com")},
+	output = \textcolor{red}{Input gets added to the database and should have the
+        following success message = ”Success in adding exercise data”},
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
+
 \testauto{
 name = {FR-WS-3},
-desc = Testing that the Workout section has delete exercise button,
-type = Manual,
-init = Each exercise in the workout section is displayed with a delete exercise button,
-input = Click delete exercise button,
-output = The exercise is deleted from the exercise list of the current calendar day,
+desc = \textcolor{red}{Tests that an existing workout can be updated to database successfully},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Database for Workout Section has an existing workout for user (test@gmail.com) with the following data (name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com") and user wants to edit sets and repetitions data},
+input = \textcolor{red}{ Fill in the fields for the user wants to update in the database (sets = 20, repetitions = 25, dateAdded = 2022-10-25 email = "test@gmail.com")},
+output = \textcolor{red}{Input gets updated to the database and should have the following success message = "Success in editing exercise data" and the updated workout data should look like this (name = "Bicep Curl", weight = 50, sets = 20, repetitions = 25, dateAdded = 2022-10-25, email = "test@gmail.com")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-WS-4},
-desc = Testing that exercises display an edit exercise button that launches the changeable exercise information when clicked,
-type = Manual,
-init = Each exercise in the workout section is displayed with an edit exercise button,
-input = click edit exercise button,
-output = A fillable dialog box is launched with information of the exercise. Once
-the edit exercise button is clicked the dialog box will close and update the exercise
-information in the list of exercises for the current calendar day,
+desc = \textcolor{red}{Tests that an existing workout can be deleted from database successfully},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Initial State: Database for Workout Section has an existing workout for user (test@gmail.com) with the following data (name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com") and user wants to delete this workout data},
+input = \textcolor{red}{ Fill in the email, date added and name fields for the user to delete workout data in the database (name = "Bicep Curl", dateAdded = 2022-10-25 email = "test@gmail.com" )},
+output =\textcolor{red}{ Selected workout data is deleted from the database and should have the following success message = "Success in deleting exercise data"},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-WS-5},
-desc = Testing that the Workout section prompts the user to add repetitions and sets of each exercise logged in the current calendar day,
-type = Manual,
-init = Workout section is displayed with list of exercises for current calendar day,
-input = An event that loads the workout section,
-output = If repetition and sets for exercises not logged then dialog box for exercise is launched and the missing repetition and set values are highlighted,
+desc =  \textcolor{red}{Tests that the Workout section must initialize with a list of workouts on the current calendar day},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Workout section is initialized with a list of workouts logged for the current calender day. Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: [((name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")]},
+input = \textcolor{red}{ An event that loads/gets the workout list for email = test@gmail.com and dateAdded = 2022-10-25},
+output = \textcolor{red}{ A list of workouts is loaded for the current calender day. For email = test@gmail.com and dateAdded = 2022-10-25, will return a successful message = ”Success in getting exercise list” and will return the following list [((name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
@@ -498,8 +459,8 @@ result = \textcolor{Green}{PASS}
 \subsection{Rest Section Page}
 \testauto{
 name = {FR-RS-1},
-desc = Testing that Rest section launches with sleep statistics of current calendar day,
-type = Manual,
+desc = \textcolor{red}{Tests that Rest section launches with sleep statistics of current calendar day},
+type = Manual\textcolor{red}{, Functional, Dynamic},
 init = Rest section is initialized with the sleep statistics of the current calendar day,
 input = An event that loads the rest section,
 output = Sleep statistics are loaded for the current calendar day,
@@ -508,11 +469,54 @@ result = \textcolor{Green}{PASS}
 }
 \testauto{
 name = {FR-RS-2},
-desc = Testing that user can alter inaccurate sleep data,
-type = Manual,
+desc = \textcolor{red}{Tests that user can alter inaccurate sleep data},
+type = Manual\textcolor{red}{, Functional, Dynamic},
 init = Rest section is initialized with the sleep statistics of the current calendar day,
 input = Alter sleep data,
 output = The sleep data is updated with user changes,
+pass = ,
+result = \textcolor{Green}{PASS}
+}
+\testauto{
+name = {FR-RS-3},
+desc = \textcolor{red}{Tests that a new sleep data can be added to database successfully},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Initial State: Database for Rest Section
+    is empty and user (test@gmail.com) wants to add new sleep data, for the selected day (2022-10-25)},
+input = \textcolor{red}{ Fill in the required fields for adding new sleep data in the
+        database (email: "test@gmail.com", sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: 2022-10-25)},
+output = \textcolor{red}{ Input gets added to the database and should have the
+        following success message = ”Success in adding sleep data”},
+pass = ,
+result = \textcolor{Green}{PASS}
+}
+\testauto{
+name = {FR-RS-4},
+desc =\textcolor{red}{Tests that an existing sleep data can be updated to database successfully},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init =\textcolor{red}{Initial State: Database for Rest Section has an existing sleep data for user (test@gmail.com) with the following data (email: "test@gmail.com", sleepHour: 12, bedHour: 10, sleepMinute: 5, bedMinute: 5, dateAdded: 2022-10-25) and user wants to edit sleep hour and sleep minute data},
+input = \textcolor{red}{ Fill in the fields for the user wants to update in the database ( sleepHour: 2, sleepMinute: 10, dateAdded = 2022-10-25 email = "test@gmail.com")},
+output = \textcolor{red}{ Input gets updated to the database and should have the following success message = "Success in editing sleep data" and the updated sleep data should look like this (email: "test@gmail.com", sleepHour: 2, bedHour: 10, sleepMinute: 10, bedMinute: 5, dateAdded: 2022-10-25)},
+pass = ,
+result = \textcolor{Green}{PASS}
+}
+\testauto{
+name = {FR-RS-5},
+desc =  \textcolor{red}{Tests that an existing sleep data can be deleted from database successfully},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Initial State: Database for Rest Section has an existing sleep data for user (test@gmail.com) with the following data (email: "test@gmail.com", sleepHour: 2, bedHour: 10, sleepMinute: 10, bedMinute: 5, dateAdded: 2022-10-25) and user wants to delete this sleep data},
+input = \textcolor{red}{ Fill in the email and date added fields for the user to delete sleep data in the database ( dateAdded = 2022-10-25 email = "test@gmail.com" )},
+output = \textcolor{red}{ Selected sleep data is deleted from the database and should have the following success message = "Success in deleting sleep data"},
+pass = ,
+result = \textcolor{Green}{PASS}
+}
+\testauto{
+name = {FR-RS-6},
+desc = \textcolor{red}{Tests that the Rest section must initialize with last saved sleep data on the current calendar day},
+type = \textcolor{red}{Automatic, Functional, Dynamic},
+init = \textcolor{red}{Rest section is initialized with last saved sleep data for the current calender day. Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: (email: "test@gmail.com", sleepHour: 2, bedHour: 10, sleepMinute: 10, bedMinute: 5, dateAdded: 2022-10-25)},
+input = \textcolor{red}{ An event that loads/gets the last saved sleep data for email = test@gmail.com and dateAdded = 2022-10-25},
+output = \textcolor{red}{ The last saved sleep data is loaded for the current calender day. For email = test@gmail.com and dateAdded = 2022-10-25, will return a successful message = ”Success in getting sleep data”},
 pass = ,
 result = \textcolor{Green}{PASS}
 }
@@ -676,6 +680,12 @@ result = \textcolor{Green}{PASS}
 	pass = ,
 	result = \textcolor{Green}{PASS}
 }
+
+\textcolor{red}{
+\subsection{Overview of Testers}
+NFS tests were conducted by Logan, Faiq, and Youssef
+}
+
 
 
 \section{Comparison to Existing Implementation}	
