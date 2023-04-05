@@ -14,6 +14,7 @@
 \usepackage{float}
 \usepackage{multirow}
 \usepackage{ulem}
+\usepackage{cancel}
 
 
 \title{System Requirements Specification\\\progname}
@@ -46,6 +47,7 @@
 		October 5th, 2022 & Hasan Kibria & Added Constraints and Context Diagram \\
 		October 5th, 2022 & Syed Bokhari & Added Dates of Completion and Traceability Matrix \\
 		October 5th, 2022 & Logan Brown & Added Activity Diagram\\
+		\textcolor{red}{April 4th, 2023} & \textcolor{red}{Syed Bokhari} & \textcolor{red}{Updated SRS REV1}\\
 		\bottomrule
 	\end{tabularx}
 \end{table}
@@ -116,7 +118,7 @@ Team 13 members building the REVITALIZE application along with Dr. Spencer Smith
 \subsection{Mandated Constraints}
 \subsubsection{MC 1}
 \begin{itemize}
-	\item Description: Total project monetary constraints must not exceed \$150. The estimated cost of launching REVITALIZE to the Google Play Store and App Store are \$25 and \$99 respectively.
+	\item Description: Total project monetary constraints must not exceed \textcolor{red}{\sout{\$750 }}{\textcolor{red}{ \$150. The estimated cost of launching REVITALIZE to the Google Play Store and Apple Store are \$25 and \$99 respectively.}}
 	\item Rationale: The project must be financially feasible as a no-profit, student-created piece of work
 \end{itemize}
 
@@ -207,7 +209,7 @@ Team 13 members building the REVITALIZE application along with Dr. Spencer Smith
 	\end{tabularx}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[h!]
 	\caption{Work Partitioning Summaries}
 	\centering
 	\begin{tabular}{|c|p{10cm}|}
@@ -230,8 +232,7 @@ Team 13 members building the REVITALIZE application along with Dr. Spencer Smith
 \end{table}
 
 
-
-
+\clearpage
 
 \section{Functional Requirements}
 \begin{enumerate}[{BE}1.] 
@@ -435,7 +436,7 @@ Team 13 members building the REVITALIZE application along with Dr. Spencer Smith
 \end{enumerate}
 \subsubsection{Privacy Requirements}
 \textcolor{red}{\sout{NOT AVAILABLE}}\newline{\color{red} N/A}
-\begin{enumerate}[{PR}1.] 
+\begin{enumerate}[{SE}3.] 
 	\item {\textcolor{red}{The application must secure user private data}} \\
 	{\textbf{Fit Criterion:} {\textcolor{red}{Developers will execute tests to ensure the user data is associated to the correct credentials.}}}
 \end{enumerate}
@@ -575,8 +576,39 @@ Ideas that are currently in the waiting room that shall be developed, given enou
 Possible ideas to make REVITALIZE accessible to all people include designing clear layouts, increasing font sizes, increasing text visibility, using large buttons and controls, and describing user interface elements. Another idea to prevent API failures is to run tests to monitor and track API performance from early development through production.
 
 
-\newpage
+\section{Reflection Appendix}
 
+\subsection{Knowledge and Skills Needed}
+
+\noindent Bill Nguyen: Skills that the team needs to acquire are end to end development, CI/CD, multiple ways of testing (integration, unit, acceptance tests etc...). This will be needed since project is end to end (front-end, back-end, database etc.), will be using CI/CD to deploy code changes, and will be testing project in multiple ways.\\
+
+\noindent Syed Bokhari: Skills relating to API integration and server communication are needed for the technical development of the application. This is needed because the project depends on the use of multiple APIs for the core functionality of its features. Knowledge of server communication is required due to the nature of application development as the dynamic application information requires constant feedback from the server. \\
+
+\noindent Youssef Dahab: The team will collectively need to acquire documentation skills to successfully complete this project. This includes learning how to write requirements (functional and non functional), how to create use case diagrams, class diagrams, activity diagrams, design documents, how to make a hazard analysis, V\&V plan and report.\\
+
+\noindent Mahmoud Anklis: The team will need to acquire skills pertaining to app development for Android. This will include setting up an emulator that the application can be run and tested on. This will also include setting up the most efficient IDE that will enable the team to develop smoothly.\\ 
+
+\noindent Logan Brown: The team will need to learn how to effectively communicate with stakeholders who do not necessarily understand technical aspects of software. More specifically, this includes knowing how to discern and understand what the client wants and effectively implementing it in the end product. Understanding and responding to stakeholder feedback is another important aspect that must be learned.\\
+
+\noindent Hasan Kibria: Skills that need to be acquired are development with mobile app frameworks and deployment of mobile applications.\\
+
+\subsection{How Knowledge and Skills Will Be Acquired}
+
+\noindent Bill Nguyen: Project will be end to end so will implement code in front-end, back-end etc. and will be integrating all components to make it an end to end project. Will use CI/CD in project to integrate and deploy code, so will add necessary steps in yaml file to make and update CI/CD process. Will research and implement unit, integration, acceptance tests etc. to learn more about multiple types of tests. \\
+
+\noindent Syed Bokhari: The knowledge relating to API integration will be acquired through reading API specific documentation and creating test API applications to test the correct functionality of each API in use. The server communication will be learned through research and development of the project.\\
+
+\noindent Youssef Dahab: An approach to acquire such knowledge is to attend 4G06 course lectures and tutorials, and ask questions to the professor and TAs whenever needed. Another approach is to look up 4G0G lecture notes or past notes from relevant courses such as SFWRENG 2AA4 or 3XA3 and to search or read online on how to properly and correctly document requirements, implementation, test plans, and design documents. I will mainly pursue the second approach as I do not often attend lectures.\\
+
+\noindent Mahmoud Anklis: Online research will play a pivotal role in acquiring the knowledge to develop an Android application. This may include videos, blogs, courses, and tutorials that cover topics from developing to setting up an emulator. The online IDE documentation will also be consulted for any IDE issues. App-Dev books may also be used as a resource.\\
+
+\noindent Logan Brown: Principles drawn from previous courses such as 3RA3, 3I03, as well as lectures in this course will be instrumental in making sure communication goes smoothly. Some trial and error will be required as communication skills are often acquired through experience. Previous experience such as members who have completed co-ops will aid the entire group\\ through teaching what they already know.\\
+
+\noindent Hasan Kibria: Developing/ deploying the codebase that uses a development mobile app framework and using Stack Overflow/ other online resources for ongoing guidance with regards to development as well as deploying.\\
+
+\newpage 
+\section{Appendix}
+\subsection{Traceability Matrices}
 \begin{table}[H]
 	\begin{center}
 		\caption{\textbf{Traceability Matrix for Non-Functional Requirements}}
@@ -691,7 +723,7 @@ Possible ideas to make REVITALIZE accessible to all people include designing cle
 		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 			\cline{3-12}
 			& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
-			& & FR22  & FR23 & FR24 & FR25 & FR26 & FR27 & FR28 & FR29 & FR30 & FR31 &\\ \cline{1-12}
+			& & FR22  & FR23 & FR24 & FR25 & FR26 & FR27 & FR28 &\textcolor{red}{\sout{FR29}}  &\textcolor{red}{\sout{FR30}} &\textcolor{red}{\sout{FR31}} &\\ \cline{1-12}
 			\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
 			\multicolumn{1}{|c| }{LF1} &X&X&X&X&X&X&X&X&X&X  \\ \cline{2-12}
 			\multicolumn{1}{|c| }{} 	                  &
@@ -745,27 +777,27 @@ Possible ideas to make REVITALIZE accessible to all people include designing cle
 		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 			\cline{3-8}
 			& & \multicolumn{6}{ c|}{Requirements} \\ \cline{3-8}
-			& & FR32  & FR33 & FR34 & FR35 & FR36 & F37\\ \cline{1-8}
+			& & \textcolor{red}{\sout{FR32}}  &\textcolor{red}{\sout{FR33}} &\textcolor{red}{\sout{FR34}} & \textcolor{red}{\sout{FR35}} &\textcolor{red}{\sout{FR36}} &\textcolor{red}{\sout{FR37}}\\ \cline{1-8}
 			\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{LF1} &X&X&X&X&X&X  \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{LF2} &X&X&X&X&X&X  \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{UH1} &X&X&X&X&X&X \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{UH2} &X&X&X&X&X&X \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| } {UH3} &X&X&X&X&X&X \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{UH4} &X&X&X&X&X&X \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{UH5} &X&X&X&X&X&X  \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{ |c| } {UH6} &X&X&X&X&X&X \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{ |c| } {PE1} &&&&&X& \\ \cline{2-8}
+			\multicolumn{1}{ |c| } {PE1} &&&&&\textcolor{red}{\sout{X}}& \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{ |c| }{PE2} &&&&X&X&X \\ \cline{2-8}
+			\multicolumn{1}{ |c| }{PE2} &&&&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}} \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
 			\multicolumn{1}{ |c| }{PE3} &&&&&& \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
@@ -773,7 +805,7 @@ Possible ideas to make REVITALIZE accessible to all people include designing cle
 			\multicolumn{1}{|c| }{}                        &
 			\multicolumn{1}{ |c| }{PE5} &&&&&& \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{ |c| }{OE1} &&&&&X&X \\ \cline{2-8}
+			\multicolumn{1}{ |c| }{OE1} &&&&&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}} \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
 			\multicolumn{1}{ |c| }{OE2} &&&&&& \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
@@ -787,43 +819,11 @@ Possible ideas to make REVITALIZE accessible to all people include designing cle
 			\multicolumn{1}{|c| }{}                        &
 			\multicolumn{1}{ |c| }{SE2} &&&&&& \\ \cline{2-8}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{ |c| }{CU1} &X&X&X&X&X&X \\ \cline{2-8}
+			\multicolumn{1}{|c| }{LF1} &\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}&\textcolor{red}{\sout{X}}  \\ \cline{2-8}
 			
 		\end{tabularx}
 	\end{center}
 \end{table}
-
-\section{Reflection Appendix}
-
-\subsection{Knowledge and Skills Needed}
-
-\noindent Bill Nguyen: Skills that the team needs to acquire are end to end development, CI/CD, multiple ways of testing (integration, unit, acceptance tests etc...). This will be needed since project is end to end (front-end, back-end, database etc.), will be using CI/CD to deploy code changes, and will be testing project in multiple ways.\\
-
-\noindent Syed Bokhari: Skills relating to API integration and server communication are needed for the technical development of the application. This is needed because the project depends on the use of multiple APIs for the core functionality of its features. Knowledge of server communication is required due to the nature of application development as the dynamic application information requires constant feedback from the server. \\
-
-\noindent Youssef Dahab: The team will collectively need to acquire documentation skills to successfully complete this project. This includes learning how to write requirements (functional and non functional), how to create use case diagrams, class diagrams, activity diagrams, design documents, how to make a hazard analysis, V\&V plan and report.\\
-
-\noindent Mahmoud Anklis: The team will need to acquire skills pertaining to app development for Android. This will include setting up an emulator that the application can be run and tested on. This will also include setting up the most efficient IDE that will enable the team to develop smoothly.\\ 
-
-\noindent Logan Brown: The team will need to learn how to effectively communicate with stakeholders who do not necessarily understand technical aspects of software. More specifically, this includes knowing how to discern and understand what the client wants and effectively implementing it in the end product. Understanding and responding to stakeholder feedback is another important aspect that must be learned.\\
-
-\noindent Hasan Kibria: Skills that need to be acquired are development with mobile app frameworks and deployment of mobile applications.\\
-
-\subsection{How Knowledge and Skills Will Be Acquired}
-
-\noindent Bill Nguyen: Project will be end to end so will implement code in front-end, back-end etc. and will be integrating all components to make it an end to end project. Will use CI/CD in project to integrate and deploy code, so will add necessary steps in yaml file to make and update CI/CD process. Will research and implement unit, integration, acceptance tests etc. to learn more about multiple types of tests. \\
-
-\noindent Syed Bokhari: The knowledge relating to API integration will be acquired through reading API specific documentation and creating test API applications to test the correct functionality of each API in use. The server communication will be learned through research and development of the project.\\
-
-\noindent Youssef Dahab: An approach to acquire such knowledge is to attend 4G06 course lectures and tutorials, and ask questions to the professor and TAs whenever needed. Another approach is to look up 4G0G lecture notes or past notes from relevant courses such as SFWRENG 2AA4 or 3XA3 and to search or read online on how to properly and correctly document requirements, implementation, test plans, and design documents. I will mainly pursue the second approach as I do not often attend lectures.\\
-
-\noindent Mahmoud Anklis: Online research will play a pivotal role in acquiring the knowledge to develop an Android application. This may include videos, blogs, courses, and tutorials that cover topics from developing to setting up an emulator. The online IDE documentation will also be consulted for any IDE issues. App-Dev books may also be used as a resource.\\
-
-\noindent Logan Brown: Principles drawn from previous courses such as 3RA3, 3I03, as well as lectures in this course will be instrumental in making sure communication goes smoothly. Some trial and error will be required as communication skills are often acquired through experience. Previous experience such as members who have completed co-ops will aid the entire group\\ through teaching what they already know.\\
-
-\noindent Hasan Kibria: Developing/ deploying the codebase that uses a development mobile app framework and using Stack Overflow/ other online resources for ongoing guidance with regards to development as well as deploying.\\
-
-\newpage 
 
 \section{References}
 [1] \href{https://www.appypie.com/faqs/how-much-does-it-cost-to-publish-an-app-on-the-app-store}{\color{blue}How much does it cost to publish an app on the app store?}
