@@ -8,70 +8,74 @@ import { radToMinutes } from './Sleep/Constants';
 
 const RecipeListScreen=({navigation})=>{
 
-    const [data, setData] = useState(null);
+// Using React's useState hook to manage the state of the data fetched from the API.
+const [data, setData] = useState(null);
 
-    const route = useRoute()
+// Using the React Navigation hook "useRoute" to get the route object from the navigation props.
+const route = useRoute()
 
+// Using React's useEffect hook to fetch data from the API when the component is mounted and the criteria are updated.
+useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Building the URL based on the search criteria sent via the route object.
+        let url = 'http://192.168.2.43:8000/recipefilter?';
+        if (route.params.keyword) {
+          url += `keyWord=${route.params.keyword}&`;
+        }
+        if (route.params.health && route.params.health.length > 0) {
+          url += `health=${route.params.health.map(h => h.name).join(';')}&`;
+        }
+        if (route.params.diet && route.params.diet.length > 0) {
+          url += `diets=${route.params.diet.map(d => d.name).join(';')}&`;
+        }
+        if (route.params.calories) {
+          url += `calories=${route.params.calories}`;
+        }
+        console.log(url);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            let url = 'http://192.168.2.43:8000/recipefilter?';
-            if (route.params.keyword) {
-              url += `keyWord=${route.params.keyword}&`;
-            }
-            if (route.params.health && route.params.health.length > 0) {
-              url += `health=${route.params.health.map(h => h.name).join(';')}&`;
-            }
-            if (route.params.diet && route.params.diet.length > 0) {
-              url += `diets=${route.params.diet.map(d => d.name).join(';')}&`;
-            }
-            if (route.params.calories) {
-              url += `calories=${route.params.calories}`;
-            }
-            console.log(url);
-    
-            const response = await fetch(url, {
-                method: 'GET',
-              });
-            const json = await response.json();
-            setData(json);
-             console.log(JSON.stringify(json, null, "  "));
-          } catch (error) {
-            console.error(error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-
-    const oneRecipe = ({item}) => (
-        <View style={styles.item}>
-                <View style={styles.picContainer}>
-                <TouchableOpacity onPress={() => goToDetailScreen(item)}>
-                <Image style={styles.pic} source={{uri: item.image}}
-            ></Image>
-            </TouchableOpacity>
-                </View>
-            <Text style={styles.name}>{item.label}</Text>
-        </View>
-        
-    )
-        // console.log (route.params.keyword);
-        // console.log (route.params.calories);
-        // console.log(route.params.diet);
-        // console.log(route.params.health);
-
-    const goToDetailScreen = (recipe) =>{
-        navigation.navigate('Recipe Detail Screen', {
-            recipe,
-        });
-    }
-
-    itemSeparator = () => {
-        return <View style={styles.separator}></View>
-
+        // Fetching data from the API based on the built URL.
+        const response = await fetch(url, {
+            method: 'GET',
+          });
+        const json = await response.json();
+        // Setting the fetched data to the state.
+        setData(json);
+         console.log(JSON.stringify(json, null, "  "));
+      } catch (error) {
+        console.error(error);
+      }
     };
+
+    fetchData();
+  }, []);
+
+// A function that returns a recipe item.
+const oneRecipe = ({item}) => (
+    <View style={styles.item}>
+            <View style={styles.picContainer}>
+            <TouchableOpacity onPress={() => goToDetailScreen(item)}>
+            <Image style={styles.pic} source={{uri: item.image}}
+        ></Image>
+        </TouchableOpacity>
+            </View>
+        <Text style={styles.name}>{item.label}</Text>
+    </View>
+    
+)
+
+// A function that navigates to the recipe detail screen and passes the selected recipe.
+const goToDetailScreen = (recipe) =>{
+    navigation.navigate('Recipe Detail Screen', {
+        recipe,
+    });
+}
+
+// A function that returns a separator between recipe items.
+itemSeparator = () => {
+    return <View style={styles.separator}></View>
+
+};
 
     //console.log(JSON.stringify(finalRecipeList, null, "  "));
 

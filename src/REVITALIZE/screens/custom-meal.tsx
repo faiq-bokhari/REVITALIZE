@@ -7,75 +7,64 @@ import { EmailContext } from './Email-component';
 
 
 const CustomMealScreen=({navigation})=>{
-    const route = useRoute()
-    const [data, setData] = useState([]);
-    const [mealName, changeTextName] = useState(route.params?.editfoodName || '');
-    const [mealCalories, changeTextCalories] = useState(route.params?.editcalories.toString() || '');
-    const [mealProtein, changeTextProtein] = useState(route.params?.editprotein.toString() || '');
-    const [mealCarbs, changeTextCarbs] = useState(route.params?.editcarbs.toString() || '');
-    const [mealFat, changeTextFat] = useState(route.params?.editfats.toString() || '');
-    const [isAlreadyMeal, setIsAlreadyMeal] = useState(false);
-    const { date, addOneDay, subtractOneDay } = useContext(DateContext);
-    const { email } = useContext(EmailContext);
-    
+// Import required dependencies
+const route = useRoute()
+const [data, setData] = useState([]);
+const [mealName, changeTextName] = useState(route.params?.editfoodName || '');
+const [mealCalories, changeTextCalories] = useState(route.params?.editcalories.toString() || '');
+const [mealProtein, changeTextProtein] = useState(route.params?.editprotein.toString() || '');
+const [mealCarbs, changeTextCarbs] = useState(route.params?.editcarbs.toString() || '');
+const [mealFat, changeTextFat] = useState(route.params?.editfats.toString() || '');
+const [isAlreadyMeal, setIsAlreadyMeal] = useState(false);
+const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+const { email } = useContext(EmailContext);
 
-    // if (route.params.foodName.length > 0) {
-    //   changeTextName = route.params.foodName;
-    // }
-    // if (route.params.calories.length > 0) {
-    //   changeTextName = route.params.foodName;
-    // }
-    // if (route.params.protein.length > 0) {
-    //   changeTextName = route.params.foodName;
-    // }
-    // if (route.params.carbs.length > 0) {
-    //   url += `calories=${route.params.calories}`;
-    // }
-    // if (route.params.fats.length > 0) {
-    //   url += `calories=${route.params.calories}`;
-    // }
+// Function that is called when the "Add Meal" button is clicked
+const AddMealButtonClick = async () => {
+  try {
+    // Construct the URL for the API request
+    let url_add_meal = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
+    // Add meal name, calories, protein, carbs, and fat to the URL query parameters, if available
+    if (mealName.length > 0) {
+      url_add_meal += `foodName=${mealName}&`;
+    }
+    if (mealCalories.length > 0) {
+      url_add_meal += `calories=${mealCalories}&`;
+    }
+    if (mealProtein.length > 0) {
+      url_add_meal += `protein=${mealProtein}&`;
+    }
+    if (mealCarbs.length > 0) {
+      url_add_meal += `carbs=${mealCarbs}&`;
+    }
+    if (mealFat.length > 0) {
+      url_add_meal += `fats=${mealFat}&`;
+    }
+    // If the current meal is being edited, make a PATCH request to the API
+    if(route.params?.editcurrentmeal && route.params?.editcurrentmeal == true){
+      console.log("EDIT MEAL");
+      const response = await fetch(url_add_meal, {
+        method: 'PATCH',
+      });
+      const responseJson = await response.json();
+      console.log(responseJson);
+    }
+    // Otherwise, make a POST request to the API to add a new meal
+    else{
+      console.log("NEW MEAL");
+      const response = await fetch(url_add_meal, {
+        method: 'POST',
+      });
+      const responseJson = await response.json();
+      console.log(responseJson);
+    }
+  } catch (error) {
+    console.error(error);
+  }
 
-    const AddMealButtonClick = async () => {
-      try {
-          let url_add_meal = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
-          if (mealName.length > 0) {
-            url_add_meal += `foodName=${mealName}&`;
-          }
-          if (mealCalories.length > 0) {
-            url_add_meal += `calories=${mealCalories}&`;
-          }
-          if (mealProtein.length > 0) {
-            url_add_meal += `protein=${mealProtein}&`;
-          }
-          if (mealCarbs.length > 0) {
-            url_add_meal += `carbs=${mealCarbs}&`;
-          }
-          if (mealFat.length > 0) {
-            url_add_meal += `fats=${mealFat}&`;
-          }
-          if(route.params?.editcurrentmeal && route.params?.editcurrentmeal == true){
-            console.log("EDIT MEAL");
-            const response = await fetch(url_add_meal, {
-              method: 'PATCH',
-            });
-            const responseJson = await response.json();
-            console.log(responseJson);
-          }
-          else{
-            console.log("NEW MEAL");
-            const response = await fetch(url_add_meal, {
-              method: 'POST',
-              
-            });
-            const responseJson = await response.json();
-            console.log(responseJson);
-          }
-        } catch (error) {
-          console.error(error);
-        }
-
-        navigation.navigate('Diet Logs');
-      };
+  // Navigate to the "Diet Logs" screen after the API request is completed
+  navigation.navigate('Diet Logs');
+};
 
     return (
         <View style={globalStyles.container}>

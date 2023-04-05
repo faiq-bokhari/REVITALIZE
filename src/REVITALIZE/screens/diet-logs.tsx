@@ -8,128 +8,137 @@ import { DateContext } from './Date-component';
 import { EmailContext } from './Email-component';
 
 const DietScreen=({navigation})=>{
-    // const current = new Date();
-    // const [dateString, setDateString] = useState(current.toDateString());
-    // const [date] = useState(current);
-    const isFocused = useIsFocused();
-    const [data, setData] = useState([]);
+// Import hooks and context from external modules
+const isFocused = useIsFocused();
+const [data, setData] = useState([]);
+const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+const { email } = useContext(EmailContext);
 
-    const { date, addOneDay, subtractOneDay } = useContext(DateContext);
-    const { email } = useContext(EmailContext);
+// Call getDietLogData when the component mounts and when the date changes
+useEffect(() => {
+  getDietLogData(date);
+}, [date]);
 
-    
+// Function to add one day to the current date
+function addDate() {
+  addOneDay();
+}
 
-    
-    useEffect(() => {
-      getDietLogData(date);
-    }, [date]);
-    
-    function addDate() {
-      addOneDay();
-    }
-    
-    function subtractDate() {
-      subtractOneDay();
-    }
+// Function to subtract one day from the current date
+function subtractDate() {
+  subtractOneDay();
+}
 
-    function getDietLogData(currentDate = date) {
-        const fetchData = async () => {
-            try {
-              let url = 'http://192.168.2.43:8000/foodlog/' + email + '/';
-              url += currentDate.toISOString().split("T")[0];
-              console.log("DATEEEEEEEEEEEEEEEEEEEEEEEE")
-              console.log(currentDate.toISOString().split("T")[0]);
-      
-              const response = await fetch(url, {
-                  method: 'GET',
-                });
-              const json = await response.json();
-              setData(json);
-               console.log(JSON.stringify(json, null, "  "));
-            } catch (error) {
-              console.error(error);
-            }
-          };
-      
-          fetchData();
-    }
-    useEffect(() => {
-        getDietLogData();
- 
-      }, []);
-
-      useEffect(() => {
-        getDietLogData();
-      },[isFocused]);
-      
-      
-
-    function EditButtonClick(mealInfo, foodName = '', protein = '', calories = '', carbs = '', fats = '') {
-        console.log("INFO BELOWWWWWWW");
-        console.log(mealInfo);
-        if (mealInfo.foodName){
-            foodName = mealInfo.foodName;
-            console.log(mealInfo.foodName);
+// Function to fetch diet log data for a given date
+function getDietLogData(currentDate = date) {
+    const fetchData = async () => {
+        try {
+          // Construct the API URL based on the current date and user email
+          let url = 'http://192.168.2.43:8000/foodlog/' + email + '/';
+          url += currentDate.toISOString().split("T")[0];
+          console.log("DATEEEEEEEEEEEEEEEEEEEEEEEE")
+          console.log(currentDate.toISOString().split("T")[0]);
+  
+          // Fetch the diet log data from the API and update the component state
+          const response = await fetch(url, {
+              method: 'GET',
+            });
+          const json = await response.json();
+          setData(json);
+           console.log(JSON.stringify(json, null, "  "));
+        } catch (error) {
+          console.error(error);
         }
-        if (mealInfo.protein){
-            protein = mealInfo.protein;
-            console.log(mealInfo.protein);
+      };
 
-        }
-        if (mealInfo.calories){
-            calories = mealInfo.calories;
-            console.log(mealInfo.calories);
-        }
-        if (mealInfo.carbs){
-            carbs = mealInfo.carbs;
-            console.log(mealInfo.carbs);
-        }
-        if (mealInfo.fats){
-            fats = mealInfo.fats;
-            console.log(mealInfo.fats);
-        }
+      fetchData();
+}
 
+// Call getDietLogData when the component mounts and when the screen comes into focus
+useEffect(() => {
+    getDietLogData();
+}, []);
 
-        navigation.navigate('Custom Meal Screen', {
-            editfoodName: foodName,
-            editcalories: calories,
-            editprotein: protein,
-            editcarbs: carbs,
-            editfats: fats,
-            editcurrentmeal: true,
-        });
+useEffect(() => {
+    getDietLogData();
+},[isFocused]);
       
+      
+
+// This function handles the button click event for editing a meal
+function EditButtonClick(mealInfo, foodName = '', protein = '', calories = '', carbs = '', fats = '') {
+  console.log("INFO BELOWWWWWWW");
+  console.log(mealInfo);
+
+  // Check which meal properties have been passed in and update the corresponding variables
+  if (mealInfo.foodName){
+      foodName = mealInfo.foodName;
+      console.log(mealInfo.foodName);
+  }
+  if (mealInfo.protein){
+      protein = mealInfo.protein;
+      console.log(mealInfo.protein);
+  }
+  if (mealInfo.calories){
+      calories = mealInfo.calories;
+      console.log(mealInfo.calories);
+  }
+  if (mealInfo.carbs){
+      carbs = mealInfo.carbs;
+      console.log(mealInfo.carbs);
+  }
+  if (mealInfo.fats){
+      fats = mealInfo.fats;
+      console.log(mealInfo.fats);
   }
 
-const DeleteButtonClick = async (item_name) => {
+  // Navigate to the 'Custom Meal Screen' and pass in the edited meal information
+  navigation.navigate('Custom Meal Screen', {
+      editfoodName: foodName,
+      editcalories: calories,
+      editprotein: protein,
+      editcarbs: carbs,
+      editfats: fats,
+      editcurrentmeal: true,
+  });
+}
+
+  const DeleteButtonClick = async (item_name) => {
     try {
-        let url_delete = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?foodName=' + item_name;
-        console.log(url_delete);
-        const response = await fetch(url_delete, {
-          method: 'DELETE',
+      // Construct the URL for deleting the item
+      let url_delete = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?foodName=' + item_name;
+      console.log(url_delete);
+      // Send a DELETE request to the server
+      const response = await fetch(url_delete, {
+        method: 'DELETE',
+      });
+      // Parse the response from the server
+      const responseJson = await response.json();
+      console.log(responseJson);
+      try {
+        // Construct the URL for retrieving the updated list of items
+        let url = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0];
+        
+        // Send a GET request to the server to retrieve the updated list of items
+        const response = await fetch(url, {
+            method: 'GET',
         });
-        const responseJson = await response.json();
-        console.log(responseJson);
-        try {
-            let url = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0];
-    
-            const response = await fetch(url, {
-                method: 'GET',
-              });
-            const json = await response.json();
-            setData(json);
-             console.log(JSON.stringify(json, null, "  "));
-          } catch (error) {
-            console.error(error);
-          }
+        // Parse the response from the server
+        const json = await response.json();
+        // Update the state with the updated list of items
+        setData(json);
+        console.log(JSON.stringify(json, null, "  "));
       } catch (error) {
         console.error(error);
       }
-    };
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-  itemSeparator = () => {
-    return <View style={globalStyles.separator}></View>
-
+// This function returns a separator component for use in rendering the list of items
+itemSeparator = () => {
+  return <View style={globalStyles.separator}></View>
 };
   
     

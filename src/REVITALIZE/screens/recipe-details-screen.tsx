@@ -8,51 +8,66 @@ import { EmailContext } from './Email-component';
 
 
 const RecipeDetailScreen=({navigation})=>{
-    const route = useRoute()
-    const { date, addOneDay, subtractOneDay } = useContext(DateContext);
-    const { email } = useContext(EmailContext);
+  // Import the useRoute hook and get the date, addOneDay, and subtractOneDay from the DateContext
+  const route = useRoute();
+  const { date, addOneDay, subtractOneDay } = useContext(DateContext);
 
-    console.log(route.params.recipe.ingredients);
+  // Get the email from the EmailContext
+  const { email } = useContext(EmailContext);
 
-    const oneRecipe = ({item}) => (
-      <View style={styles.item}>
-              <View style={styles.picContainer}>
-              <Image style={styles.pic} source={{uri: item.image} }
-          ></Image>
-              </View>
-          <Text style={styles.name}>{item.text}</Text>
+  // Log the ingredients of the recipe to the console
+  console.log(route.params.recipe.ingredients);
+
+  // Define a functional component oneRecipe that renders a view containing an image and text
+  const oneRecipe = ({ item }) => (
+    <View style={styles.item}>
+      <View style={styles.picContainer}>
+        <Image style={styles.pic} source={{ uri: item.image }}></Image>
       </View>
-      
-  )
+      <Text style={styles.name}>{item.text}</Text>
+    </View>
+  );
 
+  // Define a function that sends a POST request to add a meal to the food log
   const AddMealButtonClick = async () => {
     try {
-        let url_add_meal = 'http://192.168.2.43:8000/foodlog/' + email + '/' + date.toISOString().split("T")[0] + '?';
+      // Construct the URL to send the POST request
+      let url_add_meal =
+        "http://192.168.2.43:8000/foodlog/" +
+        email +
+        "/" +
+        date.toISOString().split("T")[0] +
+        "?";
+      url_add_meal += `foodName=${route.params.recipe.label}&`;
+      url_add_meal += `calories=${route.params.recipe.calories}&`;
+      url_add_meal += `protein=${route.params.recipe.protein}&`;
+      url_add_meal += `carbs=${route.params.recipe.carbs}&`;
+      url_add_meal += `fats=${route.params.recipe.fat}&`;
 
-          url_add_meal += `foodName=${route.params.recipe.label}&`;
-          url_add_meal += `calories=${route.params.recipe.calories}&`;
-          url_add_meal += `protein=${route.params.recipe.protein}&`;
-          url_add_meal += `carbs=${route.params.recipe.carbs}&`;
-          url_add_meal += `fats=${route.params.recipe.fat}&`;
-          
-          console.log("NEW MEAL");
-          const response = await fetch(url_add_meal, {
-            method: 'POST',
-            
-          });
-          const responseJson = await response.json();
-          console.log(responseJson);
-      } catch (error) {
-        console.error(error);
-      }
+      // Log "NEW MEAL"
+      console.log("NEW MEAL");
 
-      navigation.navigate('Diet Logs');
-    };
+      // Send the POST request with the constructed URL and method
+      const response = await fetch(url_add_meal, {
+        method: "POST",
+      });
 
+      // Get the response data in JSON format
+      const responseJson = await response.json();
+      console.log(responseJson);
+    } catch (error) {
+      // Log any errors that occur
+      console.error(error);
+    }
+
+    // Navigate to the 'Diet Logs' screen
+    navigation.navigate("Diet Logs");
+  };
+
+  // Define a function that renders a separator view between items
   itemSeparator = () => {
-    return <View style={styles.separator}></View>
-
-};
+    return <View style={styles.separator}></View>;
+  };
 
     return (
         <View style={globalStyles.container}>

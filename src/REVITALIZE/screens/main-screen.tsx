@@ -7,39 +7,19 @@ import { RotateInUpLeft } from 'react-native-reanimated';
 import { useRoute } from '@react-navigation/native';
 import { DateContext } from './Date-component';
 
-const MainScreen=({navigation})=>{
+const MainScreen=({navigation})=>{ // main component that will be rendered when the MainScreen is called
     const current = new Date();
-    const [dateString, setDateString] = useState(current.toDateString());
+    const [dateString, setDateString] = useState(current.toDateString()); // create a state for dateString and set it to the current date
     // const [date, setDatea] = useState(current);
-    const { date, addOneDay, subtractOneDay } = useContext(DateContext);
+    const { date, addOneDay, subtractOneDay } = useContext(DateContext); // retrieve the date, addOneDay and subtractOneDay functions from the context
 
-    const route = useRoute();
-    
-    // function addDate() {
-    //     console.log(date);
-    //     date.setDate(date.getDate() + 1);
-    //     setDateString(date.toDateString());
-    // }
+    const route = useRoute(); // retrieve the current route
 
-    // function subtractDate() {
-    //     date.setDate(date.getDate() - 1);
-    //     setDateString(date.toDateString());
-    // }
-
-    const goToCalendarScreen = () =>{
+    const goToCalendarScreen = () =>{ // function to navigate to the calendar screen
         navigation.navigate('Calendar Screen');
     }
 
-    // useEffect(() => {
-    //     if(route.params){
-    //         setDateString(a => route.params.day.dateString);
-    //         setDatea(b => new Date(route.params.day.dateString));
-    //         console.log("_______________________")
-    //         console.log(dateString);
-    //         console.log(route.params.day.dateString);
-    //     }
-    // },[route.params]);
-    
+   
     return (
         <View>
             <View style={globalStyles.date_container}>
