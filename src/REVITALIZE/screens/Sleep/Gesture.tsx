@@ -1,3 +1,4 @@
+// Import necessary libraries
 import React from "react";
 import { StyleSheet } from "react-native";
 import {
@@ -10,6 +11,7 @@ import { canvas2Polar, Vector } from "react-native-redash";
 import { CENTER, containedInSquare, normalize, STROKE } from "./Constants";
 import CursorOverlay from "./CursorOverlay";
 
+// Define the regions of the gesture
 enum Region {
   START,
   END,
@@ -24,11 +26,15 @@ interface GestureProps {
 }
 
 const Gesture = ({ start, end, startPos, endPos }: GestureProps) => {
+
+  // Define the callback function that will be called when a gesture event happens
   const onGestureEvent = useAnimatedGestureHandler<
     PanGestureHandlerGestureEvent,
     { offset: number; region: Region }
   >({
     onStart: ({ x, y }, ctx) => {
+
+      // Determine the region of the gesture
       if (containedInSquare({ x, y }, startPos.value, STROKE)) {
         ctx.region = Region.START;
         ctx.offset = start.value;
@@ -42,6 +48,8 @@ const Gesture = ({ start, end, startPos, endPos }: GestureProps) => {
       }
     },
     onActive: ({ x, y }, ctx) => {
+
+      // Determine the change in angle and update the corresponding shared value
       const { theta } = canvas2Polar({ x, y }, CENTER);
       const delta = theta - ctx.offset;
       if (ctx.region === Region.START || ctx.region === Region.MAIN) {
@@ -53,6 +61,8 @@ const Gesture = ({ start, end, startPos, endPos }: GestureProps) => {
       ctx.offset = theta;
     },
   });
+
+  // Render the PanGestureHandler and the CursorOverlays
   return (
     <PanGestureHandler onGestureEvent={onGestureEvent}>
       <Animated.View style={StyleSheet.absoluteFill}>
@@ -63,4 +73,5 @@ const Gesture = ({ start, end, startPos, endPos }: GestureProps) => {
   );
 };
 
+// Export the Gesture component as the default export
 export default Gesture;
