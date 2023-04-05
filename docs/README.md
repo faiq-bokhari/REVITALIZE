@@ -20,9 +20,11 @@ information.  They are just intended to be a starting point.>
 
 The relevant files for REVITALIZE are:
 
-ProblemStatement.pdf : a document that provides context for the problem, characterizes its inputs and outputs, and identifies stakeholders. //
+ProblemStatement.pdf : a document that provides context for the problem, characterizes its inputs and outputs, and identifies stakeholders.
+  
 DevelopmentPlan.pdf : a document that outlines the team roles and responsibilities, workflow plans, and deadline schedules for the development of REVITALIZE.
 SRS.pdf : a document that describes the detailed requirements for REVITALIZE, including functional and non-functional requirements and other relevant details.
+  
 HazardAnalysis.pdf : a document that identifies hazards associated with REVITALIZE and provides strategies to mitigate each hazard.
 VnVPlan.pdf : a document that provides the testing plan that REVITALIZE will undergo during its development period.
 MG.pdf : a document that communicates the modular decomposition of REVITALIZE.
