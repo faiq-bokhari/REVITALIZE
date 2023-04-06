@@ -8,6 +8,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+
+\usepackage{ulem}
 \hypersetup{
 colorlinks,
 citecolor=blue,
@@ -76,9 +78,9 @@ This section records information for easy reference.
 	MG & Module Guide \\
 	OS & Operating System \\
 	R & Requirement\\
+	\progname & Explanation of program name\\
 	SC & Scientific Computing \\
 	SRS & Software Requirements Specification\\
-	\progname & Explanation of program name\\
 	UC & Unlikely Change \\
 	\bottomrule
 \end{tabular}\\
@@ -100,7 +102,7 @@ This section records information for easy reference.
 \section{Introduction}
 The following document details the System Design for
 the REVITALIZE app. The REVITALIZE app is an all-in-one health and wellness app, comprised of 1 main 
-section and 3 major subsections. The main section is a calendar which organizes and documents the contents of the 3 subsections. 
+section and 3 {\textcolor{red}{\sout{major}}} subsections. The main section is a calendar which organizes and documents the contents of the 3 subsections. 
 The 3 subsections are the diet section, workout section, and sleep section.
 
 The full documentation and implementation can be
@@ -139,8 +141,8 @@ In the event that undesired events take place, the REVITALIZE application will h
 \end{figure}
 \subsection{Connection Between Requirements and Design} \label{SecConnection}
 
-The system design of REVITALIZE is founded upon the requirements previously set in the SRS. It is designed to cater for every single requirement attributed to this project. Hence, the design is decomposed into modular pieces of functionality which each help serve the fulfillment of aforementioned requirements. Specifications on how each module relates to (a) requirement(s) can be found in Section 8 of the MG document.\\
-The functional outlook of each module can be understood by its name and, if needed, its access programs detailed in the MIS. After realizing the functionality of each module, the connections outlined in the Traceability Matrix in Section 8 of the MG document should be clear and easily comprehended.
+The system design of REVITALIZE is founded upon the requirements previously set in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/SRS/SRS.pdf}{\textbf{SRS}} {\textcolor{red}{\sout{SRS}}}. It is designed to cater for every single requirement attributed to this project. Hence, the design is decomposed into modular pieces of functionality which each help serve the fulfillment of aforementioned requirements. Specifications on how each module relates to (a) requirement(s) can be found in Section 8 of the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftArchitecture/MG.pdf}{\textbf{MG}} {\textcolor{red}{\sout{MG}}} document.\\
+The functional outlook of each module can be understood by its name and, if needed, its access programs detailed in the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{\textbf{MIS}} {\textcolor{red}{\sout{MIS}}}. After realizing the functionality of each module, the connections outlined in the Traceability Matrix in Section 8 of the \href{https://github.com/BillNguyen1999/REVITALIZE/blob/main/docs/Design/SoftArchitecture/MG.pdf}{\textbf{MG}} {\textcolor{red}{\sout{MG}}} document should be clear and easily comprehended.
 
 \section{System Variables}
 
@@ -152,48 +154,58 @@ N/A
 N/A
 \subsection{Constants Variables}
 N/A
+\newpage
 \section{User Interfaces}
-
+\textcolor{red}{\subsection{Authentication}}
 \begin{figure}[H]%
 	\centering
 	\subfloat[\centering Start]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p1.png} }}%
-	\subfloat[\centering Signup]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p2.png} }}%
+	\subfloat[\centering Sign up]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p2.png} }}%
 	\subfloat[\centering Login]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p3.png} }}%
 	\label{fig:example}%
 \end{figure}
-
+\newpage
+\textcolor{red}{\subsection{Main Page}}
 \begin{figure}[H]%
 	\centering
 	\subfloat[\centering Main]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p4.png} }}%
+	\label{fig:example}%
+\end{figure}
+\newpage
+\textcolor{red}{\subsection{Diet}}
+\begin{figure}[H]%
+	\centering
 	\subfloat[\centering Diet Main]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p5.png} }}%
 	\subfloat[\centering Diet Search/Add Custom Meal]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p6.png} }}%
+	\subfloat[\centering Diet Add Custom Meal]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p7.png} }}%
 	\label{fig:example}%
 \end{figure}
 
 \begin{figure}[H]%
 	\centering
-	\subfloat[\centering Diet Add Custom Meal]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p7.png} }}%
 	\subfloat[\centering Diet Recipe Search]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p8.png} }}%
 	\subfloat[\centering Diet Recipe List]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p9.png} }}%
+	\subfloat[\centering Diet Recipe Info]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p10.png} }}%
 	\label{fig:example}%
 \end{figure}
-
+\newpage
+\textcolor{red}{\subsection{Exercise}}
 \begin{figure}[H]%
 	\centering
-	\subfloat[\centering Diet Recipe Info]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p10.png} }}%
 	\subfloat[\centering Exercise Main]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p11.png} }}%
 	\subfloat[\centering Exercise List]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p12.png} }}%
+	\subfloat[\centering Exercise Details]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p13.png} }}%
 	\label{fig:example}%
 \end{figure}
-
+\newpage
+\textcolor{red}{\subsection{Sleep}}
 \begin{figure}[H]%
 	\centering
-	\subfloat[\centering Exercuse Details]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p13.png} }}%
 	\subfloat[\centering Sleep]{{\includegraphics[width=5cm]{revitalize_figma_sketches/p14.png} }}%
 	\label{fig:example}%
 \end{figure}
 
-
+\newpage
 \section{Design of Hardware}
 
 N/A
