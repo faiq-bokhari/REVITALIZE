@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Component that displays sleep section components
+*/
+
 // Import necessary libraries
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";

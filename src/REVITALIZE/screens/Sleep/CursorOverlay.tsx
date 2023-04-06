@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Cursor overlay interface
+*/
+
 // Import necessary libraries
 import React, { ComponentProps } from "react";
 import Animated, { useAnimatedStyle } from "react-native-reanimated";

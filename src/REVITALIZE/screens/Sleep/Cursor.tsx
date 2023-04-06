@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Cursor UI
+*/
+
 // Import necessary libraries
 import React from "react";
 import Animated, { useAnimatedProps } from "react-native-reanimated";

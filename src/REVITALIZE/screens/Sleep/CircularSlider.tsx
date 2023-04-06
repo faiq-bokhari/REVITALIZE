@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Circular slider UI
+*/
+
 // Import necessary packages and components
 import React from "react";
 import { View } from "react-native";

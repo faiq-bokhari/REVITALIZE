@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: slider gesture touch component
+*/
+
 // Import necessary libraries
 import React from "react";
 import { StyleSheet } from "react-native";

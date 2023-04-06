@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Define constants used in this module
+*/
+
 // Importing necessary modules
 import { Dimensions } from "react-native";
 import { Vector } from "react-native-redash";
