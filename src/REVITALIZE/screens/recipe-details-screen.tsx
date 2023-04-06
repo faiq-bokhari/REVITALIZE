@@ -6,6 +6,9 @@ import { useRoute } from '@react-navigation/native';
 import { DateContext } from './Date-component';
 import { EmailContext } from './Email-component';
 
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Front end functionality of the recipe detail screen. Allows users to view the details of the recipe that they clicked and allows them to add the recipe to the food log.
 
 const RecipeDetailScreen=({navigation})=>{
   // Import the useRoute hook and get the date, addOneDay, and subtractOneDay from the DateContext

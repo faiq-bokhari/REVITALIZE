@@ -14,6 +14,10 @@ export const DateContext = React.createContext<DateContextProps>({
   setDate: (newDate: Date) => {}
 });
 
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Global date provider that keeps the date consistent throughout the application. lets the user data load to the same date globally.
+
 const GlobalDateProvider = ({ children }) => {
   // Initialize state using the useState hook to set the current date to the date variable
   const [date, setDateState] = useState(new Date());

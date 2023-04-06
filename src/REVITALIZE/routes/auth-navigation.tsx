@@ -13,12 +13,19 @@ import StartScreen from '../screens/start-screen';
 import LoginScreen from '../screens/login-screen';
 import ForgotPasswordScreen from '../screens/forgot-password-screen';
 import SignUpScreen from '../screens/sign-up-screen';
-
 import FilterRecipeScreen2 from '../screens/filter-recipe';
 import CustomMealScreen from '../screens/custom-meal';
+
+//Author: Bill Nguyen
+//Date: October 25th, 2022
+//Summary: Routes file that allow application to navigate from one screen to another using stack navigation.
+
+// Creating a native stack navigator using the 
 const Stack = createNativeStackNavigator();
 
+// Defining a function that returns the stack 
 const AuthNavigationStack = () => { 
+  // Creating a navigator with initial route as Start Screen and common options for all screens
   return ( 
     <Stack.Navigator 
         initialRouteName="StartScreen"

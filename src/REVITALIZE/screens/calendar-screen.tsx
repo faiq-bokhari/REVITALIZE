@@ -6,7 +6,9 @@ import { useRoute } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { DateContext } from './Date-component';
 
-
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Front end functionality of the calendar screen. Allows user to select the date.
 const CalendarScreen=({navigation})=>{
     const { date, setDate} = useContext(DateContext);    
     return (

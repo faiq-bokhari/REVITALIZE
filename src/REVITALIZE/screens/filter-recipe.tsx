@@ -8,16 +8,21 @@ import { useRoute } from '@react-navigation/native';
 import SearchableDropdown from 'react-native-searchable-dropdown';
 import SearchableDropdownComponent from './searchable-dropdown-component';
 
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Front end functionality of the recipe search. Allows users to filter recipe search criteria.
 const FilterRecipeScreen2=({navigation})=>{    
-    const options1 = [
-        { id: 1, name: 'balanced' },
-        { id: 2, name: 'high-fiber' },
-        { id: 3, name: 'high-protein' },
-        { id: 4, name: 'low-carb' },
-        { id: 5, name: 'low-fat' },
-        { id: 6, name: 'low-sodium' },
-      ];
-    
+  // Define an array of diet options with their ids and names
+  const options1 = [
+    { id: 1, name: 'balanced' },
+    { id: 2, name: 'high-fiber' },
+    { id: 3, name: 'high-protein' },
+    { id: 4, name: 'low-carb' },
+    { id: 5, name: 'low-fat' },
+    { id: 6, name: 'low-sodium' },
+  ];
+
+  // Define an array of health options with their ids and names
       const options2 = [
         { id: 39, name: 'alcohol-cocktail' },
         { id: 40, name: 'alcohol-free' },
@@ -55,28 +60,31 @@ const FilterRecipeScreen2=({navigation})=>{
         { id: 37, name: 'vegetarian' },
         { id: 38, name: 'wheat-free' },
       ];
-    const [selectedItems1, setSelectedItems1] = useState([] as any);
-  const [selectedItems2, setSelectedItems2] = useState([] as any);
-  const [number1, changeTextName] = React.useState("");
-  const [number2, changeTextCalories] = React.useState("");
-  
-    const handleItemSelect1 = (item) => {
-        setSelectedItems1([...selectedItems1, item]);
-      };
-    
-      const handleItemSelect2 = (item) => {
-        setSelectedItems2([...selectedItems2, item]);
-      };
-
-      const goToListScreen = () =>{
-        navigation.navigate('Recipe List Screen', {
-            keyword: number1,
-            calories: number2,
-            diet: selectedItems1,
-            health: selectedItems2,
-        });
-
-    }
+   // Define state variables for selected diet and health options, and text inputs for name and calorie range
+   const [selectedItems1, setSelectedItems1] = useState([] as any);
+   const [selectedItems2, setSelectedItems2] = useState([] as any);
+   const [number1, changeTextName] = React.useState("");
+   const [number2, changeTextCalories] = React.useState("");
+ 
+   // Define a function that updates the selected diet options array with a new item
+   const handleItemSelect1 = (item) => {
+     setSelectedItems1([...selectedItems1, item]);
+   };
+ 
+   // Define a function that updates the selected health options array with a new item
+   const handleItemSelect2 = (item) => {
+     setSelectedItems2([...selectedItems2, item]);
+   };
+ 
+   // Define a function that navigates to the Recipe List Screen and passes in the selected options and text inputs
+   const goToListScreen = () =>{
+     navigation.navigate('Recipe List Screen', {
+         keyword: number1,
+         calories: number2,
+         diet: selectedItems1,
+         health: selectedItems2,
+     });
+   }
     
     return (
         <View style={globalStyles.container}>

@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Drawing circular slider component
+*/
+
 // Import React and various SVG components
 import React from "react";
 import { polar2Canvas } from "react-native-redash";

@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Nov, 2022
+Description: Container that displays sleep screen UI along with circular slider and other labels
+*/
+
 // Import required modules and components
 import React, { useState, ReactNode, useContext } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";

@@ -1,3 +1,9 @@
+/*
+Author: Youssef Dahab
+Date Started: Jan, 2023
+Description: Sleep screen UI
+*/
+
 // Import necessary modules and components
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';

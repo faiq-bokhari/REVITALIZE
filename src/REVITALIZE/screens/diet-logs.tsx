@@ -7,6 +7,10 @@ import { useIsFocused } from '@react-navigation/native';
 import { DateContext } from './Date-component';
 import { EmailContext } from './Email-component';
 
+//Author: Syed Bokhari
+//Date: October 30th, 2022
+//Summary: Front end functionality of the diet section. Allows user to view food log, edit items, add items
+
 const DietScreen=({navigation})=>{
 // Import hooks and context from external modules
 const isFocused = useIsFocused();
