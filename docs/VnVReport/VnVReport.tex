@@ -848,248 +848,247 @@ Formal testing did not reveal any necessary changes in terms of module interfaci
 Jest was used to automate the unit tests
 \section{Trace to Requirements}
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Login Page Functional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|}
-		\cline{3-11}
-		& & \multicolumn{9}{ c|}{Requirements} \\ \cline{3-11}
-		& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 & FR8 & FR9 \\ \cline{1-11}
-		\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&&&& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&&& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&&&& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&&&& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&&&& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X&&& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-LP-7} &&&&&&&X&& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ FR-LP-8} &&&&&&&&X& \\ \cline{2-11}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ FR-LP-9} &&&&&&&&&X \\ \cline{1-11}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Login Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|}
+			\cline{3-9}
+			& & \multicolumn{7}{ c|}{Requirements} \\ \cline{3-9}
+			& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 \\ \cline{1-9}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&& \\ \cline{2-9}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&X \\ \cline{2-9}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&& \\ \cline{2-9}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&& \\ \cline{2-9}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&& \\ \cline{2-9}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X& \\ \cline{1-9}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Signup Page Functional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-		\cline{3-7}
-		& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
-		& & FR10  & FR11 & FR12 & FR13 & FR14 \\ \cline{1-7}
-		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ FR-SP-1} &X&&&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-SP-2} &&X&&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-SP-3} &&&X&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-SP-4} &&&&X& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ FR-SP-5} &&&&&X \\ \cline{1-7}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Signup Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|}
+			\cline{3-6}
+			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-6}
+			& & FR\textcolor{red}{8}  & FR\textcolor{red}{9} & FR\textcolor{red}{10} & FR\textcolor{red}{11} \\ \cline{1-6}
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-SP-1} &X&&&X \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-2} &&X&X& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-3} &&X&X& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-4} &&X&X& \\ \cline{2-6}
+            \multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-5} &&X&X& \\ \cline{1-6}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Main Page Functional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-		\cline{3-7}
-		& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-7}
-		& & FR15  & FR16 & FR17 & FR18 & FR30 \\ \cline{1-7}
-		\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ FR-MP-1} &X&&&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-MP-2} &&X&&&X \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-MP-3} &&&X&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-MP-4} &&&&X& \\ \cline{1-7}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Main Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
+			\cline{3-6}
+			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-6}
+			& & FR\textcolor{red}{12}  & FR\textcolor{red}{13} & FR\textcolor{red}{14} & FR\textcolor{red}{15} \\ \cline{1-6}
+			\multicolumn{1}{ |c| }{\multirow{4}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-MP-1} &X&&& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-2} &&X&& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-3} &&&X& \\ \cline{2-6}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-MP-4} &&&&X \\ \cline{1-6}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Diet Page Functional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-		\cline{3-12}
-		& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
-		& & FR19  & FR20 & FR21 & FR22 & FR23-25  & FR26 & FR27 & FR28 & FR29 & F30 \\ \cline{1-12}
-		\multicolumn{1}{ |c| }{\multirow{11}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&&& \\ \cline{2-12}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&&& \\ \cline{2-12}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-DS-3} &&&X&&&&&&& \\ \cline{2-12}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-DS-4} &&&&X&&&&&& \\ \cline{2-12}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-DS-5} &&&&&X&&&&& \\ \cline{2-12}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-DS-6} &&&&&&X&&&& \\ \cline{2-12}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-DS-7} &&&&&&&X&&& \\ \cline{2-12}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-DS-8} &&&&&&&&X&X& \\ \cline{1-12}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Diet Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c}
+			\cline{3-10}
+			& & \multicolumn{8}{ c|}{Requirements} \\ \cline{3-10}
+			& & FR\textcolor{red}{16}  & FR\textcolor{red}{17}  & FR\textcolor{red}{18}  & FR\textcolor{red}{19}  & FR\textcolor{red}{20}   & FR\textcolor{red}{21} & FR\textcolor{red}{22} & FR\textcolor{red}{23} \\ \cline{1-10}
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&& \\ \cline{2-10}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&& \\ \cline{2-10}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-3} &&X&&&&&&& \\ \cline{2-10}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-4} &&X&&&&&&& \\ \cline{2-10}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-DS-5} &&&X&X&X&X&X&X& \\ \cline{1-10}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Workout Page Functional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-		\cline{3-7}
-		& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
-		& & FR31  & FR32 & FR33 & FR34 & FR35 \\ \cline{1-7}
-		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ FR-WP-1} &X&&&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-WP-2} &&X&&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-WP-3} &&&X&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ FR-WP-4} &&&&X& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ FR-WP-5} &&&&&X \\ \cline{1-7}
-	\end{tabularx}
-\end{center}
-\end{table}
-
-
-\begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Rest Section Functional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-		\cline{3-4}
-		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-		& & FR36  & FR37 \\ \cline{1-4}
-		\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ FR-RS-1} &X& \\ \cline{2-4}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{1-4}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Workout Page Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
+			\cline{3-5}
+			& & \multicolumn{3}{ c|}{Requirements} \\ \cline{3-5}
+			& & FR\textcolor{red}{24}  & FR\textcolor{red}{25} & FR\textcolor{red}{26} \\ \cline{1-5}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-WP-1} &X&& \\ \cline{2-5}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-2} &&X& \\ \cline{2-5}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-3} &&X& \\ \cline{2-5}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-WP-4} &&X& \\ \cline{2-5}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-WP-5} &X&&X \\ \cline{1-5}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Look and Feel Nonfunctional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-		\cline{3-4}
-		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-		& & LF1  & LF2 \\ \cline{1-4}
-		\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ NFR-LF1} &X& \\ \cline{2-4}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ NFR-LF22} &&X \\ \cline{1-4}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Rest Section Functional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & FR\textcolor{red}{27}  & FR\textcolor{red}{28} \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-RS-1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-3}} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-4}} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-5}} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-6}} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
+\end{table}
+
+\begin{table}[H]
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Look and Feel Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & LF1  & LF2 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-LF1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ NFR-LF22} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Usability and Humanity Nonfunctional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|}
-		\cline{3-8}
-		& & \multicolumn{6}{ c|}{Requirements} \\ \cline{3-8}
-		& & UH1  & UH2 & UH3 & UH4 & UH5 & UH6 \\ \cline{1-8}
-		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ NFR-UH1} &X&&&&& \\ \cline{2-8}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ NFR-UH2} &&X&&&& \\ \cline{2-8}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ NFR-UH3} &&&X&&& \\ \cline{2-8}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ NFR-UH4} &&&&X&&\\ \cline{2-8}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{NFR-UH5} &&&&&X& \\ \cline{1-8}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Usability and Humanity Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|}
+			\cline{3-8}
+			& & \multicolumn{6}{ c|}{Requirements} \\ \cline{3-8}
+			& & UH1  & UH2 & UH3 & UH4 & UH5 & UH6 \\ \cline{1-8}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-UH1} &X&&&&& \\ \cline{2-8}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-UH2} &&X&&&& \\ \cline{2-8}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-UH3} &&&X&&& \\ \cline{2-8}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-UH4} &&&&X&&\\ \cline{2-8}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{NFR-UH5} &&&&&X& \\ \cline{1-8}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Perfromance Nonfunctional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-		\cline{3-7}
-		& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
-		& & PE1  & PE2 & PE3 & PE4 & PE5 \\ \cline{1-7}
-		\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ NFR-PE1} &X&&&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ NFR-PE2} &&X&&& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ NFR-PE3} &&&&X& \\ \cline{2-7}
-		\multicolumn{1}{|c| }{} 	                  &
-		\multicolumn{1}{|c| }{ NFR-PE4} &&&&&X \\ \cline{1-7}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Perfromance Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
+			\cline{3-7}
+			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
+			& & PE1  & PE2 & PE3 & PE4 & PE5 \\ \cline{1-7}
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-PE1} &X&&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-PE2} &&X&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-PE3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ NFR-PE4} &&&&X& \\ \cline{2-7}
+            \multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ \textcolor{red}{NFR-PE5}} &&&&&X \\ \cline{1-7}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Operational Nonfunctional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-		\cline{3-4}
-		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-		& & OE1  & OE2 \\ \cline{1-4}
-		\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ NFR-OE1} &X& \\ \cline{1-4}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Operational Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & OE1  & OE2 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{2}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-OE1} &X& \\ \cline{2-4}
+            \multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ \textcolor{red}{NFR-OE2}} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Maintainability and Portability Nonfunctional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
-		\cline{3-5}
-		& & \multicolumn{3}{ c|}{Requirements} \\ \cline{3-5}
-		& & MP1  & MP2 & MP3 \\ \cline{1-5}
-		\multicolumn{1}{ |c| }{\multirow{2}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{ NFR-MP1} &X&& \\ \cline{2-5}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{ NFR-MP2} &&X& \\ \cline{1-5}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Maintainability and Portability Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
+			\cline{3-5}
+			& & \multicolumn{3}{ c|}{Requirements} \\ \cline{3-5}
+			& & MP1  & MP2 & MP3 \\ \cline{1-5}
+			\multicolumn{1}{ |c| }{\multirow{2}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-MP1} &X&& \\ \cline{2-5}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ NFR-MP2} &&X& \\ \cline{1-5}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Security Nonfunctional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
-		\cline{3-4}
-		& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-		& & SE1  & SE2 \\ \cline{1-4}
-		\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{NFR-SE1} &X& \\ \cline{2-4}
-		\multicolumn{1}{|c| }{}                        &
-		\multicolumn{1}{|c| }{NFR-SE2} &&X \\ \cline{1-4}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Security Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
+			\cline{3-4}
+			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
+			& & SE1  & SE2 \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{NFR-SE1} &X& \\ \cline{2-4}
+			\multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{NFR-SE2} &&X \\ \cline{1-4}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \begin{table}[H]
-\begin{center}
-	\caption{\textbf{Traceability Matrix for Cultural and Political Nonfunctional Requirements}}
-	\begin{tabularx}{\textwidth}{cc|c|c|c|c|}
-		\cline{3-3}
-		& & \multicolumn{1}{ c|}{Requirements} \\ \cline{3-3}
-		& & CU1 \\ \cline{1-3}
-		\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
-		\multicolumn{1}{|c| }{NFR-CU1} &X \\ \cline{1-3}
-	\end{tabularx}
-\end{center}
+	\begin{center}
+		\caption{\textbf{Traceability Matrix for Cultural and Political Nonfunctional Requirements}}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|}
+			\cline{3-3}
+			& & \multicolumn{1}{ c|}{Requirements} \\ \cline{3-3}
+			& & CU1 \\ \cline{1-3}
+			\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{NFR-CU1} &X \\ \cline{1-3}
+		\end{tabularx}
+	\end{center}
 \end{table}
 
 \section{Trace to Modules}		
