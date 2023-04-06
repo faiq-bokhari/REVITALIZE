@@ -6,6 +6,14 @@
 \usepackage{graphicx}
 \usepackage{pdflscape}
 
+\def\fillandplacepagenumber{%
+ \par\pagestyle{empty}%
+ \vbox to 0pt{\vss}\vfill
+ \vbox to 0pt{\baselineskip0pt
+   \hbox to\linewidth{\hss}%
+   \baselineskip\footskip
+   \hbox to\linewidth{%
+     \hfil\thepage\hfil}\vss}}
 \hypersetup{
 colorlinks=true,       % false: boxed links; true: colored links
 linkcolor=red,          % color of internal links (change box color with linkbordercolor)
@@ -51,6 +59,9 @@ urlcolor=cyan           % color of external links
 ~\newpage
 
 \tableofcontents
+
+\listoffigures
+
 
 ~\newpage
 
@@ -142,25 +153,53 @@ The next pages will show the full failure mode and effect analysis (FMEA) for RE
 \begin{landscape}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[angle=360, scale=1.42]{FMEAPart1.png}
+		\includegraphics[angle=360, scale=0.8]{FMEA_1.png}
 		\caption{Part 1 of FMEA}
 	\end{figure}
+	\fillandplacepagenumber
 \end{landscape}
-
 \begin{landscape}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[angle=360, scale=0.72]{FMEA_part_2.png}
+		\includegraphics[angle=360, scale=1.15]{FMEA_2.png}
 		\caption{Part 2 of FMEA}
 	\end{figure}
+	\fillandplacepagenumber
+\end{landscape}
+\begin{landscape}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[angle=360, scale=0.85]{FMEA_3.png}
+		\caption{Part 3 of FMEA}
+	\end{figure}
+	\fillandplacepagenumber
 \end{landscape}
 
 \begin{landscape}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[angle=360, scale=0.75]{FMEA_Part3.png}
-		\caption{Part 3 of FMEA}
+		\includegraphics[angle=360, scale=1]{FMEA_4.png}
+		\caption{Part 4 of FMEA}
 	\end{figure}
+	\fillandplacepagenumber
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[angle=360, scale=1]{FMEA_5.png}
+		\caption{Part 5 of FMEA}
+	\end{figure}
+	\fillandplacepagenumber
+\end{landscape}
+
+\begin{landscape}
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[angle=360, scale=0.9]{FMEA_6.png}
+		\caption{Part 6 of FMEA}
+	\end{figure}
+	\fillandplacepagenumber
 \end{landscape}
 
 \section{Safety and Security Requirements}
