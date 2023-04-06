@@ -7,8 +7,12 @@ import { useNavigation } from '@react-navigation/native';
 import { DateContext } from './Date-component';
 import { EmailContext } from './Email-component';
 
+//Author: Logan Brown
+//Date: November 2nd, 2022
+//Summary: Front end functionality of the Add Exercise screen of the workout section. Allows user edit exercises, add exercises, and specify reps, sets, and weight of exercise
 
 const AddExercise = ({navigation, route}) => {
+    // Hooks needed for functionality and context from other modules like data and email
     const { date, addOneDay, subtractOneDay } = useContext(DateContext);
     const { email } = useContext(EmailContext);
     const [selected, setSelected] = useState(route.params?.editName || "");
@@ -16,6 +20,7 @@ const AddExercise = ({navigation, route}) => {
     const [sets, setSets] = useState(route.params?.editSets || 0);
     const [weight, setWeight] = useState(route.params?.editWeight || 0);
     
+    // List of exercises
     const exercises = [
         {key: '0', value: 'Ab Wheel'},
         {key: '1', value: 'Arnold Press'},
@@ -101,6 +106,7 @@ const AddExercise = ({navigation, route}) => {
         {key: '81', value: 'Tricep Extension'},
     ];
 
+    // Validates user input and disallows navigation if fields are empty or 0
     const navigateOrBlock = (exercise) => {
         if (exercise.name.length === 0) {
             Alert.alert('Invalid Input','Please select exercise')
@@ -116,22 +122,14 @@ const AddExercise = ({navigation, route}) => {
             }, 200);
         }
     }
-
-  
-    // const switchedTo = navigation.addListener('focus', () => {
-    //     if (route.params !== null) {
-    //         //navigation.setParams(null);
-    //         // setSelected("");
-    //         // setReps(0);
-    //         // setSets(0);
-    //         // setWeight(0);
-    //     }
-    // }, [navigation]);
    
+    // Adds new exercise to the current workout of the specified date
     function addWorkout (newExercise) {
         const addData = async () => {
             try {
+                // If the current workout is being edited, make a PATCH request to the API
                 if(route.params?.editcurrentexercise && route.params?.editcurrentexercise == true){
+                    // Construct URL for API request
                     let url = 'http://192.168.2.43:8000/exercises/' + email + '/' + selected + '/';
                     url += date.toISOString().split("T")[0];
                     const response = await fetch(url, {
@@ -146,6 +144,7 @@ const AddExercise = ({navigation, route}) => {
                       console.log(responseJson);
                 }
                 else {
+                    // If new exercise is added, make a POST request to API
                     let url = 'http://192.168.2.43:8000/exercises/';
                     const response = await fetch(url, {
                         method: 'POST',
@@ -156,14 +155,6 @@ const AddExercise = ({navigation, route}) => {
                       body: JSON.stringify(newExercise)
                     });
                     const data = await response.json();
-                    if(data.success) {
-                        //console.log(JSON.stringify(newExercise, null, "  "));
-                      }
-                      else {
-                        //console.log('no worky')
-                        //console.log(data.message)
-                        //console.log(JSON.stringify(newExercise, null, "  "));
-                      }
                 }
             } catch (error) {
               console.error(error);
@@ -174,7 +165,7 @@ const AddExercise = ({navigation, route}) => {
     
 
 
-
+    // Renders page
     return (
         <View style={styles.container}>
                 <SelectList 

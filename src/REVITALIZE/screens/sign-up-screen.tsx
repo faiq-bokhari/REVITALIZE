@@ -3,19 +3,23 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert} from 'react
 import { globalStyles } from '../styles/global';
 import EmailProvider, {EmailContext} from "./Email-component";
 
-//Email is made global so it can be accessed in other modules
-//export const EmailContext = createContext();
+//Author: Logan Brown
+//Date: November 2nd, 2022
+//Summary: Front end functionality of the signup screen. Allows user to enter name, email, password to signup for REVITALIZE
 
 const SignUpScreen=({navigation})=>{
-
+    // Hooks needed for functionality and context from other modules like data and email
     const [name, setName] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
    
+      // Validates user input and sends request to server if correct
       const handleSignUp = async () => {
-
+        // Regex expression to verify that email is valid
         const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        
+        // Checks if any fields are empty or password confirmation doesn't match
         if (!name || !email || !password || !passwordConfirm) {
             Alert.alert('Invalid Input','Required fields empty');
             return;
@@ -29,8 +33,9 @@ const SignUpScreen=({navigation})=>{
             return;
         }
 
+        // Sends POST request to server if all inputs valid to create account
         try {
-          // change ip back
+          // Construct URL for API request
           const response = await fetch('http://192.168.2.43:8000/users/', {
             method: 'POST',
             headers: {
@@ -42,14 +47,12 @@ const SignUpScreen=({navigation})=>{
       
           const data = await response.json();
       
+          // Displays message on completion of signup and navigates back to login
           if (data.success) {
             Alert.alert('Congrats!','Your account has been successfully created');
             navigation.navigate('Login Screen');
             
           } else {
-            // remove navigate later
-            //navigation.navigate('Main Screen');
-            console.log('bruh')
             alert(data.message);
           }
         } catch (error) {
@@ -57,6 +60,7 @@ const SignUpScreen=({navigation})=>{
         }
       };
 
+    // Renders page
     return (
         <EmailContext.Provider value={email}>
             <View style={globalStyles.loginContainer}>
