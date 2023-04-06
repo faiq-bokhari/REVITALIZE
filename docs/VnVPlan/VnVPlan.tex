@@ -55,6 +55,7 @@ urlcolor=blue
 	November 1st, 2022 & 0.0 & Logan Brown & Added Symbolic Parameters\\
 	November 1st, 2022 & 0.0 & Youssef Dahab & Added Implementation Verification Plan, Self Reflection\\
     April 1st, 2023 & 1.0 & Bill Nguyen & Made Suggested Changes to Functional Requirements\\
+	April 4th, 2023 & 1.0 & Logan Brown & Made Suggested Changes to Nonfunctional Requirements\\
 	\bottomrule
 \end{tabularx}
 
@@ -459,7 +460,7 @@ Testing all functional requirements for sign page of REVITALIZE. (Refer to BE2 i
 	
 	\textcolor{red}{\textcolor{red}{Tester will navigate to the signup page and verify that the username, password, email and confirm password textboxes are present and blank. Tester will enter a username, email and mismatching passwords in the textboxes and click the "sign up" button. Tester will verify that failure message appears and user is not added into the database.}}
 	
-\item{\textcolor{red}{\sout{FR-SP-3}}
+\item{\textcolor{red}{\sout{FR-SP-3}}}
 	
 \textcolor{red}{\sout{Control: Manual}}
 
@@ -743,9 +744,8 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 
 \textcolor{red}{\sout{Test Case Derivation: User clicks add custom meal button}}
 
-\textcolor{red}{\sout{How test will be performed: Tester will click on add custom meal button and will visually
-
-	
+\textcolor{red}{\sout{How test will be performed: Tester will click on add custom meal button and will visually}}
+}
 \end{enumerate}
 
 
@@ -829,11 +829,11 @@ Testing all functional requirements for workout section of REVITALIZE. (Refer to
 	
 	\textcolor{red}{Control: Automatic, Functional, Dynamic}
 	
-	\textcolor{red}{Workout section is initialized with a list of workouts logged for the current calender day. Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: [((name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")]}
+	\textcolor{red}{Workout section is initialized with a list of workouts logged for the current calender day. Assume this is the current data in the database for test@gmail.com and the date of 2022-10-25: (name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")}
 	
 	\textcolor{red}{Input: An event that loads/gets the workout list for email = test@gmail.com and dateAdded = 2022-10-25}
 	
-	\textcolor{red}{Output: A list of workouts is loaded for the current calender day. For email = test@gmail.com and dateAdded = 2022-10-25, will return a successful message = ”Success in getting exercise list” and will return the following list [((name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")}
+	\textcolor{red}{Output: A list of workouts is loaded for the current calender day. For email = test@gmail.com and dateAdded = 2022-10-25, will return a successful message = ”Success in getting exercise list” and will return the following list (name = "Bicep Curl", weight = 50, sets = 10, repetitions = 15, dateAdded = 2022-10-25, email = "test@gmail.com"),(name = "Bench Press", weight = 50, sets = 13, repetitions = 12, dateAdded = 2022-10-25, email = "test@gmail.com")}
 	
 	\textcolor{red}{Test Case Derivation: Request is made to get/load the exercise list for email = test@gmail.com and dateAdded = 2022-10-25 and request is successful}
 	
@@ -889,7 +889,7 @@ Testing all functional requirements for workout section of REVITALIZE. (Refer to
 
 \textcolor{red}{\sout{Test Case Derivation: User launches the workout section. User adds an exercise and does not input repetition and set values.}}
 
-\textcolor{red}{\sout{How test will be performed: Tester will add exercise without inputting values for set and repetitions. The user will visually check if the exercise dialog is launched with highlighted missing repetitions and set values.}
+\textcolor{red}{\sout{How test will be performed: Tester will add exercise without inputting values for set and repetitions. The user will visually check if the exercise dialog is launched with highlighted missing repetitions and set values.}}
 	
 \end{enumerate}
 
@@ -1018,7 +1018,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: All UI/UX design and elements matches original design and are displayed correctly and neatly
 	
-	How test will be performed: All related stakeholders will test application with the focus on neatness and attractiveness of UI/UX design of REVITALIZE and answer question 1 of the Usability Survey. Would need an average rating of \hyperlink{MINIMUM_TEST_SCORE}{MINIMUM\_TEST\_SCORE} or above out of 10 and assess all stakeholders responses to make improvements
+	How test will be performed: All related stakeholders will test application with the focus on neatness and attractiveness of UI/UX design of REVITALIZE and answer \hyperlink{q1}{\textcolor{red}{Q1}} of the Usability Survey. Would need an average rating of \textcolor{red}{8.5} or above out of 10 and assess all stakeholders responses to make improvements
 	
 	\item{NFR-LF2\\}
 	
@@ -1030,7 +1030,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: All colours are considered appealing, contrasting and non-intrusive
 	
-	How test will be performed: All related stakeholders will test application with the focus on colour and answer question 2 of the Usability Survey. Would need an average rating of \hyperlink{MINIMUM_TEST_SCORE}{MINIMUM\_TEST\_SCORE} or above out of 10 for each factor and assess all stakeholders responses to make improvements
+	How test will be performed: All related stakeholders will test application with the focus on colour and answer \hyperlink{q2}{\textcolor{red}{Q2}} of the Usability Survey. Would need an average rating of \textcolor{red}{8.5} or above out of 10 for each factor and assess all stakeholders responses to make improvements
 	
 \end{enumerate}
 
@@ -1048,7 +1048,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: REVITALIZE features are displaying correct outputs and results
 	
-	How test will be performed: All related stakeholders with varying size hands/fingers can use all aspects of REVITALIZE using one hand/finger and have an average rating of \hyperlink{MINIMUM_TEST_SCORE_2}{MINIMUM\_TEST\_SCORE\_2} or above for question 3 of the Usability Survey
+	How test will be performed: All related stakeholders with varying size hands/fingers can use all aspects of REVITALIZE using one hand/finger and have an average rating of \textcolor{red}{9.5} or above for \hyperlink{q3}{\textcolor{red}{Q3}} of the Usability Survey
 	
 	\item{NFR-UH2\\}
 	
@@ -1058,9 +1058,9 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Input/Condition: User uses main page to access features (Diet, Workout and Rest Section)
 	
-	Output/Result: All features take less than \hyperlink{MINIMUM_ACCESS_TIME}{MINIMUM\_ACCESS\_TIME} seconds to access
+	Output/Result: All features take less than \textcolor{red}{10} seconds to access
 	
-	How test will be performed: Stakeholders will navigate to the Diet, Workout and/or Rest section from the main page in \hyperlink{MAXIMUM_ACCESS_TIME}{MAXIMUM\_ACCESS\_TIME} seconds or less. 90\% of stakeholders need to be able to navigate to any of the sections in \hyperlink{MAXIMUM_ACCESS_TIME}{MAXIMUM\_ACCESS\_TIME} seconds or less
+	How test will be performed: Stakeholders will navigate to the Diet, Workout and/or Rest section from the main page in \textcolor{red}{10} seconds or less. 90\% of stakeholders need to be able to navigate to any of the sections in \textcolor{red}{10} seconds or less. \textcolor{red}{This will be verified with \hyperlink{q4}{\textcolor{red}{Q4}} of the usability survey}
 	
 	\item{NFR-UH3\\}
 	
@@ -1070,9 +1070,9 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Input/Condition: Users in targeted demographic will use all features of REVITALIZE
 	
-	Output/Result: Results gathered from survey
+	Output/Result: \textcolor{red}{\sout{Results gathered from survey}} \textcolor{red}{All features have an appropriate ease of with survey result greater than 8.5}
 	
-	How test will be performed: Primary stakeholders such as teenagers and young adults 14 years or older will test application and fill in survey, with the goal of an approval rating of \hyperlink{MIN_APPROVAL_RATING}{MIN\_APPROVAL\_RATING} or above
+	How test will be performed: Primary stakeholders such as teenagers and young adults 14 years or older will test application and fill in survey, with the goal of an approval rating of \textcolor{red}{85\%} \textcolor{red}{or above for \hyperlink{q5}{\textcolor{red}{Q5}} of the usability survey}
 	
 	\item{NFR-UH4\\}
 	
@@ -1084,7 +1084,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: User can use and understand basic/common aspects of all features after 3rd iteration
 	
-	How test will be performed: Stakeholders will use all features/aspects of REVITALIZE and \hyperlink{MIN_APPROVAL_RATING}{MIN\_APPROVAL\_RATING} of stakeholders should be able to use and understand basic/common aspects of all features in 3 iterations or less.
+	How test will be performed: Stakeholders will use all features/aspects of REVITALIZE and \textcolor{red}{85\%} of stakeholders should be able to use and understand basic/common aspects of all features in 3 iterations or less. \textcolor{red}{This will be verified with \hyperlink{q6}{\textcolor{red}{Q6}} of the usability survey}
 	
 	\item{NFR-UH5\\}
 	
@@ -1096,7 +1096,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: Results gathered from survey based on consistency of UI aspects such as buttons, drop-downs, words etc.
 	
-	How test will be performed: Stakeholders will test application with focus on consistency of UI aspects and fill in survey, with the goal of an approval rating of \hyperlink{MIN_APPROVAL_RATING}{MIN\_APPROVAL\_RATING} or above
+	How test will be performed: Stakeholders will test application with focus on consistency of UI aspects and fill in survey, with the goal of an approval rating of \textcolor{red}{85\%} or above. \textcolor{red}{This will be verified with \hyperlink{q7}{\textcolor{red}{Q7}} of the usability survey}
 	
 \end{enumerate}
 
@@ -1114,7 +1114,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: loading time of all REVITALIZE features
 	
-	How test will be performed: Developers will run performance tests and ensure that all output data loads within 5 seconds or less for \hyperlink{MIN_APPROVAL_RATING_2}{MIN\_APPROVAL\_RATING\_2} of all API responses and outputs
+	How test will be performed: Developers will run performance tests and ensure that all output data loads within 5 seconds or less for \textcolor{red}{95\%} of all API responses and outputs
 	
 	\item{NFR-PE2\\}
 	
@@ -1126,31 +1126,44 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: data/numbers of used features in floating points
 	
-	How test will be performed: Developers will run accuracy tests to ensure output data/numbers are accurate for double precision floating points and pass all test cases
+	How test will be performed: \textcolor{red}{\sout{Developers will run accuracy tests to ensure output data/numbers are accurate for double precision floating points and pass all test cases}} \textcolor{red}{Developer will add meals to the diet section and verify that calories, carbohydrate, fat, and protein all add their respective totals correctly. When meals are removed, these values will be verified to subtract correctly as well}
 	
-	\item{NFR-PE3\\}
+	\item{\textcolor{red}{NFR-PE3}\\}
+	
+	\textcolor{red}{Type: Dynamic, Functional, Manual}
+	
+	\textcolor{red}{Initial State: REVITALIZE is loaded but not in use}
+
+	\textcolor{red}{Input/Condition: All REVITALIZE features are loaded with appropriate data}
+	
+	\textcolor{red}{Output/Result: REVITALIZE stays up 99\% of testing time}
+	
+	\textcolor{red}{How test will be performed: Developer will make hourly pings to the database over a week's time and document any downtime.}
+
+
+	\item{\textcolor{red}{\sout{NFR-PE3}} \textcolor{red}{NFR-PE4}\\}
 	
 	Type: Dynamic, Functional, Manual
 	
 	Initial State: REVITALIZE is loaded but not in use
 	
-	Input/Condition: Multiple (More than \hyperlink{MIN_USER_LOAD}{MIN\_USER\_LOAD}) users using REVITALIZE
+	Input/Condition: Multiple (More than \textcolor{red}{50}) users using REVITALIZE
 	
 	Output/Result: Performance metrics (ex. loading time, frames per second etc.)
 	
-	How test will be performed: \hyperlink{MIN_USER_LOAD}{MIN\_USER\_LOAD} or more users (does not have to be actual people) use/send requests to REVITALIZE application simultaneously and analyze performance trends based on the number of users
+	How test will be performed: \textcolor{red}{\sout{50 or more users (does not have to be actual people) use/send requests to REVITALIZE application simultaneously and analyze performance trends based on the number of users}} \textcolor{red}{50 concurrent requests will be sent to the database at varying intervals. The developer will verify that the application's performance metrics are not affected by the background requests}
 	
-	\item{NFR-PE4\\}
+	\item{\textcolor{red}{\sout{NFR-PE4}} \textcolor{red}{NFR-PE5}\\}
 	
 	Type: Dynamic, Functional, Manual
 	
 	Initial State: REVITALIZE is loaded but not in use
 	
-	Input/Condition: User will use all features of REVITALIZE
+	Input/Condition: \textcolor{red}{\sout{User will use all features of REVITALIZE}} \textcolor{red}{REVITALIZE database filled with large amount of data}
 	
 	Output/Result: Storage percentage of data
 	
-	How test will be performed: Developers will try to add as much data as possible to user account and application should be able to store \hyperlink{MIN_DATA_POINTS}{MIN\_DATA\_POINTS} or more data points for all users
+	How test will be performed: \textcolor{red}{\sout{Developers will try to add as much data as possible to user account and application should be able to store \textcolor{red}{1000000} or more data points for all users}} \textcolor{red}{Developers will use an automated script to add 1000000 randomized data points spread across the diet log, workout log, sleep log across multiple users and verify the database can handle this}
 	
 \end{enumerate}
 
@@ -1168,8 +1181,18 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Output/Result: REVITALIZE features are all loaded 
 	
-	How test will be performed: Users will connect to the internet on their devices and launch the application. The application should load all features. 
+	How test will be performed: Users will connect to the internet on their devices and launch the application. The application should load all features. \textcolor{red}{If no internet connection is established, the proper error message is displayed by the application}
 	
+
+	\item{\textcolor{red}{NFR-OE2\\}}
+
+	\textcolor{red}{Initial State: Device has Android 11+ operating system installed}
+
+	\textcolor{red}{Input/Condition: REVITALIZE application is launched}
+
+	\textcolor{red}{Output/Result: REVITALIZE features are all loaded}
+
+	\textcolor{red}{How test will be performed: The developer will load multiple emulated versions of Android 11+ and verify that all features work as intended}
 	
 \end{enumerate}
 
@@ -1197,7 +1220,7 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 	
 	Input/Condition: New source code is added
 	
-	Output/Result: New source code that is added adheres to Google JS Style Guide (refer to SRS)
+	Output/Result: New source code that is added adheres to \href{https://google.github.io/styleguide/jsguide.html}{\color{red}Google JS Style Guide} (refer to SRS)
 	
 	How test will be performed: The ESLint linter tool will scan the source code and ensure it adheres to the Google JS Style Guide for newly developed source code.  
 	
@@ -1258,28 +1281,22 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 \begin{table}[H]
 	\begin{center}
 		\caption{\textbf{Traceability Matrix for Login Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|}
-			\cline{3-11}
-			& & \multicolumn{9}{ c|}{Requirements} \\ \cline{3-11}
-			& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 & FR8 & FR9 \\ \cline{1-11}
-			\multicolumn{1}{ |c| }{\multirow{10}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&&&& \\ \cline{2-11}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|}
+			\cline{3-9}
+			& & \multicolumn{7}{ c|}{Requirements} \\ \cline{3-9}
+			& & FR1  & FR2 & FR3 & FR4 & FR5 & FR6 & FR7 \\ \cline{1-9}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-LP-1} &X&&&&&& \\ \cline{2-9}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{ FR-LP-2} &&X&&&&&X \\ \cline{2-9}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{ FR-LP-3} &&&X&&&& \\ \cline{2-9}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{ FR-LP-4} &&&&X&&& \\ \cline{2-9}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&&&& \\ \cline{2-11}
+			\multicolumn{1}{|c| }{ FR-LP-5} &&&&&X&& \\ \cline{2-9}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X&&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-LP-7} &&&&&&&X&& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-LP-8} &&&&&&&&X& \\ \cline{2-11}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-LP-9} &&&&&&&&&X \\ \cline{1-11}
+			\multicolumn{1}{|c| }{ FR-LP-6} &&&&&&X& \\ \cline{1-9}
 		\end{tabularx}
 	\end{center}
 \end{table}
@@ -1287,20 +1304,20 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 \begin{table}[H]
 	\begin{center}
 		\caption{\textbf{Traceability Matrix for Signup Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-			\cline{3-7}
-			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
-			& & FR10  & FR11 & FR12 & FR13 & FR14 \\ \cline{1-7}
-			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-SP-1} &X&&&& \\ \cline{2-7}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|}
+			\cline{3-6}
+			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-6}
+			& & FR\textcolor{red}{8}  & FR\textcolor{red}{9} & FR\textcolor{red}{10} & FR\textcolor{red}{11} \\ \cline{1-6}
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-SP-1} &X&&&X \\ \cline{2-6}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-SP-2} &&X&&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{ FR-SP-2} &&X&X& \\ \cline{2-6}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-SP-3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{ FR-SP-3} &&X&X& \\ \cline{2-6}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-SP-4} &&&&X& \\ \cline{2-7}
-			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-SP-5} &&&&&X \\ \cline{1-7}
+			\multicolumn{1}{|c| }{ FR-SP-4} &&X&X& \\ \cline{2-6}
+            \multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ FR-SP-5} &&X&X& \\ \cline{1-6}
 		\end{tabularx}
 	\end{center}
 \end{table}
@@ -1308,18 +1325,18 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 \begin{table}[H]
 	\begin{center}
 		\caption{\textbf{Traceability Matrix for Main Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|}
-			\cline{3-7}
-			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-7}
-			& & FR15  & FR16 & FR17 & FR18 & FR30 \\ \cline{1-7}
-			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-MP-1} &X&&&& \\ \cline{2-7}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|}
+			\cline{3-6}
+			& & \multicolumn{4}{ c|}{Requirements} \\ \cline{3-6}
+			& & FR\textcolor{red}{12}  & FR\textcolor{red}{13} & FR\textcolor{red}{14} & FR\textcolor{red}{15} \\ \cline{1-6}
+			\multicolumn{1}{ |c| }{\multirow{4}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-MP-1} &X&&& \\ \cline{2-6}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-MP-2} &&X&&&X \\ \cline{2-7}
+			\multicolumn{1}{|c| }{ FR-MP-2} &&X&& \\ \cline{2-6}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-MP-3} &&&X&& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{ FR-MP-3} &&&X& \\ \cline{2-6}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-MP-4} &&&&X& \\ \cline{1-7}
+			\multicolumn{1}{|c| }{ FR-MP-4} &&&&X \\ \cline{1-6}
 		\end{tabularx}
 	\end{center}
 \end{table}
@@ -1327,26 +1344,20 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 \begin{table}[H]
 	\begin{center}
 		\caption{\textbf{Traceability Matrix for Diet Page Functional Requirements}}
-		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-			\cline{3-12}
-			& & \multicolumn{10}{ c|}{Requirements} \\ \cline{3-12}
-			& & FR19  & FR20 & FR21 & FR22 & FR23-25  & FR26 & FR27 & FR28 & FR29 & F30 \\ \cline{1-12}
-			\multicolumn{1}{ |c| }{\multirow{11}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&&& \\ \cline{2-12}
+		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|c|c|c|c}
+			\cline{3-10}
+			& & \multicolumn{8}{ c|}{Requirements} \\ \cline{3-10}
+			& & FR\textcolor{red}{16}  & FR\textcolor{red}{17}  & FR\textcolor{red}{18}  & FR\textcolor{red}{19}  & FR\textcolor{red}{20}   & FR\textcolor{red}{21} & FR\textcolor{red}{22} & FR\textcolor{red}{23} \\ \cline{1-10}
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ FR-DS-1} &X&&&&&&&& \\ \cline{2-10}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{ FR-DS-2} &&X&&&&&&& \\ \cline{2-10}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-3} &&&X&&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{ FR-DS-3} &&X&&&&&&& \\ \cline{2-10}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-4} &&&&X&&&&&& \\ \cline{2-12}
+			\multicolumn{1}{|c| }{ FR-DS-4} &&X&&&&&&& \\ \cline{2-10}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-5} &&&&&X&&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-6} &&&&&&X&&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-7} &&&&&&&X&&& \\ \cline{2-12}
-			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ FR-DS-8} &&&&&&&&X&X& \\ \cline{1-12}
+			\multicolumn{1}{|c| }{ FR-DS-5} &&&X&X&X&X&X&X& \\ \cline{1-10}
 		\end{tabularx}
 	\end{center}
 \end{table}
@@ -1379,11 +1390,19 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 		\begin{tabularx}{\textwidth}{cc|c|c|c|c|c|}
 			\cline{3-4}
 			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
-			& & FR36  & FR37 \\ \cline{1-4}
-			\multicolumn{1}{ |c| }{\multirow{3}{*}{Test Cases} } &
+			& & FR\textcolor{red}{27}  & FR\textcolor{red}{28} \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
 			\multicolumn{1}{|c| }{ FR-RS-1} &X& \\ \cline{2-4}
 			\multicolumn{1}{|c| }{}                        &
-			\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{1-4}
+			\multicolumn{1}{|c| }{ FR-RS-2} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-3}} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-4}} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-5}} &&X \\ \cline{2-4}
+            \multicolumn{1}{|c| }{}                        &
+			\multicolumn{1}{|c| }{ \textcolor{red}{FR-RS-6}} &&X \\ \cline{1-4}
 		\end{tabularx}
 	\end{center}
 \end{table}
@@ -1432,14 +1451,16 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 			\cline{3-7}
 			& & \multicolumn{5}{ c|}{Requirements} \\ \cline{3-7}
 			& & PE1  & PE2 & PE3 & PE4 & PE5 \\ \cline{1-7}
-			\multicolumn{1}{ |c| }{\multirow{6}{*}{Test Cases} } &
+			\multicolumn{1}{ |c| }{\multirow{5}{*}{Test Cases} } &
 			\multicolumn{1}{|c| }{ NFR-PE1} &X&&&& \\ \cline{2-7}
 			\multicolumn{1}{|c| }{} 	                  &
 			\multicolumn{1}{|c| }{ NFR-PE2} &&X&&& \\ \cline{2-7}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-PE3} &&&&X& \\ \cline{2-7}
+			\multicolumn{1}{|c| }{ NFR-PE3} &&&X&& \\ \cline{2-7}
 			\multicolumn{1}{|c| }{} 	                  &
-			\multicolumn{1}{|c| }{ NFR-PE4} &&&&&X \\ \cline{1-7}
+			\multicolumn{1}{|c| }{ NFR-PE4} &&&&X& \\ \cline{2-7}
+            \multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ \textcolor{red}{NFR-PE5}} &&&&&X \\ \cline{1-7}
 		\end{tabularx}
 	\end{center}
 \end{table}
@@ -1451,8 +1472,10 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 			\cline{3-4}
 			& & \multicolumn{2}{ c|}{Requirements} \\ \cline{3-4}
 			& & OE1  & OE2 \\ \cline{1-4}
-			\multicolumn{1}{ |c| }{\multirow{1}{*}{Test Cases} } &
-			\multicolumn{1}{|c| }{ NFR-OE1} &X& \\ \cline{1-4}
+			\multicolumn{1}{ |c| }{\multirow{2}{*}{Test Cases} } &
+			\multicolumn{1}{|c| }{ NFR-OE1} &X& \\ \cline{2-4}
+            \multicolumn{1}{|c| }{} 	                  &
+			\multicolumn{1}{|c| }{ \textcolor{red}{NFR-OE2}} &&X \\ \cline{1-4}
 		\end{tabularx}
 	\end{center}
 \end{table}
@@ -2087,13 +2110,13 @@ Testing all functional requirements for rest section of REVITALIZE. (Refer to BE
 
 \subsection{Symbolic Parameters}
 
-\noindent MINIMUM\_TEST\_SCORE = \hypertarget{MINIMUM_TEST_SCORE}{8.5}\\
-MINIMUM\_TEST\_SCORE\_2 = \hypertarget{MINIMUM_TEST_SCORE_2}{9.5}\\
-MAXIMUM\_ACCESS\_TIME = \hypertarget{MAXIMUM_ACCESS_TIME}{10}\\
-MIN\_APPROVAL\_RATING = \hypertarget{MIN_APPROVAL_RATING}{85\%}\\
-MIN\_APPROVAL\_RATING\_2 = \hypertarget{MIN_APPROVAL_RATING_2}{95\%}\\
-MIN\_USER\_LOAD = \hypertarget{MIN_USER_LOAD}{50}\\
-MIN\_DATA\_POINTS = \hypertarget{MIN_DATA_POINTS}{1000000}
+\noindent \textcolor{red}{\sout{MINIMUM\_TEST\_SCORE =}}  \hypertarget{MINIMUM_TEST_SCORE}{8.5}\\
+\textcolor{red}{\sout{MINIMUM\_TEST\_SCORE\_2 =}} \hypertarget{MINIMUM_TEST_SCORE_2}{9.5}\\
+\textcolor{red}{\sout{MAXIMUM\_ACCESS\_TIME =}} \hypertarget{MAXIMUM_ACCESS_TIME}{10}\\
+\textcolor{red}{\sout{MIN\_APPROVAL\_RATING =}} \hypertarget{MIN_APPROVAL_RATING}{85\%}\\
+\textcolor{red}{\sout{MIN\_APPROVAL\_RATING\_2}} = \hypertarget{MIN_APPROVAL_RATING_2}{95\%}\\
+\textcolor{red}{\sout{MIN\_USER\_LOAD =}} \hypertarget{MIN_USER_LOAD}{50}\\
+\textcolor{red}{\sout{MIN\_DATA\_POINTS =}} \hypertarget{MIN_DATA_POINTS}{1000000}
 
 
 
@@ -2106,9 +2129,17 @@ MIN\_DATA\_POINTS = \hypertarget{MIN_DATA_POINTS}{1000000}
 \subsection{Usability Survey Questions}
 
 \begin{enumerate}
-	\item How would you rate overall neatness of UI/UX design of REVITALIZE out of 10? What are elements you like related to neatness? What are elements you would improve related to neatness?
-	\item Are colours used in REVITALIZE non-intrusive, appealing and/or contrasting? Rate each factor of non-intrusive, appealing and contrasting out of 10? What are elements you like that elevate these factors? What are elements you would improve to elevate these factors?
-	\item How would you rate the overall ability to use REVITALIZE with only one hand/one finger out of 10? What are elements that help with this? What are elements you would improve?
+	\hypertarget{q1}{\item} How would you rate overall neatness of UI/UX design of REVITALIZE out of 10? What are elements you like related to neatness? What are elements you would improve related to neatness?
+	\hypertarget{q2}{\item} Are colours used in REVITALIZE non-intrusive, appealing and/or contrasting? Rate each factor of non-intrusive, appealing and contrasting out of 10? What are elements you like that elevate these factors? What are elements you would improve to elevate these factors?
+	\hypertarget{q3}{\item} How would you rate the overall ability to use REVITALIZE with only one hand/one finger out of 10? What are elements that help with this? What are elements you would improve?
+	
+	\hypertarget{q4}{\item} \textcolor{red}{Please navigate from the main menu to each of the diet section, then the workout section, and finally the sleep section. Were you able to locate and navigate to each of these sections under 10 seconds?}
+
+	\hypertarget{q5}{\item} \textcolor{red}{On a scale of 1 to 10, how easily were you able navigate to and utilize the various features of REVITALIZE?}
+
+	\hypertarget{q6}{\item} \textcolor{red}{After exploring the application, were you able to learn and understand the features of the application with less than 3 attempts?}
+
+	\hypertarget{q7}{\item} \textcolor{red}{How consistent would you say the interface is from page to page on a scale of 1 to 10? What would you do to improve the consistency of the application?}
 \end{enumerate}
 
 \section{Reflection Appendix}
