@@ -1,6 +1,6 @@
 REVITALIZE
 
-Developer Names: Bill Nguyen, Syed Bokhari, Logan Brown, Youssef Dahab, Hasan Kibria, Mahmoud Anklis
+Developer Names: Syed Bokhari, Bill Nguyen, Logan Brown, Youssef Dahab, Hasan Kibria, Mahmoud Anklis
 
 Date of project start: September, 2022
 
